@@ -39,8 +39,8 @@
 }
 
 .logo {
-  background-image: url(../../../img/logo.svg);
-  background-size: cover;
+  background: url(../../../img/logo.svg) no-repeat scroll 0 0;
+  background-size: contain;
   display: block;
   height: 0;
   overflow: hidden;
@@ -51,8 +51,9 @@
 
 @media only screen and (min-width: 700px) {
   .logo {
-    padding-top: 239px;
-    width: 620px;
+    margin-top: 2rem;
+    padding-top: 161px;
+    width: 420px;
   }
 }
 
