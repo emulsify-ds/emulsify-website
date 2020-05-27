@@ -1,0 +1,77 @@
+.header {
+  overflow: hidden;
+  position: relative;
+}
+
+.heroImage {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.heroImage * {
+  height: 100%;
+  width: 100%;
+}
+
+.headerHome {
+  background-position: 0 53%;
+  padding-bottom: 0;
+}
+
+.headerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.8rem;
+}
+
+.headerWrapper div {
+  position: relative;
+}
+
+@media only screen and (min-width: 700px) {
+  .headerWrapper {
+    padding: 1.6rem 1.6rem 2.1rem;
+  }
+}
+
+.logo {
+  background-image: url(../../../img/logo.svg);
+  background-size: cover;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding-top: 193px;
+  position: relative;
+  width: 190px;
+}
+
+@media only screen and (min-width: 700px) {
+  .logo {
+    padding-top: 239px;
+    width: 620px;
+  }
+}
+
+.heading {
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (min-width: 700px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .heading {
+    font-size: 2.4rem;
+  }
+}

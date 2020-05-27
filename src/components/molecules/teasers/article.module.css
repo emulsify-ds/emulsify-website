@@ -1,0 +1,71 @@
+.preview {
+  margin-bottom: 3rem;
+}
+
+.previewTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.15rem;
+  margin-top: 0;
+}
+
+.image {
+  margin-bottom: 1rem;
+}
+
+.author {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.author a {
+  text-decoration: none;
+}
+
+.author a:hover {
+  text-decoration: underline;
+}
+
+.author a::after {
+  color: #aaa;
+  content: "|";
+  margin: 0 0.5rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .preview {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+  
+  .image {
+    margin-bottom: 0;
+    margin-right: 3rem;
+    width: 25%;
+  }
+  
+  .content {
+    width: 75%;
+  }
+}
+
+.tags {
+  overflow: hidden;
+}
+
+.tag {
+  color: #A0A0A0;
+  text-decoration: none;
+  display: inline-block;
+  float: left;
+  font-size: 0.7rem;
+  line-height: 1.7;
+  margin: 0 0.25rem 0 0;
+}
+
+.tag:not(:last-child)::after {
+  content: ",";
+}
+
+.description {
+  font-size: 0.9rem;
+}

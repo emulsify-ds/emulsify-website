@@ -1,0 +1,65 @@
+/* Footer */
+.footer {
+  background-color: #3a3734;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+@media only screen and (min-width: 940px) {
+  font-size: 0.9rem;
+}
+
+.footerWrap::after {
+  background-color: #676561;
+  content: "";
+  display: block;
+  height: 2px;
+  margin: 1.5rem auto 0;
+  width: 100px;
+}
+
+.footer ul {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.footer span {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+@media only screen and (min-width: 940px) {
+  .footer span {
+    display: inline;
+    margin-bottom: 0;
+  }
+
+  .footer span:not(:last-child)::after {
+    content: "|";
+    margin: 0 0.4rem;
+  }
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footerListItem {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.youtube svg {
+  height: 37px;
+  position: relative;
+  top: 2px;
+  width: 37px;
+}
