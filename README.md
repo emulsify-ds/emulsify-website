@@ -1,6 +1,6 @@
 # Emulsify.info website
 
-Built using [Gatsby.js](https://www.gatsbyjs.org/), the [Contentful CMS](https://www.contentful.com/), and the [Gatsby Contentful Starter](https://www.gatsbyjs.org/starters/contentful-userland/gatsby-contentful-starter/). It is hosted on [Netlify](https://www.netlify.com/). 
+Built using [Gatsby.js](https://www.gatsbyjs.org/), the [Contentful CMS](https://www.contentful.com/), and the [Gatsby Contentful Starter](https://github.com/contentful/starter-gatsby-blog). It is hosted on [Netlify](https://www.netlify.com/). 
 
 ## Getting started
 

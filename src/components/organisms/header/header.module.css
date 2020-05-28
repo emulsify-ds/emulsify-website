@@ -28,7 +28,7 @@
   padding: 0.8rem;
 }
 
-.headerWrapper div {
+.content {
   position: relative;
 }
 
@@ -44,7 +44,8 @@
   display: block;
   height: 0;
   overflow: hidden;
-  padding-top: 193px;
+  margin-top: 1rem;
+  padding-top: 115px;
   position: relative;
   width: 190px;
 }

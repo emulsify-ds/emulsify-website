@@ -57,7 +57,7 @@ export default function Header ({ image, isHome }) {
             <Link className={styles.logo} to="/">Home</Link>
             <Navigation light={isHome && true} />
             {isHome &&
-              <div>
+              <div className={styles.content}>
                 <h1 className={styles.heading}>CREATE A DYNAMIC DESIGN SYSTEM FOR YOUR ENTIRE ORGANIZATION</h1>
                 <a className="button" target="_blank" href="https://docs.emulsify.info/" rel="noopener">Get Started</a>
                 <p>
