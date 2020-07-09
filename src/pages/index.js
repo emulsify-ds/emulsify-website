@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/base/seo/seo'
@@ -16,7 +17,6 @@ import styles from './home.module.css';
 
 class RootIndex extends React.Component {
   render() {
-    console.log(this.props)
     return (
       <Layout location={this.props.location}>
         <SEO title="Home" url={this.props.location.href} />
@@ -49,12 +49,27 @@ class RootIndex extends React.Component {
         <div className={styles.demo}>
           <Card
             imageClass="demoImage"
-            imageFluid={this.props.data.file.childImageSharp.fluid}
+            imageFluid={this.props.data.westernu.childImageSharp.fluid}
             title="Explore the Demo"
             text="Western University of Pennsylvania is a fictional university to show how Emulsify can be used to manage the design system for a school and all of its departments."
             buttonUrl="#"
             buttonText="University Demo"
           />
+        </div>
+        <div className={styles.tech}>
+          <div className="wrapper">
+            <h2 className={styles.techHeading}>Built Using Well-supported Technologies Developers Love</h2>
+            <div className={styles.techItems}>
+              <div className={styles.techItem}>
+                <Img fluid={this.props.data.storybook.childImageSharp.fluid} />
+                <p>Develop UI components with support for React and Twig</p>
+              </div>
+              <div className={styles.techItem}>
+                <Img fluid={this.props.data.gatsby.childImageSharp.fluid} />
+                <p>Deploy your style guide documentation as a blazing fast static site</p>
+              </div>
+            </div>
+          </div>
         </div>
       </Layout>
     )
@@ -65,7 +80,21 @@ export default RootIndex
 
 export const query = graphql`
   query HomePageQuery {
-    file(relativePath: { eq: "western-u.png" }) {
+    westernu: file(relativePath: { eq: "western-u.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 580) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    storybook: file(relativePath: { eq: "storybook.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 580) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    gatsby: file(relativePath: { eq: "gatsby.png" }) {
       childImageSharp {
         fluid(maxWidth: 580) {
           ...GatsbyImageSharpFluid

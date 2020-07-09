@@ -54,7 +54,7 @@ export default function Header ({ image, isHome }) {
           }
           <div className={headerWrapperClasses}>
             <Link className={styles.logo} to="/">Home</Link>
-            <Navigation light={isHome && true} />
+            {/* <Navigation light={isHome && true} /> */}
             {isHome &&
               <div className={styles.content}>
                 <h1 className={styles.heading}>Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams.</h1>
