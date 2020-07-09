@@ -11,6 +11,18 @@
   width: 100%;
 }
 
+.heroImage::after {
+  background: linear-gradient(0deg, rgba(26, 150, 202, 0) 41.3%, #1A96CA 100%);
+  mix-blend-mode: multiply;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .heroImage * {
   height: 100%;
   width: 100%;
@@ -61,7 +73,9 @@
 .heading {
   color: white;
   font-size: 1.6rem;
+  font-weight: 800;
   line-height: 1.2;
+  margin: 3rem 0 1rem;
   position: relative;
   width: 100%;
 }
@@ -69,11 +83,20 @@
 @media only screen and (min-width: 700px) {
   .heading {
     font-size: 2.25rem;
+    margin: 4rem 0 2rem;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .heading {
-    font-size: 2.4rem;
+    font-size: 3.6rem;
+    margin: 7rem 0 4rem;
   }
+}
+
+.headingSmall {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }

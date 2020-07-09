@@ -1,0 +1,15 @@
+.os {
+  background: #1A96CA;
+  color: #fff;
+}
+
+@media only screen and (min-width: 1024px) {
+  .os {
+    padding: 0 22rem;
+  }
+}
+
+
+.demo {
+  background: #EFF3F5;
+}

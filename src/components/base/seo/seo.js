@@ -76,7 +76,7 @@ function SEO({ description, lang, meta, title, imageUrl }) {
         },
       ].concat(meta)}
     >
-      <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
       <link rel="icon" href={favicon} type="image/x-icon" />
       <link rel="preconnect" href="https://www.google-analytics.com"></link>
     </Helmet>

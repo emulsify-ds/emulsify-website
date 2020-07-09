@@ -4,15 +4,42 @@ import Img from 'gatsby-image'
 
 import styles from './card.module.css'
 
-export default ({ title, text, link, image }) => (
-  <article className={styles.card}>
-    <div className={styles.image}>
-      <Img alt="" fluid={image.fluid} />
-    </div>
-    <div className={styles.copy}>
-      <h2 className={styles.cardTitle}>{title}</h2>
-      <h3 className={styles.cardText}>{text}</h3>
-      <Link className={styles.cardLink} to={link}>Read More</Link>
-    </div>
-  </article>
-)
+import classNames from 'classnames/bind';
+let cx = classNames.bind(styles);
+
+export default ({ title, specialTitle, specialSubTitle, text, image, imageFluid, imageClass, buttonUrl, buttonText }) => {
+  let imageClasses = cx({
+    image: true,
+    demo: imageClass
+  });
+  return (
+    <article className={styles.card}>
+      <div className={imageClasses}>
+        {image}
+        {imageFluid && 
+          <Img fluid={imageFluid} />
+        }
+      </div>
+      <div className={styles.copy}>
+        {title &&
+          <h2 className={styles.cardTitle}>{title}</h2>
+        }
+        {specialTitle && 
+          <h2 className={styles.cardSpecialTitle}>
+            <span>{specialTitle}</span>
+            <span className={styles.cardSubTitle}>{specialSubTitle}</span>
+          </h2>
+        }
+        <h3 className={styles.cardText}>{text}</h3>
+        {buttonUrl && 
+          <div className={styles.cardBtn}>
+            <Link
+              className="button"
+              url={buttonUrl}
+            >{buttonText}</Link>
+          </div>
+        }
+      </div>
+    </article>
+  )
+}

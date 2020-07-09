@@ -1,0 +1,14 @@
+.banner {
+  background-color: #06425C;
+  color: #d1dade;
+  font-size: 1.6rem;
+  padding: 1.6rem 3.2rem;
+}
+
+.bannerContent {
+  margin: 0;
+}
+
+.bannerContent a:hover {
+  color: #fff;
+}

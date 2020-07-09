@@ -2,6 +2,7 @@ import React from 'react'
 
 import './base/base.css'
 
+import Banner from './molecules/banner/banner'
 import Header from './organisms/header/header'
 import Footer from './organisms/footer/footer'
 
@@ -21,6 +22,7 @@ class Template extends React.Component {
 
     return (
       <div>
+        <Banner />
         <Header
           image={heroImage}
           isHome={home}

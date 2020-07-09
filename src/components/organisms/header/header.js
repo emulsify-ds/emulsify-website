@@ -3,7 +3,6 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Navigation from '../../molecules/nav/navigation'
-import Github from '../../../img/github.inline.svg';
 
 import styles from './header.module.css'
 import classNames from 'classnames/bind';
@@ -58,11 +57,9 @@ export default function Header ({ image, isHome }) {
             <Navigation light={isHome && true} />
             {isHome &&
               <div className={styles.content}>
-                <h1 className={styles.heading}>CREATE A DYNAMIC DESIGN SYSTEM FOR YOUR ENTIRE ORGANIZATION</h1>
-                <a className="button" target="_blank" href="https://docs.emulsify.info/" rel="noopener">Get Started</a>
-                <p>
-                  <a target="_blank" href="https://github.com/emulsify-ds" rel="noopener">View on <Github />Github</a>
-                </p>
+                <h1 className={styles.heading}>Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams.</h1>
+                <h2 className={styles.headingSmall}>Ready to get started?</h2>
+                <a className="button button--dark" target="_blank" href="https://docs.emulsify.info/" rel="noopener">Check out the installation guide</a>
               </div>
             }
           </div>

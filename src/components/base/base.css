@@ -1,12 +1,13 @@
 html {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 62.5%;
   line-height: 1.65;
 }
 
 body {
   background: #fff;
-  color: #373F49;
+  color: #000;
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -20,7 +21,7 @@ h2,
 h3,
 h4,
 h5 {
-  font: normal 2.5rem 'Lora', serif;
+  font: normal 2.5rem 'Inter', sans-serif;
 }
 
 h2 {
@@ -45,7 +46,7 @@ h5 {
   h3,
   h4,
   h5 {
-    font: normal 2.8rem 'Lora', serif;
+    font: normal 2.8rem 'Inter', sans-serif
   }
 
   h2 {
@@ -72,7 +73,7 @@ h5 {
   h3,
   h4,
   h5 {
-    font: normal 3.5rem 'Lora', serif;
+    font: normal 3.5rem 'Inter', sans-serif;
   }
 
   h2 {
@@ -111,13 +112,22 @@ blockquote {
 }
 
 .button {
-  background-color: #06425c;
+  background-color: #1A96CA;
+  border-radius: 4px;
   color: #fff;
   display: inline-block;
-  font-size: 0.85rem;
-  padding: 0.75rem 1.2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 1.6rem 2.7rem;
   text-align: center;
   text-decoration: none;
+}
+
+.button--dark {
+  background-color: #06425c;
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 1.2rem 2rem;
 }
 
 .button-center {
@@ -127,7 +137,7 @@ blockquote {
 }
 
 .button:hover {
-  background-color: #031e29;
+  background-color: #06425c;
   text-decoration: underline;
 }
 
