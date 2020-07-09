@@ -23,6 +23,11 @@ export default function Header ({ image, isHome }) {
     headerHomeWrapper: isHome,
   });
 
+  let logoClasses = cx({
+    logo: true,
+    logoHome: isHome,
+  });
+
   return (
     <StaticQuery
       query={graphql`
@@ -38,24 +43,14 @@ export default function Header ({ image, isHome }) {
       `}
       render={data => (
         <header className={headerClasses}>
-          {!image && 
-            <div className={styles.heroImage}>
-              <Img
-                alt=""
-                fluid={data.file.childImageSharp.fluid}
-              />
-            </div>
-          }
-          {image &&
-            <div className={styles.heroImage}> 
-              <Img
-                alt=""
-                fluid={image.fluid}
-              />
-            </div>
-          }
+          <div className={styles.heroImage}>
+            <Img
+              alt=""
+              fluid={data.file.childImageSharp.fluid}
+            />
+          </div>
           <div className={headerWrapperClasses}>
-            <Link className={styles.logo} to="/">Home</Link>
+            <Link className={logoClasses} to="/">Home</Link>
             {/* <Navigation light={isHome && true} /> */}
             {isHome &&
               <div className={styles.content}>

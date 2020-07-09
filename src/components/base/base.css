@@ -21,7 +21,8 @@ h2,
 h3,
 h4,
 h5 {
-  font: normal 2.5rem 'Inter', sans-serif;
+  color: #06425C;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -46,7 +47,7 @@ h5 {
   h3,
   h4,
   h5 {
-    font: normal 2.8rem 'Inter', sans-serif
+    font-size: 2.8rem;
   }
 
   h2 {
@@ -64,16 +65,16 @@ h5 {
   h5 {
     font-size: 1.25rem;
   }
-  
 }
 
-@media only screen and (min-width: 1024) {
+@media only screen and (min-width: 1024px) {
   h1,
   h2,
   h3,
   h4,
   h5 {
-    font: normal 3.5rem 'Inter', sans-serif;
+    font-size: 6.4rem;
+    line-height: 1.1;
   }
 
   h2 {

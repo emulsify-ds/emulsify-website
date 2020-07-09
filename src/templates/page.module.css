@@ -1,0 +1,19 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7rem;
+}
+
+.rightContent {
+  order: 2;
+  width: 45%;
+}
+
+.leftContent {
+  order: 1;
+  width: 52%;
+}
+
+.pageTitle {
+  margin-top: 0;
+}
