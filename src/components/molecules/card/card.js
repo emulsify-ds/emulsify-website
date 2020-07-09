@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
+import Arrow from '../../../img/arrow.inline.svg'
+
 import styles from './card.module.css'
 
 import classNames from 'classnames/bind';
@@ -36,7 +38,7 @@ export default ({ title, specialTitle, specialSubTitle, text, image, imageFluid,
             <Link
               className="button"
               url={buttonUrl}
-            >{buttonText}</Link>
+            >{buttonText}<Arrow className="button-icon" /></Link>
           </div>
         }
       </div>

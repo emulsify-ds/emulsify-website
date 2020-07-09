@@ -2,7 +2,9 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Navigation from '../../molecules/nav/navigation'
+// import Navigation from '../../molecules/nav/navigation'
+
+import Arrow from '../../../img/arrow.inline.svg'
 
 import styles from './header.module.css'
 import classNames from 'classnames/bind';
@@ -59,7 +61,10 @@ export default function Header ({ image, isHome }) {
               <div className={styles.content}>
                 <h1 className={styles.heading}>Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams.</h1>
                 <h2 className={styles.headingSmall}>Ready to get started?</h2>
-                <a className="button button--dark" target="_blank" href="https://docs.emulsify.info/" rel="noopener">Check out the installation guide</a>
+                <a className="button button--dark" target="_blank" href="https://docs.emulsify.info/" rel="noopener">
+                  <span>Check out the installation guide</span>
+                  <Arrow className="button-icon" />
+                </a>
               </div>
             }
           </div>

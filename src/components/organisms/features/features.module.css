@@ -21,7 +21,7 @@
   }
 
   .featuresItem {
-    width: 30%;
+    width: 28%;
   }
 }
 
@@ -29,4 +29,11 @@
   color: #085A7D;
   font-size: 2.4rem;
   font-weight: bold;
+  position: relative;
+}
+
+.featuresIcon {
+  left: -4rem;
+  position: absolute;
+  top: 0;
 }

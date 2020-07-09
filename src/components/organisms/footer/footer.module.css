@@ -41,6 +41,10 @@
   color: #CDE9F4;
 }
 
+.footer a:hover {
+  color: white;
+}
+
 .footerLink {
   display: block;
   margin-bottom: 1rem;

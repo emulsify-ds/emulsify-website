@@ -130,6 +130,11 @@ blockquote {
   padding: 1.2rem 2rem;
 }
 
+.button-icon {
+  fill: white;
+  margin-left: 1rem;
+}
+
 .button-center {
   display: block;
   margin: 0 auto;
@@ -139,6 +144,15 @@ blockquote {
 .button:hover {
   background-color: #06425c;
   text-decoration: underline;
+}
+
+.button--dark:hover {
+  background-color: #fff;
+  color: #06425c;
+}
+
+.button--dark:hover .button-icon {
+  fill: #06425c;
 }
 
 .wrapper {
