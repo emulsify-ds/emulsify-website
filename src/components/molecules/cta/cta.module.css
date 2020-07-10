@@ -1,0 +1,26 @@
+.cta {
+  background-color: #CDE9F4;
+  padding: 5rem;
+}
+
+.ctaBg {
+  background-color: #085A7D;
+  color: white;
+}
+
+.ctaBg .title {
+  color: white;
+  margin: 2rem 0 4rem;
+}
+
+.title {
+  margin: 0 0 1rem;
+}
+
+.image {
+  max-width: 300px;
+}
+
+.copy {
+  margin-top: 4rem;
+}

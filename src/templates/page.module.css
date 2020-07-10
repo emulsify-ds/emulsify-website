@@ -26,6 +26,21 @@
 
 @media only screen and (min-width: 1024px) {
   .content {
+    margin-bottom: 5rem;
     margin-top: 7rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .ctaWrapper {
+    display: flex;
+  }
+
+  .ctaWrapper > *:first-child {
+    width: 60%;
+  }
+
+  .ctaWrapper > *:last-child {
+    width: 40%;
   }
 }
