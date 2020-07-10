@@ -345,23 +345,25 @@ blockquote {
 }
 
 /* CMS classes */
-.float-right img {
-  float: right;
-  width: 40%;
-  margin: 1rem 0 2rem 3rem !important;
-}
+@media only screen and (min-width: 850px) {
+  .float-right img {
+    float: right;
+    width: 40%;
+    margin: 1rem 0 2rem 3rem !important;
+  }
 
-.float-left img {
-  float: left;
-  width: 40%;
-  margin: 1rem 3rem 2rem 0 !important;
-}
+  .float-left img {
+    float: left;
+    width: 40%;
+    margin: 1rem 3rem 2rem 0 !important;
+  }
 
-.content-flex {
-  display: flex;
-  justify-content: space-between;
-}
+  .content-flex {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.content-flex > * {
-  width: 48%;
+  .content-flex > * {
+    width: 48%;
+  }
 }
