@@ -343,3 +343,25 @@ blockquote {
     margin-top: 2.5rem;
   }
 }
+
+/* CMS classes */
+.float-right img {
+  float: right;
+  width: 40%;
+  margin: 1rem 0 2rem 3rem !important;
+}
+
+.float-left img {
+  float: left;
+  width: 40%;
+  margin: 1rem 3rem 2rem 0 !important;
+}
+
+.content-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-flex > * {
+  width: 48%;
+}
