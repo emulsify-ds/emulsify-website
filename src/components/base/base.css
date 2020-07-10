@@ -283,3 +283,57 @@ blockquote {
   top: 0;
   width: 100%;
 }
+
+/* Acton */
+#aoform-8cb720cf-340b-4191-8e54-6891b9f638fb {
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media only screen and (min-width: 700px) {
+  .ao-form .ao-row .ao-column-inner {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.ao-form label.ao-form-label {
+  color: white;
+  display: block;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.ao-form label.ao-form-label span {
+  display: none;
+}
+
+#ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb.ao-form input[type="text"] {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 1.4rem 1.4rem;
+  width: 100%;
+}
+
+@media only screen and (min-width: 700px) {
+  #ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb.ao-form input[type="text"] {
+    max-width: 370px;
+  }
+}
+
+.ao-form button.ao-form-submit {
+  font-size: 1.6rem !important;
+  margin-left: 1rem;
+  padding: 1.2rem 2rem !important;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 700px) {
+  .ao-form button.ao-form-submit {
+    font-size: 1.8rem !important;
+    margin-top: 2.5rem;
+    padding: 1.6rem 2.7rem !important;
+  }
+}
