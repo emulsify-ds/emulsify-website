@@ -23,12 +23,14 @@ class PageTemplate extends React.Component {
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <div className={styles.content}>
+            {post.heroImage &&
               <div className={styles.rightContent}>
                 <Img
                   alt={post.heroImage.title}
                   fluid={post.heroImage.fluid}
                 />
               </div>
+            }
               <div className={styles.leftContent}>
                 <h1 className={styles.pageTitle}>{post.title}</h1>
                 <div
