@@ -14,7 +14,7 @@ import styles from './page.module.css'
 
 class PageTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulPage')
+    const post = get(this.props, 'data.contentfulLandingPage')
     let page
 
     return (
@@ -22,7 +22,6 @@ class PageTemplate extends React.Component {
         <SEO title={post.title} url={this.props.location.href} />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
-            <a href="/" className={styles.backLink}><Arrow className={styles.backIcon} />Back to Homepage</a>
             <div className={styles.content}>
             {post.heroImage &&
               <div className={styles.rightContent}>
@@ -74,8 +73,8 @@ class PageTemplate extends React.Component {
 export default PageTemplate
 
 export const pageQuery = graphql`
-  query PageBySlug($slug: String!) {
-    contentfulPage(slug: { eq: $slug }) {
+  query LandingPageBySlug($slug: String!) {
+    contentfulLandingPage(slug: { eq: $slug }) {
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
