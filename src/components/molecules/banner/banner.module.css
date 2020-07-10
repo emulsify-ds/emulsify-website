@@ -1,8 +1,16 @@
 .banner {
   background-color: #06425C;
   color: #d1dade;
-  font-size: 1.6rem;
-  padding: 1.6rem 3.2rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  padding: 1rem 2rem 1.2rem;
+}
+
+@media only screen and (min-width: 850px) {
+  .banner {
+    font-size: 1.6rem;
+    padding: 1.6rem 3.2rem;
+  }
 }
 
 .bannerContent {

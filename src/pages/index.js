@@ -9,10 +9,6 @@ import Card from '../components/molecules/card/card'
 import Features from '../components/organisms/features/features'
 import Signup from '../components/organisms/signup/signup'
 
-import Unify from '../img/unify.inline.svg';
-import DevTools from '../img/devTools.inline.svg';
-import Connector from '../img/connector.inline.svg';
-
 import styles from './home.module.css';
 
 class RootIndex extends React.Component {
@@ -23,12 +19,12 @@ class RootIndex extends React.Component {
         <div style={{ background: '#fff' }}>
           <div className="wrapper wrapper-home">
             <Card
-              image={Unify()}
+              imageFluid={this.props.data.unify.childImageSharp.fluid}
               title="Unify your websites and teams with a design system"
               text="Complex organizations need a design system that simplifies development, encourages consistency, reduces maintenance effort, and scales quickly and affordably — without hampering flexibility for individual developers or departments."
             />
             <Card
-            image={DevTools()}
+            imageFluid={this.props.data.devTools.childImageSharp.fluid}
               title="Give your developer and designers powerful tools all in one place"
               text="Emulsify doesn’t just conveniently join your component library and style guide, but includes all of the workflow tools necessary for prototyping, testing, checking accessibility, and documenting."
             />
@@ -39,7 +35,7 @@ class RootIndex extends React.Component {
         <div className={styles.os}>
           <div className="wrapper">
             <Card
-              image={Connector()}
+              imageFluid={this.props.data.connector.childImageSharp.fluid}
               specialTitle="Emulsify is"
               specialSubTitle="Open Source"
               text="Emulsify is an open source project that’s free for everyone. Check out the project on GitHub and visit our support page for help."
@@ -61,11 +57,11 @@ class RootIndex extends React.Component {
             <h2 className={styles.techHeading}>Built Using Well-supported Technologies Developers Love</h2>
             <div className={styles.techItems}>
               <div className={styles.techItem}>
-                <Img fluid={this.props.data.storybook.childImageSharp.fluid} />
+                <Img className={styles.techItemImage} fluid={this.props.data.storybook.childImageSharp.fluid} />
                 <p>Develop UI components with support for React and Twig</p>
               </div>
               <div className={styles.techItem}>
-                <Img fluid={this.props.data.gatsby.childImageSharp.fluid} />
+                <Img className={styles.techItemImage} fluid={this.props.data.gatsby.childImageSharp.fluid} />
                 <p>Deploy your style guide documentation as a blazing fast static site</p>
               </div>
             </div>
@@ -80,6 +76,27 @@ export default RootIndex
 
 export const query = graphql`
   query HomePageQuery {
+    unify: file(relativePath: { eq: "unify.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 580) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    devTools: file(relativePath: { eq: "devTools.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 580) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    connector: file(relativePath: { eq: "connector.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 580) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     westernu: file(relativePath: { eq: "western-u.png" }) {
       childImageSharp {
         fluid(maxWidth: 580) {

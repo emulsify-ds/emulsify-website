@@ -1,19 +1,31 @@
-.content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 7rem;
-}
-
 .rightContent {
-  order: 2;
-  width: 45%;
+  margin: 2rem 0 4rem;
 }
 
-.leftContent {
-  order: 1;
-  width: 52%;
+@media only screen and (min-width: 700px) {
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+  
+  .rightContent {
+    order: 2;
+    width: 45%;
+  }
+  
+  .leftContent {
+    order: 1;
+    width: 52%;
+  }
+  
+  .pageTitle {
+    margin-top: 0;
+  }
 }
 
-.pageTitle {
-  margin-top: 0;
+@media only screen and (min-width: 1024px) {
+  .content {
+    margin-top: 7rem;
+  }
 }

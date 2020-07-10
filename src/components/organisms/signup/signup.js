@@ -1,11 +1,11 @@
 import React from 'react'
 
-import ActOn from '../../../hooks/actOn.js'
+// import ActOn from '../../../hooks/actOn.js'
 
 import styles from './signup.module.css'
 
 export default () => {
-  ActOn();
+  // ActOn();
   return (
     <div className={styles.signup}>
         <h2 className={styles.signupHeading}>Stay up to date with the latest news from Emulsify</h2>

@@ -3,7 +3,7 @@
   margin: 2.5rem 0;
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 700px) {
   .cardGrid {
     display: flex;
     margin-bottom: 4rem;

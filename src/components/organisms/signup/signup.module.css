@@ -1,11 +1,25 @@
 .signup {
   background: #085A7D;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   text-align: center;
+}
+
+@media only screen and (min-width: 700px) {
+  .signup {
+    padding: 4rem 0;
+  }
 }
 
 .signupHeading {
   color: white;
-  font-size: 3.6rem;
-  font-weight: 800;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+@media only screen and (min-width: 700px) {
+  .signupHeading {
+    font-size: 3.6rem;
+    font-weight: 800;
+  }
 }
