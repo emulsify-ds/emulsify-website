@@ -1,6 +1,12 @@
 .cta {
   background-color: #CDE9F4;
-  padding: 5rem;
+  padding: 3rem 2rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .cta {
+    padding: 5rem;
+  }
 }
 
 .ctaBg {
