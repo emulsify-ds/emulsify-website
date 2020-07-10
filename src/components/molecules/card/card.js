@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Arrow from '../../../img/arrow.inline.svg'
@@ -8,7 +9,7 @@ import styles from './card.module.css'
 import classNames from 'classnames/bind';
 let cx = classNames.bind(styles);
 
-export default ({ title, specialTitle, specialSubTitle, text, image, imageFluid, imageClass, buttonUrl, buttonText }) => {
+export default ({ title, specialTitle, specialSubTitle, text, linkUrl, imageFluid, imageClass, buttonUrl, buttonText }) => {
   let imageClasses = cx({
     image: true,
     demo: imageClass
@@ -37,6 +38,14 @@ export default ({ title, specialTitle, specialSubTitle, text, image, imageFluid,
               className="button"
               href={buttonUrl}
             >{buttonText}<Arrow className="button-icon" /></a>
+          </div>
+        }
+        {linkUrl && 
+          <div className={styles.cardBtn}>
+            <Link
+              className="button"
+              to={linkUrl}
+            >{buttonText}<Arrow className="button-icon" /></Link>
           </div>
         }
       </div>

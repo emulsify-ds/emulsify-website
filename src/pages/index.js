@@ -48,7 +48,7 @@ class RootIndex extends React.Component {
             imageFluid={this.props.data.westernu.childImageSharp.fluid}
             title="Explore the Demo"
             text="Western University of Pennsylvania is a fictional university to show how Emulsify can be used to manage the design system for a school and all of its departments."
-            buttonUrl="#"
+            linkUrl="/demo"
             buttonText="University Demo"
           />
         </div>

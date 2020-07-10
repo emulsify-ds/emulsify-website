@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
@@ -22,7 +22,7 @@ class PageTemplate extends React.Component {
         <SEO title={post.title} url={this.props.location.href} />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
-            <a href="/" className={styles.backLink}><Arrow className={styles.backIcon} />Back to Homepage</a>
+            <Link to="/" className={styles.backLink}><Arrow className={styles.backIcon} />Back to Homepage</Link>
             <div className={styles.content}>
             {post.heroImage &&
               <div className={styles.rightContent}>
