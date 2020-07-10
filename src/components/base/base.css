@@ -325,16 +325,21 @@ blockquote {
 }
 
 .ao-form button.ao-form-submit {
+  background: url(../../img/envelope.svg) no-repeat scroll 130px 14px rgb(26, 150, 202) !important;
   font-size: 1.6rem !important;
   margin-left: 1rem;
-  padding: 1.2rem 2rem !important;
+  padding: 1.6rem 4.7rem 1.6rem 2.7rem !important;
   text-transform: uppercase;
+}
+
+.ao-form button.ao-form-submit:hover {
+  background-color: #0cb1f9 !important;
 }
 
 @media only screen and (min-width: 700px) {
   .ao-form button.ao-form-submit {
+    background-position: 140px 16px !important;
     font-size: 1.8rem !important;
     margin-top: 2.5rem;
-    padding: 1.6rem 2.7rem !important;
   }
 }
