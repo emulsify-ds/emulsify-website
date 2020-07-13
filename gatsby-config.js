@@ -31,7 +31,7 @@ module.exports = {
     title: 'Emulsify Design System powered by Storybook and Gatsby',
     author: `Four Kitchens`,
     description: ``,
-    defaultImage: `/emulsify.png`,
+    defaultImage: `/emulsify-sharing-image.png`,
     siteUrl: "https://emulsify.info",
   },
   pathPrefix: '/emulsify-website',
