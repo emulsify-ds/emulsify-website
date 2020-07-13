@@ -345,6 +345,11 @@ blockquote {
 }
 
 /* CMS classes */
+.content-flex,
+.content-flex > div {
+  margin-bottom: 4rem;
+}
+
 @media only screen and (min-width: 850px) {
   .float-right img {
     float: right;
@@ -361,6 +366,7 @@ blockquote {
   .content-flex {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 4rem;
   }
 
   .content-flex > * {
