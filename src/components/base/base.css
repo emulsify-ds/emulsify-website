@@ -47,6 +47,7 @@ h5 {
 }
 
 @media only screen and (min-width: 700px) {
+
   h1,
   h2,
   h3,
@@ -73,6 +74,7 @@ h5 {
 }
 
 @media only screen and (min-width: 1024px) {
+
   h1,
   h2,
   h3,
@@ -97,7 +99,7 @@ h5 {
   h5 {
     font-size: 1.4rem;
   }
-  
+
 }
 
 a {
@@ -127,6 +129,7 @@ blockquote {
   padding: 1.2rem 2rem;
   text-align: center;
   text-decoration: none;
+  transition: all 0.15s;
 }
 
 @media only screen and (min-width: 700px) {
@@ -153,6 +156,7 @@ blockquote {
 .button-icon {
   fill: white;
   margin-left: 1rem;
+  transition: all 0.15s;
 }
 
 .button-center {
@@ -163,16 +167,20 @@ blockquote {
 
 .button:hover {
   background-color: #06425c;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .button--dark:hover {
-  background-color: #fff;
-  color: #06425c;
+  background-color: #023044;
+  text-decoration: none;
+}
+
+.button:hover .button-icon {
+  margin-left: 2rem;
 }
 
 .button--dark:hover .button-icon {
-  fill: #06425c;
+  margin-left: 2rem;
 }
 
 .wrapper {
@@ -195,7 +203,7 @@ blockquote {
     justify-content: space-between;
   }
 
-  .content-flex > * {
+  .content-flex>* {
     margin-right: 5%;
     width: 45%;
   }
@@ -230,7 +238,7 @@ blockquote {
 }
 
 .content-wrapper iframe {
-    width: 100%;
+  width: 100%;
 }
 
 /* Highlighted Content */
@@ -272,7 +280,8 @@ blockquote {
   height: 0;
   overflow: hidden;
   padding-top: 35px;
-  padding-bottom: 56.25%; /* 56.25% = 16x9 */
+  padding-bottom: 56.25%;
+  /* 56.25% = 16x9 */
   position: relative;
 }
 
@@ -330,6 +339,7 @@ blockquote {
   margin-left: 1rem;
   padding: 1.6rem 4.7rem 1.6rem 2.7rem !important;
   text-transform: uppercase;
+  transition: all 0.15s;
 }
 
 .ao-form button.ao-form-submit:hover {
@@ -369,7 +379,7 @@ blockquote {
     margin-bottom: 4rem;
   }
 
-  .content-flex > * {
+  .content-flex>* {
     width: 48%;
   }
 }
