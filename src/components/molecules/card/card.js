@@ -17,7 +17,7 @@ export default ({ title, specialTitle, specialSubTitle, text, linkUrl, imageFlui
   return (
     <article className={styles.card}>
       <div className={imageClasses}>
-        {imageFluid && 
+        {imageFluid &&
           <Img fluid={imageFluid} />
         }
       </div>
@@ -25,14 +25,14 @@ export default ({ title, specialTitle, specialSubTitle, text, linkUrl, imageFlui
         {title &&
           <h2 className={styles.cardTitle}>{title}</h2>
         }
-        {specialTitle && 
+        {specialTitle &&
           <h2 className={styles.cardSpecialTitle}>
             <span>{specialTitle}</span>
             <span className={styles.cardSubTitle}>{specialSubTitle}</span>
           </h2>
         }
         <h3 className={styles.cardText}>{text}</h3>
-        {buttonUrl && 
+        {buttonUrl &&
           <div className={styles.cardBtn}>
             <a
               className="button"
@@ -40,7 +40,7 @@ export default ({ title, specialTitle, specialSubTitle, text, linkUrl, imageFlui
             >{buttonText}<Arrow className="button-icon" /></a>
           </div>
         }
-        {linkUrl && 
+        {linkUrl &&
           <div className={styles.cardBtn}>
             <Link
               className="button"

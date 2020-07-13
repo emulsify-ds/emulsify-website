@@ -51,11 +51,12 @@
   color: #085A7D;
   font-size: 2.5rem;
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 1.1;
   margin: 0 0 2rem;
 }
 
 @media only screen and (min-width: 1024px) {
+
   .cardTitle,
   .cardSpecialTitle {
     font-size: 3.6rem;
@@ -69,7 +70,7 @@
   display: block;
 }
 
-.cardSpecialTitle + .cardText {
+.cardSpecialTitle+.cardText {
   color: #fff;
 }
 
@@ -85,4 +86,9 @@
 
 .cardBtn {
   margin-top: 3rem;
+}
+
+.cardText {
+  font-weight: normal;
+  line-height: 1.4;
 }
