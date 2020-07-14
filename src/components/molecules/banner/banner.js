@@ -4,6 +4,6 @@ import styles from './banner.module.css'
 
 export default () => (
   <div className={styles.banner}>
-    <p className={styles.bannerContent}>Want to create a design system? Four Kitchens, the creators of Emulsify, <a href="http://fourkitchens.com">can help you</a></p>
+    <p className={styles.bannerContent}>Not sure where to start? Four Kitchens can help you <a href="http://fourkitchens.com">build design systems with Emulsify.</a></p>
   </div>
 )
