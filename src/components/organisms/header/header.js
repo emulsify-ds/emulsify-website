@@ -3,6 +3,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 // import Navigation from '../../molecules/nav/navigation'
+import Video from '../../molecules/video/video'
 
 import Arrow from '../../../img/arrow.inline.svg'
 
@@ -53,6 +54,7 @@ export default function Header ({ image, isHome }) {
             <Link className={logoClasses} to="/">Home</Link>
             {/* <Navigation light={isHome && true} /> */}
             {isHome &&
+              <>
               <div className={styles.content}>
                 <h1 className={styles.heading}>Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams.</h1>
                 <h2 className={styles.headingSmall}>Ready to get started?</h2>
@@ -61,6 +63,8 @@ export default function Header ({ image, isHome }) {
                   <Arrow className="button-icon" />
                 </a>
               </div>
+              <Video />
+              </>
             }
           </div>
         </header>
