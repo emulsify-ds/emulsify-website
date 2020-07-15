@@ -6,7 +6,7 @@ export default class extends Component {
   actionSignup = null
   script = null
 
-  componentDidMount() {
+  attachScript() {
     this.script = document.createElement('script')
     this.script.id = 'aoform-script-8cb720cf-340b-4191-8e54-6891b9f638fb:d-0001'
     this.script.type = 'text/javascript'
@@ -16,6 +16,13 @@ export default class extends Component {
 
     this.actonSignup = document.getElementById('acton-signup')
     this.actonSignup.appendChild(this.script)
+  }
+
+  componentDidUpdate() {
+    this.attachScript()
+  }
+  componentDidMount() {
+    this.attachScript()
   }
 
   componentWillUnmount() {
