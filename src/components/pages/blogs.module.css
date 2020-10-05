@@ -1,39 +1,3 @@
-.sermonsLink {
-  display: block;
-  margin-bottom: 2rem;
-}
-
-@media only screen and (min-width: 600px) {
-  .sermonsLink {
-    font-size: 0.9rem;
-    margin-bottom: 0;
-    position: absolute;
-    right: 0;
-    top: 115px;
-  }
-}
-
-.podcastLink {
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-
-.podcastLink .button {
-  padding: 0.5rem 1rem;
-}
-
-.podcastLink svg {
-  fill: #fff;
-  margin-right: 0.5rem;
-  position: relative;
-  top: 3px;
-}
-
-.podcastLink span {
-  position: relative;
-  top: -5px;
-}
-
 .prevNext {
   overflow: hidden;
 }
