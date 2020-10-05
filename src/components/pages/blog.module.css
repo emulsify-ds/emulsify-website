@@ -1,0 +1,15 @@
+@media only screen and (min-width: 500px) {
+  .meta {
+    display: flex;
+  }
+  
+  .meta a::after {
+    color: #aaa;
+    content: "|";
+    margin: 0 0.5rem;
+  }
+}
+
+.meta p {
+  margin: 0;
+}
