@@ -1,6 +1,6 @@
 # Emulsify.info website
 
-Built using [Gatsby.js](https://www.gatsbyjs.org/), the [Contentful CMS](https://www.contentful.com/), and the [Gatsby Contentful Starter](https://github.com/contentful/starter-gatsby-blog). It is hosted on [Netlify](https://www.netlify.com/). 
+Built using [Gatsby.js](https://www.gatsbyjs.org/), the [Contentful CMS](https://www.contentful.com/), and the [Gatsby Contentful Starter](https://github.com/contentful/starter-gatsby-blog). It is hosted on [Netlify](https://www.netlify.com/).
 
 ## Getting started
 
@@ -9,6 +9,10 @@ Install [Yarn](https://yarnpkg.com/en/docs/install) (if you haven't already).
 ## Installation
 
 Clone repo and run `yarn`
+
+## Configuration
+
+Copy `.env.example` to `env.development`, and fill in the required credentials.
 
 ## Crucial Commands
 
