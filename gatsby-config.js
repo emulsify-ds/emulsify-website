@@ -60,13 +60,13 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     // The property ID; the tracking code won't be generated without it
-    //     trackingId: "",
-    //     respectDNT: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-559851-17",
+        respectDNT: true,
+      },
+    },
   ],
 }
