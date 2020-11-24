@@ -26,9 +26,7 @@ class BlogIndex extends React.Component {
             <ul className="list-reset">
               {posts.map(({ node }) => {
                 return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
+                  <ArticlePreview article={node} key={node.slug} wrapperTag="li" />
                 )
               })}
             </ul>
