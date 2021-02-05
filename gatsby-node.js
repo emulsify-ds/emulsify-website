@@ -8,6 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
     const pageLayout = path.resolve('./src/templates/page.js');
     const landingPageLayout = path.resolve('./src/templates/landing-page.js');
     const blogPost = path.resolve('./src/templates/blog-post.js');
+    const caseStudy = path.resolve('./src/templates/case-study.js');
     resolve(
       graphql(
         `
@@ -29,6 +30,14 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             allContentfulBlog(limit: 1000) {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+            allContentfulCaseStudy(limit: 1000) {
               edges {
                 node {
                   title
@@ -87,6 +96,32 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path: i === 0 ? `/blog` : `/blog/${i + 1}`,
             component: path.resolve("./src/templates/blog.js"),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1
+            },
+          })
+        })
+
+        // Case Study        
+        const caseStudies = result.data.allContentfulCaseStudy.edges
+        // Posts
+        caseStudies.forEach((post) => {
+          createPage({
+            path: `/case-studies/${post.node.slug}/`,
+            component: caseStudy,
+            context: {
+              slug: post.node.slug
+            },
+          })
+        })
+        // Case Study Pagination Pages
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/case-studies` : `/case-studies/${i + 1}`,
+            component: path.resolve("./src/templates/case-studies.js"),
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,
