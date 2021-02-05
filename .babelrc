@@ -5,7 +5,6 @@
       {
         loose: true,
         modules: false,
-        useBuiltIns: "usage",
         shippedProposals: true,
         targets: {
           browsers: [">0.25%", "not dead"],
