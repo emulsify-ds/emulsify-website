@@ -69,10 +69,10 @@ export default class Nav extends Component {
               </li>
             }
             <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/blog/">Blog</Link>
+              <Link className={navLinkClasses} to="/demo/">Demo</Link>
             </li>
             <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/demo/">Demo</Link>
+              <Link className={navLinkClasses} to="/blog/">Blog</Link>
             </li>
           </ul>
         </div>
