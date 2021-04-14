@@ -10,6 +10,7 @@ export default () => (
           <span className={styles.logo}>Emulsify Design System</span>
           <a className={styles.footerLink} target="_blank" href="https://docs.emulsify.info" rel="noopener">Documentation</a>
           <a className={styles.footerLink} target="_blank" href="https://github.com/emulsify-ds" rel="noopener">Github</a>
+          <a className={styles.footerLink} target="_blank" href="https://launchpass.com/emulsify" rel="noopener">Join us on Slack</a>
         </div>
         <div className={styles.footerPart2}>
           <h3 className={styles.footerHeading}>Emulsify is a product of <a href="https://fourkitchens.com">Four Kitchens</a></h3>
