@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 
 import TwitterIcon from '../../../img/twitter.inline.svg'
@@ -10,7 +13,9 @@ export default ({ page_url, title }) => (
     <h5 className={styles.heading}>Share this post</h5>
     <ul className={styles.shareList}>
       <li className={styles.shareItem}>
-        <a href={`https://twitter.com/intent/tweet/?text=${title}&url=${page_url}`}>
+        <a
+          href={`https://twitter.com/intent/tweet/?text=${title}&url=${page_url}`}
+        >
           <TwitterIcon />
         </a>
       </li>
@@ -25,3 +30,4 @@ export default ({ page_url, title }) => (
     </ul>
   </div>
 )
+/* eslint-enable */

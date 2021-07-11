@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
@@ -13,7 +16,7 @@ class CaseStudyTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulCaseStudy')
     const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
-    const currentUrl =  `${siteUrl}${this.props.location.pathname}`
+    const currentUrl = `${siteUrl}${this.props.location.pathname}`
 
     return (
       <Layout location={this.props.location}>
@@ -24,25 +27,21 @@ class CaseStudyTemplate extends React.Component {
             <div className={styles.meta}>
               {/* <span>by:&nbsp;</span><Link to={post.author.slug}>{post.author.name}</Link> */}
             </div>
-            {post.heroImage &&
+            {post.heroImage && (
               <div className={styles.caseStudyImg}>
-                <Img
-                  alt={post.heroImage.title}
-                  fluid={post.heroImage.fluid}
-                />
+                <Img alt={post.heroImage.title} fluid={post.heroImage.fluid} />
               </div>
-            }
+            )}
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
-            <Share
-              page_url={currentUrl}
-              title={post.title}
-            />
+            <Share page_url={currentUrl} title={post.title} />
             <br />
-            <Link className="button" to="/case-studies">Back to Case Studies</Link>
+            <Link className="button" to="/case-studies">
+              Back to Case Studies
+            </Link>
           </div>
         </div>
       </Layout>
@@ -81,3 +80,4 @@ export const pageQuery = graphql`
     }
   }
 `
+/* eslint-enable */

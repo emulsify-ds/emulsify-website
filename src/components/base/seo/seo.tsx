@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
@@ -5,13 +8,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import { useLocation } from '@reach/router'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import favicon from '../../../img/favicon.png';
+import favicon from '../../../img/favicon.png'
 
 function SEO({ description, lang, meta, title, imageUrl }) {
   const { pathname } = useLocation()
@@ -32,7 +35,9 @@ function SEO({ description, lang, meta, title, imageUrl }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImage = imageUrl ? `https:${imageUrl}` : `${site.siteMetadata.siteUrl}${site.siteMetadata.defaultImage}`
+  const ogImage = imageUrl
+    ? `https:${imageUrl}`
+    : `${site.siteMetadata.siteUrl}${site.siteMetadata.defaultImage}`
 
   return (
     <Helmet
@@ -76,7 +81,10 @@ function SEO({ description, lang, meta, title, imageUrl }) {
         },
       ].concat(meta)}
     >
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+        rel="stylesheet"
+      />
       <link rel="icon" href={favicon} type="image/x-icon" />
       <link rel="preconnect" href="https://www.google-analytics.com"></link>
     </Helmet>
@@ -99,3 +107,4 @@ SEO.propTypes = {
 }
 
 export default SEO
+/* eslint-enable */

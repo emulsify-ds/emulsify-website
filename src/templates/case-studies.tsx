@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
@@ -14,7 +17,10 @@ class CaseStudyIndex extends React.Component {
     const { currentPage, numPages } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "case-studies/" : `case-studies/${(currentPage - 1).toString()}`
+    const prevPage =
+      currentPage - 1 === 1
+        ? 'case-studies/'
+        : `case-studies/${(currentPage - 1).toString()}`
     const nextPage = `/case-studies/${(currentPage + 1).toString()}`
 
     return (
@@ -26,7 +32,11 @@ class CaseStudyIndex extends React.Component {
             <ul className="list-reset">
               {posts.map(({ node }) => {
                 return (
-                  <CaseStudyPreview article={node} key={node.slug} wrapperTag="li" />
+                  <CaseStudyPreview
+                    article={node}
+                    key={node.slug}
+                    wrapperTag="li"
+                  />
                 )
               })}
             </ul>
@@ -73,3 +83,4 @@ export const pageQuery = graphql`
     }
   }
 `
+/* eslint-enable */

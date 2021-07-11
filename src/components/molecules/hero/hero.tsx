@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 import Img from 'gatsby-image'
 
@@ -17,3 +20,4 @@ export default ({ data }) => (
     </div>
   </div>
 )
+/* eslint-enable */

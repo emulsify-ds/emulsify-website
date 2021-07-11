@@ -12,7 +12,7 @@ Clone repo and run `yarn`
 
 ## Configuration
 
-Copy `.env.example` to `env.development`, and fill in the required credentials.
+Copy `.env.example` to `.env.development`, and fill in the required credentials.
 
 ## Crucial Commands
 

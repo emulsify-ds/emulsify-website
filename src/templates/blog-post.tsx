@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
@@ -12,7 +15,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlog')
     const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
-    const currentUrl =  `${siteUrl}${this.props.location.pathname}`
+    const currentUrl = `${siteUrl}${this.props.location.pathname}`
 
     return (
       <Layout location={this.props.location}>
@@ -35,12 +38,11 @@ class BlogPostTemplate extends React.Component {
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
-            <Share
-              page_url={currentUrl}
-              title={post.title}
-            />
+            <Share page_url={currentUrl} title={post.title} />
             <br />
-            <Link className="button" to="/blog">Back to Blog</Link>
+            <Link className="button" to="/blog">
+              Back to Blog
+            </Link>
           </div>
         </div>
       </Layout>
@@ -73,3 +75,4 @@ export const pageQuery = graphql`
     }
   }
 `
+/* eslint-enable */

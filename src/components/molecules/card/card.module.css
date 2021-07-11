@@ -70,6 +70,11 @@
   display: block;
 }
 
+.cardText {
+  font-weight: normal;
+  line-height: 1.4;
+}
+
 .cardSpecialTitle+.cardText {
   color: #fff;
 }
@@ -86,9 +91,4 @@
 
 .cardBtn {
   margin-top: 3rem;
-}
-
-.cardText {
-  font-weight: normal;
-  line-height: 1.4;
 }
