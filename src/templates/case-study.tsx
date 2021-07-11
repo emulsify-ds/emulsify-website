@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/base/seo/seo'
-import Share from '../components/molecules/share/share.js'
+import Share from '../components/molecules/share/share'
 
 import styles from '../components/pages/blog.module.css'
 

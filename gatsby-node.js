@@ -5,10 +5,10 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const pageLayout = path.resolve('./src/templates/page.js')
-    const landingPageLayout = path.resolve('./src/templates/landing-page.js')
-    const blogPost = path.resolve('./src/templates/blog-post.js')
-    const caseStudy = path.resolve('./src/templates/case-study.js')
+    const pageLayout = path.resolve('./src/templates/page.tsx')
+    const landingPageLayout = path.resolve('./src/templates/landing-page.tsx')
+    const blogPost = path.resolve('./src/templates/blog-post.tsx')
+    const caseStudy = path.resolve('./src/templates/case-study.tsx')
     resolve(
       graphql(
         `
@@ -95,7 +95,7 @@ exports.createPages = ({ graphql, actions }) => {
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
             path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-            component: path.resolve('./src/templates/blog.js'),
+            component: path.resolve('./src/templates/blog.tsx'),
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,
@@ -121,7 +121,7 @@ exports.createPages = ({ graphql, actions }) => {
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
             path: i === 0 ? `/case-studies` : `/case-studies/${i + 1}`,
-            component: path.resolve('./src/templates/case-studies.js'),
+            component: path.resolve('./src/templates/case-studies.tsx'),
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,

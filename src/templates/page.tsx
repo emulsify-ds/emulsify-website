@@ -9,7 +9,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/base/seo/seo'
 
-import Cta from '../components/molecules/cta/cta.js'
+import Cta from '../components/molecules/cta/cta'
 
 import Arrow from '../img/arrow.inline.svg'
 

@@ -3,7 +3,7 @@
 // @TODO: update this file to tsx and enable eslint
 import React from 'react'
 
-import ActOn from '../../../hooks/actOn.js'
+import ActOn from '../../../hooks/actOn'
 
 import styles from './signup.module.css'
 
