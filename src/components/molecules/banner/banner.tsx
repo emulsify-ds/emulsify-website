@@ -1,16 +1,12 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React from 'react'
-
+import React, { ReactNode, FC } from 'react'
 import styles from './banner.module.css'
 
-export default () => (
+type BannerProps = {
+  children: ReactNode
+}
+
+export const Banner: FC<BannerProps> = ({ children }) => (
   <div className={styles.banner}>
-    <p className={styles.bannerContent}>
-      Not sure where to start? Four Kitchens can help you{' '}
-      <a href="http://fourkitchens.com">build design systems with Emulsify</a>.
-    </p>
+    <p className={styles.bannerContent}>{children}</p>
   </div>
 )
-/* eslint-enable */
