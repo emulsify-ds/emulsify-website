@@ -1,11 +1,7 @@
-import React, { ReactNode, FC } from 'react'
+import React, { FC } from 'react'
 import styles from './banner.module.css'
 
-type BannerProps = {
-  children: ReactNode
-}
-
-export const Banner: FC<BannerProps> = ({ children }) => (
+export const Banner: FC = ({ children }) => (
   <div className={styles.banner}>
     <p className={styles.bannerContent}>{children}</p>
   </div>
