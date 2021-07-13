@@ -281,6 +281,7 @@ blockquote {
   overflow: hidden;
   padding-top: 35px;
   padding-bottom: 56.25%;
+
   /* 56.25% = 16x9 */
   position: relative;
 }

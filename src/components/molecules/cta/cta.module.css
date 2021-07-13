@@ -14,13 +14,13 @@
   color: white;
 }
 
+.title {
+  margin: 0 0 1rem;
+}
+
 .ctaBg .title {
   color: white;
   margin: 2rem 0 4rem;
-}
-
-.title {
-  margin: 0 0 1rem;
 }
 
 .image {

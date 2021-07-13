@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 import { Link } from 'gatsby'
 
@@ -13,7 +16,9 @@ class RootIndex extends React.Component {
           <section className="wrapper">
             <p>Sorry, the page you are looking for is not found.</p>
             <br></br>
-            <Link className="button" to="/">Return to the Homepage</Link>
+            <Link className="button" to="/">
+              Return to the Homepage
+            </Link>
           </section>
         </div>
       </Layout>
@@ -22,3 +27,4 @@ class RootIndex extends React.Component {
 }
 
 export default RootIndex
+/* eslint-enable */

@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: update this file to pass linting
 const Promise = require('bluebird')
 const path = require('path')
 
@@ -5,10 +7,10 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const pageLayout = path.resolve('./src/templates/page.js');
-    const landingPageLayout = path.resolve('./src/templates/landing-page.js');
-    const blogPost = path.resolve('./src/templates/blog-post.js');
-    const caseStudy = path.resolve('./src/templates/case-study.js');
+    const pageLayout = path.resolve('./src/templates/page.tsx')
+    const landingPageLayout = path.resolve('./src/templates/landing-page.tsx')
+    const blogPost = path.resolve('./src/templates/blog-post.tsx')
+    const caseStudy = path.resolve('./src/templates/case-study.tsx')
     resolve(
       graphql(
         `
@@ -46,8 +48,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-          `
-      ).then(result => {
+        `
+      ).then((result) => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
@@ -60,7 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/${page.node.slug}/`,
             component: pageLayout,
             context: {
-              slug: page.node.slug
+              slug: page.node.slug,
             },
           })
         })
@@ -72,7 +74,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/${page.node.slug}/`,
             component: landingPageLayout,
             context: {
-              slug: page.node.slug
+              slug: page.node.slug,
             },
           })
         })
@@ -85,7 +87,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/blog/${post.node.slug}/`,
             component: blogPost,
             context: {
-              slug: post.node.slug
+              slug: post.node.slug,
             },
           })
         })
@@ -95,17 +97,17 @@ exports.createPages = ({ graphql, actions }) => {
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
             path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-            component: path.resolve("./src/templates/blog.js"),
+            component: path.resolve('./src/templates/blog.tsx'),
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages,
-              currentPage: i + 1
+              currentPage: i + 1,
             },
           })
         })
 
-        // Case Study        
+        // Case Study
         const caseStudies = result.data.allContentfulCaseStudy.edges
         // Posts
         caseStudies.forEach((post) => {
@@ -113,7 +115,7 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/case-studies/${post.node.slug}/`,
             component: caseStudy,
             context: {
-              slug: post.node.slug
+              slug: post.node.slug,
             },
           })
         })
@@ -121,12 +123,12 @@ exports.createPages = ({ graphql, actions }) => {
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
             path: i === 0 ? `/case-studies` : `/case-studies/${i + 1}`,
-            component: path.resolve("./src/templates/case-studies.js"),
+            component: path.resolve('./src/templates/case-studies.tsx'),
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages,
-              currentPage: i + 1
+              currentPage: i + 1,
             },
           })
         })
@@ -134,3 +136,4 @@ exports.createPages = ({ graphql, actions }) => {
     )
   })
 }
+/* eslint-enable */

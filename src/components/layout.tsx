@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 
 import './base/base.css'
@@ -12,8 +15,8 @@ class Template extends React.Component {
     let home
 
     if (location.pathname === '/') {
-      home = true;
-    } 
+      home = true
+    }
 
     let rootPath = `/`
     if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
@@ -23,10 +26,7 @@ class Template extends React.Component {
     return (
       <div>
         <Banner />
-        <Header
-          image={heroImage}
-          isHome={home}
-        />
+        <Header image={heroImage} isHome={home} />
         {children}
         <Footer />
       </div>
@@ -35,3 +35,4 @@ class Template extends React.Component {
 }
 
 export default Template
+/* eslint-enable */

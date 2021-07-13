@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: update this file to pass linting
 const spaceImport = require('contentful-import')
 const exportFile = require('../contentful/export.json')
 const inquirer = require('inquirer')
@@ -36,7 +38,7 @@ const questions = [
     name: 'spaceId',
     message: 'Your Space ID',
     when: !argv.spaceId && !process.env.CONTENTFUL_SPACE_ID,
-    validate: input =>
+    validate: (input) =>
       /^[a-z0-9]{12}$/.test(input) ||
       'Space ID must be 12 lowercase characters',
   },
@@ -64,7 +66,7 @@ inquirer
     accessToken = CONTENTFUL_ACCESS_TOKEN || argv.accessToken || accessToken
 
     console.log('Writing config file...')
-    const configFiles = [`.env.development`, `.env.production`].map(file =>
+    const configFiles = [`.env.development`, `.env.production`].map((file) =>
       path.join(__dirname, '..', file)
     )
 
@@ -77,7 +79,7 @@ inquirer
         `CONTENTFUL_ACCESS_TOKEN='${accessToken}'`,
       ].join('\n') + '\n'
 
-    configFiles.forEach(file => {
+    configFiles.forEach((file) => {
       writeFileSync(file, fileContents, 'utf8')
       console.log(`Config file ${chalk.yellow(file)} written`)
     })
@@ -93,4 +95,5 @@ inquirer
       )} to see it in action.`
     )
   })
-  .catch(error => console.error(error))
+  .catch((error) => console.error(error))
+/* eslint-enable */

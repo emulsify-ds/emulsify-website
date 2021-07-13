@@ -1,3 +1,6 @@
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
@@ -14,7 +17,8 @@ class BlogIndex extends React.Component {
     const { currentPage, numPages } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "blog/" : `blog/${(currentPage - 1).toString()}`
+    const prevPage =
+      currentPage - 1 === 1 ? 'blog/' : `blog/${(currentPage - 1).toString()}`
     const nextPage = `/blog/${(currentPage + 1).toString()}`
 
     return (
@@ -26,7 +30,11 @@ class BlogIndex extends React.Component {
             <ul className="list-reset">
               {posts.map(({ node }) => {
                 return (
-                  <ArticlePreview article={node} key={node.slug} wrapperTag="li" />
+                  <ArticlePreview
+                    article={node}
+                    key={node.slug}
+                    wrapperTag="li"
+                  />
                 )
               })}
             </ul>
@@ -73,3 +81,4 @@ export const pageQuery = graphql`
     }
   }
 `
+/* eslint-enable */
