@@ -78,6 +78,7 @@
   "scripts": {
     "dev": "yarn develop",
     "develop": "gatsby develop",
+    "commitlint": "commitlint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md}' 'bin/*.js' && yarn lint --fix && yarn stylelint --fix",
