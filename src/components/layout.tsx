@@ -5,7 +5,6 @@ import React from 'react'
 
 import './base/base.css'
 
-import { Banner } from './molecules/banner/banner'
 import Header from './organisms/header/header'
 import Footer from './organisms/footer/footer'
 
@@ -25,13 +24,6 @@ class Template extends React.Component {
 
     return (
       <div>
-        <Banner>
-          Not sure where to start? Four Kitchens can help you{' '}
-          <a href="http://fourkitchens.com">
-            build design systems with Emulsify
-          </a>
-          .
-        </Banner>
         <Header image={heroImage} isHome={home} />
         {children}
         <Footer />
