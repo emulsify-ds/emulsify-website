@@ -74,38 +74,14 @@ export default class Nav extends Component {
               </li>
             )}
             <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/developers/">
-                Developers
+              <Link className={navLinkClasses} to="/demo/">
+                Demo
               </Link>
             </li>
             <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/other-stuff/">
-                Other Stuff
+              <Link className={navLinkClasses} to="/blog/">
+                Blog
               </Link>
-              <span
-                className={styles.expandSub}
-                onClick={(e) => this.showNext(e)}
-              >
-                <Down />
-              </span>
-              <ul className={styles.subNav}>
-                <li>
-                  <Link
-                    className={navLinkClasses}
-                    to="/other-stuff/other-stuff-child/"
-                  >
-                    Child
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={navLinkClasses}
-                    to="/other-stuff/other-stuff-child-2/"
-                  >
-                    Child 2
-                  </Link>
-                </li>
-              </ul>
             </li>
           </ul>
         </div>
