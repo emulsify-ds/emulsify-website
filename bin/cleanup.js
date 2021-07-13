@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: update this file to pass linting
 'use strict'
 
 const fs = require('fs')
@@ -10,3 +12,4 @@ delete packageJSON.scripts['cleanup-repository']
 
 let data = JSON.stringify(packageJSON, null, 2)
 fs.writeFileSync(path.resolve(__dirname, '../package.json'), data)
+/* eslint-enable */

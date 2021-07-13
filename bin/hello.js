@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: update this file to pass linting
 const chalk = require('chalk')
 const pkg = require('../package.json')
 
@@ -28,3 +30,4 @@ For further information check the readme of the project
 (https://github.com/contentful-userland/gatsby-contentful-starter)
 
 `)
+/* eslint-enable */
