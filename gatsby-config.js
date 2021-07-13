@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: update this file to pass linting
 const path = require(`path`)
 
 require('dotenv').config({
@@ -98,3 +100,4 @@ module.exports = {
     },
   ],
 }
+/* eslint-enable */

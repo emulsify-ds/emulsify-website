@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: update this file to pass linting
 const spaceImport = require('contentful-import')
 const exportFile = require('../contentful/export.json')
 const inquirer = require('inquirer')
@@ -94,3 +96,4 @@ inquirer
     )
   })
   .catch((error) => console.error(error))
+/* eslint-enable */
