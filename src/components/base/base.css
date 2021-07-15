@@ -1,7 +1,22 @@
+:root {
+  --c-blue-dark: #095a7d;
+  --c-blue-light: #32b9f1;
+  --c-blue-gray: #95b8c7;
+  --c-gray-light: #eff4f7;
+  --c-yellow: #ecd843;
+}
+
 html {
+  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   font-size: 62.5%;
   line-height: 1.65;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 body {
@@ -411,4 +426,13 @@ blockquote {
 
 .wistia_swatch img {
   filter:blur(5px);height:100%;object-fit:contain;width:100%;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
 }

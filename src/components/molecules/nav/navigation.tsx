@@ -1,51 +1,57 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React, { Component } from 'react'
+import React, { Component, ReactNode } from 'react'
 import { Link } from 'gatsby'
 
 import styles from './navigation.module.css'
 
-import Menu from '../../../img/menu.inline.svg'
-import Close from '../../../img/close.inline.svg'
-import Down from '../../../img/down.inline.svg'
+import { Menu } from '../../../img/menu.inline'
+import { Close } from '../../../img/close.inline'
+// import Down from '../../../img/down.inline.svg'
 
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-export default class Nav extends Component {
-  state = {
+type NavProps = {
+  light: boolean
+  navlink?: boolean
+}
+
+type State = {
+  revealed: boolean
+  nextShown: boolean
+}
+
+export default class Nav extends Component<NavProps, State> {
+  readonly state = {
     revealed: false,
     nextShown: false,
   }
 
-  reveal = (e) => {
-    e.preventDefault()
+  reveal: React.MouseEventHandler<HTMLSpanElement> = () => {
     this.setState((prevState) => ({
       revealed: !prevState.revealed,
     }))
   }
 
-  showNext = (e) => {
-    e.currentTarget.nextElementSibling.classList.toggle(cx('subNavOpen'))
+  showNext = (e: React.FormEvent<HTMLInputElement>): void => {
+    e.currentTarget.nextElementSibling?.classList.toggle(cx('subNavOpen'))
   }
 
-  render() {
+  render(): ReactNode {
     const { light } = this.props
     const navLinkClasses = cx({
       navlink: true,
       navlinkHome: light,
     })
 
-    const toggleOpenClasses = cx({
-      toggleOpen: true,
-      closed: this.state.revealed === true,
-    })
+    const toggleOpenClasses = classNames(
+      { [styles.toggleOpen]: true },
+      { [styles.closed]: this.state.revealed === true }
+    )
 
-    const toggleCloseClasses = cx({
-      toggleClose: true,
-      open: this.state.revealed === true,
-    })
+    // const toggleCloseClasses = cx({
+    //   toggleClose: true,
+    //   open: this.state.revealed === true,
+    // })
 
     const mainNavClasses = cx({
       mainNav: true,
@@ -54,16 +60,19 @@ export default class Nav extends Component {
 
     return (
       <nav role="navigation" className={styles.nav}>
+        {/* Menu Toggle */}
         <button className={styles.toggle}>
-          <span className={toggleOpenClasses}>
-            <Menu onClick={this.reveal} />
-            <div className={styles.toggleText}>Menu</div>
+          <span className={toggleOpenClasses} onClick={this.reveal}>
+            <Menu />
+            <div className={'visually-hidden'}>Menu</div>
           </span>
         </button>
+        {/* Main Menu */}
         <div className={mainNavClasses}>
-          <span className={styles.mobileNavClose}>
-            <Close onClick={this.reveal} />
-            <div className={styles.toggleText}>Close</div>
+          {/* Close Toggle */}
+          <span className={styles.mobileNavClose} onClick={this.reveal}>
+            <Close />
+            <div className={'visually-hidden'}>Close</div>
           </span>
           <ul className={styles.navigation}>
             {!light && (
@@ -89,4 +98,3 @@ export default class Nav extends Component {
     )
   }
 }
-/* eslint-enable */

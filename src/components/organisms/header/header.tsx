@@ -5,7 +5,7 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-// import Navigation from '../../molecules/nav/navigation'
+import Navigation from '../../molecules/nav/navigation'
 import Video from '../../molecules/video/video'
 
 import Arrow from '../../../img/arrow.inline.svg'
@@ -54,7 +54,7 @@ export default function Header({ image, isHome }) {
             <Link className={logoClasses} to="/">
               Home
             </Link>
-            {/* <Navigation light={isHome && true} /> */}
+            <Navigation light={isHome && true} />
             {isHome && (
               <>
                 <div className={styles.content}>

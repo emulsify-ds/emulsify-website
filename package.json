@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.6",
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.1",
     "gatsby-cli": "^2.19.1",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-google-analytics": "^2.11.0",
@@ -35,7 +35,6 @@
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/addon-links": "^6.3.4",
     "@storybook/react": "^6.3.4",
-    "@types/classnames": "^2.3.1",
     "@types/css-modules": "^1.0.2",
     "@types/react": "^17.0.14",
     "@types/react-helmet": "^6.1.2",
