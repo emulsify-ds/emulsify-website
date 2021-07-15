@@ -10,7 +10,7 @@
 
 ### Functional Testing:
 - [ ] Run `yarn storybook` and verify the [XXX component](http://localhost:6006/?path=/story/organization-navigation--primary) in storybook.
-- [ ] Run `yarn develop` and verify WHATEVER on [the gatsby site](http://localhost:8000/).
+- [ ] Run `yarn develop` and verify WHATEVER on [the Gatsby site](http://localhost:8000/).
 
 <!--
 **Notes:**
