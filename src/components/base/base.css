@@ -1,9 +1,23 @@
 :root {
+  /* Colors */
   --c-blue-dark: #095a7d;
   --c-blue-light: #32b9f1;
   --c-blue-gray: #95b8c7;
   --c-gray-light: #eff4f7;
   --c-yellow: #ecd843;
+  --c-black: #000;
+  --c-white: #fff;
+
+  /* Spacing */
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 8rem;
+
+  /* Typography */
+  --font-size-l: 2.8rem;
+  --line-height-l: 1.29;
 }
 
 html {
@@ -40,7 +54,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: #06425C;
+  color: #06425c;
   font-size: 3rem;
   line-height: 1.3;
 }
@@ -62,7 +76,6 @@ h5 {
 }
 
 @media only screen and (min-width: 700px) {
-
   h1,
   h2,
   h3,
@@ -89,7 +102,6 @@ h5 {
 }
 
 @media only screen and (min-width: 1024px) {
-
   h1,
   h2,
   h3,
@@ -114,7 +126,6 @@ h5 {
   h5 {
     font-size: 1.4rem;
   }
-
 }
 
 a {
@@ -135,7 +146,7 @@ blockquote {
 }
 
 .button {
-  background-color: #1A96CA;
+  background-color: #1a96ca;
   border-radius: 4px;
   color: #fff;
   display: inline-block;
@@ -218,7 +229,7 @@ blockquote {
     justify-content: space-between;
   }
 
-  .content-flex>* {
+  .content-flex > * {
     margin-right: 5%;
     width: 45%;
   }
@@ -334,7 +345,7 @@ blockquote {
   display: none;
 }
 
-#ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb.ao-form input[type="text"] {
+#ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb.ao-form input[type='text'] {
   color: rgba(8, 90, 125, 0.83);
   display: block;
   font-size: 1.8rem;
@@ -344,13 +355,14 @@ blockquote {
 }
 
 @media only screen and (min-width: 700px) {
-  #ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb.ao-form input[type="text"] {
+  #ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb.ao-form input[type='text'] {
     max-width: 370px;
   }
 }
 
 .ao-form button.ao-form-submit {
-  background: url(../../img/envelope.svg) no-repeat scroll 130px 14px rgb(26, 150, 202) !important;
+  background: url(../../img/envelope.svg) no-repeat scroll 130px 14px
+    rgb(26, 150, 202) !important;
   font-size: 1.6rem !important;
   margin-left: 1rem;
   padding: 1.6rem 4.7rem 1.6rem 2.7rem !important;
@@ -395,7 +407,7 @@ blockquote {
     margin-bottom: 4rem;
   }
 
-  .content-flex>* {
+  .content-flex > * {
     width: 48%;
   }
 }
@@ -421,11 +433,21 @@ blockquote {
 }
 
 .wistia_swatch {
-  height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: opacity 200ms;
+  width: 100%;
 }
 
 .wistia_swatch img {
-  filter:blur(5px);height:100%;object-fit:contain;width:100%;
+  filter: blur(5px);
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
 }
 
 .visually-hidden {

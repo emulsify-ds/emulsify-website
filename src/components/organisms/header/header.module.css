@@ -12,9 +12,9 @@
 }
 
 .heroImage::after {
-  background: linear-gradient(0deg, rgba(26, 150, 202, 0) 41.3%, #1A96CA 100%);
+  background: linear-gradient(0deg, rgba(26, 150, 202, 0) 41.3%, #1a96ca 100%);
   mix-blend-mode: multiply;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   left: 0;

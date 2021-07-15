@@ -32,10 +32,6 @@ export default class Nav extends Component<NavProps, State> {
     }))
   }
 
-  showNext = (e: React.FormEvent<HTMLInputElement>): void => {
-    e.currentTarget.nextElementSibling?.classList.toggle(cx('subNavOpen'))
-  }
-
   render(): ReactNode {
     const { light } = this.props
     const navLinkClasses = cx({
@@ -45,13 +41,8 @@ export default class Nav extends Component<NavProps, State> {
 
     const toggleOpenClasses = classNames(
       { [styles.toggleOpen]: true },
-      { [styles.closed]: this.state.revealed === true }
+      { [styles.open]: this.state.revealed === true }
     )
-
-    // const toggleCloseClasses = cx({
-    //   toggleClose: true,
-    //   open: this.state.revealed === true,
-    // })
 
     const mainNavClasses = cx({
       mainNav: true,

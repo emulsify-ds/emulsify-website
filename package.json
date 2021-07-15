@@ -80,7 +80,7 @@
     "commitlint": "commitlint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md}' 'bin/*.js' && yarn lint --fix && yarn stylelint --fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md,css}' 'bin/*.js' && yarn lint --fix && yarn stylelint --fix",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "noIndex": "yarn build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
