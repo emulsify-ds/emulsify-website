@@ -18,7 +18,11 @@ Copy `.env.example` to `.env.development`, and fill in the required credentials.
 
 ### `yarn develop`
 
-Develop on the project locally.
+Develop on the gatsby site locally.
+
+### `yarn storybook`
+
+Develop on the component library locally.
 
 To deploy your changes, simply commit to the repo and request a PR.
 
