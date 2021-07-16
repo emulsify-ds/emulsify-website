@@ -5,7 +5,6 @@ import styles from './navigation.module.css'
 
 import { Menu } from '../../../img/menu.inline'
 import { Close } from '../../../img/close.inline'
-// import Down from '../../../img/down.inline.svg'
 
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
