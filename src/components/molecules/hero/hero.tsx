@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import styles from './hero.module.css'
 
-type HeroProps = {
+export type HeroProps = {
   heading: string
 }
 
