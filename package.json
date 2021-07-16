@@ -41,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
     "chalk": "^4.1.0",
     "contentful-import": "^7.9.37",
     "dotenv": "^8.2.0",
