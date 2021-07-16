@@ -18,6 +18,13 @@ Copy `.env.example` to `.env.development`, and fill in the required credentials.
 
 ### `yarn develop`
 
-Develop on the project locally.
+Develop on the gatsby site locally.
+
+### `yarn storybook`
+
+Develop on the component library locally.
 
 To deploy your changes, simply commit to the repo and request a PR.
+
+## Note for M1 Macs
+If you get an error when running `yarn` about "sharp", [this comment](https://github.com/lovell/sharp/issues/2460#issuecomment-751491241) may help you resolve that issue.

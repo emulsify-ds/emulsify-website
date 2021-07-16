@@ -13,17 +13,17 @@
     justify-content: space-between;
     margin-top: 3rem;
   }
-  
+
   .rightContent {
     order: 2;
     width: 45%;
   }
-  
+
   .rightContent + .leftContent {
     order: 1;
     width: 52%;
   }
-  
+
   .pageTitle {
     margin-top: 0;
   }

@@ -1,10 +1,15 @@
 .features {
-  background: linear-gradient(180deg, rgba(26, 150, 202, 0) 0%, rgba(26, 150, 202, 0.34) 100%), #CDE9F4;
+  background: linear-gradient(
+      180deg,
+      rgba(26, 150, 202, 0) 0%,
+      rgba(26, 150, 202, 0.34) 100%
+    ),
+    #cde9f4;
   background-blend-mode: multiply, normal;
 }
 
 .featuresHeading {
-  color: #085A7D;
+  color: #085a7d;
   font-size: 4rem;
   font-weight: bold;
   line-height: 1.2;
@@ -35,7 +40,7 @@
 }
 
 .featuresItemHeading {
-  color: #085A7D;
+  color: #085a7d;
   font-size: 2rem;
   font-weight: bold;
   line-height: 1.3;
