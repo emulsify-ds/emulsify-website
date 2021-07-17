@@ -1,25 +1,32 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React from 'react'
-import Img from 'gatsby-image'
+import React, { ReactNode, FC } from 'react'
+import { Link } from 'gatsby'
 
 import styles from './cta.module.css'
 
-import classNames from 'classnames/bind'
-const cx = classNames.bind(styles)
+import { Arrow } from '../../../img/arrow.inline'
 
-export default ({ bg, title, image, children }) => {
-  const bgClasses = cx({
-    cta: true,
-    ctaBg: bg,
-  })
+export type CtaProps = {
+  icon?: ReactNode
+  linkText: string
+  linkUrl: string
+}
+
+export const Cta: FC<CtaProps> = ({ icon, linkText, linkUrl }) => {
   return (
-    <div className={bgClasses}>
-      <h2 className={styles.title}>{title}</h2>
-      {image && <Img className={styles.image} fluid={image} />}
-      <div className={styles.copy}>{children}</div>
+    <div className={styles.cta}>
+      {icon && (
+        <Link
+          className={styles.ctaIcon}
+          to={linkUrl}
+          tabIndex={-1}
+          aria-hidden="true"
+        >
+          {icon}
+        </Link>
+      )}
+      <Link className={styles.ctaText} to={linkUrl}>
+        {linkText} <Arrow />
+      </Link>
     </div>
   )
 }
-/* eslint-enable */
