@@ -1,10 +1,13 @@
 import React from 'react'
 import { Story } from '@storybook/react'
+import { Play } from '../../../img/play.inline'
+import { Arrow } from '../../../img/arrow.inline'
 
 import { Hero, HeroProps } from './Hero'
+import { CtaGrid } from '../../organisms/ctaGrid/CtaGrid'
 
 export default {
-  title: 'Molecule/Hero',
+  title: 'Molecules/Hero',
   component: 'Hero',
   argTypes: {
     heading: {
@@ -19,8 +22,15 @@ export default {
 
 type HeroStoryProps = HeroProps
 
+const ctas = [
+  { linkText: 'Watch an Overview', linkUrl: '#', icon: <Play /> },
+  { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Arrow /> },
+]
+
 export const hero: Story<HeroStoryProps> = ({ heading }) => (
   <div style={{ background: 'var(--c-blue-dark)' }}>
-    <Hero heading={heading} />
+    <Hero heading={heading}>
+      <CtaGrid ctas={ctas} />
+    </Hero>
   </div>
 )
