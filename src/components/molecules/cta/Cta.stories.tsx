@@ -5,7 +5,7 @@ import { Cta, CtaProps } from './Cta'
 import { Play } from '../../../img/play.inline'
 
 export default {
-  title: 'Molecule/Cta',
+  title: 'Molecules/Cta',
   component: 'Cta',
   argTypes: {
     linkText: {

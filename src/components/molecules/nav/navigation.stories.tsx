@@ -3,7 +3,7 @@ import { Story } from '@storybook/react'
 import Navigation from './navigation'
 
 export default {
-  title: 'Organization/Navigation',
+  title: 'Organisms/Navigation',
   component: Navigation,
   parameters: {
     layout: 'fullscreen',

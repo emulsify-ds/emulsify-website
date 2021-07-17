@@ -4,7 +4,7 @@ import { Story } from '@storybook/react'
 import { Banner } from './banner'
 
 export default {
-  title: 'Molecule/Banner',
+  title: 'Molecules/Banner',
   component: 'Banner',
 }
 
