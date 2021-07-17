@@ -2,6 +2,8 @@
   color: #fff;
   text-align: center;
   padding: var(--space-2xl) var(--space-l);
+  max-width: 126.6rem;
+  margin: 0 auto;
 }
 
 .heroHeading {
