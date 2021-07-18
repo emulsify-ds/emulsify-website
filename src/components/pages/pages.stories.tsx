@@ -3,7 +3,7 @@ import { Story } from '@storybook/react'
 import { Play } from '../../img/play.inline'
 import { Arrow } from '../../img/arrow.inline'
 
-import Navigation from '../molecules/nav/navigation'
+import { Header } from '../organisms/site/Header/Header'
 import { Hero } from '../molecules/hero/Hero'
 import { CtaGrid } from '../organisms/ctaGrid/CtaGrid'
 
@@ -13,6 +13,12 @@ export default {
     layout: 'fullscreen',
   },
   argTypes: {
+    isHome: {
+      control: {
+        type: 'boolean',
+      },
+      defaultValue: false,
+    },
     pageTitle: {
       control: {
         type: 'text',
@@ -23,20 +29,19 @@ export default {
   },
 }
 
-type HomepageProps = { pageTitle: string }
+type HomepageProps = { pageTitle: string; isHome: boolean }
 
 const ctas = [
   { linkText: 'Watch an Overview', linkUrl: '#', icon: <Play /> },
   { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Arrow /> },
 ]
 
-export const Homepage: Story<HomepageProps> = ({ pageTitle }) => (
+export const Homepage: Story<HomepageProps> = ({ pageTitle, isHome }) => (
   <>
-    <div style={{ background: 'var(--c-blue-dark)' }}>
-      <Navigation isHome={true} />
+    <Header isHome={isHome}>
       <Hero heading={pageTitle}>
         <CtaGrid ctas={ctas} />
       </Hero>
-    </div>
+    </Header>
   </>
 )

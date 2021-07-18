@@ -10,6 +10,9 @@ import { CtaGrid } from '../../../organisms/ctaGrid/CtaGrid'
 export default {
   component: 'Header',
   title: 'Organisms/Site/Header',
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     isHome: {
       control: {
