@@ -4,7 +4,7 @@ import { Play } from '../../img/play.inline'
 import { Arrow } from '../../img/arrow.inline'
 
 import { Header } from '../organisms/site/Header/Header'
-import { Hero } from '../molecules/hero/Hero'
+import { Hero } from '../molecules/Hero/Hero'
 import { CtaGrid } from '../organisms/ctaGrid/CtaGrid'
 
 export default {
