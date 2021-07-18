@@ -33,7 +33,7 @@ const ctas = [
 export const Homepage: Story<HomepageProps> = ({ pageTitle }) => (
   <>
     <div style={{ background: 'var(--c-blue-dark)' }}>
-      <Navigation light={true} />
+      <Navigation isHome={true} />
       <Hero heading={pageTitle}>
         <CtaGrid ctas={ctas} />
       </Hero>

@@ -4,7 +4,6 @@ import { Play } from '../../../../img/play.inline'
 import { Arrow } from '../../../../img/arrow.inline'
 
 import { Header } from './Header'
-import Navigation from '../../../molecules/nav/navigation'
 import { Hero } from '../../../molecules/hero/Hero'
 import { CtaGrid } from '../../../organisms/ctaGrid/CtaGrid'
 
@@ -13,12 +12,6 @@ export default {
   title: 'Organisms/Site/Header',
   argTypes: {
     isHome: {
-      control: {
-        type: 'boolean',
-      },
-      defaultValue: false,
-    },
-    light: {
       control: {
         type: 'boolean',
       },
@@ -41,13 +34,11 @@ const ctas = [
 
 type HeaderStoryProps = {
   isHome: boolean
-  light: boolean
   heading: string
 }
 
-export const header: Story<HeaderStoryProps> = ({ isHome, light, heading }) => (
+export const header: Story<HeaderStoryProps> = ({ isHome, heading }) => (
   <Header isHome={isHome}>
-    <Navigation light={light} />
     <Hero heading={heading}>
       <CtaGrid ctas={ctas} />
     </Hero>
