@@ -1,0 +1,32 @@
+.header {
+  position: relative;
+}
+
+.header > * {
+  position: relative;
+}
+
+.headerImage {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.headerImage::after {
+  background: linear-gradient(0deg, rgba(26, 150, 202, 0) 41.3%, #1a96ca 100%);
+  mix-blend-mode: multiply;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* .headerImage * {
+  height: 100%;
+  width: 100%;
+} */
