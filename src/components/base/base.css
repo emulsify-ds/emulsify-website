@@ -48,12 +48,11 @@
     --font-scale-5: 5.5rem;
     --font-scale-4: 4.2rem;
     --font-scale-3: 3.2rem;
+
+    /* --font-scale-2: 2.7rem;
+    --font-scale-1: 1.4rem; */
     --font-scale-0: 2rem;
     --font-scale--1: 1.6rem;
-
-    /* --font-scale-3: 2.9rem;
-    --font-scale-2: 2.7rem;
-    --font-scale-1: 1.4rem; */
   }
 }
 

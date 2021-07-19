@@ -5,7 +5,7 @@ import React from 'react'
 
 import './base/base.css'
 
-import Header from './organisms/header/header'
+import { Header } from './organisms/site/Header/Header'
 import Footer from './organisms/footer/footer'
 
 class Template extends React.Component {
