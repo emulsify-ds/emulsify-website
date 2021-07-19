@@ -2,12 +2,13 @@
   color: #fff;
   text-align: center;
   padding: var(--space-2xl) var(--space-l);
-  max-width: 126.6rem;
+  max-width: 130.6rem;
   margin: 0 auto;
 }
 
 .heroHeading {
   font-size: var(--font-scale-5);
+  letter-spacing: -0.55px;
   margin-bottom: var(--space-xl);
 }
 

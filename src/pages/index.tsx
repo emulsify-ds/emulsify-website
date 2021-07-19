@@ -11,13 +11,33 @@ import SEO from '../components/base/seo/seo'
 import Card from '../components/molecules/card/card'
 import Features from '../components/organisms/features/features'
 import Signup from '../components/organisms/signup/signup'
+import { CtaGrid } from '../components/organisms/ctaGrid/CtaGrid'
+import { Play } from '../img/play.inline'
+import { Arrow } from '../img/arrow.inline'
 
 import styles from './home.module.css'
+
+const ctas = [
+  {
+    linkText: 'Watch an Overview',
+    linkUrl: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
+    icon: <Play />,
+  },
+  {
+    linkText: 'View Installation Guide',
+    linkUrl: 'https://docs.emulsify.info/',
+    icon: <Arrow />,
+  },
+]
 
 class RootIndex extends React.Component {
   render() {
     return (
-      <Layout location={this.props.location}>
+      <Layout
+        location={this.props.location}
+        heroHeading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
+        heroChildren={<CtaGrid ctas={ctas} />}
+      >
         <SEO title="Home" url={this.props.location.href} />
         <div style={{ background: '#fff' }}>
           <div className="wrapper wrapper-home">

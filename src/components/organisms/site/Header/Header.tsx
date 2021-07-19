@@ -52,8 +52,8 @@ export const Header: FC<HeaderProps> = ({ children, isHome }) => {
           <Logo /> <span className="visually-hidden">Home</span>
         </Link>
         <Navigation isHome={isHome} />
-        {children}
       </div>
+      {children}
     </div>
   )
 }

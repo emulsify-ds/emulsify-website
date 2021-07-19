@@ -1,15 +1,23 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import '../base/base.css'
 
 import { Header } from '../organisms/site/Header/Header'
 import Footer from '../organisms/footer/footer'
+import { Hero } from '../molecules/Hero/Hero'
 
 type LayoutProps = {
   location: Location
+  heroHeading: string
+  heroChildren: ReactNode
 }
 
-export const Layout: FC<LayoutProps> = ({ location, children }) => {
+export const Layout: FC<LayoutProps> = ({
+  location,
+  heroHeading,
+  heroChildren,
+  children,
+}) => {
   let home = false
 
   if (location.pathname === '/') {
@@ -18,7 +26,9 @@ export const Layout: FC<LayoutProps> = ({ location, children }) => {
 
   return (
     <div>
-      <Header isHome={home} />
+      <Header isHome={home}>
+        <Hero heading={heroHeading}>{heroChildren}</Hero>
+      </Header>
       {children}
       <Footer />
     </div>
