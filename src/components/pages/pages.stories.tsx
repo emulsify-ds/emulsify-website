@@ -3,8 +3,7 @@ import { Story } from '@storybook/react'
 import { Play } from '../../img/play.inline'
 import { Arrow } from '../../img/arrow.inline'
 
-import { Header } from '../organisms/site/Header/Header'
-import { Hero } from '../molecules/Hero/Hero'
+import { Layout } from '../templates/Layout'
 import { CtaGrid } from '../organisms/ctaGrid/CtaGrid'
 
 export default {
@@ -13,12 +12,6 @@ export default {
     layout: 'fullscreen',
   },
   argTypes: {
-    isHome: {
-      control: {
-        type: 'boolean',
-      },
-      defaultValue: false,
-    },
     pageTitle: {
       control: {
         type: 'text',
@@ -26,22 +19,26 @@ export default {
       defaultValue:
         'Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams',
     },
+    location: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: '/',
+    },
   },
 }
 
-type HomepageProps = { pageTitle: string; isHome: boolean }
+type HomepageProps = { pageTitle: string; location: Location }
 
 const ctas = [
   { linkText: 'Watch an Overview', linkUrl: '#', icon: <Play /> },
   { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Arrow /> },
 ]
 
-export const Homepage: Story<HomepageProps> = ({ pageTitle, isHome }) => (
-  <>
-    <Header isHome={isHome}>
-      <Hero heading={pageTitle}>
-        <CtaGrid ctas={ctas} />
-      </Hero>
-    </Header>
-  </>
+export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
+  <Layout
+    location={location}
+    heroHeading={pageTitle}
+    heroChildren={<CtaGrid ctas={ctas} />}
+  />
 )
