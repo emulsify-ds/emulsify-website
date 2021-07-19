@@ -5,7 +5,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Layout from '../components/layout'
+import { Layout } from '../components/templates/Layout'
 import SEO from '../components/base/seo/seo'
 import CaseStudyPreview from '../components/molecules/teasers/case-study'
 
