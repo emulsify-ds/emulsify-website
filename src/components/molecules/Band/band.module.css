@@ -1,0 +1,11 @@
+.band {
+  padding: var(--space-4xl) 0;
+}
+
+.band[data-band-color='primary'] {
+  background-color: var(--c-blue-dark);
+}
+
+.band[data-band-color='secondary'] {
+  background-color: var(--c-blue-light);
+}
