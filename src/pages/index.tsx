@@ -17,7 +17,7 @@ import { Arrow } from '../img/arrow.inline'
 import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
 
-import styles from './home.module.css'
+// import styles from './home.module.css'
 
 const ctas = [
   {

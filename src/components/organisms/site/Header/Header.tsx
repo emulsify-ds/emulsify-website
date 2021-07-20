@@ -24,11 +24,6 @@ interface HeaderData {
 export const Header: FC<HeaderProps> = ({ children, isHome }) => {
   const headerClasses = cx({ header: true, headerHome: isHome })
   const logoClasses = cx({ logo: true, logoHome: isHome })
-  const headerWrapperClasses = cx({
-    headerWrapper: true,
-    wrapper: true,
-    headerHomeWrapper: isHome,
-  })
 
   const data: HeaderData = useStaticQuery(graphql`
     query HeadingQuery {
@@ -47,13 +42,15 @@ export const Header: FC<HeaderProps> = ({ children, isHome }) => {
       <div className={styles.headerImage}>
         <Img alt="" fluid={data.file.childImageSharp.fluid} />
       </div>
-      <div className={headerWrapperClasses}>
-        <Link className={logoClasses} to="/">
-          <Logo /> <span className="visually-hidden">Home</span>
-        </Link>
-        <Navigation isHome={isHome} />
+      <div className={styles.headerInner}>
+        <div className={styles.headerBranding}>
+          <Link className={logoClasses} to="/">
+            <Logo /> <span className="visually-hidden">Home</span>
+          </Link>
+          <Navigation isHome={isHome} />
+        </div>
+        {children}
       </div>
-      {children}
     </div>
   )
 }
