@@ -6,7 +6,7 @@ export type CalloutProps = {
   heading: string
   text: string
   image: ReactNode
-  layout: 'media-start' | 'media-end'
+  layout?: 'media-start' | 'media-end'
 }
 
 export const Callout: FC<CalloutProps> = ({
