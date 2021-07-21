@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import classNames from 'classnames/bind'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+
 import { Logo } from '../../../../img/logo'
 import Navigation from '../../../molecules/nav/navigation'
 

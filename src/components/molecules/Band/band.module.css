@@ -1,5 +1,12 @@
 .band {
-  padding: var(--space-4xl) var(--space-l);
+  position: relative;
+  padding: var(--space-xl) var(--space-l);
+}
+
+@media only screen and (min-width: 750px) {
+  .band {
+    padding: var(--space-4xl) var(--space-l);
+  }
 }
 
 .band[data-band-color='primary'] {
@@ -8,6 +15,23 @@
 
 .band[data-band-color='secondary'] {
   background-color: var(--c-blue-light);
+}
+
+.bandContent {
+  position: relative;
+}
+
+.bandImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.bandImage > * {
+  height: 100%;
+  width: 100%;
 }
 
 .band > *:not(:last-child) {
