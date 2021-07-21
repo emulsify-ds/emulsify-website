@@ -5,7 +5,7 @@ import { Arrow } from '../../../../img/arrow.inline'
 
 import { Header } from './Header'
 import { Hero } from '../../../molecules/Hero/Hero'
-import { CtaGrid } from '../../ctaGrid/CtaGrid'
+import { CtaGrid } from '../../CtaGrid/CtaGrid'
 
 export default {
   component: 'Header',

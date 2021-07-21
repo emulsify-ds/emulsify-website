@@ -4,7 +4,7 @@ import { Play } from '../../img/play.inline'
 import { Arrow } from '../../img/arrow.inline'
 
 import { Layout } from '../templates/Layout'
-import { CtaGrid } from '../organisms/ctaGrid/CtaGrid'
+import { CtaGrid } from '../organisms/CtaGrid/CtaGrid'
 import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
 
