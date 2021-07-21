@@ -22,12 +22,6 @@
   color: var(--c-white);
 }
 
-.bandContent {
-  position: relative;
-  max-width: 170rem;
-  margin: 0 auto;
-}
-
 .bandImage {
   position: absolute;
   top: 0;
@@ -52,6 +46,12 @@
   width: 100%;
 }
 
-.band > *:not(:last-child) {
-  margin-bottom: var(--space-3xl);
+.bandContent {
+  position: relative;
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+.bandContent > *:not(:last-child) {
+  margin-bottom: var(--space-2xl);
 }
