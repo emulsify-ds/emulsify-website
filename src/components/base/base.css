@@ -5,8 +5,9 @@
   --c-blue-gray: #95b8c7;
   --c-gray-light: #eff4f7;
   --c-yellow: #ecd843;
-  --c-black: #000;
+  --c-black: #06425c;
   --c-white: #fff;
+  --c-heading: inherit;
 
   /* Spacing */
   --space-s: 0.5rem;
@@ -49,9 +50,9 @@
     --font-scale-5: 5.5rem;
     --font-scale-4: 4.2rem;
     --font-scale-3: 3.2rem;
+    --font-scale-2: 2.4rem;
 
-    /* --font-scale-2: 2.7rem;
-    --font-scale-1: 1.4rem; */
+    /* --font-scale-1: 1.4rem; */
     --font-scale-0: 2rem;
     --font-scale--1: 1.6rem;
   }
@@ -74,6 +75,7 @@ body {
   background: var(--c-white);
   color: var(--c-black);
   font-size: var(--font-scale-0);
+  font-weight: 300;
   margin: 0;
 }
 

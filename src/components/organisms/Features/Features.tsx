@@ -1,59 +1,32 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import styles from './features.module.css'
 
-import Stars from '../../../img/stars.inline.svg'
-import Wand from '../../../img/wand.inline.svg'
-import Code from '../../../img/code.inline.svg'
+type FeatureProps = {
+  heading: string
+  children: ReactNode
+}
 
-export const Features: FC = () => (
+const Feature: FC<FeatureProps> = ({ heading, children }) => (
+  <li>
+    <h3 className={styles.featuresItemHeading}>{heading}</h3>
+    {children}
+  </li>
+)
+
+export type FeaturesProps = {
+  features: FeatureProps[]
+}
+
+export const Features: FC<FeaturesProps> = ({ features }) => (
   <div className={styles.features}>
-    <div className="wrapper">
-      <h2 className={styles.featuresHeading}>Features of Emulsify</h2>
-      <div className={styles.featuresItems}>
-        <div className={styles.featuresItem}>
-          <h3 className={styles.featuresItemHeading}>
-            <Stars className={styles.featuresIcon} />
-            Technology and Design Leaders
-          </h3>
-          <p>
-            Reduce development, maintenance time, and errors by reusing
-            components and via automated testing
-          </p>
-          <p>
-            Create a consistent look and feel by reusing brand-standard colors,
-            typography, and more
-          </p>
-        </div>
-        <div className={styles.featuresItem}>
-          <h3 className={styles.featuresItemHeading}>
-            <Wand className={styles.featuresIcon} />
-            Designers and Marketers
-          </h3>
-          <p>Document brand and design guidelines for everyone to use</p>
-          <p>Make changes in one place and have them update everywhere</p>
-          <p>
-            Automate accessibility testing for an accessible user experience
-          </p>
-        </div>
-        <div className={styles.featuresItem}>
-          <h3 className={styles.featuresItemHeading}>
-            <Code className={styles.featuresIcon} />
-            Developers
-          </h3>
-          <p>
-            Automate testing to simplify prototyping and reduce development time
-          </p>
-          <p>
-            Encourage reuse across all properties to reduce errors, development
-            and maintenance efforts
-          </p>
-          <p>
-            Maintain flexibility with support for multiple development languages
-            and component customization
-          </p>
-        </div>
-      </div>
-    </div>
+    <h2 className={styles.featuresHeading}>Emulsify Features</h2>
+    <ul className={styles.featuresItems}>
+      {features.map((feature, index) => (
+        <Feature heading={feature.heading} key={index}>
+          {feature.children}
+        </Feature>
+      ))}
+    </ul>
   </div>
 )
