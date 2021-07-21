@@ -1,7 +1,4 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React from 'react'
+import React, { FC } from 'react'
 
 import styles from './features.module.css'
 
@@ -9,7 +6,7 @@ import Stars from '../../../img/stars.inline.svg'
 import Wand from '../../../img/wand.inline.svg'
 import Code from '../../../img/code.inline.svg'
 
-export default ({ children }) => (
+export const Features: FC = () => (
   <div className={styles.features}>
     <div className="wrapper">
       <h2 className={styles.featuresHeading}>Features of Emulsify</h2>
@@ -60,4 +57,3 @@ export default ({ children }) => (
     </div>
   </div>
 )
-/* eslint-enable */
