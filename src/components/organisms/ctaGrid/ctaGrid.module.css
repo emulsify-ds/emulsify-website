@@ -1,0 +1,25 @@
+@media only screen and (max-width: 749px) {
+  .ctaGrid > *:first-child {
+    padding-top: 0;
+  }
+
+  .ctaGrid > *:last-child {
+    padding-bottom: 0;
+  }
+
+  .ctaGrid > *:not(:last-child) {
+    border-bottom: 6px dotted;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .ctaGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--space-m);
+  }
+
+  .ctaGrid > *:nth-child(odd):not(:last-child) {
+    border-right: 6px dotted;
+  }
+}

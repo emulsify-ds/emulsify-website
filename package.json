@@ -35,6 +35,7 @@
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/addon-links": "^6.3.4",
     "@storybook/react": "^6.3.4",
+    "@storybook/storybook-deployer": "^2.8.10",
     "@types/css-modules": "^1.0.2",
     "@types/react": "^17.0.14",
     "@types/react-helmet": "^6.1.2",
@@ -93,6 +94,7 @@
     "cleanup-repository": "yarn remove contentful-import chalk inquirer && node ./bin/cleanup.js && rimraf bin contentful",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   }
 }

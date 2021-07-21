@@ -9,8 +9,8 @@ import { Close } from '../../../img/close.inline'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-type NavProps = {
-  light: boolean
+export type NavProps = {
+  isHome: boolean
   navlink?: boolean
 }
 
@@ -32,10 +32,10 @@ export default class Nav extends Component<NavProps, State> {
   }
 
   render(): ReactNode {
-    const { light } = this.props
+    const { isHome } = this.props
     const navLinkClasses = cx({
       navlink: true,
-      navlinkHome: light,
+      navlinkHome: isHome,
     })
 
     const toggleOpenClasses = classNames(
@@ -65,7 +65,7 @@ export default class Nav extends Component<NavProps, State> {
             <div className={'visually-hidden'}>Close</div>
           </span>
           <ul className={styles.navigation}>
-            {!light && (
+            {!isHome && (
               <li className={styles.navigationItem}>
                 <Link className={navLinkClasses} to="/">
                   Home

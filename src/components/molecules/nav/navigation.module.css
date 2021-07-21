@@ -75,7 +75,7 @@
 
 .navlink {
   color: var(--c-white);
-  font-size: var(--font-size-l);
+  font-size: var(--font-scale-4);
   line-height: var(--line-height-l);
   font-weight: 600;
   letter-spacing: -0.28px;

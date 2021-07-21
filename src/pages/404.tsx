@@ -4,7 +4,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
+import { Layout } from '../components/templates/Layout'
 import SEO from '../components/base/seo/seo'
 
 class RootIndex extends React.Component {

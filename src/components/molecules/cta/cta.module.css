@@ -1,32 +1,37 @@
 .cta {
-  background-color: #cde9f4;
-  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xl);
+  color: var(--c-yellow);
 }
 
-@media only screen and (min-width: 700px) {
-  .cta {
-    padding: 5rem;
+.ctaIcon {
+  margin-bottom: var(--space-l);
+}
+
+.ctaIcon svg {
+  height: 10.5rem;
+  width: 10.5rem;
+}
+
+@media only screen and (min-width: 750px) {
+  .ctaIcon svg {
+    height: 11.4rem;
+    width: 11.4rem;
   }
 }
 
-.ctaBg {
-  background-color: #085a7d;
-  color: white;
+@media only screen and (min-width: 1024px) {
+  .ctaIcon svg {
+    height: 12.4rem;
+    width: 12.4rem;
+  }
 }
 
-.title {
-  margin: 0 0 1rem;
-}
-
-.ctaBg .title {
-  color: white;
-  margin: 2rem 0 4rem;
-}
-
-.image {
-  max-width: 300px;
-}
-
-.copy {
-  margin-top: 4rem;
+.ctaText {
+  font-size: var(--font-scale-3);
+  font-weight: bold;
+  letter-spacing: -0.31px;
+  text-decoration: none;
 }
