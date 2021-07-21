@@ -9,6 +9,7 @@
   }
 }
 
+/* Color variations */
 .band[data-band-color='primary'] {
   background-color: var(--c-blue-dark);
   color: var(--c-white);
@@ -48,8 +49,20 @@
 
 .bandContent {
   position: relative;
-  max-width: 170rem;
   margin: 0 auto;
+}
+
+/* Size variations */
+[data-band-size='small'] .bandContent {
+  max-width: 100rem;
+}
+
+[data-band-size='medium'] .bandContent {
+  max-width: 130rem;
+}
+
+[data-band-size='large'] .bandContent {
+  max-width: 170rem;
 }
 
 .bandContent > *:not(:last-child) {

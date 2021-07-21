@@ -19,7 +19,7 @@ export const Header: FC<HeaderProps> = ({ children, isHome }) => {
   const logoClasses = cx({ logo: true, logoHome: isHome })
 
   return (
-    <Band bgColor="waves">
+    <Band bgColor="waves" size="large">
       <div className={headerClasses}>
         <div className={styles.headerInner}>
           <div className={styles.headerBranding}>

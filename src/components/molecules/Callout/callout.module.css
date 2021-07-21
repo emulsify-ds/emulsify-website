@@ -1,8 +1,6 @@
 .callout {
   display: flex;
   flex-direction: column-reverse;
-  max-width: 100rem;
-  margin: 0 auto;
 }
 
 @media only screen and (min-width: 750px) {

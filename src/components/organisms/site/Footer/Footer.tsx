@@ -7,7 +7,7 @@ import styles from './footer.module.css'
 
 export const Footer: FC = () => {
   return (
-    <Band bgColor="waves">
+    <Band bgColor="waves" size="large">
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
           <div className={styles.footerBranding}>

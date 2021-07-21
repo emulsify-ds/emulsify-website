@@ -6,6 +6,7 @@ import styles from './band.module.css'
 
 export type BandProps = {
   bgColor?: 'default' | 'primary' | 'secondary' | 'waves'
+  size?: 'small' | 'medium' | 'large'
 }
 
 interface BandData {
@@ -16,7 +17,11 @@ interface BandData {
   }
 }
 
-export const Band: FC<BandProps> = ({ bgColor = 'default', children }) => {
+export const Band: FC<BandProps> = ({
+  bgColor = 'default',
+  size = 'small',
+  children,
+}) => {
   const data: BandData = useStaticQuery(graphql`
     query HeadingQuery {
       file(relativePath: { eq: "wavebkg.png" }) {
@@ -32,7 +37,11 @@ export const Band: FC<BandProps> = ({ bgColor = 'default', children }) => {
   const bgImage = bgColor === 'waves'
 
   return (
-    <div className={styles.band} data-band-color={bgColor}>
+    <div
+      className={styles.band}
+      data-band-color={bgColor}
+      data-band-size={size}
+    >
       {bgImage && (
         <div className={styles.bandImage}>
           <Img alt="" fluid={data.file.childImageSharp.fluid} />
