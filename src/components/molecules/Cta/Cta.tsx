@@ -1,5 +1,5 @@
 import React, { ReactNode, FC } from 'react'
-import { Link } from 'gatsby'
+import { Link } from '../../utility/Link'
 
 import styles from './cta.module.css'
 

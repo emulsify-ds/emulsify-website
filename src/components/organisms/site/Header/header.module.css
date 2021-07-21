@@ -1,12 +1,18 @@
 .header {
   position: relative;
+  padding: var(--space-3xl);
 }
 
 .header > * {
   position: relative;
 }
 
-.headerWrapper {
+.headerInner {
+  max-width: 170rem;
+  margin: 0 auto;
+}
+
+.headerBranding {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

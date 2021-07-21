@@ -6,16 +6,18 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+// import SEO from '../components/base/seo/seo'
 
-import Card from '../components/molecules/card/card'
-import Features from '../components/organisms/features/features'
-import Signup from '../components/organisms/signup/signup'
-import { CtaGrid } from '../components/organisms/ctaGrid/CtaGrid'
+// import Card from '../components/molecules/card/card'
+// import Features from '../components/organisms/features/features'
+// import Signup from '../components/organisms/signup/signup'
+import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
 import { Play } from '../img/play.inline'
 import { Arrow } from '../img/arrow.inline'
+import { Band } from '../components/molecules/Band/Band'
+import { Callout } from '../components/molecules/Callout/Callout'
 
-import styles from './home.module.css'
+// import styles from './home.module.css'
 
 const ctas = [
   {
@@ -38,8 +40,23 @@ class RootIndex extends React.Component {
         heroHeading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
         heroChildren={<CtaGrid ctas={ctas} />}
       >
-        <SEO title="Home" url={this.props.location.href} />
-        <div style={{ background: '#fff' }}>
+        <Band>
+          <Callout
+            heading="Unify your websites and teams with a design system."
+            text="Complex organizations need a design system that simplifies development, encourages consistency, reduces maintenance effort, and scales quickly and affordably — without hampering flexibility for individual developers or departments."
+            image={<Img fluid={this.props.data.unify.childImageSharp.fluid} />}
+          />
+          <Callout
+            layout="media-end"
+            heading="Give your developer and designers powerful tools all in one place."
+            text="Emulsify doesn’t just conveniently join your component library and style guide, but includes all of the workflow tools necessary for prototyping, testing, checking accessibility, and documenting."
+            image={
+              <Img fluid={this.props.data.devTools.childImageSharp.fluid} />
+            }
+          />
+        </Band>
+        {/* <SEO title="Home" url={this.props.location.href} /> */}
+        {/* <div style={{ background: '#fff' }}>
           <div className="wrapper wrapper-home">
             <Card
               imageFluid={this.props.data.unify.childImageSharp.fluid}
@@ -100,7 +117,7 @@ class RootIndex extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </Layout>
     )
   }

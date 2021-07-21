@@ -4,7 +4,7 @@ import { Play } from '../../../img/play.inline'
 import { Arrow } from '../../../img/arrow.inline'
 
 import { Hero, HeroProps } from './Hero'
-import { CtaGrid } from '../../organisms/ctaGrid/CtaGrid'
+import { CtaGrid } from '../../organisms/CtaGrid/CtaGrid'
 
 export default {
   title: 'Molecules/Hero',

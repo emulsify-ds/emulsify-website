@@ -1,0 +1,15 @@
+.band {
+  padding: var(--space-4xl) var(--space-l);
+}
+
+.band[data-band-color='primary'] {
+  background-color: var(--c-blue-dark);
+}
+
+.band[data-band-color='secondary'] {
+  background-color: var(--c-blue-light);
+}
+
+.band > *:not(:last-child) {
+  margin-bottom: var(--space-3xl);
+}
