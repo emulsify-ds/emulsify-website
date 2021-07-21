@@ -17,11 +17,20 @@ export default {
       },
       defaultValue: 'primary',
     },
+    testContent: {
+      control: {
+        type: 'text',
+      },
+      defaultValue:
+        'This is some text to demonstrate how it changes color based on the background color',
+    },
   },
 }
 
-type BandStoryProps = BandProps
+type BandStoryProps = BandProps & {
+  testContent: string
+}
 
-export const band: Story<BandStoryProps> = ({ bgColor }) => (
-  <Band bgColor={bgColor} />
+export const band: Story<BandStoryProps> = ({ bgColor, testContent }) => (
+  <Band bgColor={bgColor}>{testContent}</Band>
 )
