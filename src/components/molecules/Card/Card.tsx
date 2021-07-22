@@ -15,8 +15,8 @@ export const Card: FC<CardProps> = ({ heading, text, linkUrl, image }) => {
     <div className={styles.card}>
       <div className={styles.cardContent}>
         {heading && (
-          <Link className={styles.cardHeading} to={linkUrl}>
-            <h3>{heading}</h3>
+          <Link to={linkUrl}>
+            <h3 className={styles.cardHeading}>{heading}</h3>
           </Link>
         )}
         <p className={styles.cardText}>{text}</p>

@@ -1,11 +1,23 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React from 'react'
+import React, { FC } from 'react'
+
+import { Card, CardProps } from '../../molecules/Card/Card'
 
 import styles from './cardGrid.module.css'
 
-export default ({ children }) => (
-  <section className={styles.cardGrid}>{children}</section>
+export type CardGridProps = {
+  cards: CardProps[]
+}
+
+export const CardGrid: FC<CardGridProps> = ({ cards }) => (
+  <section className={styles.cardGrid}>
+    {cards.map((card, index) => (
+      <Card
+        key={index}
+        heading={card.heading}
+        text={card.text}
+        linkUrl={card.linkUrl}
+        image={card.image}
+      />
+    ))}
+  </section>
 )
-/* eslint-enable */

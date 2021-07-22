@@ -3,6 +3,8 @@ import { Story } from '@storybook/react'
 
 import { Card, CardProps } from './Card'
 
+import { cards } from '../../data/cards'
+
 export default {
   component: 'Card',
   title: 'Molecules/Card',
@@ -11,26 +13,26 @@ export default {
       control: {
         type: 'text',
       },
-      defaultValue: 'Four Kitchens',
+      defaultValue: cards[0].heading,
     },
     text: {
       control: {
         type: 'text',
       },
-      defaultValue: 'Creator and Emulsify Project Maintainer',
+      defaultValue: cards[0].text,
     },
     linkUrl: {
       control: {
         type: 'text',
       },
-      defaultValue: '#',
+      defaultValue: cards[0].linkUrl,
     },
   },
 }
 
 type CardStoryProps = CardProps
 
-export const card: Story<CardStoryProps> = ({ heading, text, linkUrl }) => (
+export const basic: Story<CardStoryProps> = ({ heading, text, linkUrl }) => (
   <Card
     heading={heading}
     text={text}
