@@ -9,6 +9,7 @@ import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
 import { Features } from '../organisms/Features/Features'
 import { Hr } from '../atoms/Hr/Hr'
+import Signup from '../molecules/Signup/Signup'
 
 export default {
   title: 'Pages/Homepage',
@@ -107,6 +108,7 @@ export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
     <Band bgColor="primary" size="medium">
       <Features features={featuresData} />
       <Hr />
+      <Signup />
     </Band>
   </Layout>
 )

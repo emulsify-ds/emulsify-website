@@ -9,7 +9,6 @@ import { Layout } from '../components/templates/Layout'
 // import SEO from '../components/base/seo/seo'
 
 // import Card from '../components/molecules/card/card'
-// import Signup from '../components/organisms/signup/signup'
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
 import { Play } from '../img/play.inline'
 import { Arrow } from '../img/arrow.inline'
@@ -17,6 +16,7 @@ import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
 import { Features } from '../components/organisms/Features/Features'
 import { Hr } from '../components/atoms/Hr/Hr'
+import Signup from '../components/molecules/Signup/Signup'
 
 // import styles from './home.module.css'
 
@@ -105,23 +105,10 @@ class RootIndex extends React.Component {
         <Band bgColor="primary" size="medium">
           <Features features={featuresData} />
           <Hr />
+          <Signup />
         </Band>
         {/* <SEO title="Home" url={this.props.location.href} /> */}
-        {/* <div style={{ background: '#fff' }}>
-          <div className="wrapper wrapper-home">
-            <Card
-              imageFluid={this.props.data.unify.childImageSharp.fluid}
-              title="Unify your websites and teams with a design system"
-              text="Complex organizations need a design system that simplifies development, encourages consistency, reduces maintenance effort, and scales quickly and affordably — without hampering flexibility for individual developers or departments."
-            />
-            <Card
-              imageFluid={this.props.data.devTools.childImageSharp.fluid}
-              title="Give your developer and designers powerful tools all in one place"
-              text="Emulsify doesn’t just conveniently join your component library and style guide, but includes all of the workflow tools necessary for prototyping, testing, checking accessibility, and documenting."
-            />
-          </div>
-        </div>
-        <Signup />
+        {/*
         <div className={styles.os}>
           <div className="wrapper">
             <Card
