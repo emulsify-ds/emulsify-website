@@ -9,21 +9,6 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  argTypes: {
-    // isHome: {
-    //   control: {
-    //     type: 'boolean',
-    //   },
-    //   defaultValue: false,
-    // },
-    // heading: {
-    //   control: {
-    //     type: 'text',
-    //   },
-    //   defaultValue:
-    //     'Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams',
-    // },
-  },
 }
 
 export const footer: Story = () => <Footer />
