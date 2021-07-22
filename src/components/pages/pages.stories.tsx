@@ -8,6 +8,7 @@ import { CtaGrid } from '../organisms/CtaGrid/CtaGrid'
 import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
 import { Features } from '../organisms/Features/Features'
+import { Hr } from '../atoms/Hr/Hr'
 
 export default {
   title: 'Pages/Homepage',
@@ -105,6 +106,7 @@ export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
     </Band>
     <Band bgColor="primary" size="medium">
       <Features features={featuresData} />
+      <Hr />
     </Band>
   </Layout>
 )

@@ -2,4 +2,7 @@
   height: 0;
   width: 100%;
   border-top: 6px dotted;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
 }

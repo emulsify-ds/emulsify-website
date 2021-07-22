@@ -15,7 +15,8 @@ import { Play } from '../img/play.inline'
 import { Arrow } from '../img/arrow.inline'
 import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
-import { Features } from '..//components/organisms/Features/Features'
+import { Features } from '../components/organisms/Features/Features'
+import { Hr } from '../components/atoms/Hr/Hr'
 
 // import styles from './home.module.css'
 
@@ -103,6 +104,7 @@ class RootIndex extends React.Component {
         </Band>
         <Band bgColor="primary" size="medium">
           <Features features={featuresData} />
+          <Hr />
         </Band>
         {/* <SEO title="Home" url={this.props.location.href} /> */}
         {/* <div style={{ background: '#fff' }}>
