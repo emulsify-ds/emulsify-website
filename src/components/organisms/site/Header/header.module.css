@@ -1,45 +1,12 @@
 .header {
   position: relative;
-  padding: var(--space-3xl);
-}
-
-.header > * {
-  position: relative;
-}
-
-.headerInner {
-  max-width: 170rem;
-  margin: 0 auto;
 }
 
 .headerBranding {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.headerImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.headerImage::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  content: '';
-  background: linear-gradient(0deg, rgba(26, 150, 202, 0) 41.3%, #1a96ca 100%);
-  mix-blend-mode: multiply;
-}
-
-.headerImage > * {
-  height: 100%;
-  width: 100%;
+  margin-bottom: var(--space-2xl);
 }
 
 .logo {

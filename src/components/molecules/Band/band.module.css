@@ -1,15 +1,70 @@
 .band {
-  padding: var(--space-4xl) var(--space-l);
+  position: relative;
+  padding: var(--space-xl) var(--space-l);
 }
 
+@media only screen and (min-width: 750px) {
+  .band {
+    padding: var(--space-3xl) var(--space-l);
+  }
+}
+
+/* Color variations */
 .band[data-band-color='primary'] {
   background-color: var(--c-blue-dark);
+  color: var(--c-white);
 }
 
 .band[data-band-color='secondary'] {
   background-color: var(--c-blue-light);
 }
 
-.band > *:not(:last-child) {
-  margin-bottom: var(--space-3xl);
+.band[data-band-color='waves'] {
+  color: var(--c-white);
+}
+
+.bandImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.bandImage::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  background: linear-gradient(0deg, rgba(26, 150, 202, 0) 41.3%, #1a96ca 100%);
+  mix-blend-mode: multiply;
+}
+
+.bandImage > * {
+  height: 100%;
+  width: 100%;
+}
+
+.bandContent {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Size variations */
+[data-band-size='small'] .bandContent {
+  max-width: 100rem;
+}
+
+[data-band-size='medium'] .bandContent {
+  max-width: 130rem;
+}
+
+[data-band-size='large'] .bandContent {
+  max-width: 170rem;
+}
+
+.bandContent > *:not(:last-child) {
+  margin-bottom: var(--space-2xl);
 }
