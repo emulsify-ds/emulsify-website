@@ -1,12 +1,14 @@
 import React from 'react'
 import { Story } from '@storybook/react'
-import { Play } from '../../img/play.inline'
-import { Arrow } from '../../img/arrow.inline'
 
 import { Layout } from '../templates/Layout'
 import { CtaGrid } from '../organisms/CtaGrid/CtaGrid'
 import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
+import { Features } from '../organisms/Features/Features'
+
+import { ctas } from '../data/ctas'
+import { featuresData } from '../data/features'
 
 export default {
   title: 'Pages/Homepage',
@@ -32,11 +34,6 @@ export default {
 
 type HomepageProps = { pageTitle: string; location: Location }
 
-const ctas = [
-  { linkText: 'Watch an Overview', linkUrl: '#', icon: <Play /> },
-  { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Arrow /> },
-]
-
 export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
   <Layout
     location={location}
@@ -55,6 +52,9 @@ export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
         text="Emulsify doesn’t just conveniently join your component library and style guide, but includes all of the workflow tools necessary for prototyping, testing, checking accessibility, and documenting."
         image={<img src="https://picsum.photos/579" alt="example image" />}
       />
+    </Band>
+    <Band bgColor="primary" size="medium">
+      <Features features={featuresData} />
     </Band>
   </Layout>
 )

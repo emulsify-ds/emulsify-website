@@ -1,11 +1,11 @@
 import React from 'react'
 import { Story } from '@storybook/react'
-import { Play } from '../../../../img/play.inline'
-import { Arrow } from '../../../../img/arrow.inline'
 
 import { Header } from './Header'
 import { Hero } from '../../../molecules/Hero/Hero'
 import { CtaGrid } from '../../CtaGrid/CtaGrid'
+
+import { ctas } from '../../../data/ctas'
 
 export default {
   component: 'Header',
@@ -29,11 +29,6 @@ export default {
     },
   },
 }
-
-const ctas = [
-  { linkText: 'Watch an Overview', linkUrl: '#', icon: <Play /> },
-  { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Arrow /> },
-]
 
 type HeaderStoryProps = {
   isHome: boolean

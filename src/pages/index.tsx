@@ -9,13 +9,13 @@ import { Layout } from '../components/templates/Layout'
 // import SEO from '../components/base/seo/seo'
 
 // import Card from '../components/molecules/card/card'
-// import Features from '../components/organisms/features/features'
 // import Signup from '../components/organisms/signup/signup'
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
 import { Play } from '../img/play.inline'
 import { Arrow } from '../img/arrow.inline'
 import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
+import { Features } from '..//components/organisms/Features/Features'
 
 // import styles from './home.module.css'
 
@@ -29,6 +29,52 @@ const ctas = [
     linkText: 'View Installation Guide',
     linkUrl: 'https://docs.emulsify.info/',
     icon: <Arrow />,
+  },
+]
+
+const featuresData = [
+  {
+    heading: 'Technology & Design Leaders',
+    children: (
+      <>
+        <p>
+          Reduce development, maintenance time, and errors by reusing components
+          and via automated testing
+        </p>
+        <p>
+          Create a consistent look and feel by reusing brand-standard colors,
+          typography, and more
+        </p>
+      </>
+    ),
+  },
+  {
+    heading: 'Designers and Marketers',
+    children: (
+      <>
+        <p>Document brand and design guidelines for everyone to use</p>
+        <p>Make changes in one place and have them update everywhere</p>
+        <p>Automate accessibility testing for an accessible user experience</p>
+      </>
+    ),
+  },
+  {
+    heading: 'Developers',
+    children: (
+      <>
+        <p>
+          Automate testing to simplify prototyping and reduce development time
+        </p>
+        <p>
+          Encourage reuse across all properties to reduce errors, development
+          and maintenance efforts
+        </p>
+        <p>
+          Maintain flexibility with support for multiple development languages
+          and component customization
+        </p>
+      </>
+    ),
   },
 ]
 
@@ -55,6 +101,9 @@ class RootIndex extends React.Component {
             }
           />
         </Band>
+        <Band bgColor="primary" size="medium">
+          <Features features={featuresData} />
+        </Band>
         {/* <SEO title="Home" url={this.props.location.href} /> */}
         {/* <div style={{ background: '#fff' }}>
           <div className="wrapper wrapper-home">
@@ -70,7 +119,6 @@ class RootIndex extends React.Component {
             />
           </div>
         </div>
-        <Features />
         <Signup />
         <div className={styles.os}>
           <div className="wrapper">

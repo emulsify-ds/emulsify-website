@@ -11,6 +11,8 @@
 
 /* Color variations */
 .band[data-band-color='primary'] {
+  --c-heading: var(--c-blue-light);
+
   background-color: var(--c-blue-dark);
   color: var(--c-white);
 }
