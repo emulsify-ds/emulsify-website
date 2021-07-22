@@ -93,8 +93,8 @@
     "heroku-postbuild": "gatsby build",
     "cleanup-repository": "yarn remove contentful-import chalk inquirer && node ./bin/cleanup.js && rimraf bin contentful",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -s src/img -p 6006",
+    "build-storybook": "build-storybook -s src/img -o .out",
     "deploy-storybook": "storybook-to-ghpages"
   }
 }
