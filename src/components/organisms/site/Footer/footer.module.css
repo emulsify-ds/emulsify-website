@@ -21,6 +21,10 @@
   height: auto;
 }
 
+.footerHeading {
+  margin-bottom: var(--space-l);
+}
+
 .footerHeading a {
   font-weight: 700;
 }
