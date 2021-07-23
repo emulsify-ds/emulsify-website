@@ -75,7 +75,7 @@
 
 .navlink {
   color: var(--c-white);
-  font-size: var(--font-scale-4);
+  font-size: var(--font-scale-2);
   line-height: var(--line-height-l);
   font-weight: 600;
   letter-spacing: -0.28px;
@@ -85,7 +85,8 @@
   border-bottom: 5px solid transparent;
 }
 
-.navlink:hover {
+.navlink:hover,
+.navLinkActive {
   border-color: var(--c-yellow);
 }
 
