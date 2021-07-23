@@ -27,6 +27,10 @@
   margin-bottom: var(--space-l);
 }
 
+.calloutText a {
+  font-weight: 500;
+}
+
 .calloutImage {
   margin-bottom: var(--space-l);
 }
