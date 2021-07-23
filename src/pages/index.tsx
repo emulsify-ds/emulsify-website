@@ -83,7 +83,7 @@ class RootIndex extends React.Component {
     return (
       <Layout
         location={this.props.location}
-        heroHeading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
+        heading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
         heroChildren={<CtaGrid ctas={ctas} />}
       >
         <Band>
