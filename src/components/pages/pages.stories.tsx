@@ -52,6 +52,7 @@ export const Homepage: Story<HomepageProps> = ({
   callout1Heading,
 }) => (
   <Layout
+    logoUrl="#"
     location={location}
     heading={pageTitle}
     heroChildren={<CtaGrid ctas={ctas} />}
