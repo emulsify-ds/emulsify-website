@@ -26,16 +26,20 @@ export const Footer: FC = () => {
               <a href="https://fourkitchens.com">Get in touch.</a>
             </p>
           </div>
-          <div className={styles.footerCopyright}>
-            <p className={styles.tm}>
-              Emulsify is a registered trademark of Four Kitchens
-            </p>
+          <div className={styles.footerTrademark}>
+            Emulsify is a registered trademark of Four Kitchens
           </div>
-          <div className={styles.footerLinks}>
-            <a href="https://docs.emulsify.info">Documentation</a>
-            <a href="https://github.com/emulsify-ds">Github</a>
-            <a href="https://launchpass.com/emulsify">Join us on Slack</a>
-          </div>
+          <ul className={styles.footerLinks}>
+            <li>
+              <a href="https://docs.emulsify.info">Documentation</a>
+            </li>
+            <li>
+              <a href="https://github.com/emulsify-ds">Github</a>
+            </li>
+            <li>
+              <a href="https://launchpass.com/emulsify">Join us on Slack</a>
+            </li>
+          </ul>
         </div>
       </footer>
     </Band>
