@@ -6,7 +6,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
 import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+import { SEO } from '../components/base/seo/seo'
 import ArticlePreview from '../components/molecules/teasers/article'
 
 import styles from '../components/pages/blogs.module.css'
@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <SEO title="Blog" url={this.props.location.href} />
+        <SEO title="Blog" />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <h1>Blog</h1>

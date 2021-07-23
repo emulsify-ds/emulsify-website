@@ -21,13 +21,18 @@ export const Layout: FC<LayoutProps> = ({
   heroChildren,
   children,
   logoUrl,
-  navItems,
 }) => {
   let home = false
 
   if (location.pathname === '/') {
     home = true
   }
+
+  const navItems = [
+    { link: '/', text: 'Home' },
+    // { link: '/demo', text: 'Demo' },
+    { link: '/blog', text: 'Blog' },
+  ]
 
   return (
     <div>

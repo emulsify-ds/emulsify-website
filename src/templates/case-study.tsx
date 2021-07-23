@@ -7,7 +7,7 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 
 import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+import { SEO } from '../components/base/seo/seo'
 import Share from '../components/molecules/share/share'
 
 import styles from '../components/pages/blog.module.css'
@@ -20,7 +20,7 @@ class CaseStudyTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <SEO title={post.title} url={this.props.location.href} />
+        <SEO title={post.title} />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>

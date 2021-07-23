@@ -6,7 +6,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
 import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+import { SEO } from '../components/base/seo/seo'
 import CaseStudyPreview from '../components/molecules/teasers/case-study'
 
 import styles from '../components/pages/blogs.module.css'
@@ -25,7 +25,7 @@ class CaseStudyIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <SEO title="Case Studies" url={this.props.location.href} />
+        <SEO title="Case Studies" />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <h1>Case Studies</h1>
