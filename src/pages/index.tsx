@@ -19,6 +19,12 @@ import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
 
 class RootIndex extends React.Component {
   render() {
+    const navItems = [
+      // { link: '/', text: 'Home' },
+      // { link: '/demo/', text: 'Demo' },
+      // { link: '/blog/', text: 'Blog' },
+    ]
+
     const ctas = [
       {
         linkText: 'Watch an Overview',
@@ -108,7 +114,9 @@ class RootIndex extends React.Component {
 
     return (
       <Layout
+        logoUrl="/"
         location={this.props.location}
+        navItems={navItems}
         heading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
         heroChildren={<CtaGrid ctas={ctas} />}
       >

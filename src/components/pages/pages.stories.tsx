@@ -12,6 +12,7 @@ import { featuresData } from '../data/features'
 import { CardGrid } from '../organisms/CardGrid/CardGrid'
 
 import { cards } from '../data/cards'
+import { navItems } from '../data/navigation'
 
 export default {
   title: 'Pages/Homepage',
@@ -54,6 +55,7 @@ export const Homepage: Story<HomepageProps> = ({
   <Layout
     logoUrl="#"
     location={location}
+    navItems={navItems}
     heading={pageTitle}
     heroChildren={<CtaGrid ctas={ctas} />}
   >

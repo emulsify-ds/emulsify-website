@@ -2,23 +2,17 @@ import React from 'react'
 import { Story } from '@storybook/react'
 import Navigation, { NavProps } from './navigation'
 
+import { navItems } from '../../data/navigation'
+
 export default {
   title: 'Organisms/Navigation',
   component: Navigation,
   parameters: {
     layout: 'fullscreen',
   },
-  argTypes: {
-    isHome: {
-      control: {
-        type: 'boolean',
-      },
-      defaultValue: false,
-    },
-  },
 }
 
-export const Primary: Story<NavProps> = ({ isHome }) => (
+export const Primary: Story<NavProps> = () => (
   <div
     style={{
       background: 'var(--c-blue-dark)',
@@ -27,6 +21,6 @@ export const Primary: Story<NavProps> = ({ isHome }) => (
       justifyContent: 'flex-end',
     }}
   >
-    <Navigation isHome={isHome} />
+    <Navigation navItems={navItems} />
   </div>
 )

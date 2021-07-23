@@ -1,5 +1,5 @@
-import React, { Component, ReactNode } from 'react'
-import { Link } from 'gatsby'
+import React, { FC, Component, ReactNode } from 'react'
+import { Link } from '../../utility/Link'
 
 import styles from './navigation.module.css'
 
@@ -9,9 +9,25 @@ import { Close } from '../../../img/close.inline'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
+type NavItemProps = {
+  link: string
+  text: string
+}
+
+const NavItem: FC<NavItemProps> = ({ link, text }) => (
+  <li className={styles.navigationItem}>
+    <Link
+      className={styles.navlink}
+      activeClassName={styles.navLinkActive}
+      to={link}
+    >
+      {text}
+    </Link>
+  </li>
+)
+
 export type NavProps = {
-  isHome: boolean
-  navlink?: boolean
+  navItems: NavItemProps[]
 }
 
 type State = {
@@ -32,11 +48,7 @@ export default class Nav extends Component<NavProps, State> {
   }
 
   render(): ReactNode {
-    const { isHome } = this.props
-    const navLinkClasses = cx({
-      navlink: true,
-      navlinkHome: isHome,
-    })
+    const { navItems } = this.props
 
     const toggleOpenClasses = classNames(
       { [styles.toggleOpen]: true },
@@ -65,23 +77,9 @@ export default class Nav extends Component<NavProps, State> {
             <div className={'visually-hidden'}>Close</div>
           </span>
           <ul className={styles.navigation}>
-            {!isHome && (
-              <li className={styles.navigationItem}>
-                <Link className={navLinkClasses} to="/">
-                  Home
-                </Link>
-              </li>
-            )}
-            <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/demo/">
-                Demo
-              </Link>
-            </li>
-            <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/blog/">
-                Blog
-              </Link>
-            </li>
+            {navItems.map((item, index) => (
+              <NavItem key={index} link={item.link} text={item.text} />
+            ))}
           </ul>
         </div>
       </nav>
