@@ -8,15 +8,28 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import favicon from '../../../img/favicon.png'
 
-function SEO({ description, lang, meta, title, imageUrl }) {
+type SeoProps = {
+  description?: string
+  lang?: string
+  meta?: object[]
+  title: string
+  imageUrl?: string
+}
+
+export const SEO: FC<SeoProps> = ({
+  description,
+  lang = 'en',
+  meta = [],
+  title,
+  imageUrl,
+}) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(
     graphql`
@@ -90,21 +103,4 @@ function SEO({ description, lang, meta, title, imageUrl }) {
     </Helmet>
   )
 }
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-  image: null,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string,
-}
-
-export default SEO
 /* eslint-enable */

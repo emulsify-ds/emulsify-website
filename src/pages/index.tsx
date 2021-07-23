@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Layout } from '../components/templates/Layout'
-// import SEO from '../components/base/seo/seo'
+import { SEO } from '../components/base/seo/seo'
 
 // import Signup from '../components/organisms/signup/signup'
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
@@ -112,6 +112,7 @@ class RootIndex extends React.Component {
         heading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
         heroChildren={<CtaGrid ctas={ctas} />}
       >
+        <SEO title="Home" />
         <Band>
           <Callout
             heading="Unify your websites and teams with a design system."
@@ -144,7 +145,6 @@ class RootIndex extends React.Component {
           />
           <CardGrid cards={cards} />
         </Band>
-        {/* <SEO title="Home" url={this.props.location.href} /> */}
         {/*
         <Signup />
         <div className={styles.os}>
