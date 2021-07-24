@@ -11,7 +11,7 @@ export type LayoutProps = HeroProps &
   NavProps & {
     location: Location
     heading: string
-    heroChildren: ReactNode
+    heroChildren?: ReactNode
     logoUrl: string
   }
 
@@ -37,7 +37,7 @@ export const Layout: FC<LayoutProps> = ({
   return (
     <div>
       <Header isHome={home} logoUrl={logoUrl} navItems={navItems}>
-        <Hero heading={heading}>{heroChildren}</Hero>
+        {heroChildren && <Hero heading={heading}>{heroChildren}</Hero>}
       </Header>
       {children}
       <Footer />
