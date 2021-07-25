@@ -10,7 +10,7 @@ import { NavProps } from '../molecules/nav/navigation'
 export type FullWidthProps = HeroProps &
   NavProps & {
     location: Location
-    heading: string
+    heading?: string
     heroChildren?: ReactNode
     logoUrl: string
   }
