@@ -7,7 +7,7 @@ import { Footer } from '../organisms/site/Footer/Footer'
 import { Hero, HeroProps } from '../molecules/Hero/Hero'
 import { NavProps } from '../molecules/nav/navigation'
 
-export type LayoutProps = HeroProps &
+export type FullWidthProps = HeroProps &
   NavProps & {
     location: Location
     heading: string
@@ -15,7 +15,7 @@ export type LayoutProps = HeroProps &
     logoUrl: string
   }
 
-export const Layout: FC<LayoutProps> = ({
+export const FullWidth: FC<FullWidthProps> = ({
   location,
   heading,
   heroChildren,

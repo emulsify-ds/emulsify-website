@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story } from '@storybook/react'
 
-import { Layout, LayoutProps } from '../templates/Layout'
+import { FullWidth, FullWidthProps } from '../templates/FullWidth'
 import { Band } from '../molecules/Band/Band'
 import { navItems } from '../data/navigation'
 import { BackLink } from '../atoms/BackLink/BackLink'
@@ -27,12 +27,12 @@ export default {
   },
 }
 
-type HomepageProps = LayoutProps & {
+type HomepageProps = FullWidthProps & {
   pageTitle: string
 }
 
 export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
-  <Layout
+  <FullWidth
     logoUrl="#"
     location={location}
     navItems={navItems}
@@ -41,5 +41,5 @@ export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
     <Band>
       <BackLink url="#" text="view all blog posts" />
     </Band>
-  </Layout>
+  </FullWidth>
 )

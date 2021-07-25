@@ -5,7 +5,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { Layout } from '../components/templates/Layout'
+import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 import ArticlePreview from '../components/molecules/teasers/article'
 
@@ -22,7 +22,7 @@ class BlogIndex extends React.Component {
     const nextPage = `/blog/${(currentPage + 1).toString()}`
 
     return (
-      <Layout location={this.props.location}>
+      <FullWidth location={this.props.location}>
         <SEO title="Blog" />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
@@ -52,7 +52,7 @@ class BlogIndex extends React.Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </FullWidth>
     )
   }
 }

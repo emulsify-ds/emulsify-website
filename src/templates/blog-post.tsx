@@ -5,7 +5,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { Layout } from '../components/templates/Layout'
+import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 import Share from '../components/molecules/share/share'
 
@@ -18,7 +18,7 @@ class BlogPostTemplate extends React.Component {
     const currentUrl = `${siteUrl}${this.props.location.pathname}`
 
     return (
-      <Layout location={this.props.location}>
+      <FullWidth location={this.props.location}>
         <SEO title={post.title} />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
@@ -45,7 +45,7 @@ class BlogPostTemplate extends React.Component {
             </Link>
           </div>
         </div>
-      </Layout>
+      </FullWidth>
     )
   }
 }

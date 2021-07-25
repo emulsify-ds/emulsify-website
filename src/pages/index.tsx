@@ -5,7 +5,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Layout } from '../components/templates/Layout'
+import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 
 // import Signup from '../components/organisms/signup/signup'
@@ -107,7 +107,7 @@ class RootIndex extends React.Component {
     ]
 
     return (
-      <Layout
+      <FullWidth
         logoUrl="/"
         location={this.props.location}
         heading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
@@ -194,7 +194,7 @@ class RootIndex extends React.Component {
             </div>
           </div>
         </div> */}
-      </Layout>
+      </FullWidth>
     )
   }
 }

@@ -4,13 +4,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Layout } from '../components/templates/Layout'
+import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 
 class RootIndex extends React.Component {
   render() {
     return (
-      <Layout location={this.props.location}>
+      <FullWidth location={this.props.location}>
         <SEO title="404 - Page Not Found" />
         <div style={{ background: '#fff' }}>
           <section className="wrapper">
@@ -21,7 +21,7 @@ class RootIndex extends React.Component {
             </Link>
           </section>
         </div>
-      </Layout>
+      </FullWidth>
     )
   }
 }
