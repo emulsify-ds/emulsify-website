@@ -1,10 +1,10 @@
 import React from 'react'
 import { Story } from '@storybook/react'
 
-import { FullWidth, FullWidthProps } from '../templates/FullWidth'
-import { Band } from '../molecules/Band/Band'
+import { WithSidebar, WithSidebarProps } from '../templates/WithSidebar'
 import { navItems } from '../data/navigation'
 import { BackLink } from '../atoms/BackLink/BackLink'
+import Signup from '../organisms/signup/signup'
 
 export default {
   title: 'Pages/Blogs',
@@ -27,7 +27,7 @@ export default {
   },
 }
 
-type HomepageProps = FullWidthProps & {
+type HomepageProps = WithSidebarProps & {
   pageTitle: string
 }
 
@@ -35,14 +35,13 @@ export const IndividualBlog: Story<HomepageProps> = ({
   pageTitle,
   location,
 }) => (
-  <FullWidth
+  <WithSidebar
     logoUrl="#"
     location={location}
     navItems={navItems}
     heading={pageTitle}
+    sidebar={<Signup />}
   >
-    <Band>
-      <BackLink url="#" text="view all blog posts" />
-    </Band>
-  </FullWidth>
+    <BackLink url="#" text="view all blog posts" />
+  </WithSidebar>
 )
