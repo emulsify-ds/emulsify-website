@@ -1,0 +1,11 @@
+.mainContent {
+  display: grid;
+  max-width: 116rem;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 750px) {
+  .mainContent {
+    grid-template-columns: 3fr 1fr;
+  }
+}

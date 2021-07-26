@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 
 import '../base/base.css'
+import styles from './withSidebar.module.css'
 
 import { Header } from '../organisms/site/Header/Header'
 import { Footer } from '../organisms/site/Footer/Footer'
@@ -41,8 +42,12 @@ export const WithSidebar: FC<WithSidebarProps> = ({
       <Header isHome={home} logoUrl={logoUrl} navItems={navItems}>
         {heroChildren && <Hero heading={heading}>{heroChildren}</Hero>}
       </Header>
-      <main>{children}</main>
-      {sidebar && <aside>{sidebar}</aside>}
+      <div className={styles.mainContent}>
+        <main className={styles.contentPrimary}>{children}</main>
+        {sidebar && (
+          <aside className={styles.contentSecondary}>{sidebar}</aside>
+        )}
+      </div>
       <Footer />
     </div>
   )

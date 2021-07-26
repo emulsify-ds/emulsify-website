@@ -32,11 +32,8 @@ export const withSidebar: Story<WithSidebarProps> = ({ location }) => (
     logoUrl="#"
     location={location}
     navItems={navItems}
-    sidebar={<Band>Sidebar content goes here.</Band>}
+    sidebar="Sidebar content goes here."
   >
-    <Band>
-      Content goes here, and it adapts based on whether there is a sidebar or
-      not.
-    </Band>
+    Content goes here, and it adapts based on whether there is a sidebar or not.
   </WithSidebar>
 )
