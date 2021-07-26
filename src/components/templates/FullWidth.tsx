@@ -7,6 +7,8 @@ import { Footer } from '../organisms/site/Footer/Footer'
 import { Hero, HeroProps } from '../molecules/Hero/Hero'
 import { NavProps } from '../molecules/nav/navigation'
 
+import { navItems } from '../data/navigation'
+
 export type FullWidthProps = HeroProps &
   NavProps & {
     location: Location
@@ -25,12 +27,6 @@ export const FullWidth: FC<FullWidthProps> = ({
   if (location.pathname === '/') {
     home = true
   }
-
-  const navItems = [
-    { link: '/', text: 'Home' },
-    // { link: '/demo', text: 'Demo' },
-    { link: '/blog', text: 'Blog' },
-  ]
 
   return (
     <div>
