@@ -13,7 +13,6 @@ export type WithSidebarProps = HeroProps &
     location: Location
     heading?: string
     heroChildren?: ReactNode
-    logoUrl: string
     sidebar?: ReactNode
   }
 
@@ -22,7 +21,6 @@ export const WithSidebar: FC<WithSidebarProps> = ({
   heading,
   heroChildren,
   children,
-  logoUrl,
   sidebar,
 }) => {
   let home = false
@@ -39,7 +37,7 @@ export const WithSidebar: FC<WithSidebarProps> = ({
 
   return (
     <div>
-      <Header isHome={home} logoUrl={logoUrl} navItems={navItems}>
+      <Header isHome={home} navItems={navItems}>
         {heroChildren && <Hero heading={heading}>{heroChildren}</Hero>}
       </Header>
       <div className={styles.mainContent}>

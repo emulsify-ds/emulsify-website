@@ -12,7 +12,6 @@ export type FullWidthProps = HeroProps &
     location: Location
     heading?: string
     heroChildren?: ReactNode
-    logoUrl: string
   }
 
 export const FullWidth: FC<FullWidthProps> = ({
@@ -20,7 +19,6 @@ export const FullWidth: FC<FullWidthProps> = ({
   heading,
   heroChildren,
   children,
-  logoUrl,
 }) => {
   let home = false
 
@@ -36,7 +34,7 @@ export const FullWidth: FC<FullWidthProps> = ({
 
   return (
     <div>
-      <Header isHome={home} logoUrl={logoUrl} navItems={navItems}>
+      <Header isHome={home} navItems={navItems}>
         {heroChildren && <Hero heading={heading}>{heroChildren}</Hero>}
       </Header>
       {children}

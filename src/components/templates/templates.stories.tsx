@@ -22,14 +22,13 @@ export default {
 }
 
 export const fullWidth: Story<FullWidthProps> = ({ location }) => (
-  <FullWidth logoUrl="#" location={location} navItems={navItems}>
+  <FullWidth location={location} navItems={navItems}>
     <Band>Content goes here, and it spans the full width of the page.</Band>
   </FullWidth>
 )
 
 export const withSidebar: Story<WithSidebarProps> = ({ location }) => (
   <WithSidebar
-    logoUrl="#"
     location={location}
     navItems={navItems}
     sidebar="Sidebar content goes here."

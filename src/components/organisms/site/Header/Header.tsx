@@ -12,7 +12,7 @@ const cx = classNames.bind(styles)
 
 export type HeaderProps = NavProps & {
   isHome: boolean
-  logoUrl: string
+  logoUrl?: string
 }
 
 export const Header: FC<HeaderProps> = ({
