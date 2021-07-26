@@ -27,7 +27,7 @@ const NavItem: FC<NavItemProps> = ({ link, text }) => (
 )
 
 export type NavProps = {
-  navItems: NavItemProps[]
+  navItems?: NavItemProps[]
 }
 
 type State = {

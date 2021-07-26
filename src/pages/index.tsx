@@ -88,7 +88,8 @@ class RootIndex extends React.Component {
         linkUrl: '#',
         image: (
           <Img
-            fluid={this.props.data.storybook.childImageSharp.fluid}
+            fixed={this.props.data.storybook.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain', objectPosition: 'left' }}
             alt="Storybook Logo"
           />
         ),
@@ -99,7 +100,8 @@ class RootIndex extends React.Component {
         linkUrl: '#',
         image: (
           <Img
-            fluid={this.props.data.gatsby.childImageSharp.fluid}
+            fixed={this.props.data.gatsby.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain', objectPosition: 'left' }}
             alt="Gatsby Logo"
           />
         ),
@@ -219,15 +221,15 @@ export const query = graphql`
     }
     storybook: file(relativePath: { eq: "storybook.png" }) {
       childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
+        fixed {
+          ...GatsbyImageSharpFixed
         }
       }
     }
     gatsby: file(relativePath: { eq: "gatsby.png" }) {
       childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
+        fixed {
+          ...GatsbyImageSharpFixed
         }
       }
     }

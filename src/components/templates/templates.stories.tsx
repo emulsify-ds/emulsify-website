@@ -7,7 +7,7 @@ import { Band } from '../molecules/Band/Band'
 import { navItems } from '../data/navigation'
 
 export default {
-  title: 'Templates',
+  title: 'Templates/Page',
   parameters: {
     layout: 'fullscreen',
   },
