@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Link } from 'gatsby'
+import { Link } from '../../utility/Link'
 
 import { Arrow } from '../../../img/arrow.inline'
 
