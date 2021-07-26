@@ -36,7 +36,7 @@ class BlogIndex extends React.Component {
                 )
               })}
             </ul>
-            <div className={styles.prevNext}>
+            {/* <div className={styles.prevNext}>
               {!isFirst && (
                 <Link to={prevPage} rel="prev">
                   ← Previous Page
@@ -47,7 +47,7 @@ class BlogIndex extends React.Component {
                   Next Page →
                 </Link>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </FullWidth>
