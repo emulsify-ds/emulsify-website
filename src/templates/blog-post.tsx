@@ -9,8 +9,7 @@ import { WithSidebar } from '../components/templates/WithSidebar'
 import { SEO } from '../components/base/seo/seo'
 // import Share from '../components/molecules/share/share'
 import { BackLink } from '../components/atoms/BackLink/BackLink'
-
-// import styles from '../components/pages/blog.module.css'
+import Signup from '../components/organisms/signup/signup'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,7 +18,7 @@ class BlogPostTemplate extends React.Component {
     // const currentUrl = `${siteUrl}${this.props.location.pathname}`
 
     return (
-      <WithSidebar location={this.props.location}>
+      <WithSidebar location={this.props.location} sidebar={<Signup />}>
         <SEO title={post.title} />
         <BackLink url="/blog" text="view all blog posts" />
         {

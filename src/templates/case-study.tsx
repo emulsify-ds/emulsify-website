@@ -10,8 +10,6 @@ import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 import Share from '../components/molecules/share/share'
 
-import styles from '../components/pages/blog.module.css'
-
 class CaseStudyTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulCaseStudy')

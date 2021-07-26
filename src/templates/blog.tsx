@@ -9,8 +9,6 @@ import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 import ArticlePreview from '../components/molecules/teasers/article'
 
-import styles from '../components/pages/blogs.module.css'
-
 class BlogIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlog.edges')

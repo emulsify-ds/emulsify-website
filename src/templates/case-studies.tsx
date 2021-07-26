@@ -9,8 +9,6 @@ import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 import CaseStudyPreview from '../components/molecules/teasers/case-study'
 
-import styles from '../components/pages/blogs.module.css'
-
 class CaseStudyIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulCaseStudy.edges')
