@@ -239,7 +239,7 @@ blockquote {
   }
 }
 
-@media only screen and (min-width: 1024) {
+@media only screen and (min-width: 1024px) {
   .wrapper {
     margin: 0 auto;
     max-width: 1024px;

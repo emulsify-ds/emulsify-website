@@ -31,7 +31,10 @@ type HomepageProps = FullWidthProps & {
   pageTitle: string
 }
 
-export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
+export const IndividualBlog: Story<HomepageProps> = ({
+  pageTitle,
+  location,
+}) => (
   <FullWidth
     logoUrl="#"
     location={location}
