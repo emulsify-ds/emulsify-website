@@ -1,8 +1,8 @@
 import React from 'react'
-import { Play } from '../../img/play.inline'
-import { Arrow } from '../../img/arrow.inline'
+import { Video } from '../../img/video'
+import { Screwdriver } from '../../img/screwdriver'
 
 export const ctas = [
-  { linkText: 'Watch an Overview', linkUrl: '#', icon: <Play /> },
-  { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Arrow /> },
+  { linkText: 'Watch an Overview', linkUrl: '#', icon: <Video /> },
+  { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Screwdriver /> },
 ]

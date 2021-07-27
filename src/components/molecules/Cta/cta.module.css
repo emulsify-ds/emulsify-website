@@ -30,8 +30,16 @@
 }
 
 .ctaText {
+  display: flex;
+  align-items: center;
   font-size: var(--font-scale-3);
   font-weight: bold;
   letter-spacing: -0.31px;
   text-decoration: none;
+}
+
+.ctaText svg {
+  height: 0.7em;
+  width: 0.7em;
+  margin-left: var(--space-m);
 }
