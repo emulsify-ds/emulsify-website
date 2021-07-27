@@ -36,7 +36,7 @@ type HeaderStoryProps = {
 }
 
 export const header: Story<HeaderStoryProps> = ({ isHome, heading }) => (
-  <Header isHome={isHome}>
+  <Header isHome={isHome} logoUrl="#">
     <Hero heading={heading}>
       <CtaGrid ctas={ctas} />
     </Hero>

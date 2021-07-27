@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story } from '@storybook/react'
 
-import { Layout } from '../templates/Layout'
+import { Layout, LayoutProps } from '../templates/Layout'
 import { CtaGrid } from '../organisms/CtaGrid/CtaGrid'
 import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
@@ -9,6 +9,9 @@ import { Features } from '../organisms/Features/Features'
 
 import { ctas } from '../data/ctas'
 import { featuresData } from '../data/features'
+import { CardGrid } from '../organisms/CardGrid/CardGrid'
+
+import { cards } from '../data/cards'
 
 export default {
   title: 'Pages/Homepage',
@@ -29,20 +32,34 @@ export default {
       },
       defaultValue: '/',
     },
+    callout1Heading: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'Unify your websites and teams with a design system.',
+    },
   },
 }
 
-type HomepageProps = { pageTitle: string; location: Location }
+type HomepageProps = LayoutProps & {
+  pageTitle: string
+  callout1Heading: string
+}
 
-export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
+export const Homepage: Story<HomepageProps> = ({
+  pageTitle,
+  location,
+  callout1Heading,
+}) => (
   <Layout
+    logoUrl="#"
     location={location}
-    heroHeading={pageTitle}
+    heading={pageTitle}
     heroChildren={<CtaGrid ctas={ctas} />}
   >
     <Band>
       <Callout
-        heading="Unify your websites and teams with a design system."
+        heading={callout1Heading}
         text="Complex organizations need a design system that simplifies development, encourages consistency, reduces maintenance effort, and scales quickly and affordably — without hampering flexibility for individual developers or departments."
         image={<img src="https://picsum.photos/580" alt="example image" />}
       />
@@ -55,6 +72,20 @@ export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
     </Band>
     <Band bgColor="primary" size="medium">
       <Features features={featuresData} />
+    </Band>
+    <Band size="medium">
+      <Callout
+        heading="Emulsify is open source, built using well-supported technologies developers love."
+        text={
+          <p>
+            Emulsify is an open source project that's free for everyone. Check
+            out the project on{' '}
+            <a href="https://github.com/emulsify-ds">GitHub</a> and join us on{' '}
+            <a href="https://launchpass.com/emulsify">Slack</a> for help
+          </p>
+        }
+      />
+      <CardGrid cards={cards.slice(3, 5)} />
     </Band>
   </Layout>
 )

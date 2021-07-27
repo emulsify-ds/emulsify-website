@@ -1,93 +1,27 @@
 /* Card */
 .card {
-  padding: 2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-@media only screen and (min-width: 700px) {
-  .card {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 3rem 2rem;
-  }
-
-  .card:nth-child(2n) .image {
-    order: 2;
-  }
+.cardContent {
+  order: 1;
 }
 
-@media only screen and (min-width: 850px) {
-  .card {
-    padding: 7rem 3rem 7rem 5rem;
-  }
+.cardContent > *:last-child {
+  margin-bottom: 0;
 }
 
-.demo {
-  position: relative;
-  top: 7rem;
-}
-
-.image {
-  margin-bottom: 3rem;
-}
-
-.demoImage {
-  position: relative;
-  top: 20px;
-}
-
-@media only screen and (min-width: 700px) {
-  .image {
-    width: 48%;
-  }
-
-  .copy {
-    width: 45%;
-  }
-}
-
-.cardTitle,
-.cardSpecialTitle {
-  color: #085a7d;
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1.1;
-  margin: 0 0 2rem;
-}
-
-@media only screen and (min-width: 1024px) {
-  .cardTitle,
-  .cardSpecialTitle {
-    font-size: 3.6rem;
-    margin: 0 0 2.4rem;
-  }
-}
-
-.cardSpecialTitle,
-.cardSubTitle {
-  color: #fff;
-  display: block;
+.cardHeading {
+  font-size: var(--font-scale-0);
+  margin-bottom: var(--space-s);
 }
 
 .cardText {
-  font-weight: normal;
-  line-height: 1.4;
+  font-size: var(--font-scale--1);
 }
 
-.cardSpecialTitle + .cardText {
-  color: #fff;
-}
-
-.cardSubTitle {
-  font-size: 3rem;
-}
-
-@media only screen and (min-width: 700px) {
-  .cardSubTitle {
-    font-size: 4.5rem;
-  }
-}
-
-.cardBtn {
-  margin-top: 3rem;
+.cardImage {
+  margin-bottom: var(--space-l);
+  height: 6rem;
 }

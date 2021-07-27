@@ -4,19 +4,21 @@ import '../base/base.css'
 
 import { Header } from '../organisms/site/Header/Header'
 import { Footer } from '../organisms/site/Footer/Footer'
-import { Hero } from '../molecules/Hero/Hero'
+import { Hero, HeroProps } from '../molecules/Hero/Hero'
 
-type LayoutProps = {
+export type LayoutProps = HeroProps & {
   location: Location
-  heroHeading: string
+  heading: string
   heroChildren: ReactNode
+  logoUrl: string
 }
 
 export const Layout: FC<LayoutProps> = ({
   location,
-  heroHeading,
+  heading,
   heroChildren,
   children,
+  logoUrl,
 }) => {
   let home = false
 
@@ -26,8 +28,8 @@ export const Layout: FC<LayoutProps> = ({
 
   return (
     <div>
-      <Header isHome={home}>
-        <Hero heading={heroHeading}>{heroChildren}</Hero>
+      <Header isHome={home} logoUrl={logoUrl}>
+        <Hero heading={heading}>{heroChildren}</Hero>
       </Header>
       {children}
       <Footer />
