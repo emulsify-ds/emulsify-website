@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.pageMeta > *:not(:last-child) {
+  margin-bottom: var(--space-xl);
+}
+
 .pageMetaHeading {
   font-size: var(--font-scale-5);
 }

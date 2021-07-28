@@ -10,7 +10,7 @@ export type PageMetaProps = {
 export const PageMeta: FC<PageMetaProps> = ({ heading, text, children }) => (
   <div className={styles.pageMeta}>
     {heading && <h2 className={styles.pageMetaHeading}>{heading}</h2>}
-    {children}
+    {children && <div className={styles.pageMetaContent}>children</div>}
     {text && <h2 className={styles.pageMetaText}>{text}</h2>}
   </div>
 )
