@@ -1,1 +1,1 @@
-yarn husky:commit-msg
+yarn husky:pre-commit
