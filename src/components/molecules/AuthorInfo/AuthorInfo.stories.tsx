@@ -35,7 +35,7 @@ export const authorInfo: Story<AuthorInfoStoryProps> = ({
   date,
   withImage,
 }) => {
-  let image = ''
+  let image = null
   if (withImage === true) {
     image = <img src="https://picsum.photos/90" alt="example image" />
   }
