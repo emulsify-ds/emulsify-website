@@ -1,6 +1,6 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
+// /* eslint-disable */
+// // This file was converted to .tsx without actually implementing typescript
+// // @TODO: update this file to tsx and enable eslint
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
