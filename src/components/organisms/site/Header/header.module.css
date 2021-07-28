@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.headerInner > *:last-child {
+  margin-bottom: 0;
+}
+
 .headerBranding {
   display: flex;
   flex-wrap: wrap;

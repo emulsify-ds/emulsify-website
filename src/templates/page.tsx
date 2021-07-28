@@ -6,8 +6,8 @@ import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+import { FullWidth } from '../components/templates/FullWidth'
+import { SEO } from '../components/base/seo/seo'
 
 import { Cta } from '../components/molecules/Cta/Cta'
 
@@ -21,8 +21,8 @@ class PageTemplate extends React.Component {
     let page
 
     return (
-      <Layout location={this.props.location} heroImage={post.heroImage}>
-        <SEO title={post.title} url={this.props.location.href} />
+      <FullWidth location={this.props.location} heroImage={post.heroImage}>
+        <SEO title={post.title} />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <Link to="/" className={styles.backLink}>
@@ -98,7 +98,7 @@ class PageTemplate extends React.Component {
             </a>
           </Cta>
         </div>
-      </Layout>
+      </FullWidth>
     )
   }
 }

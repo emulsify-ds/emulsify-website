@@ -5,11 +5,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+import { FullWidth } from '../components/templates/FullWidth'
+import { SEO } from '../components/base/seo/seo'
 import ArticlePreview from '../components/molecules/teasers/article'
-
-import styles from '../components/pages/blogs.module.css'
 
 class BlogIndex extends React.Component {
   render() {
@@ -22,8 +20,8 @@ class BlogIndex extends React.Component {
     const nextPage = `/blog/${(currentPage + 1).toString()}`
 
     return (
-      <Layout location={this.props.location}>
-        <SEO title="Blog" url={this.props.location.href} />
+      <FullWidth location={this.props.location}>
+        <SEO title="Blog" />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <h1>Blog</h1>
@@ -38,7 +36,7 @@ class BlogIndex extends React.Component {
                 )
               })}
             </ul>
-            <div className={styles.prevNext}>
+            {/* <div className={styles.prevNext}>
               {!isFirst && (
                 <Link to={prevPage} rel="prev">
                   ← Previous Page
@@ -49,10 +47,10 @@ class BlogIndex extends React.Component {
                   Next Page →
                 </Link>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
-      </Layout>
+      </FullWidth>
     )
   }
 }

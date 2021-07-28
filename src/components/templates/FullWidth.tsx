@@ -5,20 +5,22 @@ import '../base/base.css'
 import { Header } from '../organisms/site/Header/Header'
 import { Footer } from '../organisms/site/Footer/Footer'
 import { Hero, HeroProps } from '../molecules/Hero/Hero'
+import { NavProps } from '../molecules/nav/navigation'
 
-export type LayoutProps = HeroProps & {
-  location: Location
-  heading: string
-  heroChildren: ReactNode
-  logoUrl: string
-}
+import { navItems } from '../data/navigation'
 
-export const Layout: FC<LayoutProps> = ({
+export type FullWidthProps = HeroProps &
+  NavProps & {
+    location: Location
+    heading?: string
+    heroChildren?: ReactNode
+  }
+
+export const FullWidth: FC<FullWidthProps> = ({
   location,
   heading,
   heroChildren,
   children,
-  logoUrl,
 }) => {
   let home = false
 
@@ -28,8 +30,8 @@ export const Layout: FC<LayoutProps> = ({
 
   return (
     <div>
-      <Header isHome={home} logoUrl={logoUrl}>
-        <Hero heading={heading}>{heroChildren}</Hero>
+      <Header isHome={home} navItems={navItems}>
+        {heroChildren && <Hero heading={heading}>{heroChildren}</Hero>}
       </Header>
       {children}
       <Footer />

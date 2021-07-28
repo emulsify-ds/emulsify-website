@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story } from '@storybook/react'
 
-import { Layout, LayoutProps } from '../templates/Layout'
+import { FullWidth, FullWidthProps } from '../templates/FullWidth'
 import { CtaGrid } from '../organisms/CtaGrid/CtaGrid'
 import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
@@ -12,6 +12,7 @@ import { featuresData } from '../data/features'
 import { CardGrid } from '../organisms/CardGrid/CardGrid'
 
 import { cards } from '../data/cards'
+import { navItems } from '../data/navigation'
 
 export default {
   title: 'Pages/Homepage',
@@ -41,7 +42,7 @@ export default {
   },
 }
 
-type HomepageProps = LayoutProps & {
+type HomepageProps = FullWidthProps & {
   pageTitle: string
   callout1Heading: string
 }
@@ -51,9 +52,10 @@ export const Homepage: Story<HomepageProps> = ({
   location,
   callout1Heading,
 }) => (
-  <Layout
+  <FullWidth
     logoUrl="#"
     location={location}
+    navItems={navItems}
     heading={pageTitle}
     heroChildren={<CtaGrid ctas={ctas} />}
   >
@@ -87,5 +89,5 @@ export const Homepage: Story<HomepageProps> = ({
       />
       <CardGrid cards={cards.slice(3, 5)} />
     </Band>
-  </Layout>
+  </FullWidth>
 )

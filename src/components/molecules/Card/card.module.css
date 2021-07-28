@@ -4,14 +4,6 @@
   flex-direction: column;
 }
 
-.cardContent {
-  order: 1;
-}
-
-.cardContent > *:last-child {
-  margin-bottom: 0;
-}
-
 .cardHeading {
   font-size: var(--font-scale-0);
   margin-bottom: var(--space-s);
@@ -23,5 +15,18 @@
 
 .cardImage {
   margin-bottom: var(--space-l);
-  height: 6rem;
+  flex: 0 0 6rem;
+}
+
+.cardImage > * {
+  display: block !important;
+  height: 6rem !important;
+}
+
+.cardContent {
+  order: 1;
+}
+
+.cardContent > *:last-child {
+  margin-bottom: 0;
 }

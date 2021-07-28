@@ -6,6 +6,7 @@ import { Hero } from '../../../molecules/Hero/Hero'
 import { CtaGrid } from '../../CtaGrid/CtaGrid'
 
 import { ctas } from '../../../data/ctas'
+import { navItems } from '../../../data/navigation'
 
 export default {
   component: 'Header',
@@ -36,7 +37,7 @@ type HeaderStoryProps = {
 }
 
 export const header: Story<HeaderStoryProps> = ({ isHome, heading }) => (
-  <Header isHome={isHome} logoUrl="#">
+  <Header isHome={isHome} logoUrl="#" navItems={navItems}>
     <Hero heading={heading}>
       <CtaGrid ctas={ctas} />
     </Hero>

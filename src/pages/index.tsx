@@ -5,7 +5,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Layout } from '../components/templates/Layout'
+import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 
 // import Signup from '../components/organisms/signup/signup'
@@ -88,7 +88,8 @@ class RootIndex extends React.Component {
         linkUrl: '#',
         image: (
           <Img
-            fluid={this.props.data.storybook.childImageSharp.fluid}
+            fixed={this.props.data.storybook.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain', objectPosition: 'left' }}
             alt="Storybook Logo"
           />
         ),
@@ -99,7 +100,8 @@ class RootIndex extends React.Component {
         linkUrl: '#',
         image: (
           <Img
-            fluid={this.props.data.gatsby.childImageSharp.fluid}
+            fixed={this.props.data.gatsby.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain', objectPosition: 'left' }}
             alt="Gatsby Logo"
           />
         ),
@@ -107,7 +109,7 @@ class RootIndex extends React.Component {
     ]
 
     return (
-      <Layout
+      <FullWidth
         location={this.props.location}
         heading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
         heroChildren={<CtaGrid ctas={ctas} />}
@@ -193,7 +195,7 @@ class RootIndex extends React.Component {
             </div>
           </div>
         </div> */}
-      </Layout>
+      </FullWidth>
     )
   }
 }
@@ -218,15 +220,15 @@ export const query = graphql`
     }
     storybook: file(relativePath: { eq: "storybook.png" }) {
       childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
+        fixed {
+          ...GatsbyImageSharpFixed
         }
       }
     }
     gatsby: file(relativePath: { eq: "gatsby.png" }) {
       childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
+        fixed {
+          ...GatsbyImageSharpFixed
         }
       }
     }

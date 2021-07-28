@@ -5,47 +5,50 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
-import Share from '../components/molecules/share/share'
-
-import styles from '../components/pages/blog.module.css'
+import { WithSidebar } from '../components/templates/WithSidebar'
+import { SEO } from '../components/base/seo/seo'
+// import Share from '../components/molecules/share/share'
+import { BackLink } from '../components/atoms/BackLink/BackLink'
+import Signup from '../components/organisms/signup/signup'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlog')
-    const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
-    const currentUrl = `${siteUrl}${this.props.location.pathname}`
+    // const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
+    // const currentUrl = `${siteUrl}${this.props.location.pathname}`
 
     return (
-      <Layout location={this.props.location}>
-        <SEO title={post.title} url={this.props.location.href} />
-        <div style={{ background: '#fff' }}>
-          <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
-            <div className={styles.meta}>
-              {/* <span>by:&nbsp;</span><Link to={post.author.slug}>{post.author.name}</Link> */}
-              <p
-                style={{
-                  display: 'block',
-                }}
-              >
-                {post.publishDate}
-              </p>
-            </div>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
+      <WithSidebar location={this.props.location} sidebar={<Signup />}>
+        <SEO title={post.title} />
+        <BackLink url="/blog" text="view all blog posts" />
+        {
+          /* <div style={{ background: '#fff' }}>
+        <div className="wrapper"> */
+          <h1 className="section-headline">{post.title}</h1>
+          /* <div className={styles.meta}> */
+        }
+        {/* <span>by:&nbsp;</span><Link to={post.author.slug}>{post.author.name}</Link> */}
+        {/* <p
+              style={{
+                display: 'block',
               }}
-            />
-            <Share page_url={currentUrl} title={post.title} />
-            <br />
-            <Link className="button" to="/blog">
-              Back to Blog
-            </Link>
+            >
+              {post.publishDate}
+            </p>
           </div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: post.body.childMarkdownRemark.html,
+            }}
+          />
+          <Share page_url={currentUrl} title={post.title} />
+          <br />
+          <Link className="button" to="/blog">
+            Back to Blog
+          </Link>
         </div>
-      </Layout>
+      </div> */}
+      </WithSidebar>
     )
   }
 }
