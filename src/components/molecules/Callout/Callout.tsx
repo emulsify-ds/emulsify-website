@@ -4,8 +4,8 @@ import styles from './callout.module.css'
 
 export type CalloutProps = {
   heading: string
-  text: string
-  image: ReactNode
+  text: ReactNode
+  image?: ReactNode
   layout?: 'media-start' | 'media-end'
 }
 

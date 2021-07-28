@@ -5,10 +5,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Layout } from '../components/templates/Layout'
-// import SEO from '../components/base/seo/seo'
+import { FullWidth } from '../components/templates/FullWidth'
+import { SEO } from '../components/base/seo/seo'
 
-// import Card from '../components/molecules/card/card'
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
 import { Play } from '../img/play.inline'
 import { Arrow } from '../img/arrow.inline'
@@ -17,76 +16,106 @@ import { Callout } from '../components/molecules/Callout/Callout'
 import { Features } from '../components/organisms/Features/Features'
 import { Hr } from '../components/atoms/Hr/Hr'
 import Signup from '../components/molecules/Signup/Signup'
-
-// import styles from './home.module.css'
-
-const ctas = [
-  {
-    linkText: 'Watch an Overview',
-    linkUrl: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
-    icon: <Play />,
-  },
-  {
-    linkText: 'View Installation Guide',
-    linkUrl: 'https://docs.emulsify.info/',
-    icon: <Arrow />,
-  },
-]
-
-const featuresData = [
-  {
-    heading: 'Technology & Design Leaders',
-    children: (
-      <>
-        <p>
-          Reduce development, maintenance time, and errors by reusing components
-          and via automated testing
-        </p>
-        <p>
-          Create a consistent look and feel by reusing brand-standard colors,
-          typography, and more
-        </p>
-      </>
-    ),
-  },
-  {
-    heading: 'Designers and Marketers',
-    children: (
-      <>
-        <p>Document brand and design guidelines for everyone to use</p>
-        <p>Make changes in one place and have them update everywhere</p>
-        <p>Automate accessibility testing for an accessible user experience</p>
-      </>
-    ),
-  },
-  {
-    heading: 'Developers',
-    children: (
-      <>
-        <p>
-          Automate testing to simplify prototyping and reduce development time
-        </p>
-        <p>
-          Encourage reuse across all properties to reduce errors, development
-          and maintenance efforts
-        </p>
-        <p>
-          Maintain flexibility with support for multiple development languages
-          and component customization
-        </p>
-      </>
-    ),
-  },
-]
+import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
 
 class RootIndex extends React.Component {
   render() {
+    const ctas = [
+      {
+        linkText: 'Watch an Overview',
+        linkUrl: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
+        icon: <Play />,
+      },
+      {
+        linkText: 'View Installation Guide',
+        linkUrl: 'https://docs.emulsify.info/',
+        icon: <Arrow />,
+      },
+    ]
+
+    const featuresData = [
+      {
+        heading: 'Technology & Design Leaders',
+        children: (
+          <>
+            <p>
+              Reduce development, maintenance time, and errors by reusing
+              components and via automated testing
+            </p>
+            <p>
+              Create a consistent look and feel by reusing brand-standard
+              colors, typography, and more
+            </p>
+          </>
+        ),
+      },
+      {
+        heading: 'Designers and Marketers',
+        children: (
+          <>
+            <p>Document brand and design guidelines for everyone to use</p>
+            <p>Make changes in one place and have them update everywhere</p>
+            <p>
+              Automate accessibility testing for an accessible user experience
+            </p>
+          </>
+        ),
+      },
+      {
+        heading: 'Developers',
+        children: (
+          <>
+            <p>
+              Automate testing to simplify prototyping and reduce development
+              time
+            </p>
+            <p>
+              Encourage reuse across all properties to reduce errors,
+              development and maintenance efforts
+            </p>
+            <p>
+              Maintain flexibility with support for multiple development
+              languages and component customization
+            </p>
+          </>
+        ),
+      },
+    ]
+
+    const cards = [
+      {
+        heading: 'Storybook',
+        text: 'Develop UI components with support for React and Twig',
+        linkUrl: '#',
+        image: (
+          <Img
+            fixed={this.props.data.storybook.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain', objectPosition: 'left' }}
+            alt="Storybook Logo"
+          />
+        ),
+      },
+      {
+        heading: 'Gatsby',
+        text: 'Deploy your style guide documentation as a blazing fast static site',
+        linkUrl: '#',
+        image: (
+          <Img
+            fixed={this.props.data.gatsby.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain', objectPosition: 'left' }}
+            alt="Gatsby Logo"
+          />
+        ),
+      },
+    ]
+
     return (
-      <Layout
+      <FullWidth
         location={this.props.location}
-        heroHeading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
+        heading="Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams."
         heroChildren={<CtaGrid ctas={ctas} />}
       >
+        <SEO title="Home" />
         <Band>
           <Callout
             heading="Unify your websites and teams with a design system."
@@ -107,8 +136,22 @@ class RootIndex extends React.Component {
           <Hr />
           <Signup />
         </Band>
-        {/* <SEO title="Home" url={this.props.location.href} /> */}
+        <Band size="medium">
+          <Callout
+            heading="Emulsify is open source, built using well-supported technologies developers love."
+            text={
+              <p>
+                Emulsify is an open source project that's free for everyone.
+                Check out the project on{' '}
+                <a href="https://github.com/emulsify-ds">GitHub</a> and join us
+                on <a href="https://launchpass.com/emulsify">Slack</a> for help
+              </p>
+            }
+          />
+          <CardGrid cards={cards} />
+        </Band>
         {/*
+        <Signup />
         <div className={styles.os}>
           <div className="wrapper">
             <Card
@@ -155,7 +198,7 @@ class RootIndex extends React.Component {
             </div>
           </div>
         </div> */}
-      </Layout>
+      </FullWidth>
     )
   }
 }
@@ -178,31 +221,17 @@ export const query = graphql`
         }
       }
     }
-    connector: file(relativePath: { eq: "connector.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    westernu: file(relativePath: { eq: "western-u.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     storybook: file(relativePath: { eq: "storybook.png" }) {
       childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
+        fixed {
+          ...GatsbyImageSharpFixed
         }
       }
     }
     gatsby: file(relativePath: { eq: "gatsby.png" }) {
       childImageSharp {
-        fluid(maxWidth: 580) {
-          ...GatsbyImageSharpFluid
+        fixed {
+          ...GatsbyImageSharpFixed
         }
       }
     }

@@ -5,11 +5,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+import { FullWidth } from '../components/templates/FullWidth'
+import { SEO } from '../components/base/seo/seo'
 import CaseStudyPreview from '../components/molecules/teasers/case-study'
-
-import styles from '../components/pages/blogs.module.css'
 
 class CaseStudyIndex extends React.Component {
   render() {
@@ -24,8 +22,8 @@ class CaseStudyIndex extends React.Component {
     const nextPage = `/case-studies/${(currentPage + 1).toString()}`
 
     return (
-      <Layout location={this.props.location}>
-        <SEO title="Case Studies" url={this.props.location.href} />
+      <FullWidth location={this.props.location}>
+        <SEO title="Case Studies" />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <h1>Case Studies</h1>
@@ -54,7 +52,7 @@ class CaseStudyIndex extends React.Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </FullWidth>
     )
   }
 }

@@ -1,20 +1,26 @@
 import React, { FC } from 'react'
 import classNames from 'classnames/bind'
-import { Link } from 'gatsby'
+import { Link } from '../../../utility/Link'
 
 import { Band } from '../../../molecules/Band/Band'
 import { Logo } from '../../../../img/logo'
-import Navigation from '../../../molecules/nav/navigation'
+import Navigation, { NavProps } from '../../../molecules/nav/navigation'
 
 import styles from './header.module.css'
 
 const cx = classNames.bind(styles)
 
-export type HeaderProps = {
+export type HeaderProps = NavProps & {
   isHome: boolean
+  logoUrl?: string
 }
 
-export const Header: FC<HeaderProps> = ({ children, isHome }) => {
+export const Header: FC<HeaderProps> = ({
+  children,
+  isHome,
+  logoUrl = '/',
+  navItems,
+}) => {
   const headerClasses = cx({ header: true, headerHome: isHome })
   const logoClasses = cx({ logo: true, logoHome: isHome })
 
@@ -23,10 +29,10 @@ export const Header: FC<HeaderProps> = ({ children, isHome }) => {
       <div className={headerClasses}>
         <div className={styles.headerInner}>
           <div className={styles.headerBranding}>
-            <Link className={logoClasses} to="/">
+            <Link className={logoClasses} to={logoUrl}>
               <Logo /> <span className="visually-hidden">Home</span>
             </Link>
-            <Navigation isHome={isHome} />
+            <Navigation navItems={navItems} />
           </div>
           {children}
         </div>

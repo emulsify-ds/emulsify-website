@@ -6,11 +6,9 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import { Layout } from '../components/templates/Layout'
-import SEO from '../components/base/seo/seo'
+import { FullWidth } from '../components/templates/FullWidth'
+import { SEO } from '../components/base/seo/seo'
 import Share from '../components/molecules/share/share'
-
-import styles from '../components/pages/blog.module.css'
 
 class CaseStudyTemplate extends React.Component {
   render() {
@@ -19,8 +17,8 @@ class CaseStudyTemplate extends React.Component {
     const currentUrl = `${siteUrl}${this.props.location.pathname}`
 
     return (
-      <Layout location={this.props.location}>
-        <SEO title={post.title} url={this.props.location.href} />
+      <FullWidth location={this.props.location}>
+        <SEO title={post.title} />
         <div style={{ background: '#fff' }}>
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
@@ -44,7 +42,7 @@ class CaseStudyTemplate extends React.Component {
             </Link>
           </div>
         </div>
-      </Layout>
+      </FullWidth>
     )
   }
 }

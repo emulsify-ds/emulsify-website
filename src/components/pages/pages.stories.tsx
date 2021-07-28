@@ -1,15 +1,20 @@
 import React from 'react'
 import { Story } from '@storybook/react'
-import { Play } from '../../img/play.inline'
-import { Arrow } from '../../img/arrow.inline'
 
-import { Layout } from '../templates/Layout'
+import { FullWidth, FullWidthProps } from '../templates/FullWidth'
 import { CtaGrid } from '../organisms/CtaGrid/CtaGrid'
 import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
 import { Features } from '../organisms/Features/Features'
 import { Hr } from '../atoms/Hr/Hr'
 import Signup from '../molecules/Signup/Signup'
+
+import { ctas } from '../data/ctas'
+import { featuresData } from '../data/features'
+import { CardGrid } from '../organisms/CardGrid/CardGrid'
+
+import { cards } from '../data/cards'
+import { navItems } from '../data/navigation'
 
 export default {
   title: 'Pages/Homepage',
@@ -30,71 +35,35 @@ export default {
       },
       defaultValue: '/',
     },
+    callout1Heading: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'Unify your websites and teams with a design system.',
+    },
   },
 }
 
-type HomepageProps = { pageTitle: string; location: Location }
+type HomepageProps = FullWidthProps & {
+  pageTitle: string
+  callout1Heading: string
+}
 
-const ctas = [
-  { linkText: 'Watch an Overview', linkUrl: '#', icon: <Play /> },
-  { linkText: 'View the Latest Guide', linkUrl: '#', icon: <Arrow /> },
-]
-
-const featuresData = [
-  {
-    heading: 'Technology & Design Leaders',
-    children: (
-      <>
-        <p>
-          Reduce development, maintenance time, and errors by reusing components
-          and via automated testing
-        </p>
-        <p>
-          Create a consistent look and feel by reusing brand-standard colors,
-          typography, and more
-        </p>
-      </>
-    ),
-  },
-  {
-    heading: 'Designers and Marketers',
-    children: (
-      <>
-        <p>Document brand and design guidelines for everyone to use</p>
-        <p>Make changes in one place and have them update everywhere</p>
-        <p>Automate accessibility testing for an accessible user experience</p>
-      </>
-    ),
-  },
-  {
-    heading: 'Developers',
-    children: (
-      <>
-        <p>
-          Automate testing to simplify prototyping and reduce development time
-        </p>
-        <p>
-          Encourage reuse across all properties to reduce errors, development
-          and maintenance efforts
-        </p>
-        <p>
-          Maintain flexibility with support for multiple development languages
-          and component customization
-        </p>
-      </>
-    ),
-  },
-]
-
-export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
-  <Layout
+export const Homepage: Story<HomepageProps> = ({
+  pageTitle,
+  location,
+  callout1Heading,
+}) => (
+  <FullWidth
+    logoUrl="#"
     location={location}
-    heroHeading={pageTitle}
+    navItems={navItems}
+    heading={pageTitle}
     heroChildren={<CtaGrid ctas={ctas} />}
   >
     <Band>
       <Callout
-        heading="Unify your websites and teams with a design system."
+        heading={callout1Heading}
         text="Complex organizations need a design system that simplifies development, encourages consistency, reduces maintenance effort, and scales quickly and affordably — without hampering flexibility for individual developers or departments."
         image={<img src="https://picsum.photos/580" alt="example image" />}
       />
@@ -110,5 +79,19 @@ export const Homepage: Story<HomepageProps> = ({ pageTitle, location }) => (
       <Hr />
       <Signup />
     </Band>
-  </Layout>
+    <Band size="medium">
+      <Callout
+        heading="Emulsify is open source, built using well-supported technologies developers love."
+        text={
+          <p>
+            Emulsify is an open source project that's free for everyone. Check
+            out the project on{' '}
+            <a href="https://github.com/emulsify-ds">GitHub</a> and join us on{' '}
+            <a href="https://launchpass.com/emulsify">Slack</a> for help
+          </p>
+        }
+      />
+      <CardGrid cards={cards.slice(3, 5)} />
+    </Band>
+  </FullWidth>
 )
