@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, ReactNode } from 'react'
 import styles from './signup.module.css'
 
 export default class extends Component {
   actonSignup: HTMLElement | null = null
   script: HTMLScriptElement | null = null
-  id: string = 'acton-signup'
+  id = 'acton-signup'
 
   attachScript(): void {
     this.script = document.createElement('script')
@@ -31,7 +31,7 @@ export default class extends Component {
     }
   }
 
-  render() {
+  render(): ReactNode {
     return (
       <div id={this.id} className={styles.signup}>
         <h2 className={styles.signupHeading}>
