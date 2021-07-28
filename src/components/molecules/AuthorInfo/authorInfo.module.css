@@ -16,7 +16,6 @@
 
 @media only screen and (max-width: 749px) {
   .authorInfoImage {
-    /* flex: 0 0 100%; */
     margin-bottom: var(--space-m);
   }
 }
