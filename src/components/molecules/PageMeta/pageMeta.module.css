@@ -1,0 +1,14 @@
+.pageMeta {
+  position: relative;
+}
+
+.pageMetaHeading {
+  font-size: var(--font-scale-5);
+}
+
+.pageMetaText {
+  font-size: var(--font-scale-2);
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: var(--c-blue-gray);
+}
