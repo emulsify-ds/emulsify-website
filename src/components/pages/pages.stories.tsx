@@ -7,7 +7,7 @@ import { Band } from '../molecules/Band/Band'
 import { Callout } from '../molecules/Callout/Callout'
 import { Features } from '../organisms/Features/Features'
 import { Hr } from '../atoms/Hr/Hr'
-import Signup from '../molecules/Signup/Signup'
+import { Signup } from '../molecules/Signup/Signup'
 
 import { ctas } from '../data/ctas'
 import { featuresData } from '../data/features'
@@ -44,6 +44,50 @@ export default {
   },
 }
 
+const actonForm = `<div id="aoform-8cb720cf-340b-4191-8e54-6891b9f638fb" style="visibility: visible">
+  <form class="ao-form" id="ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb" method="POST" action="//info.fourkitchens.com/acton/forms/userSubmit.jsp" data-validate-blur="" >
+    <div class="ao-row" id="row-r1594328490896">
+      <div class="ao-column ao-column-12 tablet-ao-column-1 mobile-ao-column-1" id="column-c1594328479534" >
+        <div class="ao-column-inner">
+          <div style="padding-bottom: 0px" class="ao-block-wrapper">
+            <div id="block-b1594328211647" class="ao-input-block ao-left">
+              <label for="b1594328211647" class="ao-form-label">Enter your email<span class="ao-required">*</span></label>
+              <input id="b1594328211647" name="Email" type="text" placeholder=" " value="" data-type="text" tabindex="1" class="ao-form-field ao-left" data-error-message="required|Required field::email|Invalid email address" data-validator="required|email" />
+              <span class="ao-form-error-message">&nbsp;</span>
+            </div>
+          </div>
+          <div style="" class="ao-block-wrapper">
+            <div id="block-b1594328322862" class="ao-submit-block">
+              <div style="text-align: center">
+                <button type="submit" class="ao-form-submit" style=" background-color: rgb(26, 150, 202); background-image: none; background-repeat: no-repeat; background-size: auto; background-position: center center; color: rgb(255, 255, 255); border-radius: 2px; display: inline-block; text-decoration: none; font-size: 13pt; font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-style: normal; border-style: solid; border-color: transparent; border-width: 0px; padding: 10px; " tabindex="2" onmouseover="this.style.backgroundColor = '#177da8'; this.style.color = '#ffffff'; this.style.borderColor = 'transparent';" onmouseout="this.style.backgroundColor = 'rgb(26, 150, 202)'; this.style.color = '#ffffff'; this.style.borderColor = 'transparent';" >Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" name="ao_form_neg_cap" value="" />
+    <input type="hidden" name="ao_bot" id="ao_bot" value="nope" />
+    <input type="hidden" name="ao_a" value="42934" />
+    <input type="hidden" name="ao_f" value="8cb720cf-340b-4191-8e54-6891b9f638fb" />
+    <input type="hidden" name="ao_d" value="8cb720cf-340b-4191-8e54-6891b9f638fb:d-0001" />
+    <input type="hidden" name="ao_jstzo" value="" />
+    <input type="hidden" name="ao_refurl" value="https://github.com/emulsify-ds/emulsify-website/pull/70" />
+    <input type="hidden" name="ao_target" value="https://deploy-preview-70--serene-noyce-007753.netlify.app/" />
+    <input type="hidden" name="ao_cuid" value="" />
+    <input type="hidden" name="ao_srcid" value="" />
+    <input type="hidden" name="ao_nc" value="" />
+    <input type="hidden" name="ao_pf" value="0" />
+    <input type="hidden" name="ao_camp" value="" />
+    <input type="hidden" name="ao_campid" value="" />
+    <input type="hidden" name="ao_refemail" value="" />
+    <input type="hidden" name="ao_iframe" value="" />
+    <input type="hidden" name="ao_gatedpage" value="" />
+    <input type="hidden" name="ao_gatedasset" value="" />
+  </form>
+</div>
+`
+
 type HomepageProps = FullWidthProps & {
   pageTitle: string
   callout1Heading: string
@@ -55,7 +99,6 @@ export const Homepage: Story<HomepageProps> = ({
   callout1Heading,
 }) => (
   <FullWidth
-    logoUrl="#"
     location={location}
     navItems={navItems}
     heading={pageTitle}
@@ -77,7 +120,9 @@ export const Homepage: Story<HomepageProps> = ({
     <Band bgColor="primary" size="medium">
       <Features features={featuresData} />
       <Hr />
-      <Signup />
+      <Signup>
+        <div dangerouslySetInnerHTML={{ __html: actonForm }} />
+      </Signup>
     </Band>
     <Band size="medium">
       <Callout

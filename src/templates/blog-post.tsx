@@ -10,7 +10,7 @@ import { WithSidebar } from '../components/templates/WithSidebar'
 import { SEO } from '../components/base/seo/seo'
 // import Share from '../components/molecules/share/share'
 import { BackLink } from '../components/atoms/BackLink/BackLink'
-import Signup from '../components/molecules/Signup/Signup'
+import { Signup } from '../components/molecules/Signup/Signup'
 
 class BlogPostTemplate extends React.Component<PageProps> {
   render(): ReactNode {

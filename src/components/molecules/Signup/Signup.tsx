@@ -1,43 +1,46 @@
-import React, { Component, ReactNode } from 'react'
+import React, { FC, useEffect } from 'react'
 import styles from './signup.module.css'
 
-export default class extends Component {
-  actonSignup: HTMLElement | null = null
-  script: HTMLScriptElement | null = null
-  id = 'acton-signup'
+type SignupProps = {
+  actonSignup: HTMLElement | null
+  script: HTMLScriptElement | null
+  id: string
+}
 
-  attachScript(): void {
-    this.script = document.createElement('script')
-    this.script.id = 'aoform-script-8cb720cf-340b-4191-8e54-6891b9f638fb:d-0001'
-    this.script.type = 'text/javascript'
-    this.script.async = true
-    this.script.innerHTML =
+export const Signup: FC<SignupProps> = ({
+  actonSignup = null,
+  script = null,
+  children,
+  id = 'acton-signup',
+}) => {
+  function attachScript(): void {
+    script = document.createElement('script')
+    script.id = 'aoform-script-8cb720cf-340b-4191-8e54-6891b9f638fb:d-0001'
+    script.type = 'text/javascript'
+    script.async = true
+    script.innerHTML =
       '!function(o,t,e,a){o._aoForms=o._aoForms||[],o._aoForms.push(a);var n=function(){var o=t.createElement(e);o.src=("https:"==t.location.protocol?"https://":"http://")+"info.fourkitchens.com/acton/content/form_embed.js",o.async=!0;for(var a=t.getElementsByTagName(e)[0],n=a.parentNode,c=document.getElementsByTagName("script"),r=!1,s=0;s<c.length;s++){if(c[s].getAttribute("src")==o.getAttribute("src"))r=!0;}r?typeof(_aoFormLoader)!="undefined"?_aoFormLoader.load({id:"8cb720cf-340b-4191-8e54-6891b9f638fb:d-0001",accountId:"42934",domain:"info.fourkitchens.com",isTemp:false,noStyle:true,prefill:false}):"":n.insertBefore(o,a)};window.attachEvent?window.attachEvent("onload",n):window.addEventListener("load",n,!1),n()}(window,document,"script",{id:"8cb720cf-340b-4191-8e54-6891b9f638fb",accountId:"42934",domain:"info.fourkitchens.com",isTemp:false,noStyle:true,prefill:false});'
 
-    this.actonSignup = document.getElementById(this.id)
-    this.actonSignup?.appendChild(this.script)
+    actonSignup = document.getElementById(id)
+    actonSignup?.appendChild(script)
   }
 
-  componentDidUpdate(): void {
-    this.attachScript()
-  }
-  componentDidMount(): void {
-    this.attachScript()
-  }
+  useEffect(() => {
+    attachScript()
 
-  componentWillUnmount(): void {
-    if (this.actonSignup && this.script) {
-      this.actonSignup.removeChild(this.script)
+    return () => {
+      if (actonSignup && script) {
+        actonSignup.removeChild(script)
+      }
     }
-  }
+  })
 
-  render(): ReactNode {
-    return (
-      <div id={this.id} className={styles.signup}>
-        <h2 className={styles.signupHeading}>
-          Stay up to date with the latest news from Emulsify
-        </h2>
-      </div>
-    )
-  }
+  return (
+    <div id={id} className={styles.signup}>
+      <h2 className={styles.signupHeading}>
+        Stay up to date with the latest news from Emulsify
+      </h2>
+      {children}
+    </div>
+  )
 }

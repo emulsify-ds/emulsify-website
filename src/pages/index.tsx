@@ -15,7 +15,7 @@ import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
 import { Features } from '../components/organisms/Features/Features'
 import { Hr } from '../components/atoms/Hr/Hr'
-import Signup from '../components/molecules/Signup/Signup'
+import { Signup } from '../components/molecules/Signup/Signup'
 import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
 
 class RootIndex extends React.Component {
