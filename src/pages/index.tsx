@@ -86,7 +86,7 @@ class RootIndex extends React.Component {
       {
         heading: 'Storybook',
         text: 'Develop UI components with support for React and Twig',
-        linkUrl: '#',
+        linkUrl: 'https://storybook.js.org',
         image: (
           <Img
             fixed={this.props.data.storybook.childImageSharp.fixed}
@@ -98,7 +98,7 @@ class RootIndex extends React.Component {
       {
         heading: 'Gatsby',
         text: 'Deploy your style guide documentation as a blazing fast static site',
-        linkUrl: '#',
+        linkUrl: 'https://www.gatsbyjs.com',
         image: (
           <Img
             fixed={this.props.data.gatsby.childImageSharp.fixed}
