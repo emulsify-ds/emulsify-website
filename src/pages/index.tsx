@@ -23,12 +23,12 @@ class RootIndex extends React.Component {
     const ctas = [
       {
         linkText: 'Watch an Overview',
-        linkUrl: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
+        to: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
         icon: <Play />,
       },
       {
         linkText: 'View Installation Guide',
-        linkUrl: 'https://docs.emulsify.info/',
+        to: 'https://docs.emulsify.info/',
         icon: <Arrow />,
       },
     ]

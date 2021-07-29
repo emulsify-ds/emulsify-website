@@ -1,30 +1,29 @@
 import React, { ReactNode, FC } from 'react'
-import { Link } from '../../utility/Link'
+import { Link, LinkProps } from '../../utility/Link'
 
 import styles from './cta.module.css'
 
 import { Arrow } from '../../../img/arrow.inline'
 
-export type CtaProps = {
+export type CtaProps = LinkProps & {
   icon?: ReactNode
   linkText: string
-  linkUrl: string
 }
 
-export const Cta: FC<CtaProps> = ({ icon, linkText, linkUrl }) => {
+export const Cta: FC<CtaProps> = ({ icon, linkText, to }) => {
   return (
     <div className={styles.cta}>
       {icon && (
         <Link
           className={styles.ctaIcon}
-          to={linkUrl}
+          to={to}
           tabIndex={-1}
-          aria-hidden="true"
+          ariaHidden={true}
         >
           {icon}
         </Link>
       )}
-      <Link className={styles.ctaText} to={linkUrl}>
+      <Link className={styles.ctaText} to={to}>
         {linkText} <Arrow />
       </Link>
     </div>

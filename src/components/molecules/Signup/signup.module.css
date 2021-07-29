@@ -32,7 +32,13 @@
 }
 
 :global(.ao-form label.ao-form-label) {
-  display: none !important;
+  /* Visually Hidden */
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
 }
 
 :global(.ao-form button.ao-form-submit) {

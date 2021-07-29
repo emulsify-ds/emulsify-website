@@ -11,12 +11,7 @@ export const CtaGrid: FC<CtaGridProps> = ({ ctas }) => {
   return (
     <div className={styles.ctaGrid}>
       {ctas.map((cta, index) => (
-        <Cta
-          icon={cta.icon}
-          linkText={cta.linkText}
-          linkUrl={cta.linkUrl}
-          key={index}
-        />
+        <Cta icon={cta.icon} linkText={cta.linkText} to={cta.to} key={index} />
       ))}
     </div>
   )
