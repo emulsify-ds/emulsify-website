@@ -1,6 +1,8 @@
 import React, { FC, Component, ReactNode } from 'react'
 import { Link } from '../../utility/Link'
 
+import { Band } from '../Band/Band'
+
 import styles from './navigation.module.css'
 
 import { Menu } from '../../../img/menu'
@@ -71,17 +73,19 @@ export default class Nav extends Component<NavProps, State> {
         </button>
         {/* Main Menu */}
         <div className={mainNavClasses}>
-          {/* Close Toggle */}
-          <span className={styles.mobileNavClose} onClick={this.reveal}>
-            <Close />
-            <div className={'visually-hidden'}>Close</div>
-          </span>
-          <ul className={styles.navigation}>
-            {navItems &&
-              navItems.map((item, index) => (
-                <NavItem key={index} link={item.link} text={item.text} />
-              ))}
-          </ul>
+          <Band bgColor="primary" size="large">
+            {/* Close Toggle */}
+            <span className={styles.mobileNavClose} onClick={this.reveal}>
+              <Close />
+              <div className={'visually-hidden'}>Close</div>
+            </span>
+            <ul className={styles.navigation}>
+              {navItems &&
+                navItems.map((item, index) => (
+                  <NavItem key={index} link={item.link} text={item.text} />
+                ))}
+            </ul>
+          </Band>
         </div>
       </nav>
     )
