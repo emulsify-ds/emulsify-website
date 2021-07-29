@@ -3,7 +3,7 @@ import { Link, LinkProps } from '../../utility/Link'
 
 import styles from './cta.module.css'
 
-import { Arrow } from '../../../img/arrow.inline'
+import { Arrow } from '../../../img/arrow'
 
 export type CtaProps = LinkProps & {
   icon?: ReactNode

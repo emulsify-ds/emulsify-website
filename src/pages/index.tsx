@@ -9,8 +9,8 @@ import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
-import { Play } from '../img/play.inline'
-import { Arrow } from '../img/arrow.inline'
+import { Video } from '../img/video'
+import { Screwdriver } from '../img/screwdriver'
 import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
 import { Features } from '../components/organisms/Features/Features'
@@ -24,12 +24,12 @@ class RootIndex extends React.Component {
       {
         linkText: 'Watch an Overview',
         to: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
-        icon: <Play />,
+        icon: <Video />,
       },
       {
         linkText: 'View Installation Guide',
         to: 'https://docs.emulsify.info/',
-        icon: <Arrow />,
+        icon: <Screwdriver />,
       },
     ]
 

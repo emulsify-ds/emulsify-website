@@ -21,6 +21,7 @@
 .cardImage > * {
   display: block !important;
   height: 6rem !important;
+  width: auto !important;
 }
 
 .cardContent {

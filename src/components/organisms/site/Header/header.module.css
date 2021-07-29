@@ -22,13 +22,10 @@
   .logo {
     width: 250px;
   }
-
-  .logoHome {
-    width: 420px;
-  }
 }
 
 .logo svg {
+  display: block;
   height: 100%;
   width: 100%;
 }
