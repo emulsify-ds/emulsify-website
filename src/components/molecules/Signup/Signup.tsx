@@ -38,7 +38,7 @@ export const Signup: FC<SignupProps> = ({
   return (
     <div id={id} className={styles.signup}>
       <h2 className={styles.signupHeading}>
-        Stay up to date with the latest news from Emulsify
+        Stay up to date with the latest news and developments from Emulsify
       </h2>
       {children}
     </div>

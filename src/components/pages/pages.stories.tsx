@@ -45,7 +45,7 @@ export default {
 }
 
 const actonForm = `<div id="aoform-8cb720cf-340b-4191-8e54-6891b9f638fb" style="visibility: visible">
-  <form class="ao-form" id="ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb" method="POST" action="//info.fourkitchens.com/acton/forms/userSubmit.jsp" data-validate-blur="" >
+  <form class="ao-form" id="ao-form-8cb720cf-340b-4191-8e54-6891b9f638fb" action="#" data-validate-blur="" >
     <div class="ao-row" id="row-r1594328490896">
       <div class="ao-column ao-column-12 tablet-ao-column-1 mobile-ao-column-1" id="column-c1594328479534" >
         <div class="ao-column-inner">
@@ -66,24 +66,6 @@ const actonForm = `<div id="aoform-8cb720cf-340b-4191-8e54-6891b9f638fb" style="
         </div>
       </div>
     </div>
-    <input type="hidden" name="ao_form_neg_cap" value="" />
-    <input type="hidden" name="ao_bot" id="ao_bot" value="nope" />
-    <input type="hidden" name="ao_a" value="42934" />
-    <input type="hidden" name="ao_f" value="8cb720cf-340b-4191-8e54-6891b9f638fb" />
-    <input type="hidden" name="ao_d" value="8cb720cf-340b-4191-8e54-6891b9f638fb:d-0001" />
-    <input type="hidden" name="ao_jstzo" value="" />
-    <input type="hidden" name="ao_refurl" value="https://github.com/emulsify-ds/emulsify-website/pull/70" />
-    <input type="hidden" name="ao_target" value="https://deploy-preview-70--serene-noyce-007753.netlify.app/" />
-    <input type="hidden" name="ao_cuid" value="" />
-    <input type="hidden" name="ao_srcid" value="" />
-    <input type="hidden" name="ao_nc" value="" />
-    <input type="hidden" name="ao_pf" value="0" />
-    <input type="hidden" name="ao_camp" value="" />
-    <input type="hidden" name="ao_campid" value="" />
-    <input type="hidden" name="ao_refemail" value="" />
-    <input type="hidden" name="ao_iframe" value="" />
-    <input type="hidden" name="ao_gatedpage" value="" />
-    <input type="hidden" name="ao_gatedasset" value="" />
   </form>
 </div>
 `
