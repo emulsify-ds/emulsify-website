@@ -8,13 +8,14 @@ import Img from 'gatsby-image'
 import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 
-// import Signup from '../components/organisms/signup/signup'
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
 import { Video } from '../img/video'
 import { Screwdriver } from '../img/screwdriver'
 import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
 import { Features } from '../components/organisms/Features/Features'
+import { Hr } from '../components/atoms/Hr/Hr'
+import { Signup } from '../components/molecules/Signup/Signup'
 import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
 
 class RootIndex extends React.Component {
@@ -132,6 +133,8 @@ class RootIndex extends React.Component {
         </Band>
         <Band bgColor="primary" size="medium">
           <Features features={featuresData} />
+          <Hr />
+          <Signup />
         </Band>
         <Band size="medium">
           <Callout
