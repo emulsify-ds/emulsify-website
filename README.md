@@ -26,5 +26,10 @@ Develop on the component library locally.
 
 To deploy your changes, simply commit to the repo and request a PR.
 
+## This project uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+Commits are vetted against the [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) ruleset. See the configuration in `commitlint.config.js`.
+
 ## Note for M1 Macs
+
 If you get an error when running `yarn` about "sharp", [this comment](https://github.com/lovell/sharp/issues/2460#issuecomment-751491241) may help you resolve that issue.
