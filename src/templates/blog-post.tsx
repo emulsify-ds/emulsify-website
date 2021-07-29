@@ -1,6 +1,7 @@
-// /* eslint-disable */
-// // This file was converted to .tsx without actually implementing typescript
-// // @TODO: update this file to tsx and enable eslint
+/* tslint:disable */
+/* eslint-disable */
+// This file was converted to .tsx without actually implementing typescript
+// @TODO: update this file to tsx and enable eslint
 import React, { ReactNode } from 'react'
 import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
@@ -79,3 +80,4 @@ export const pageQuery = graphql`
   }
 `
 /* eslint-enable */
+/* tslint:enable */
