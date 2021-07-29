@@ -13,9 +13,10 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    max-height: 100vh;
     z-index: 100;
     overflow-y: scroll;
+    padding: clamp(var(--space-xl), 7vw, var(--space-3xl)) 0;
   }
 }
 
@@ -24,7 +25,8 @@
   display: flex;
   justify-content: flex-end;
   color: var(--c-yellow);
-  margin-bottom: var(--space-l);
+  margin-right: clamp(var(--space-l), 4.44vw, var(--space-2xl));
+  margin-bottom: var(--space-xl);
 }
 
 .mobileNavClose svg {
@@ -50,6 +52,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+@media only screen and (max-width: 749px) {
+  .navigation {
+    padding: clamp(var(--space-xl), 7vw, var(--space-3xl))
+      clamp(var(--space-l), 4.44vw, var(--space-2xl));
+    background-color: var(--c-blue-dark);
+  }
 }
 
 @media only screen and (min-width: 750px) {
