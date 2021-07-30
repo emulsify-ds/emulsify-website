@@ -7,6 +7,7 @@ import { BackLink } from '../atoms/BackLink/BackLink'
 import { PageMeta, PageMetaProps } from '../molecules/PageMeta/PageMeta'
 import { AuthorInfo, AuthorInfoProps } from '../molecules/AuthorInfo/AuthorInfo'
 import { Signup } from '../molecules/Signup/Signup'
+import { RichText } from '../atoms/RichText/RichText'
 
 import { blogText } from '../data/blog'
 
@@ -82,7 +83,7 @@ export const IndividualBlog: Story<HomepageProps> = ({
       <PageMeta heading={pageTitle} text={pageSubtitle}>
         <AuthorInfo image={image} name={name} date={date} />
       </PageMeta>
-      {blogText}
+      <RichText>{blogText}</RichText>
     </WithSidebar>
   )
 }
