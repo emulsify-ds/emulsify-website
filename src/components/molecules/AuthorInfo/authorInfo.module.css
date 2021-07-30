@@ -7,6 +7,8 @@
 
 .authorInfoImage {
   margin-right: var(--space-m);
+  max-height: 9rem;
+  max-width: 9rem;
 }
 
 .authorInfoImage > * {
