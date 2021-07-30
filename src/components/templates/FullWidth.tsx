@@ -33,7 +33,7 @@ export const FullWidth: FC<FullWidthProps> = ({
       <Header isHome={home} navItems={navItems}>
         {heroChildren && <Hero heading={heading}>{heroChildren}</Hero>}
       </Header>
-      {children}
+      <main role="main">{children}</main>
       <Footer />
     </div>
   )

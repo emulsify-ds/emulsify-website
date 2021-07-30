@@ -7,8 +7,8 @@ import styles from './footer.module.css'
 
 export const Footer: FC = () => {
   return (
-    <Band bgColor="waves" size="large">
-      <footer className={styles.footer}>
+    <footer className={styles.footer}>
+      <Band bgColor="waves" size="large">
         <div className={styles.footerInner}>
           <div className={styles.footerBranding}>
             <Logo />
@@ -41,7 +41,7 @@ export const Footer: FC = () => {
             </li>
           </ul>
         </div>
-      </footer>
-    </Band>
+      </Band>
+    </footer>
   )
 }

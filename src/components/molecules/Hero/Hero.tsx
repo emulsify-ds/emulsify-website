@@ -8,7 +8,7 @@ export type HeroProps = {
 
 export const Hero: FC<HeroProps> = ({ heading, children }) => (
   <div className={styles.hero}>
-    {heading && <h2 className={styles.heroHeading}>{heading}</h2>}
+    {heading && <h1 className={styles.heroHeading}>{heading}</h1>}
     <div className={styles.ctas}>{children}</div>
   </div>
 )
