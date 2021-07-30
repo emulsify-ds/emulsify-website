@@ -37,7 +37,9 @@ export const WithSidebar: FC<WithSidebarProps> = ({
         {heroChildren && <Hero heading={heading}>{heroChildren}</Hero>}
       </Header>
       <div className={styles.mainContent}>
-        <main className={styles.contentPrimary}>{children}</main>
+        <main role="main" className={styles.contentPrimary}>
+          {children}
+        </main>
         {sidebar && (
           <aside className={styles.contentSecondary}>{sidebar}</aside>
         )}

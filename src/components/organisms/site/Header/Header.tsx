@@ -25,18 +25,20 @@ export const Header: FC<HeaderProps> = ({
   const logoClasses = cx({ logo: true, logoHome: isHome })
 
   return (
-    <Band bgColor="waves" size="large">
-      <div className={headerClasses}>
-        <div className={styles.headerInner}>
-          <div className={styles.headerBranding}>
-            <Link className={logoClasses} to={logoUrl}>
-              <Logo /> <span className="visually-hidden">Home</span>
-            </Link>
-            <Navigation navItems={navItems} />
+    <header>
+      <Band bgColor="waves" size="large">
+        <div className={headerClasses}>
+          <div className={styles.headerInner}>
+            <div className={styles.headerBranding}>
+              <Link className={logoClasses} to={logoUrl}>
+                <Logo /> <span className="visually-hidden">Home</span>
+              </Link>
+              <Navigation navItems={navItems} />
+            </div>
+            {children}
           </div>
-          {children}
         </div>
-      </div>
-    </Band>
+      </Band>
+    </header>
   )
 }

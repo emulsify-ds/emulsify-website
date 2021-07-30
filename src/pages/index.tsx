@@ -8,13 +8,14 @@ import Img from 'gatsby-image'
 import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 
-// import Signup from '../components/organisms/signup/signup'
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
-import { Play } from '../img/play.inline'
-import { Arrow } from '../img/arrow.inline'
+import { Video } from '../img/video'
+import { Screwdriver } from '../img/screwdriver'
 import { Band } from '../components/molecules/Band/Band'
 import { Callout } from '../components/molecules/Callout/Callout'
 import { Features } from '../components/organisms/Features/Features'
+import { Hr } from '../components/atoms/Hr/Hr'
+import { Signup } from '../components/molecules/Signup/Signup'
 import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
 
 class RootIndex extends React.Component {
@@ -22,13 +23,13 @@ class RootIndex extends React.Component {
     const ctas = [
       {
         linkText: 'Watch an Overview',
-        linkUrl: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
-        icon: <Play />,
+        to: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
+        icon: <Video />,
       },
       {
         linkText: 'View Installation Guide',
-        linkUrl: 'https://docs.emulsify.info/',
-        icon: <Arrow />,
+        to: 'https://docs.emulsify.info/',
+        icon: <Screwdriver />,
       },
     ]
 
@@ -85,7 +86,7 @@ class RootIndex extends React.Component {
       {
         heading: 'Storybook',
         text: 'Develop UI components with support for React and Twig',
-        linkUrl: '#',
+        linkUrl: 'https://storybook.js.org',
         image: (
           <Img
             fixed={this.props.data.storybook.childImageSharp.fixed}
@@ -97,7 +98,7 @@ class RootIndex extends React.Component {
       {
         heading: 'Gatsby',
         text: 'Deploy your style guide documentation as a blazing fast static site',
-        linkUrl: '#',
+        linkUrl: 'https://www.gatsbyjs.com',
         image: (
           <Img
             fixed={this.props.data.gatsby.childImageSharp.fixed}
@@ -132,6 +133,8 @@ class RootIndex extends React.Component {
         </Band>
         <Band bgColor="primary" size="medium">
           <Features features={featuresData} />
+          <Hr />
+          <Signup />
         </Band>
         <Band size="medium">
           <Callout

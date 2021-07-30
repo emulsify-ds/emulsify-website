@@ -1,18 +1,19 @@
+/* tslint:disable */
 /* eslint-disable */
 // This file was converted to .tsx without actually implementing typescript
 // @TODO: update this file to tsx and enable eslint
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React, { ReactNode } from 'react'
+import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
 
 import { WithSidebar } from '../components/templates/WithSidebar'
 import { SEO } from '../components/base/seo/seo'
 // import Share from '../components/molecules/share/share'
 import { BackLink } from '../components/atoms/BackLink/BackLink'
-import Signup from '../components/organisms/signup/signup'
+import { Signup } from '../components/molecules/Signup/Signup'
 
-class BlogPostTemplate extends React.Component {
-  render() {
+class BlogPostTemplate extends React.Component<PageProps> {
+  render(): ReactNode {
     const post = get(this.props, 'data.contentfulBlog')
     // const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
     // const currentUrl = `${siteUrl}${this.props.location.pathname}`
@@ -79,3 +80,4 @@ export const pageQuery = graphql`
   }
 `
 /* eslint-enable */
+/* tslint:enable */

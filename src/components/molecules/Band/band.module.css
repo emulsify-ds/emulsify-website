@@ -1,12 +1,7 @@
 .band {
   position: relative;
-  padding: var(--space-xl) var(--space-l);
-}
-
-@media only screen and (min-width: 750px) {
-  .band {
-    padding: var(--space-3xl) var(--space-l);
-  }
+  padding: clamp(var(--space-xl), 7vw, var(--space-3xl))
+    clamp(var(--space-l), 4.44vw, var(--space-2xl));
 }
 
 /* Color variations */

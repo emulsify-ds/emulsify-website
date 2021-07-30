@@ -4,13 +4,14 @@
 import React, { FC, ReactNode } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 
-type LinkProps = {
-  children: ReactNode
+export type LinkProps = {
+  children?: ReactNode
   to: string
   className?: string
   activeClassName?: string
   partiallyActive?: boolean
   tabIndex?: number
+  ariaHidden?: boolean
 }
 
 // Since DOM elements <a> cannot receive activeClassName and partiallyActive,
@@ -22,6 +23,7 @@ export const Link: FC<LinkProps> = ({
   activeClassName,
   partiallyActive,
   tabIndex,
+  ariaHidden,
 }) => {
   // Tailor the following test to your environment. This example assumes that
   // any internal link(intended for Gatsby) will start with exactly one slash,
@@ -37,13 +39,19 @@ export const Link: FC<LinkProps> = ({
         partiallyActive={partiallyActive}
         tabIndex={tabIndex}
         to={to}
+        aria-hidden={ariaHidden}
       >
         {children}
       </GatsbyLink>
     )
   }
   return (
-    <a className={className} tabIndex={tabIndex} href={to}>
+    <a
+      className={className}
+      tabIndex={tabIndex}
+      aria-hidden={ariaHidden}
+      href={to}
+    >
       {children}
     </a>
   )

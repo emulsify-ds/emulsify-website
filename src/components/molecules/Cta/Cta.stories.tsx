@@ -14,7 +14,7 @@ export default {
       },
       defaultValue: 'Watch an Overview',
     },
-    linkUrl: {
+    to: {
       control: {
         type: 'text',
       },
@@ -25,6 +25,6 @@ export default {
 
 type CtaStoryProps = CtaProps
 
-export const cta: Story<CtaStoryProps> = ({ linkText, linkUrl }) => (
-  <Cta icon={<Play />} linkText={linkText} linkUrl={linkUrl} />
+export const cta: Story<CtaStoryProps> = ({ linkText, to }) => (
+  <Cta icon={<Play />} linkText={linkText} to={to} />
 )

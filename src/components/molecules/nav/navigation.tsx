@@ -3,8 +3,8 @@ import { Link } from '../../utility/Link'
 
 import styles from './navigation.module.css'
 
-import { Menu } from '../../../img/menu.inline'
-import { Close } from '../../../img/close.inline'
+import { Menu } from '../../../img/menu'
+import { Close } from '../../../img/close'
 
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
@@ -77,9 +77,10 @@ export default class Nav extends Component<NavProps, State> {
             <div className={'visually-hidden'}>Close</div>
           </span>
           <ul className={styles.navigation}>
-            {navItems.map((item, index) => (
-              <NavItem key={index} link={item.link} text={item.text} />
-            ))}
+            {navItems &&
+              navItems.map((item, index) => (
+                <NavItem key={index} link={item.link} text={item.text} />
+              ))}
           </ul>
         </div>
       </nav>

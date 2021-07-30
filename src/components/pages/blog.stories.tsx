@@ -4,9 +4,9 @@ import { Story } from '@storybook/react'
 import { WithSidebar, WithSidebarProps } from '../templates/WithSidebar'
 import { navItems } from '../data/navigation'
 import { BackLink } from '../atoms/BackLink/BackLink'
-import Signup from '../organisms/signup/signup'
 import { PageMeta, PageMetaProps } from '../molecules/PageMeta/PageMeta'
 import { AuthorInfo, AuthorInfoProps } from '../molecules/AuthorInfo/AuthorInfo'
+import { Signup } from '../molecules/Signup/Signup'
 
 export default {
   title: 'Pages/Blogs',
