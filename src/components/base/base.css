@@ -94,6 +94,7 @@ img {
 
 a {
   color: currentColor;
+  text-underline-offset: 0.3rem;
 }
 
 h1,

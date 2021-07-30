@@ -1,5 +1,9 @@
 .richText {
-  position: relative;
+  letter-spacing: -0.2px;
+}
+
+.richText a {
+  font-weight: 500;
 }
 
 .richText h2 {
