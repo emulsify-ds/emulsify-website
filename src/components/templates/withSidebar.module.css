@@ -6,7 +6,8 @@
      need to account for that here. */
   max-width: calc(112rem + calc(var(--space-band-horizontal) * 2));
   margin: 0 auto;
-  padding: var(--space-l) var(--space-band-horizontal);
+  padding: calc(var(--space-band-vertical) / 2) var(--space-band-horizontal)
+    calc(var(--space-band-vertical) * 2);
 }
 
 @media only screen and (min-width: 750px) {

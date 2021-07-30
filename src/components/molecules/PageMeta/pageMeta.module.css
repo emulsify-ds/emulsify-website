@@ -1,5 +1,5 @@
 .pageMeta {
-  margin-bottom: var(--space-l);
+  margin-bottom: var(--space-xl);
 }
 
 .pageMeta > *:not(:last-child) {
