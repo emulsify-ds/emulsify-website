@@ -10,3 +10,12 @@
 .richText * ~ h2 {
   margin-top: var(--space-xl);
 }
+
+.richText h3 {
+  font-size: var(--font-scale-1);
+  margin-bottom: var(--space-l);
+}
+
+.richText * ~ h3 {
+  margin-top: var(--space-xl);
+}
