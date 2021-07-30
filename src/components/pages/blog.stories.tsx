@@ -8,6 +8,8 @@ import { PageMeta, PageMetaProps } from '../molecules/PageMeta/PageMeta'
 import { AuthorInfo, AuthorInfoProps } from '../molecules/AuthorInfo/AuthorInfo'
 import { Signup } from '../molecules/Signup/Signup'
 
+import { blogText } from '../data/blog'
+
 export default {
   title: 'Pages/Blogs',
   parameters: {
@@ -80,6 +82,7 @@ export const IndividualBlog: Story<HomepageProps> = ({
       <PageMeta heading={pageTitle} text={pageSubtitle}>
         <AuthorInfo image={image} name={name} date={date} />
       </PageMeta>
+      {blogText}
     </WithSidebar>
   )
 }

@@ -41,6 +41,11 @@ class BlogPostTemplate extends React.Component<PageProps> {
             date={post.publishDate}
           />
         </PageMeta>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: post.body.childMarkdownRemark.html,
+          }}
+        />
         {/* <div style={{ background: '#fff' }}>
         <div className="wrapper"> */
         /* <div className={styles.meta}> */}
@@ -53,11 +58,7 @@ class BlogPostTemplate extends React.Component<PageProps> {
               {post.publishDate}
             </p>
           </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: post.body.childMarkdownRemark.html,
-            }}
-          />
+
           <Share page_url={currentUrl} title={post.title} />
           <br />
           <Link className="button" to="/blog">
