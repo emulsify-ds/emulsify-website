@@ -1,7 +1,6 @@
 .band {
   position: relative;
-  padding: clamp(var(--space-xl), 7vw, var(--space-3xl))
-    clamp(var(--space-l), 4.44vw, var(--space-2xl));
+  padding: var(--space-band-vertical) var(--space-band-horizontal);
 }
 
 /* Color variations */

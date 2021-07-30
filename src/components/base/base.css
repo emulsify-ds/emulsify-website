@@ -17,6 +17,8 @@
   --space-2xl: 8rem;
   --space-3xl: 10rem;
   --space-4xl: 15rem;
+  --space-band-vertical: clamp(var(--space-xl), 7vw, var(--space-3xl));
+  --space-band-horizontal: clamp(var(--space-l), 4.44vw, var(--space-2xl));
 
   /* Typography */
   --font-scale-5: 3rem;
@@ -125,15 +127,19 @@ h5 {
 }
 
 blockquote {
-  border-left: 2px solid #eee;
-  font-style: italic;
-  padding-left: 1rem;
-  margin: 0;
+  font-size: var(--font-scale-2);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: var(--c-blue-gray);
+  margin: 0 0 0 var(--space-band-horizontal);
+  padding: 0;
+  max-width: 45ch;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 750px) {
   blockquote {
-    padding-left: 2rem;
+    margin-left: calc(var(--space-band-horizontal) * -0.33);
   }
 }
 

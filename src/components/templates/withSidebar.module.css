@@ -1,9 +1,12 @@
 .mainContent {
   display: grid;
   gap: var(--space-l);
-  max-width: 120rem;
+
+  /* Desired content max-width is 112rem. Since we're adding padding below, we
+     need to account for that here. */
+  max-width: calc(112rem + calc(var(--space-band-horizontal) * 2));
   margin: 0 auto;
-  padding: var(--space-l);
+  padding: var(--space-l) var(--space-band-horizontal);
 }
 
 @media only screen and (min-width: 750px) {
