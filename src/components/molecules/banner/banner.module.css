@@ -1,7 +1,7 @@
 .banner {
   background-color: #06425c;
   color: #d1dade;
-  font-size: var(--font-scale--1);
+  font-size: var(--font-scale--2);
   line-height: 1.4;
   padding: 1rem 2rem 1.2rem;
 }
