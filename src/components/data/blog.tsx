@@ -76,6 +76,9 @@ export const blogText = (
       advanced, site-building has grown more accessible through “codeless”
       development within the Drupal UI.
     </p>
+    <p>
+      <img src="https://picsum.photos/900/506" alt="Example Image" />
+    </p>
     <h2>
       No-Code Software Plays a Critical Role in Modern Website Development
     </h2>
