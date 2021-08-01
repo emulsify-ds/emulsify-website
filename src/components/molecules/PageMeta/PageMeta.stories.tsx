@@ -33,7 +33,13 @@ export default {
       },
       defaultValue: 'January 27, 2021',
     },
-    withImage: {
+    withAuthorImage: {
+      control: {
+        type: 'boolean',
+      },
+      defaultValue: true,
+    },
+    withHeroImage: {
       control: {
         type: 'boolean',
       },
@@ -43,21 +49,29 @@ export default {
 }
 
 type PageMetaStoryProps = PageMetaProps &
-  AuthorInfoProps & { withImage: boolean }
+  AuthorInfoProps & {
+    withAuthorImage: boolean
+    withHeroImage: boolean
+  }
 
 export const pageMeta: Story<PageMetaStoryProps> = ({
   heading,
   text,
   name,
   date,
-  withImage,
+  withAuthorImage,
+  withHeroImage,
 }) => {
   let image = null
-  if (withImage === true) {
+  let heroImage = null
+  if (withAuthorImage === true) {
     image = <img src="https://picsum.photos/90" alt="example image" />
   }
+  if (withHeroImage === true) {
+    heroImage = <img src="https://picsum.photos/1200/720" alt="example image" />
+  }
   return (
-    <PageMeta heading={heading} text={text}>
+    <PageMeta heading={heading} text={text} heroImage={heroImage}>
       <AuthorInfo image={image} name={name} date={date} />
     </PageMeta>
   )
