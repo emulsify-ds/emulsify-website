@@ -54,6 +54,12 @@ export default {
       },
       defaultValue: true,
     },
+    withHeroImage: {
+      control: {
+        type: 'boolean',
+      },
+      defaultValue: true,
+    },
   },
 }
 
@@ -63,6 +69,7 @@ type HomepageProps = WithSidebarProps &
     pageTitle: string
     pageSubtitle: string
     withAuthorImage: boolean
+    withHeroImage: boolean
   }
 
 export const IndividualBlog: Story<HomepageProps> = ({
@@ -70,17 +77,22 @@ export const IndividualBlog: Story<HomepageProps> = ({
   pageSubtitle,
   location,
   withAuthorImage,
+  withHeroImage,
   name,
   date,
 }) => {
   let image = null
+  let heroImage = null
   if (withAuthorImage === true) {
     image = <img src="https://picsum.photos/90" alt="example image" />
+  }
+  if (withHeroImage === true) {
+    heroImage = <img src="https://picsum.photos/1200/720" alt="example image" />
   }
   return (
     <WithSidebar location={location} navItems={navItems} sidebar={<Signup />}>
       <BackLink url="#" text="view all blog posts" />
-      <PageMeta heading={pageTitle} text={pageSubtitle}>
+      <PageMeta heading={pageTitle} text={pageSubtitle} heroImage={heroImage}>
         <AuthorInfo image={image} name={name} date={date} />
       </PageMeta>
       <RichText>{blogText}</RichText>
