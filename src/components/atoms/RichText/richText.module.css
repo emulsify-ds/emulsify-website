@@ -23,3 +23,14 @@
 .richText * ~ h3 {
   margin-top: var(--space-xl);
 }
+
+.richText img {
+  margin: var(--space-margin-overflow);
+  max-width: calc(100% + calc(var(--space-band-horizontal) * 2));
+}
+
+@media only screen and (min-width: 750px) {
+  .richText img {
+    max-width: calc(100% + calc(var(--space-band-horizontal) / 1.5));
+  }
+}

@@ -33,7 +33,13 @@ class BlogPostTemplate extends React.Component<PageProps> {
       <WithSidebar location={this.props.location} sidebar={<Signup />}>
         <SEO title={post.title} />
         <BackLink url="/blog" text="view all blog posts" />
-        <PageMeta heading={post.title} text={pageMetaText}>
+        <PageMeta
+          heading={post.title}
+          text={pageMetaText}
+          heroImage={
+            <img src={post.heroImage.file.url} alt={post.heroImage.title} />
+          }
+        >
           <AuthorInfo
             image={
               <img src={post.author.photo.file.url} alt={post.author.name} />
@@ -102,6 +108,12 @@ export const pageQuery = graphql`
       body {
         childMarkdownRemark {
           html
+        }
+      }
+      heroImage {
+        title
+        file {
+          url
         }
       }
     }

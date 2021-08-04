@@ -19,6 +19,8 @@
   --space-4xl: 15rem;
   --space-band-vertical: clamp(var(--space-xl), 7vw, var(--space-3xl));
   --space-band-horizontal: clamp(var(--space-l), 4.44vw, var(--space-2xl));
+  --space-margin-overflow: 0 calc(var(--space-band-horizontal) * -1);
+  --space-margin-overflow-inset: 0 var(--space-band-horizontal);
 
   /* Typography */
   --font-scale-5: 3rem;
@@ -35,6 +37,10 @@
 
 @media only screen and (min-width: 750px) {
   :root {
+    /* Spacing */
+    --space-margin-overflow: 0 calc(var(--space-band-horizontal) * -0.33);
+    --space-margin-overflow-inset: var(--space-margin-overflow);
+
     /* Typography */
     --font-scale-5: 4rem;
     --font-scale-4: 3.3rem;
@@ -135,15 +141,9 @@ blockquote {
   line-height: 1.5;
   letter-spacing: -0.24px;
   color: var(--c-blue-gray);
-  margin: 0 0 0 var(--space-band-horizontal);
+  margin: var(--space-margin-overflow-inset);
   padding: 0;
   max-width: 45ch;
-}
-
-@media only screen and (min-width: 750px) {
-  blockquote {
-    margin-left: calc(var(--space-band-horizontal) * -0.33);
-  }
 }
 
 /* Highlighted Content */
