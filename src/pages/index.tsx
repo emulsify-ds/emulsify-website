@@ -23,7 +23,7 @@ class RootIndex extends React.Component<PageProps> {
     const ctas = [
       {
         linkText: 'Watch an Overview',
-        to: 'https://modulesunraveled.wistia.com/medias/nnkn75an3f',
+        to: '/video/emulsify-overview',
         icon: <Video />,
       },
       {

@@ -1,28 +1,48 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React from 'react'
+import React, { FC, useEffect } from 'react'
 
-import Wistia from '../../../hooks/wistia.js'
-
-import Play from '../../../img/play.inline.svg'
+import { Play } from '../../../img/play.inline'
 
 import styles from './video.module.css'
 
-export default () => {
-  Wistia()
+export type VideoProps = {
+  id: string
+  heading?: string
+}
+
+export const Video: FC<VideoProps> = ({ id, heading }) => {
+  useEffect(() => {
+    const script1 = document.createElement('script')
+    const script2 = document.createElement('script')
+
+    script1.src = `https://fast.wistia.com/embed/medias/${id}.jsonp`
+    script1.async = true
+
+    script2.src = 'https://fast.wistia.com/assets/external/E-v1.js'
+    script2.async = true
+
+    document.body.appendChild(script1)
+    document.body.appendChild(script2)
+
+    return () => {
+      document.body.removeChild(script1)
+      document.body.removeChild(script2)
+    }
+  })
+
   return (
     <div className={styles.video}>
-      <h2 className={styles.heading}>
-        <Play className={styles.icon} />
-        Watch Our Emulsify Overview
-      </h2>
+      {heading && (
+        <h2 className={styles.heading}>
+          <Play />
+          {heading}
+        </h2>
+      )}
       <div className="wistia_responsive_padding">
         <div className="wistia_responsive_wrapper">
-          <div className="wistia_embed wistia_async_nnkn75an3f videoFoam=true">
+          <div className={`wistia_embed wistia_async_${id} videoFoam=true`}>
             <div className="wistia_swatch">
               <img
-                src="https://fast.wistia.com/embed/medias/nnkn75an3f/swatch"
+                src={`https://fast.wistia.com/embed/medias/${id}/swatch`}
                 alt=""
                 aria-hidden="true"
               />
@@ -33,4 +53,3 @@ export default () => {
     </div>
   )
 }
-/* eslint-enable */

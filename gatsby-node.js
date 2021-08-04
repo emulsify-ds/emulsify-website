@@ -1,10 +1,10 @@
 /* eslint-disable */
 // TODO: update this file to pass linting
 const Promise = require('bluebird')
-// const path = require('path')
+const path = require('path')
 
 exports.createPages = ({ graphql, actions }) => {
-  // const { createPage } = actions
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     // const pageLayout = path.resolve('./src/templates/page.tsx')
@@ -44,6 +44,15 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   title
                   slug
+                }
+              }
+            }
+            allContentfulVideoEmbed(limit: 1000) {
+              edges {
+                node {
+                  title
+                  slug
+                  videoId
                 }
               }
             }
@@ -91,6 +100,19 @@ exports.createPages = ({ graphql, actions }) => {
         //     },
         //   })
         // })
+
+        // Videos
+        const videos = result.data.allContentfulVideoEmbed.edges
+        // Posts
+        videos.forEach((video) => {
+          createPage({
+            path: `/video/${video.node.slug}/`,
+            component: path.resolve('./src/templates/video-embed.tsx'),
+            context: {
+              slug: video.node.slug,
+            },
+          })
+        })
 
         // Blog Pagination Pages
         // const postsPerPage = 8
