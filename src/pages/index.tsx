@@ -144,7 +144,7 @@ class RootIndex extends React.Component<PageProps> {
                 Emulsify is an open-source project that's free for everyone.
                 Check out the project on{' '}
                 <a href="https://github.com/emulsify-ds">GitHub</a> and join us
-                on <a href="https://launchpass.com/emulsify">Slack</a> for help
+                on <a href="https://launchpass.com/emulsify">Slack</a> for help.
               </p>
             }
           />
