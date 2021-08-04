@@ -9,7 +9,7 @@ import get from 'lodash/get'
 import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
 import { Band } from '../components/molecules/Band/Band'
-import { Video } from '../components/molecules/video/video'
+import { Video } from '../components/molecules/Video/Video'
 
 class VideoEmbedTemplate extends Component<PageProps> {
   render(): ReactNode {

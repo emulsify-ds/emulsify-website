@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story } from '@storybook/react'
 
-import { Video, VideoProps } from './video'
+import { Video, VideoProps } from './Video'
 
 export default {
   title: 'Molecules/Video',
