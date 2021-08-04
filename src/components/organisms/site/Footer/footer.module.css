@@ -31,7 +31,7 @@
 }
 
 .footerTrademark {
-  font-size: var(--font-scale--1);
+  font-size: var(--font-scale--2);
 }
 
 .footerLinks {
@@ -39,7 +39,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  font-size: var(--font-scale--1);
+  font-size: var(--font-scale--2);
 }
 
 @media only screen and (max-width: 749px) {

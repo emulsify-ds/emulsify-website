@@ -13,10 +13,25 @@
 /* Overrides to fix the acton form styles */
 :global(.ao-form-error-message) {
   position: absolute;
+  top: 100%;
 }
 
 :global(.ao-block-wrapper) {
   display: flex;
+}
+
+:global(.ao-form-label) {
+  /* Visually Hidden */
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+:global(.ao-form-label span) {
+  display: none;
 }
 
 :global(.ao-block-wrapper div) {
@@ -29,36 +44,31 @@
   border: 3px solid var(--c-blue-light) !important;
   color: var(--c-white) !important;
   width: 34rem !important;
-}
-
-:global(.ao-form label.ao-form-label) {
-  /* Visually Hidden */
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
+  font-size: var(--font-scale--1);
+  padding: var(--space-l) !important;
 }
 
 :global(.ao-form button.ao-form-submit) {
-  margin: 0;
-  text-transform: none;
   background: var(--c-blue-light) !important;
   padding: var(--space-l) var(--space-xl) !important;
   min-width: 20rem;
-  font-size: var(--font-scale-1);
+  font-size: var(--font-scale-0) !important;
   font-family: inherit !important;
 }
 
 @media only screen and (max-width: 699px) {
-  :global(.ao-form .ao-row .ao-column-inner > *:not(:last-child)) {
+  :global(.ao-column-inner > *:not(:last-child)) {
     margin-bottom: var(--space-l);
   }
 }
 
 @media only screen and (min-width: 700px) {
-  :global(.ao-form .ao-row .ao-column-inner > *:not(:last-child)) {
+  :global(.ao-column-inner) {
+    display: flex;
+    justify-content: center;
+  }
+
+  :global(.ao-column-inner > *:not(:last-child)) {
     margin-right: var(--space-m);
   }
 }

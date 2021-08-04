@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     // const pageLayout = path.resolve('./src/templates/page.tsx')
     // const landingPageLayout = path.resolve('./src/templates/landing-page.tsx')
-    // const blogPost = path.resolve('./src/templates/blog-post.tsx')
+    const blogPost = path.resolve('./src/templates/blog-post.tsx')
     // const caseStudy = path.resolve('./src/templates/case-study.tsx')
     resolve(
       graphql(
@@ -89,17 +89,17 @@ exports.createPages = ({ graphql, actions }) => {
         // })
 
         // Blogs
-        // const posts = result.data.allContentfulBlog.edges
-        // // Posts
-        // posts.forEach((post) => {
-        //   createPage({
-        //     path: `/blog/${post.node.slug}/`,
-        //     component: blogPost,
-        //     context: {
-        //       slug: post.node.slug,
-        //     },
-        //   })
-        // })
+        const posts = result.data.allContentfulBlog.edges
+        // Posts
+        posts.forEach((post) => {
+          createPage({
+            path: `/blog/${post.node.slug}/`,
+            component: blogPost,
+            context: {
+              slug: post.node.slug,
+            },
+          })
+        })
 
         // Videos
         const videos = result.data.allContentfulVideoEmbed.edges
