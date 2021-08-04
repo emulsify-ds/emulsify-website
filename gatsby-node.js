@@ -47,6 +47,15 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            allContentfulVideoEmbed(limit: 1000) {
+              edges {
+                node {
+                  title
+                  slug
+                  videoId
+                }
+              }
+            }
           }
         `
       ).then((result) => {
@@ -88,6 +97,19 @@ exports.createPages = ({ graphql, actions }) => {
             component: blogPost,
             context: {
               slug: post.node.slug,
+            },
+          })
+        })
+
+        // Videos
+        const videos = result.data.allContentfulVideoEmbed.edges
+        // Posts
+        videos.forEach((video) => {
+          createPage({
+            path: `/video/${video.node.slug}/`,
+            component: path.resolve('./src/templates/video-embed.tsx'),
+            context: {
+              slug: video.node.slug,
             },
           })
         })
