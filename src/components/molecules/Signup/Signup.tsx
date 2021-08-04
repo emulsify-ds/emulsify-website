@@ -2,9 +2,9 @@ import React, { FC, useEffect } from 'react'
 import styles from './signup.module.css'
 
 type SignupProps = {
-  actonSignup: HTMLElement | null
-  script: HTMLScriptElement | null
-  id: string
+  actonSignup?: HTMLElement | null
+  script?: HTMLScriptElement | null
+  id?: string
 }
 
 export const Signup: FC<SignupProps> = ({

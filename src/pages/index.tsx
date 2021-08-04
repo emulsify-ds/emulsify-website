@@ -2,7 +2,7 @@
 // This file was converted to .tsx without actually implementing typescript
 // @TODO: update this file to tsx and enable eslint
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { FullWidth } from '../components/templates/FullWidth'
@@ -18,7 +18,7 @@ import { Hr } from '../components/atoms/Hr/Hr'
 import { Signup } from '../components/molecules/Signup/Signup'
 import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
 
-class RootIndex extends React.Component {
+class RootIndex extends React.Component<PageProps> {
   render() {
     const ctas = [
       {
