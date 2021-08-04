@@ -1,12 +1,11 @@
 import React from 'react'
 import { Story } from '@storybook/react'
 
-import { Cta, CtaProps } from './Cta'
+import { Cta, CtaProps } from './Cta/Cta'
 import { Play } from '../../../img/play.inline'
 
 export default {
-  title: 'Molecules/Cta',
-  component: 'Cta',
+  title: 'Molecules/Ctas',
   argTypes: {
     linkText: {
       control: {
