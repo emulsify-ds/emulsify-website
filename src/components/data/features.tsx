@@ -2,7 +2,7 @@ import React from 'react'
 
 export const featuresData = [
   {
-    heading: 'Technology & Design Leaders',
+    heading: 'Technology and Design Leaders',
     children: (
       <>
         <p>
@@ -34,8 +34,8 @@ export const featuresData = [
           Automate testing to simplify prototyping and reduce development time
         </p>
         <p>
-          Encourage reuse across all properties to reduce errors, development
-          and maintenance efforts
+          Encourage reuse across all properties to reduce errors and maintenance
+          efforts
         </p>
         <p>
           Maintain flexibility with support for multiple development languages
