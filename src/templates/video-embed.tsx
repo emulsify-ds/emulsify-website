@@ -18,7 +18,7 @@ class VideoEmbedTemplate extends Component<PageProps> {
     return (
       <FullWidth location={this.props.location}>
         <SEO title={post.title} />
-        <Band>
+        <Band size="large">
           <Video id={post.videoId} heading={post.videoHeading} />
         </Band>
       </FullWidth>
