@@ -1,51 +1,59 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import React, { FC, Component, ReactNode } from 'react'
+import { Link } from '../../utility/Link'
 
 import styles from './navigation.module.css'
 
-import Menu from '../../../img/menu.inline.svg'
-import Close from '../../../img/close.inline.svg'
-import Down from '../../../img/down.inline.svg'
+import { Menu } from '../../../img/menu'
+import { Close } from '../../../img/close'
 
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-export default class Nav extends Component {
-  state = {
+type NavItemProps = {
+  link: string
+  text: string
+}
+
+const NavItem: FC<NavItemProps> = ({ link, text }) => (
+  <li className={styles.navigationItem}>
+    <Link
+      className={styles.navlink}
+      activeClassName={styles.navLinkActive}
+      to={link}
+    >
+      {text}
+    </Link>
+  </li>
+)
+
+export type NavProps = {
+  navItems?: NavItemProps[]
+}
+
+type State = {
+  revealed: boolean
+  nextShown: boolean
+}
+
+export default class Nav extends Component<NavProps, State> {
+  readonly state = {
     revealed: false,
     nextShown: false,
   }
 
-  reveal = (e) => {
-    e.preventDefault()
+  reveal: React.MouseEventHandler<HTMLSpanElement> = () => {
     this.setState((prevState) => ({
       revealed: !prevState.revealed,
     }))
   }
 
-  showNext = (e) => {
-    e.currentTarget.nextElementSibling.classList.toggle(cx('subNavOpen'))
-  }
+  render(): ReactNode {
+    const { navItems } = this.props
 
-  render() {
-    const { light } = this.props
-    const navLinkClasses = cx({
-      navlink: true,
-      navlinkHome: light,
-    })
-
-    const toggleOpenClasses = cx({
-      toggleOpen: true,
-      closed: this.state.revealed === true,
-    })
-
-    const toggleCloseClasses = cx({
-      toggleClose: true,
-      open: this.state.revealed === true,
-    })
+    const toggleOpenClasses = classNames(
+      { [styles.toggleOpen]: true },
+      { [styles.open]: this.state.revealed === true }
+    )
 
     const mainNavClasses = cx({
       mainNav: true,
@@ -54,63 +62,28 @@ export default class Nav extends Component {
 
     return (
       <nav role="navigation" className={styles.nav}>
+        {/* Menu Toggle */}
         <button className={styles.toggle}>
-          <span className={toggleOpenClasses}>
-            <Menu onClick={this.reveal} />
-            <div className={styles.toggleText}>Menu</div>
+          <span className={toggleOpenClasses} onClick={this.reveal}>
+            <Menu />
+            <div className={'visually-hidden'}>Menu</div>
           </span>
         </button>
+        {/* Main Menu */}
         <div className={mainNavClasses}>
-          <span className={styles.mobileNavClose}>
-            <Close onClick={this.reveal} />
-            <div className={styles.toggleText}>Close</div>
+          {/* Close Toggle */}
+          <span className={styles.mobileNavClose} onClick={this.reveal}>
+            <Close />
+            <div className={'visually-hidden'}>Close</div>
           </span>
           <ul className={styles.navigation}>
-            {!light && (
-              <li className={styles.navigationItem}>
-                <Link className={navLinkClasses} to="/">
-                  Home
-                </Link>
-              </li>
-            )}
-            <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/developers/">
-                Developers
-              </Link>
-            </li>
-            <li className={styles.navigationItem}>
-              <Link className={navLinkClasses} to="/other-stuff/">
-                Other Stuff
-              </Link>
-              <span
-                className={styles.expandSub}
-                onClick={(e) => this.showNext(e)}
-              >
-                <Down />
-              </span>
-              <ul className={styles.subNav}>
-                <li>
-                  <Link
-                    className={navLinkClasses}
-                    to="/other-stuff/other-stuff-child/"
-                  >
-                    Child
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={navLinkClasses}
-                    to="/other-stuff/other-stuff-child-2/"
-                  >
-                    Child 2
-                  </Link>
-                </li>
-              </ul>
-            </li>
+            {navItems &&
+              navItems.map((item, index) => (
+                <NavItem key={index} link={item.link} text={item.text} />
+              ))}
           </ul>
         </div>
       </nav>
     )
   }
 }
-/* eslint-enable */

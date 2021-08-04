@@ -1,0 +1,12 @@
+.backLink {
+  font-size: var(--font-scale--1);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.backLink svg {
+  transform: rotate(180deg);
+  width: 1.3rem;
+  margin-right: var(--space-s);
+}
