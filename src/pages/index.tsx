@@ -35,7 +35,7 @@ class RootIndex extends React.Component<PageProps> {
 
     const featuresData = [
       {
-        heading: 'Technology & Design Leaders',
+        heading: 'Technology and Design Leaders',
         children: (
           <>
             <p>
@@ -70,8 +70,8 @@ class RootIndex extends React.Component<PageProps> {
               time
             </p>
             <p>
-              Encourage reuse across all properties to reduce errors,
-              development and maintenance efforts
+              Encourage reuse across all properties to reduce errors and
+              maintenance efforts
             </p>
             <p>
               Maintain flexibility with support for multiple development
@@ -141,7 +141,7 @@ class RootIndex extends React.Component<PageProps> {
             heading="Emulsify is open source, built using well-supported technologies developers love."
             text={
               <p>
-                Emulsify is an open source project that's free for everyone.
+                Emulsify is an open-source project that's free for everyone.
                 Check out the project on{' '}
                 <a href="https://github.com/emulsify-ds">GitHub</a> and join us
                 on <a href="https://launchpass.com/emulsify">Slack</a> for help
