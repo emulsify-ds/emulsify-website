@@ -1,5 +1,5 @@
 .pageMeta {
-  position: relative;
+  margin-bottom: var(--space-xl);
 }
 
 .pageMeta > *:not(:last-child) {
@@ -15,4 +15,8 @@
   line-height: 1.5;
   letter-spacing: -0.24px;
   color: var(--c-blue-gray);
+}
+
+.pageMetaText *:last-child {
+  margin-bottom: 0;
 }

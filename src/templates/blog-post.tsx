@@ -14,6 +14,7 @@ import { Signup } from '../components/molecules/Signup/Signup'
 import { BackLink } from '../components/atoms/BackLink/BackLink'
 import { PageMeta } from '../components/molecules/PageMeta/PageMeta'
 import { AuthorInfo } from '../components/molecules/AuthorInfo/AuthorInfo'
+import { RichText } from '../components/atoms/RichText/RichText'
 
 class BlogPostTemplate extends React.Component<PageProps> {
   render(): ReactNode {
@@ -41,6 +42,13 @@ class BlogPostTemplate extends React.Component<PageProps> {
             date={post.publishDate}
           />
         </PageMeta>
+        <RichText>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: post.body.childMarkdownRemark.html,
+            }}
+          />
+        </RichText>
         {/* <div style={{ background: '#fff' }}>
         <div className="wrapper"> */
         /* <div className={styles.meta}> */}
@@ -53,11 +61,7 @@ class BlogPostTemplate extends React.Component<PageProps> {
               {post.publishDate}
             </p>
           </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: post.body.childMarkdownRemark.html,
-            }}
-          />
+
           <Share page_url={currentUrl} title={post.title} />
           <br />
           <Link className="button" to="/blog">
