@@ -57,6 +57,7 @@ export const preFooter: Story<PreFooterProps> = ({
   <PreFooter
     teaserLabel={teaserLabel}
     teaserHeading={teaserHeading}
+    teaserLinkUrl="#"
     teaserText={teaserText}
     teaserLinkText={teaserLinkText}
     teaserHeroImage={blogHeroImage}
