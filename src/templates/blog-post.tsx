@@ -15,6 +15,9 @@ import { BackLink } from '../components/atoms/BackLink/BackLink'
 import { PageMeta } from '../components/molecules/PageMeta/PageMeta'
 import { AuthorInfo } from '../components/molecules/AuthorInfo/AuthorInfo'
 import { RichText } from '../components/atoms/RichText/RichText'
+import { ContentCta } from '../components/molecules/Ctas/ContentCta/ContentCta'
+
+import { Video } from '../img/video'
 
 class BlogPostTemplate extends React.Component<PageProps> {
   render(): ReactNode {
@@ -55,6 +58,13 @@ class BlogPostTemplate extends React.Component<PageProps> {
             }}
           />
         </RichText>
+        <ContentCta
+          heading="Emulsify is an open-source project that's free for everyone."
+          linkText="Watch an Overview"
+          to="/video/emulsify-overview"
+          icon={<Video />}
+        />
+
         {/* <div style={{ background: '#fff' }}>
         <div className="wrapper"> */
         /* <div className={styles.meta}> */}
