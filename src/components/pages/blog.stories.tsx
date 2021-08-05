@@ -8,6 +8,9 @@ import { PageMeta, PageMetaProps } from '../molecules/PageMeta/PageMeta'
 import { AuthorInfo, AuthorInfoProps } from '../molecules/AuthorInfo/AuthorInfo'
 import { Signup } from '../molecules/Signup/Signup'
 import { RichText } from '../atoms/RichText/RichText'
+import { ContentCta } from '../molecules/Ctas/ContentCta/ContentCta'
+
+import { Video } from '../../img/video'
 
 import { blogText } from '../data/blog'
 
@@ -60,6 +63,19 @@ export default {
       },
       defaultValue: true,
     },
+    contentCtaHeading: {
+      control: {
+        type: 'text',
+      },
+      defaultValue:
+        "Emulsify is an open-source project that's free for everyone.",
+    },
+    contentCtaLinkText: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: 'Watch an Overview',
+    },
   },
 }
 
@@ -70,6 +86,8 @@ type HomepageProps = WithSidebarProps &
     pageSubtitle: string
     withAuthorImage: boolean
     withHeroImage: boolean
+    contentCtaHeading: string
+    contentCtaLinkText: string
   }
 
 export const IndividualBlog: Story<HomepageProps> = ({
@@ -80,6 +98,8 @@ export const IndividualBlog: Story<HomepageProps> = ({
   withHeroImage,
   name,
   date,
+  contentCtaHeading,
+  contentCtaLinkText,
 }) => {
   let image = null
   let heroImage = null
@@ -96,6 +116,12 @@ export const IndividualBlog: Story<HomepageProps> = ({
         <AuthorInfo image={image} name={name} date={date} />
       </PageMeta>
       <RichText>{blogText}</RichText>
+      <ContentCta
+        heading={contentCtaHeading}
+        linkText={contentCtaLinkText}
+        to="#"
+        icon={<Video />}
+      />
     </WithSidebar>
   )
 }

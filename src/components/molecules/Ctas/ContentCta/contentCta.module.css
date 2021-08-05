@@ -1,10 +1,11 @@
 .contentCta {
   border-top: 6px dotted var(--c-subtle);
+  margin-top: var(--space-2xl);
   padding-top: var(--space-l);
   font-weight: bold;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 1024px) {
   .contentCta {
     display: flex;
     align-items: center;
@@ -19,7 +20,7 @@
   font-size: var(--font-scale-2);
 }
 
-@media only screen and (max-width: 749px) {
+@media only screen and (max-width: 1023px) {
   .contentCtaHeading {
     margin-bottom: var(--space-l);
   }
@@ -35,9 +36,10 @@
   text-decoration: none;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 1024px) {
   .contentCtaLink {
     white-space: nowrap;
+    margin-left: var(--space-xl);
   }
 }
 
