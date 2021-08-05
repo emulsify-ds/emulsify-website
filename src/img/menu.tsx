@@ -9,7 +9,7 @@ export const Menu: React.FC = () => (
     viewBox="0 0 100 100"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g fill-rule="evenodd">
+    <g fillRule="evenodd">
       <path d="m100 0h-100v23.172h100z" />
       <path d="m100 76.828h-100v23.172h100z" />
       <path d="m100 39.023h-100v23.172h100z" />

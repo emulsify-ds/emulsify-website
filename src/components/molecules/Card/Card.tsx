@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import { Link } from 'gatsby'
+import { Link } from '../../utility/Link'
 
 import styles from './card.module.css'
 
