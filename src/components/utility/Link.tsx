@@ -12,6 +12,7 @@ export type LinkProps = {
   partiallyActive?: boolean
   tabIndex?: number
   ariaHidden?: boolean
+  ariaLabelledby?: string
 }
 
 // Since DOM elements <a> cannot receive activeClassName and partiallyActive,
@@ -24,6 +25,7 @@ export const Link: FC<LinkProps> = ({
   partiallyActive,
   tabIndex,
   ariaHidden,
+  ariaLabelledby,
 }) => {
   // Tailor the following test to your environment. This example assumes that
   // any internal link(intended for Gatsby) will start with exactly one slash,
@@ -40,6 +42,7 @@ export const Link: FC<LinkProps> = ({
         tabIndex={tabIndex}
         to={to}
         aria-hidden={ariaHidden}
+        aria-labelledby={ariaLabelledby}
       >
         {children}
       </GatsbyLink>
@@ -50,6 +53,7 @@ export const Link: FC<LinkProps> = ({
       className={className}
       tabIndex={tabIndex}
       aria-hidden={ariaHidden}
+      aria-labelledby={ariaLabelledby}
       href={to}
     >
       {children}

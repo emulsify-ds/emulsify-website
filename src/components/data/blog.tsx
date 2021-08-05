@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const blogLabel = 'From the Blog'
+
 export const blogHeading = 'Why Developers Shouldn’t Fear a No-Code Interface'
 
 export const blogTeaser =
