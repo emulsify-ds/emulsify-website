@@ -46,12 +46,12 @@
 :global(.ao-form input) {
   background: transparent;
   border: 3px solid var(--c-blue-light) !important;
-  color: var(--c-white) !important;
   font-size: var(--font-scale--1);
   padding: var(--space-l) !important;
 }
 
 :global([data-signup-variation='content'] .ao-form input) {
+  color: var(--c-white) !important;
   width: 34rem !important;
 }
 

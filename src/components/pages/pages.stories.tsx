@@ -135,7 +135,7 @@ export const Homepage: Story<HomepageProps> = ({
             Emulsify is an open-source project that's free for everyone. Check
             out the project on{' '}
             <a href="https://github.com/emulsify-ds">GitHub</a> and join us on{' '}
-            <a href="https://launchpass.com/emulsify">Slack</a> for help
+            <a href="https://launchpass.com/emulsify">Slack</a> for help.
           </p>
         }
       />
