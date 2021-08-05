@@ -13,6 +13,7 @@ import { ContentCta } from '../molecules/Ctas/ContentCta/ContentCta'
 import { Video } from '../../img/video'
 
 import { blogText } from '../data/blog'
+import { ActonForm } from '../data/actonForm'
 
 export default {
   title: 'Pages/Blogs',
@@ -110,7 +111,15 @@ export const IndividualBlog: Story<HomepageProps> = ({
     heroImage = <img src="https://picsum.photos/1200/720" alt="example image" />
   }
   return (
-    <WithSidebar location={location} navItems={navItems} sidebar={<Signup />}>
+    <WithSidebar
+      location={location}
+      navItems={navItems}
+      sidebar={
+        <Signup variation="sidebar">
+          <ActonForm />
+        </Signup>
+      }
+    >
       <BackLink url="#" text="view all blog posts" />
       <PageMeta heading={pageTitle} text={pageSubtitle} heroImage={heroImage}>
         <AuthorInfo image={image} name={name} date={date} />

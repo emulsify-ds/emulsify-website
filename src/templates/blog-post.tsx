@@ -33,7 +33,10 @@ class BlogPostTemplate extends React.Component<PageProps> {
     )
 
     return (
-      <WithSidebar location={this.props.location} sidebar={<Signup />}>
+      <WithSidebar
+        location={this.props.location}
+        sidebar={<Signup variation="sidebar" />}
+      >
         <SEO title={post.title} />
         <BackLink url="/blog" text="view all blog posts" />
         <PageMeta
