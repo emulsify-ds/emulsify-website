@@ -9,11 +9,10 @@ import { Features } from '../organisms/Features/Features'
 import { Hr } from '../atoms/Hr/Hr'
 import { Signup } from '../molecules/Signup/Signup'
 import { Teaser } from '../molecules/Teaser/Teaser'
+import { CardGrid } from '../organisms/CardGrid/CardGrid'
 
 import { ctas } from '../data/ctas'
 import { featuresData } from '../data/features'
-import { CardGrid } from '../organisms/CardGrid/CardGrid'
-
 import { cards } from '../data/cards'
 import { navItems } from '../data/navigation'
 import { ActonForm } from '../data/actonForm'
