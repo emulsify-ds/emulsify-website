@@ -39,7 +39,12 @@ export const Teaser: FC<TeaserProps> = ({
             </h3>
           </Link>
         )}
-        <p className={styles.teaserText}>{text}</p>
+        <div
+          className={styles.teaserText}
+          dangerouslySetInnerHTML={{
+            __html: text,
+          }}
+        />
         {linkText && (
           <Link
             className={styles.teaserLinkText}

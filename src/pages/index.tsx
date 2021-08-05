@@ -4,10 +4,10 @@
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import Img from 'gatsby-image'
+import get from 'lodash/get'
 
 import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
-
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
 import { Video } from '../img/video'
 import { Screwdriver } from '../img/screwdriver'
@@ -17,6 +17,7 @@ import { Features } from '../components/organisms/Features/Features'
 import { Hr } from '../components/atoms/Hr/Hr'
 import { Signup } from '../components/molecules/Signup/Signup'
 import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
+import { PreFooter } from '../components/organisms/site/PreFooter/PreFooter'
 
 class RootIndex extends React.Component<PageProps> {
   render() {
@@ -109,6 +110,9 @@ class RootIndex extends React.Component<PageProps> {
       },
     ]
 
+    const posts = get(this, 'props.data.allContentfulBlog.edges')
+    const teaser = posts[0]?.node
+
     return (
       <FullWidth
         location={this.props.location}
@@ -136,7 +140,16 @@ class RootIndex extends React.Component<PageProps> {
           <Hr />
           <Signup />
         </Band>
-        <Band size="medium">
+        <PreFooter
+          teaserLabel="From the Blog"
+          teaserHeading={teaser.title}
+          teaserText={teaser.description.childMarkdownRemark.html}
+          teaserLinkText={teaser.moreLinkText}
+          teaserLinkUrl={`${teaser.sys.contentType.sys.id}/${teaser.slug}`}
+          teaserHeroImage={
+            <img src={teaser.heroImage.file.url} alt={teaser.heroImage.title} />
+          }
+        >
           <Callout
             heading="Emulsify is open source, built using well-supported technologies developers love."
             text={
@@ -149,55 +162,7 @@ class RootIndex extends React.Component<PageProps> {
             }
           />
           <CardGrid cards={cards} />
-        </Band>
-        {/*
-        <Signup />
-        <div className={styles.os}>
-          <div className="wrapper">
-            <Card
-              imageFluid={this.props.data.connector.childImageSharp.fluid}
-              specialTitle="Emulsify is"
-              specialSubTitle="Open Source"
-              text="Emulsify is an open source project that’s free for everyone. Check out the project on GitHub and visit our support page for help."
-            />
-          </div>
-        </div>
-        <div className={styles.demo}>
-          <Card
-            imageClass="demoImage"
-            imageFluid={this.props.data.westernu.childImageSharp.fluid}
-            title="Explore the Demo"
-            text="Western University of Pennsylvania is a fictional university to show how Emulsify can be used to manage the design system for a school and all of its departments."
-            linkUrl="/demo"
-            buttonText="University Demo"
-          />
-        </div>
-        <div className={styles.tech}>
-          <div className="wrapper">
-            <h2 className={styles.techHeading}>
-              Built Using Well-supported Technologies Developers Love
-            </h2>
-            <div className={styles.techItems}>
-              <div className={styles.techItem}>
-                <Img
-                  className={styles.techItemImage}
-                  fluid={this.props.data.storybook.childImageSharp.fluid}
-                />
-                <p>Develop UI components with support for React and Twig</p>
-              </div>
-              <div className={styles.techItem}>
-                <Img
-                  className={styles.techItemImage}
-                  fluid={this.props.data.gatsby.childImageSharp.fluid}
-                />
-                <p>
-                  Deploy your style guide documentation as a blazing fast static
-                  site
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        </PreFooter>
       </FullWidth>
     )
   }
@@ -206,7 +171,7 @@ class RootIndex extends React.Component<PageProps> {
 export default RootIndex
 
 export const query = graphql`
-  query HomePageQuery {
+  query HomePageQuery($limit: Int! = 1) {
     unify: file(relativePath: { eq: "unify.png" }) {
       childImageSharp {
         fluid(maxWidth: 580) {
@@ -232,6 +197,37 @@ export const query = graphql`
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    allContentfulBlog(
+      sort: { fields: [publishDate], order: DESC }
+      limit: $limit
+    ) {
+      edges {
+        node {
+          title
+          slug
+          publishDate(formatString: "MMMM Do, YYYY")
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          heroImage {
+            id
+            file {
+              url
+            }
+          }
+          moreLinkText
+          sys {
+            contentType {
+              sys {
+                id
+              }
+            }
+          }
         }
       }
     }

@@ -9,16 +9,18 @@ export type PreFooterProps = BandProps & {
   teaserLabel: string
   teaserHeading: string
   teaserText: string
+  teaserLinkUrl: string
   teaserLinkText: string
   teaserHeroImage: ReactNode
 }
 
 export const PreFooter: FC<PreFooterProps> = ({
-  size = 'large',
+  size = 'medium',
   children,
   teaserLabel,
   teaserHeading,
   teaserText,
+  teaserLinkUrl,
   teaserLinkText,
   teaserHeroImage,
 }) => (
@@ -30,7 +32,7 @@ export const PreFooter: FC<PreFooterProps> = ({
           label={teaserLabel}
           heading={teaserHeading}
           text={teaserText}
-          linkUrl="#"
+          linkUrl={teaserLinkUrl}
           linkText={teaserLinkText}
           image={teaserHeroImage}
         />

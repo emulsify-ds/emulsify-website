@@ -5,7 +5,7 @@ export const blogLabel = 'From the Blog'
 export const blogHeading = 'Why Developers Shouldn’t Fear a No-Code Interface'
 
 export const blogTeaser =
-  'For those of you who manage digital projects, your world centers upon change. From deploying new versions of website platforms to navigating all manner of software updates, the fast pace of the technology industry requires (and rewards) persistent upending of the status quo.'
+  '<p>For those of you who manage digital projects, your world centers upon change. From deploying new versions of website platforms to navigating all manner of software updates, the fast pace of the technology industry requires (and rewards) persistent upending of the status quo.</p>'
 
 export const blogHeroImage = (
   <img src="https://picsum.photos/1200/720" alt="example image" />
