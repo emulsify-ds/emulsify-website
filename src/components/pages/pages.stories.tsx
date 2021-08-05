@@ -8,7 +8,6 @@ import { Callout } from '../molecules/Callout/Callout'
 import { Features } from '../organisms/Features/Features'
 import { Hr } from '../atoms/Hr/Hr'
 import { Signup } from '../molecules/Signup/Signup'
-import { Teaser } from '../molecules/Teaser/Teaser'
 import { CardGrid } from '../organisms/CardGrid/CardGrid'
 import {
   PreFooter,
@@ -124,6 +123,7 @@ export const Homepage: Story<HomepageProps> = ({
     <PreFooter
       teaserLabel={teaserLabel}
       teaserHeading={teaserHeading}
+      teaserLinkUrl="#"
       teaserText={teaserText}
       teaserLinkText={teaserLinkText}
       teaserHeroImage={blogHeroImage}
