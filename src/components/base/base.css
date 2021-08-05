@@ -9,6 +9,9 @@
   --c-white: #fff;
   --c-heading: inherit;
 
+  /* Color Usage definitions */
+  --c-subtle: var(--c-blue-gray);
+
   /* Spacing */
   --space-s: 0.5rem;
   --space-m: 1rem;
@@ -61,7 +64,7 @@
     --font-scale-4: 4.2rem;
     --font-scale-3: 3.2rem;
     --font-scale-2: 2.4rem;
-    --font-scale-1: 1.1rem;
+    --font-scale-1: 2.1rem;
     --font-scale-0: 2rem;
     --font-scale--1: 1.8rem;
     --font-scale--2: 1.5rem;

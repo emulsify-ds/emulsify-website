@@ -1,6 +1,6 @@
 .mainContent {
   display: grid;
-  gap: var(--space-l);
+  gap: var(--space-2xl);
 
   /* Desired content max-width is 112rem. Since we're adding padding below, we
      need to account for that here. */

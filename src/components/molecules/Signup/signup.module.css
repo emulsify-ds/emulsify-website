@@ -5,7 +5,7 @@
 }
 
 @media only screen and (min-width: 750px) {
-  .signupHeading {
+  [data-signup-variation='content'] .signupHeading {
     text-align: center;
   }
 }
@@ -30,6 +30,10 @@
   word-wrap: normal;
 }
 
+:global(.ao-input-block) {
+  width: 100%;
+}
+
 :global(.ao-form-label span) {
   display: none;
 }
@@ -42,10 +46,13 @@
 :global(.ao-form input) {
   background: transparent;
   border: 3px solid var(--c-blue-light) !important;
-  color: var(--c-white) !important;
-  width: 34rem !important;
   font-size: var(--font-scale--1);
   padding: var(--space-l) !important;
+}
+
+:global([data-signup-variation='content'] .ao-form input) {
+  color: var(--c-white) !important;
+  width: 34rem !important;
 }
 
 :global(.ao-form button.ao-form-submit) {
@@ -56,19 +63,29 @@
   font-family: inherit !important;
 }
 
+:global([data-signup-variation='sidebar']
+    .ao-column-inner
+    > *:not(:last-child)) {
+  margin-bottom: var(--space-l);
+}
+
 @media only screen and (max-width: 699px) {
-  :global(.ao-column-inner > *:not(:last-child)) {
+  :global([data-signup-variation='content']
+      .ao-column-inner
+      > *:not(:last-child)) {
     margin-bottom: var(--space-l);
   }
 }
 
 @media only screen and (min-width: 700px) {
-  :global(.ao-column-inner) {
+  :global([data-signup-variation='content'] .ao-column-inner) {
     display: flex;
     justify-content: center;
   }
 
-  :global(.ao-column-inner > *:not(:last-child)) {
+  :global([data-signup-variation='content']
+      .ao-column-inner
+      > *:not(:last-child)) {
     margin-right: var(--space-m);
   }
 }

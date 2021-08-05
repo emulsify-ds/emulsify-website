@@ -11,7 +11,7 @@ export const Arrow: React.FC = () => (
   >
     <path
       d="m55.984 49.938-36.293 37.836 12.742 12.227 47.875-50.062-47.875-49.938-12.742 12.227z"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     />
   </svg>
 )

@@ -150,54 +150,6 @@ class RootIndex extends React.Component<PageProps> {
           />
           <CardGrid cards={cards} />
         </Band>
-        {/*
-        <Signup />
-        <div className={styles.os}>
-          <div className="wrapper">
-            <Card
-              imageFluid={this.props.data.connector.childImageSharp.fluid}
-              specialTitle="Emulsify is"
-              specialSubTitle="Open Source"
-              text="Emulsify is an open source project that’s free for everyone. Check out the project on GitHub and visit our support page for help."
-            />
-          </div>
-        </div>
-        <div className={styles.demo}>
-          <Card
-            imageClass="demoImage"
-            imageFluid={this.props.data.westernu.childImageSharp.fluid}
-            title="Explore the Demo"
-            text="Western University of Pennsylvania is a fictional university to show how Emulsify can be used to manage the design system for a school and all of its departments."
-            linkUrl="/demo"
-            buttonText="University Demo"
-          />
-        </div>
-        <div className={styles.tech}>
-          <div className="wrapper">
-            <h2 className={styles.techHeading}>
-              Built Using Well-supported Technologies Developers Love
-            </h2>
-            <div className={styles.techItems}>
-              <div className={styles.techItem}>
-                <Img
-                  className={styles.techItemImage}
-                  fluid={this.props.data.storybook.childImageSharp.fluid}
-                />
-                <p>Develop UI components with support for React and Twig</p>
-              </div>
-              <div className={styles.techItem}>
-                <Img
-                  className={styles.techItemImage}
-                  fluid={this.props.data.gatsby.childImageSharp.fluid}
-                />
-                <p>
-                  Deploy your style guide documentation as a blazing fast static
-                  site
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </FullWidth>
     )
   }
