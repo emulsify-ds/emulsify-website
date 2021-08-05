@@ -10,6 +10,10 @@ import { Hr } from '../atoms/Hr/Hr'
 import { Signup } from '../molecules/Signup/Signup'
 import { Teaser } from '../molecules/Teaser/Teaser'
 import { CardGrid } from '../organisms/CardGrid/CardGrid'
+import {
+  PreFooter,
+  PreFooterProps,
+} from '../organisms/site/PreFooter/PreFooter'
 
 import { ctas } from '../data/ctas'
 import { featuresData } from '../data/features'
@@ -76,14 +80,11 @@ export default {
   },
 }
 
-type HomepageProps = FullWidthProps & {
-  pageTitle: string
-  callout1Heading: string
-  teaserLabel: string
-  teaserHeading: string
-  teaserText: string
-  teaserLinkText: string
-}
+type HomepageProps = FullWidthProps &
+  PreFooterProps & {
+    pageTitle: string
+    callout1Heading: string
+  }
 
 export const Homepage: Story<HomepageProps> = ({
   pageTitle,
@@ -120,7 +121,13 @@ export const Homepage: Story<HomepageProps> = ({
         <ActonForm />
       </Signup>
     </Band>
-    <Band size="medium">
+    <PreFooter
+      teaserLabel={teaserLabel}
+      teaserHeading={teaserHeading}
+      teaserText={teaserText}
+      teaserLinkText={teaserLinkText}
+      teaserHeroImage={blogHeroImage}
+    >
       <Callout
         heading="Emulsify is open source, built using well-supported technologies developers love."
         text={
@@ -133,14 +140,6 @@ export const Homepage: Story<HomepageProps> = ({
         }
       />
       <CardGrid cards={cards.slice(3, 5)} />
-      <Teaser
-        label={teaserLabel}
-        heading={teaserHeading}
-        text={teaserText}
-        linkUrl="#"
-        linkText={teaserLinkText}
-        image={blogHeroImage}
-      />
-    </Band>
+    </PreFooter>
   </FullWidth>
 )
