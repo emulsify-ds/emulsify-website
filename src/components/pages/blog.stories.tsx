@@ -12,7 +12,7 @@ import { ContentCta } from '../molecules/Ctas/ContentCta/ContentCta'
 
 import { Video } from '../../img/video'
 
-import { blogText } from '../data/blog'
+import { blogHeading, blogTeaser, blogHeroImage, blogText } from '../data/blog'
 import { ActonForm } from '../data/actonForm'
 
 export default {
@@ -31,14 +31,13 @@ export default {
       control: {
         type: 'text',
       },
-      defaultValue: 'Why Developers Shouldn’t Fear a No-Code Interface',
+      defaultValue: blogHeading,
     },
     pageSubtitle: {
       control: {
         type: 'text',
       },
-      defaultValue:
-        'For those of you who manage digital projects, your world centers upon change. From deploying new versions of website platforms to navigating all manner of software updates, the fast pace of the technology industry requires (and rewards) persistent upending of the status quo.',
+      defaultValue: blogTeaser,
     },
     name: {
       control: {
@@ -108,7 +107,7 @@ export const IndividualBlog: Story<HomepageProps> = ({
     image = <img src="https://picsum.photos/90" alt="example image" />
   }
   if (withHeroImage === true) {
-    heroImage = <img src="https://picsum.photos/1200/720" alt="example image" />
+    heroImage = blogHeroImage
   }
   return (
     <WithSidebar
