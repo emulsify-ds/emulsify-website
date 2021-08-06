@@ -3,40 +3,7 @@ import { Story } from '@storybook/react'
 
 import { TeaserList, TeaserListProps } from './TeaserList'
 
-import {
-  blogLabel,
-  blogHeading,
-  blogTeaser,
-  blogHeroImage,
-  blogReadMoreText,
-} from '../../data/blog'
-
-const teasers = [
-  {
-    label: blogLabel,
-    heading: blogHeading,
-    text: blogTeaser,
-    linkUrl: '#',
-    linkText: blogReadMoreText,
-    image: blogHeroImage,
-  },
-  {
-    label: blogLabel,
-    heading: blogHeading,
-    text: blogTeaser,
-    linkUrl: '#',
-    linkText: blogReadMoreText,
-    image: blogHeroImage,
-  },
-  {
-    label: blogLabel,
-    heading: blogHeading,
-    text: blogTeaser,
-    linkUrl: '#',
-    linkText: blogReadMoreText,
-    image: blogHeroImage,
-  },
-]
+import { teasers } from '../../data/teasers'
 
 export default {
   title: 'Organisms/TeaserList',
