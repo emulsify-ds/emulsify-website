@@ -55,7 +55,7 @@ export default {
   },
 }
 
-export const grid: Story<TeaserProps> = ({
+export const teaser: Story<TeaserProps> = ({
   label,
   heading,
   text,
