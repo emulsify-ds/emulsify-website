@@ -45,17 +45,26 @@ export default {
       },
       defaultValue: blogReadMoreText,
     },
+    variation: {
+      control: {
+        type: 'select',
+        options: ['grid', 'list'],
+      },
+      defaultValue: 'grid',
+    },
   },
 }
 
-export const basic: Story<TeaserProps> = ({
+export const grid: Story<TeaserProps> = ({
   label,
   heading,
   text,
   linkUrl,
   linkText,
+  variation,
 }) => (
   <Teaser
+    variation={variation}
     label={label}
     heading={heading}
     text={text}

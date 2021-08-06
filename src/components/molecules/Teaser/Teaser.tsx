@@ -10,6 +10,7 @@ export type TeaserProps = {
   linkUrl: string
   linkText?: string
   image: ReactNode
+  variation?: 'grid' | 'list'
 }
 
 export const Teaser: FC<TeaserProps> = ({
@@ -19,12 +20,13 @@ export const Teaser: FC<TeaserProps> = ({
   linkUrl,
   linkText,
   image,
+  variation = 'grid',
 }) => {
   const randomInt = Math.floor(Math.random() * 1000)
   const titleId = heading.replace(/\s+/g, '-').toLowerCase()
   const linkId = `${titleId}-${randomInt}`
   return (
-    <div className={styles.teaser}>
+    <div className={styles.teaser} data-teaser-variation={variation}>
       <div className={styles.teaserLabel}>{label}</div>
       <div className={styles.teaserContent}>
         {heading && (
