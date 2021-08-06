@@ -1,8 +1,7 @@
-/* Teaser List */
-.teaserList {
-  margin-bottom: 5rem;
+.teaserListHeading {
+  margin-bottom: var(--space-xl);
 }
 
-.listItem {
-  margin-bottom: 4rem;
+.teaserListContent > *:not(:last-child) {
+  margin-bottom: var(--space-xl);
 }

@@ -1,18 +1,29 @@
-/* eslint-disable */
-// This file was converted to .tsx without actually implementing typescript
-// @TODO: update this file to tsx and enable eslint
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { FC } from 'react'
+
+import { Teaser, TeaserProps } from '../../molecules/Teaser/Teaser'
 
 import styles from './teaserList.module.css'
 
-export default ({ title, children, link, linkText }) => (
+export type TeaserListProps = {
+  heading: string
+  teasers: TeaserProps[]
+}
+
+export const TeaserList: FC<TeaserListProps> = ({ heading, teasers }) => (
   <section className={styles.teaserList}>
-    <h2 className={styles.listTitle}>{title}</h2>
-    {children}
-    <Link className="button button-center" to={link}>
-      {linkText}
-    </Link>
+    <h2 className={styles.teaserListHeading}>{heading}</h2>
+    <div className={styles.teaserListContent}>
+      {teasers.map((teaser) => (
+        <Teaser
+          variation="list"
+          label={teaser.label}
+          heading={teaser.heading}
+          text={teaser.text}
+          linkUrl={teaser.linkUrl}
+          linkText={teaser.linkText}
+          image={teaser.image}
+        />
+      ))}
+    </div>
   </section>
 )
-/* eslint-enable */
