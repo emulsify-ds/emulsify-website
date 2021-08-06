@@ -1,5 +1,18 @@
 import React from 'react'
 
+export const blogLabel = 'From the Blog'
+
+export const blogHeading = 'Why Developers Shouldn’t Fear a No-Code Interface'
+
+export const blogTeaser =
+  '<p>For those of you who manage digital projects, your world centers upon change. From deploying new versions of website platforms to navigating all manner of software updates, the fast pace of the technology industry requires (and rewards) persistent upending of the status quo.</p>'
+
+export const blogHeroImage = (
+  <img src="https://picsum.photos/1200/720" alt="example image" />
+)
+
+export const blogReadMoreText = 'Fear not and read on'
+
 export const blogText = (
   <div>
     <p>

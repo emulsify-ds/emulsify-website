@@ -4,10 +4,10 @@
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import Img from 'gatsby-image'
+import get from 'lodash/get'
 
 import { FullWidth } from '../components/templates/FullWidth'
 import { SEO } from '../components/base/seo/seo'
-
 import { CtaGrid } from '../components/organisms/CtaGrid/CtaGrid'
 import { Video } from '../img/video'
 import { Screwdriver } from '../img/screwdriver'
@@ -17,6 +17,7 @@ import { Features } from '../components/organisms/Features/Features'
 import { Hr } from '../components/atoms/Hr/Hr'
 import { Signup } from '../components/molecules/Signup/Signup'
 import { CardGrid } from '../components/organisms/CardGrid/CardGrid'
+import { PreFooter } from '../components/organisms/site/PreFooter/PreFooter'
 
 class RootIndex extends React.Component<PageProps> {
   render() {
@@ -109,6 +110,9 @@ class RootIndex extends React.Component<PageProps> {
       },
     ]
 
+    const posts = get(this, 'props.data.allContentfulBlog.edges')
+    const teaser = posts[0]?.node
+
     return (
       <FullWidth
         location={this.props.location}
@@ -136,7 +140,16 @@ class RootIndex extends React.Component<PageProps> {
           <Hr />
           <Signup />
         </Band>
-        <Band size="medium">
+        <PreFooter
+          teaserLabel="From the Blog"
+          teaserHeading={teaser.title}
+          teaserText={teaser.description.childMarkdownRemark.html}
+          teaserLinkText={teaser.moreLinkText}
+          teaserLinkUrl={`${teaser.sys.contentType.sys.id}/${teaser.slug}`}
+          teaserHeroImage={
+            <img src={teaser.heroImage.file.url} alt={teaser.heroImage.title} />
+          }
+        >
           <Callout
             heading="Emulsify is open source, built using well-supported technologies developers love."
             text={
@@ -149,7 +162,7 @@ class RootIndex extends React.Component<PageProps> {
             }
           />
           <CardGrid cards={cards} />
-        </Band>
+        </PreFooter>
       </FullWidth>
     )
   }
@@ -158,7 +171,7 @@ class RootIndex extends React.Component<PageProps> {
 export default RootIndex
 
 export const query = graphql`
-  query HomePageQuery {
+  query HomePageQuery($limit: Int! = 1) {
     unify: file(relativePath: { eq: "unify.png" }) {
       childImageSharp {
         fluid(maxWidth: 580) {
@@ -184,6 +197,37 @@ export const query = graphql`
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    allContentfulBlog(
+      sort: { fields: [publishDate], order: DESC }
+      limit: $limit
+    ) {
+      edges {
+        node {
+          title
+          slug
+          publishDate(formatString: "MMMM Do, YYYY")
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          heroImage {
+            id
+            file {
+              url
+            }
+          }
+          moreLinkText
+          sys {
+            contentType {
+              sys {
+                id
+              }
+            }
+          }
         }
       }
     }

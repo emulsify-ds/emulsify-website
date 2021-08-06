@@ -24,13 +24,6 @@ class BlogPostTemplate extends React.Component<PageProps> {
     const post = get(this.props, 'data.contentfulBlog')
     // const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
     // const currentUrl = `${siteUrl}${this.props.location.pathname}`
-    const pageMetaText = (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: post.description.childMarkdownRemark.html,
-        }}
-      />
-    )
 
     return (
       <WithSidebar
@@ -41,7 +34,7 @@ class BlogPostTemplate extends React.Component<PageProps> {
         <BackLink url="/blog" text="view all blog posts" />
         <PageMeta
           heading={post.title}
-          text={pageMetaText}
+          text={post.description.childMarkdownRemark.html}
           heroImage={
             <img src={post.heroImage.file.url} alt={post.heroImage.title} />
           }
