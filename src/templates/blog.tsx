@@ -80,6 +80,7 @@ export const pageQuery = graphql`
           }
           heroImage {
             id
+            title
             file {
               url
             }
