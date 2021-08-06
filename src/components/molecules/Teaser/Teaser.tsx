@@ -4,6 +4,7 @@ import { Link } from '../../utility/Link'
 import styles from './teaser.module.css'
 
 export type TeaserProps = {
+  id: string
   label: string
   heading: string
   text: string
@@ -14,6 +15,7 @@ export type TeaserProps = {
 }
 
 export const Teaser: FC<TeaserProps> = ({
+  id,
   label,
   heading,
   text,
@@ -22,9 +24,8 @@ export const Teaser: FC<TeaserProps> = ({
   image,
   variation = 'grid',
 }) => {
-  const randomInt = Math.floor(Math.random() * 1000)
   const titleId = heading.replace(/\s+/g, '-').toLowerCase()
-  const linkId = `${titleId}-${randomInt}`
+  const linkId = `${titleId}-${id}`
   return (
     <div className={styles.teaser} data-teaser-variation={variation}>
       <div className={styles.teaserLabel}>{label}</div>

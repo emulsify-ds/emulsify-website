@@ -15,6 +15,8 @@ export const TeaserList: FC<TeaserListProps> = ({ heading, teasers }) => (
     <div className={styles.teaserListContent}>
       {teasers.map((teaser) => (
         <Teaser
+          key={teaser.id}
+          id={teaser.id}
           variation="list"
           label={teaser.label}
           heading={teaser.heading}

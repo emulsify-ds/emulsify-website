@@ -21,6 +21,7 @@ class BlogIndex extends React.Component {
     // const nextPage = `/blog/${(currentPage + 1).toString()}`
     // Create a new object from the post data to fit what the Teaser component expects
     const blogs = posts.map((post) => ({
+      id: post.node.id,
       label: 'From the Blog',
       heading: post.node.title,
       text: post.node.description.childMarkdownRemark.html,
@@ -68,6 +69,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          id
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")

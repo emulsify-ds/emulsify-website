@@ -64,6 +64,7 @@ export const teaser: Story<TeaserProps> = ({
   variation,
 }) => (
   <Teaser
+    id="1"
     variation={variation}
     label={label}
     heading={heading}
