@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
       label: 'From the Blog',
       heading: post.node.title,
       text: post.node.description.childMarkdownRemark.html,
-      linkUrl: `${post.node.sys.contentType.sys.id}/${post.node.slug}`,
+      linkUrl: `/${post.node.sys.contentType.sys.id}/${post.node.slug}`,
       linkText: post.node.moreLinkText,
       image: (
         <img
