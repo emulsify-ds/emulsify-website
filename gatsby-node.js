@@ -101,6 +101,22 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
+        // Blog Pagination Pages
+        const postsPerPage = 8
+        const numPages = Math.ceil(posts.length / postsPerPage)
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+            component: path.resolve('./src/templates/blog.tsx'),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          })
+        })
+
         // Videos
         const videos = result.data.allContentfulVideoEmbed.edges
         // Posts
@@ -113,22 +129,6 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
-
-        // Blog Pagination Pages
-        // const postsPerPage = 8
-        // const numPages = Math.ceil(posts.length / postsPerPage)
-        // Array.from({ length: numPages }).forEach((_, i) => {
-        //   createPage({
-        //     path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-        //     component: path.resolve('./src/templates/blog.tsx'),
-        //     context: {
-        //       limit: postsPerPage,
-        //       skip: i * postsPerPage,
-        //       numPages,
-        //       currentPage: i + 1,
-        //     },
-        //   })
-        // })
 
         // Case Study
         // const caseStudies = result.data.allContentfulCaseStudy.edges

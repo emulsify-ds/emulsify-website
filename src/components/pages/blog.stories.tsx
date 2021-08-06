@@ -1,6 +1,7 @@
 import React from 'react'
 import { Story } from '@storybook/react'
 
+import { FullWidth, FullWidthProps } from '../templates/FullWidth'
 import { WithSidebar, WithSidebarProps } from '../templates/WithSidebar'
 import { navItems } from '../data/navigation'
 import { BackLink } from '../atoms/BackLink/BackLink'
@@ -9,11 +10,14 @@ import { AuthorInfo, AuthorInfoProps } from '../molecules/AuthorInfo/AuthorInfo'
 import { Signup } from '../molecules/Signup/Signup'
 import { RichText } from '../atoms/RichText/RichText'
 import { ContentCta } from '../molecules/Ctas/ContentCta/ContentCta'
+import { TeaserList, TeaserListProps } from '../organisms/TeaserList/TeaserList'
+import { Band } from '../molecules/Band/Band'
 
 import { Video } from '../../img/video'
 
 import { blogHeading, blogTeaser, blogHeroImage, blogText } from '../data/blog'
 import { ActonForm } from '../data/actonForm'
+import { teasers } from '../data/teasers'
 
 export default {
   title: 'Pages/Blogs',
@@ -79,7 +83,7 @@ export default {
   },
 }
 
-type HomepageProps = WithSidebarProps &
+type BlogPostProps = WithSidebarProps &
   PageMetaProps &
   AuthorInfoProps & {
     pageTitle: string
@@ -90,7 +94,12 @@ type HomepageProps = WithSidebarProps &
     contentCtaLinkText: string
   }
 
-export const IndividualBlog: Story<HomepageProps> = ({
+type BlogListProps = FullWidthProps &
+  TeaserListProps & {
+    pageTitle: string
+  }
+
+export const IndividualBlog: Story<BlogPostProps> = ({
   pageTitle,
   pageSubtitle,
   location,
@@ -133,3 +142,11 @@ export const IndividualBlog: Story<HomepageProps> = ({
     </WithSidebar>
   )
 }
+
+export const BlogListingPage: Story<BlogListProps> = ({ location }) => (
+  <FullWidth location={location} navItems={navItems}>
+    <Band size="medium">
+      <TeaserList heading="Recent Blogs" teasers={teasers} />
+    </Band>
+  </FullWidth>
+)

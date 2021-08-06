@@ -145,7 +145,7 @@ class RootIndex extends React.Component<PageProps> {
           teaserHeading={teaser.title}
           teaserText={teaser.description.childMarkdownRemark.html}
           teaserLinkText={teaser.moreLinkText}
-          teaserLinkUrl={`${teaser.sys.contentType.sys.id}/${teaser.slug}`}
+          teaserLinkUrl={`/${teaser.sys.contentType.sys.id}/${teaser.slug}`}
           teaserHeroImage={
             <img src={teaser.heroImage.file.url} alt={teaser.heroImage.title} />
           }
