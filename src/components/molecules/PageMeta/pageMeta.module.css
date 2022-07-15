@@ -1,0 +1,26 @@
+.pageMeta {
+  margin-bottom: var(--space-xl);
+}
+
+.pageMeta > *:not(:last-child) {
+  margin-bottom: var(--space-xl);
+}
+
+.pageMetaHeading {
+  font-size: var(--font-scale-5);
+}
+
+.pageMetaText {
+  font-size: var(--font-scale-2);
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: var(--c-blue-gray);
+}
+
+.pageMetaText *:last-child {
+  margin-bottom: 0;
+}
+
+.pageMetaHeroImage {
+  margin: var(--space-margin-overflow);
+}

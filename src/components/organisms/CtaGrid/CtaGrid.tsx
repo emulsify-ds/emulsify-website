@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Cta, CtaProps } from '../../molecules/Cta/Cta'
+import { Cta, CtaProps } from '../../molecules/Ctas/Cta/Cta'
 
 import styles from './ctaGrid.module.css'
 
