@@ -1,3 +1,5 @@
+[![Emulsify Design System](https://user-images.githubusercontent.com/409903/170579210-327abcdd-2c98-4922-87bb-36446a4cc013.svg)](https://www.emulsify.info/)
+
 # Emulsify.info website
 
 Built using [Gatsby.js](https://www.gatsbyjs.org/), the [Contentful CMS](https://www.contentful.com/), and the [Gatsby Contentful Starter](https://github.com/contentful/starter-gatsby-blog). It is hosted on [Netlify](https://www.netlify.com/).
