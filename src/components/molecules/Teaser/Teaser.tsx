@@ -28,8 +28,8 @@ export const Teaser: FC<TeaserProps> = ({
   const linkId = `${titleId}-${id}`
   return (
     <div className={styles.teaser} data-teaser-variation={variation}>
-      <div className={styles.teaserLabel}>{label}</div>
       <div className={styles.teaserContent}>
+        <div className={styles.teaserLabel}>{label}</div>
         {heading && (
           <Link
             className={styles.teaserHeadingLink}
