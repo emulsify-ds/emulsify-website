@@ -5,6 +5,7 @@ type SignupProps = {
   actonSignup?: HTMLElement | null
   script?: HTMLScriptElement | null
   id?: string
+  variation?: 'content' | 'sidebar'
 }
 
 export const Signup: FC<SignupProps> = ({
@@ -12,6 +13,7 @@ export const Signup: FC<SignupProps> = ({
   script = null,
   children,
   id = 'acton-signup',
+  variation = 'content',
 }) => {
   function attachScript(): void {
     script = document.createElement('script')
@@ -36,7 +38,7 @@ export const Signup: FC<SignupProps> = ({
   })
 
   return (
-    <div id={id} className={styles.signup}>
+    <div id={id} className={styles.signup} data-signup-variation={variation}>
       <h2 className={styles.signupHeading}>
         Stay up to date with the latest news and developments from Emulsify
       </h2>

@@ -1,0 +1,11 @@
+.preFooter {
+  display: grid;
+  gap: var(--space-2xl);
+}
+
+@media only screen and (min-width: 1024px) {
+  .preFooter {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-4xl);
+  }
+}

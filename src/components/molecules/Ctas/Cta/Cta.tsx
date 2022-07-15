@@ -1,9 +1,9 @@
 import React, { ReactNode, FC } from 'react'
-import { Link, LinkProps } from '../../utility/Link'
+import { Link, LinkProps } from '../../../utility/Link'
 
 import styles from './cta.module.css'
 
-import { Arrow } from '../../../img/arrow'
+import { Arrow } from '../../../../img/arrow'
 
 export type CtaProps = LinkProps & {
   icon?: ReactNode

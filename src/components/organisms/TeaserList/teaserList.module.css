@@ -1,0 +1,7 @@
+.teaserListHeading {
+  margin-bottom: var(--space-xl);
+}
+
+.teaserListContent > *:not(:last-child) {
+  margin-bottom: var(--space-xl);
+}

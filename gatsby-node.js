@@ -7,9 +7,6 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    // const pageLayout = path.resolve('./src/templates/page.tsx')
-    // const landingPageLayout = path.resolve('./src/templates/landing-page.tsx')
-    // const blogPost = path.resolve('./src/templates/blog-post.tsx')
     // const caseStudy = path.resolve('./src/templates/case-study.tsx')
     resolve(
       graphql(
@@ -65,41 +62,57 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Pages
-        // const pages = result.data.allContentfulPage.edges
-        // pages.forEach((page) => {
-        //   createPage({
-        //     path: `/${page.node.slug}/`,
-        //     component: pageLayout,
-        //     context: {
-        //       slug: page.node.slug,
-        //     },
-        //   })
-        // })
+        const pages = result.data.allContentfulPage.edges
+        pages.forEach((page) => {
+          createPage({
+            path: `/${page.node.slug}/`,
+            component: path.resolve('./src/templates/page.tsx'),
+            context: {
+              slug: page.node.slug,
+            },
+          })
+        })
 
         // Landing Page
-        // const landingPages = result.data.allContentfulLandingPage.edges
-        // landingPages.forEach((page) => {
-        //   createPage({
-        //     path: `/${page.node.slug}/`,
-        //     component: landingPageLayout,
-        //     context: {
-        //       slug: page.node.slug,
-        //     },
-        //   })
-        // })
+        const landingPages = result.data.allContentfulLandingPage.edges
+        landingPages.forEach((page) => {
+          createPage({
+            path: `/${page.node.slug}/`,
+            component: path.resolve('./src/templates/landing-page.tsx'),
+            context: {
+              slug: page.node.slug,
+            },
+          })
+        })
 
         // Blogs
-        // const posts = result.data.allContentfulBlog.edges
-        // // Posts
-        // posts.forEach((post) => {
-        //   createPage({
-        //     path: `/blog/${post.node.slug}/`,
-        //     component: blogPost,
-        //     context: {
-        //       slug: post.node.slug,
-        //     },
-        //   })
-        // })
+        const posts = result.data.allContentfulBlog.edges
+        // Posts
+        posts.forEach((post) => {
+          createPage({
+            path: `/blog/${post.node.slug}/`,
+            component: path.resolve('./src/templates/blog-post.tsx'),
+            context: {
+              slug: post.node.slug,
+            },
+          })
+        })
+
+        // Blog Pagination Pages
+        const postsPerPage = 8
+        const numPages = Math.ceil(posts.length / postsPerPage)
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+            component: path.resolve('./src/templates/blog.tsx'),
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          })
+        })
 
         // Videos
         const videos = result.data.allContentfulVideoEmbed.edges
@@ -113,22 +126,6 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
-
-        // Blog Pagination Pages
-        // const postsPerPage = 8
-        // const numPages = Math.ceil(posts.length / postsPerPage)
-        // Array.from({ length: numPages }).forEach((_, i) => {
-        //   createPage({
-        //     path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-        //     component: path.resolve('./src/templates/blog.tsx'),
-        //     context: {
-        //       limit: postsPerPage,
-        //       skip: i * postsPerPage,
-        //       numPages,
-        //       currentPage: i + 1,
-        //     },
-        //   })
-        // })
 
         // Case Study
         // const caseStudies = result.data.allContentfulCaseStudy.edges
