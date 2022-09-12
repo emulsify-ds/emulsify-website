@@ -66,6 +66,7 @@ export const pageQuery = graphql`
       sort: { fields: [publishDate], order: DESC }
       limit: $limit
       skip: $skip
+      filter: { publishToBlog: { eq: true } }
     ) {
       edges {
         node {
