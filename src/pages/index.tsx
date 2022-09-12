@@ -203,6 +203,7 @@ export const query = graphql`
     allContentfulBlog(
       sort: { fields: [publishDate], order: DESC }
       limit: $limit
+      filter: { publishToBlog: { eq: true } }
     ) {
       edges {
         node {
