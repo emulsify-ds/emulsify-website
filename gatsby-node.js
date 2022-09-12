@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            allContentfulBlog(limit: 1000) {
+            allContentfulBlog(limit: 1000, filter: {publishToBlog: {eq: true}}) {
               edges {
                 node {
                   title
