@@ -39,6 +39,9 @@ export const Footer: FC = () => {
             <li>
               <a href="https://launchpass.com/emulsify">Join us on Slack</a>
             </li>
+            <li>
+              <a href="https://www.emulsify.info/rss.xml">RSS Feed</a>
+            </li>
           </ul>
         </div>
       </Band>
