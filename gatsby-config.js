@@ -71,6 +71,58 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulBlog } }) => {
+              return allContentfulBlog.edges.map(edge => {
+                return Object.assign({}, {
+                  description: edge.node.description.description,
+                  date: edge.node.publishDate,
+                  url: `${site.siteMetadata.siteUrl}/blog/${edge.node.slug}`,
+                  guid: site.siteMetadata.siteUrl + edge.node.slug,
+                  title: edge.node.title
+                })
+              })
+            },
+            query: `
+              {
+                allContentfulBlog(filter: {publishToBlog: {eq: true}}, sort: {fields: publishDate, order: DESC}) {
+                  edges {
+                    node {
+                      id
+                      publishDate
+                      slug
+                      title
+                      moreLinkText
+                      description {
+                        description
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Emulsify Blog RSS Feed",
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         id: 'GTM-PS3D7TV',
