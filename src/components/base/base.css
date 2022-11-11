@@ -147,6 +147,15 @@ blockquote {
   margin: var(--space-margin-overflow-inset);
   padding: 0;
   max-width: 45ch;
+  position: relative;
+}
+
+blockquote::before {
+  content: '\201C';
+  font-size: var(--font-scale-5);
+  position: absolute;
+  left: -34px;
+  top: -17px;
 }
 
 /* Highlighted Content */
