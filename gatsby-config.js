@@ -119,6 +119,39 @@ module.exports = {
             output: "/rss.xml",
             title: "Emulsify Blog RSS Feed",
           },
+          {
+            serialize: ({ query: { site, allContentfulBlog } }) => {
+              return allContentfulBlog.edges.map(edge => {
+                return Object.assign({}, {
+                  description: edge.node.description.description,
+                  date: edge.node.publishDate,
+                  url: `${site.siteMetadata.siteUrl}/blog/${edge.node.slug}`,
+                  guid: site.siteMetadata.siteUrl + edge.node.slug,
+                  title: edge.node.title
+                })
+              })
+            },
+            query: `
+              {
+                allContentfulBlog(filter: {publishToBlog: {eq: true}, category: {elemMatch: {title: {eq: "Drupal"}}}}, sort: {fields: publishDate, order: DESC}) {
+                  edges {
+                    node {
+                      id
+                      publishDate
+                      slug
+                      title
+                      moreLinkText
+                      description {
+                        description
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss-planet-drupal.xml",
+            title: "Emulsify Blog RSS Feed for Planet Drupal",
+          },
         ],
       },
     },
