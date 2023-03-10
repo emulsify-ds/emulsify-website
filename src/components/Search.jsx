@@ -46,15 +46,15 @@ export function Search() {
     <>
       <button
         type="button"
-        className="group flex h-6 w-6 items-center justify-center sm:justify-start md:h-auto md:w-80 md:flex-none md:rounded-lg md:py-2.5 md:pl-4 md:pr-3.5 md:text-sm md:ring-1 md:ring-slate-200 md:hover:ring-slate-300 dark:md:bg-slate-800/75 dark:md:ring-inset dark:md:ring-white/5 dark:md:hover:bg-slate-700/40 dark:md:hover:ring-slate-500 lg:w-96"
+        className="group flex h-6 w-6 items-center justify-center transition-all border-emulsifyBlue-400 border border-solid hover:border-emulsifyBlue-200 sm:justify-start md:h-auto md:w-80 md:flex-none md:rounded-lg md:py-2.5 md:pl-4 md:pr-3.5 md:text-sm  dark:md:bg-slate-800/75 dark:md:ring-inset dark:md:ring-white/5 dark:md:hover:bg-slate-700/40 dark:md:hover:ring-slate-500 lg:w-96"
         onClick={onOpen}
       >
-        <SearchIcon className="h-5 w-5 flex-none fill-slate-400 group-hover:fill-slate-500 dark:fill-slate-500 md:group-hover:fill-slate-400" />
-        <span className="sr-only md:not-sr-only md:ml-2 md:text-slate-500 md:dark:text-slate-400">
+        <SearchIcon className="h-5 w-5 flex-none transition-all fill-emulsifyBlue-300 group-hover:fill-emulsifyBlue-100 dark:fill-slate-500 " />
+        <span className="sr-only md:not-sr-only md:ml-2 md:text-emulsifyBlue-200 uppercase font-bold md:dark:text-slate-400 group-hover:text-emulsifyBlue-100">
           Search docs
         </span>
         {modifierKey && (
-          <kbd className="ml-auto hidden font-medium text-slate-400 dark:text-slate-500 md:block">
+          <kbd className="ml-auto hidden font-medium text-emulsifyBlue-200 group-hover:text-emulsifyBlue-100 dark:text-slate-500 md:block">
             <kbd className="font-sans">{modifierKey}</kbd>
             <kbd className="font-sans">K</kbd>
           </kbd>

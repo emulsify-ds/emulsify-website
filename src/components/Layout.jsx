@@ -93,7 +93,7 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-emulsifyBlue-600 px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
           : 'dark:bg-transparent'
@@ -104,8 +104,7 @@ function Header({ navigation }) {
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
-          <Logomark className="h-9 w-9 lg:hidden" />
-          <Logo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100 lg:block" />
+          <Logo className="h-9 w-auto fill-slate-700 dark:fill-sky-100 block min-h-[50px] relative top-[4px]" />
         </Link>
       </div>
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
@@ -114,7 +113,7 @@ function Header({ navigation }) {
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
         <Link href="https://github.com" className="group" aria-label="GitHub">
-          <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
+          <GitHubIcon className="h-6 w-6 fill-white/80 group-hover:fill-white dark:group-hover:fill-slate-300" />
         </Link>
       </div>
     </header>
@@ -192,9 +191,9 @@ export function Layout({ children, title, tableOfContents }) {
 
       {isHomePage && <Hero />}
 
-      <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
+      <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12 wave-background z-10">
         <div className="hidden lg:relative lg:block lg:flex-none">
-          <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
+          <div className="absolute inset-y-0 right-0 w-[50vw] bg-emulsifyBlue-600/10 dark:hidden" />
           <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
           <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
           <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
@@ -204,17 +203,18 @@ export function Layout({ children, title, tableOfContents }) {
             />
           </div>
         </div>
-        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+
+        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16 z-70">
           <article>
             {(title || section) && (
-              <header className="mb-9 space-y-1">
+              <header className="mb-9">
                 {section && (
-                  <p className="font-display text-sm font-medium text-sky-500">
+                  <p className="text-xl font-black uppercase text-emulsifyBlue-700">
                     {section.title}
                   </p>
                 )}
                 {title && (
-                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
+                  <h1 className="font-bold text-emulsifyBlue-900 text-5xl tracking-tight dark:text-white bg-gradient-to-b ">
                     {title}
                   </h1>
                 )}
@@ -255,13 +255,13 @@ export function Layout({ children, title, tableOfContents }) {
             )}
           </dl>
         </div>
-        <div className="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
+        <div className="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6 z-70">
           <nav aria-labelledby="on-this-page-title" className="w-56">
             {tableOfContents.length > 0 && (
               <>
                 <h2
                   id="on-this-page-title"
-                  className="font-display text-sm font-medium text-slate-900 dark:text-white"
+                  className="font-display text-2xl font-black text-emulsifyBlue-800 dark:text-white"
                 >
                   On this page
                 </h2>
@@ -273,8 +273,8 @@ export function Layout({ children, title, tableOfContents }) {
                           href={`#${section.id}`}
                           className={clsx(
                             isActive(section)
-                              ? 'text-sky-500'
-                              : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300'
+                              ? 'text-violet-800'
+                              : 'font-normal text-emulsifyBlue-300 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300'
                           )}
                         >
                           {section.title}

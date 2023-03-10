@@ -1,23 +1,22 @@
 @font-face {
-  font-family: 'Lexend';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/fonts/lexend.woff2) format('woff2');
+  font-family: 'Mona Sans';
+  src:
+    url('/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('/fonts/Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
 }
-@font-face {
-  font-family: 'Inter';
-  font-weight: 100 900;
-  font-display: block;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/Inter-roman.var.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Inter';
-  font-weight: 100 900;
-  font-display: block;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/Inter-italic.var.woff2') format('woff2');
+
+@layer utilities {
+  .font-width-75 {
+    font-variation-settings: "wdth" 75;
+  }
+  
+  .font-width-100 {
+    font-variation-settings: "wdth" 100;
+  }
+
+  .font-width-125 {
+    font-variation-settings: "wdth" 125;
+  }
 }
