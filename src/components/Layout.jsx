@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
 import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
@@ -77,7 +78,7 @@ function GitHubIcon(props) {
 }
 
 function Header({ navigation }) {
-  let [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     function onScroll() {
@@ -93,13 +94,63 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-emulsifyBlue-600 px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-emulsifyBlue-800 px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
           : 'dark:bg-transparent'
       )}
     >
-      <div className="mr-6 flex lg:hidden">
+      <div className="relative flex items-center">
+        <Link href="/" aria-label="Home page">
+          <Logo className="relative top-[4px] block h-9 min-h-[60px] w-auto fill-slate-700 dark:fill-sky-100" />
+        </Link>
+      </div>
+      <div className="relative ml-10 flex items-center">
+        <nav
+          className={clsx(
+            'font-width-75 text-3xl font-semibold uppercase text-white'
+          )}
+        >
+          <ul className={clsx('flex-flow flex gap-8')}>
+            <li>
+              <Link
+                href="/"
+                className="flex-flow group flex items-center gap-1"
+              >
+                <FontAwesomeIcon icon={faBolt} className="text-orange-600" />
+                <span className="whitespace-nowrap border-b border-solid border-emulsifyBlue-400 group-hover:border-emulsifyBlue-200">
+                  Quick Start
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+              >
+                Docs
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+              >
+                Search
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      {/* <div className="mr-6 flex lg:hidden">
         <MobileNavigation navigation={navigation} />
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
@@ -115,36 +166,38 @@ function Header({ navigation }) {
         <Link href="https://github.com" className="group" aria-label="GitHub">
           <GitHubIcon className="h-6 w-6 fill-white/80 group-hover:fill-white dark:group-hover:fill-slate-300" />
         </Link>
-      </div>
+      </div> */}
     </header>
   )
 }
 
 function useTableOfContents(tableOfContents) {
-  let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
+  const [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
 
-  let getHeadings = useCallback((tableOfContents) => {
-    return tableOfContents
-      .flatMap((node) => [node.id, ...node.children.map((child) => child.id)])
-      .map((id) => {
-        let el = document.getElementById(id)
-        if (!el) return
+  const getHeadings = useCallback(
+    (tableOfContents) =>
+      tableOfContents
+        .flatMap((node) => [node.id, ...node.children.map((child) => child.id)])
+        .map((id) => {
+          const el = document.getElementById(id)
+          if (!el) return
 
-        let style = window.getComputedStyle(el)
-        let scrollMt = parseFloat(style.scrollMarginTop)
+          const style = window.getComputedStyle(el)
+          const scrollMt = parseFloat(style.scrollMarginTop)
 
-        let top = window.scrollY + el.getBoundingClientRect().top - scrollMt
-        return { id, top }
-      })
-  }, [])
+          const top = window.scrollY + el.getBoundingClientRect().top - scrollMt
+          return { id, top }
+        }),
+    []
+  )
 
   useEffect(() => {
     if (tableOfContents.length === 0) return
-    let headings = getHeadings(tableOfContents)
+    const headings = getHeadings(tableOfContents)
     function onScroll() {
-      let top = window.scrollY
+      const top = window.scrollY
       let current = headings[0].id
-      for (let heading of headings) {
+      for (const heading of headings) {
         if (top >= heading.top) {
           current = heading.id
         } else {
@@ -164,16 +217,16 @@ function useTableOfContents(tableOfContents) {
 }
 
 export function Layout({ children, title, tableOfContents }) {
-  let router = useRouter()
-  let isHomePage = router.pathname === '/'
-  let allLinks = navigation.flatMap((section) => section.links)
-  let linkIndex = allLinks.findIndex((link) => link.href === router.pathname)
-  let previousPage = allLinks[linkIndex - 1]
-  let nextPage = allLinks[linkIndex + 1]
-  let section = navigation.find((section) =>
+  const router = useRouter()
+  const isHomePage = router.pathname === '/'
+  const allLinks = navigation.flatMap((section) => section.links)
+  const linkIndex = allLinks.findIndex((link) => link.href === router.pathname)
+  const previousPage = allLinks[linkIndex - 1]
+  const nextPage = allLinks[linkIndex + 1]
+  const section = navigation.find((section) =>
     section.links.find((link) => link.href === router.pathname)
   )
-  let currentSection = useTableOfContents(tableOfContents)
+  const currentSection = useTableOfContents(tableOfContents)
 
   function isActive(section) {
     if (section.id === currentSection) {
@@ -191,7 +244,7 @@ export function Layout({ children, title, tableOfContents }) {
 
       {isHomePage && <Hero />}
 
-      <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12 wave-background z-10">
+      <div className="wave-background relative z-10 mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-emulsifyBlue-600/10 dark:hidden" />
           <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
@@ -204,7 +257,7 @@ export function Layout({ children, title, tableOfContents }) {
           </div>
         </div>
 
-        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16 z-70">
+        <div className="z-70 min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
             {(title || section) && (
               <header className="mb-9">
@@ -214,7 +267,7 @@ export function Layout({ children, title, tableOfContents }) {
                   </p>
                 )}
                 {title && (
-                  <h1 className="font-bold text-emulsifyBlue-900 text-5xl tracking-tight dark:text-white bg-gradient-to-b ">
+                  <h1 className="bg-gradient-to-b text-5xl font-bold tracking-tight text-emulsifyBlue-900 dark:text-white ">
                     {title}
                   </h1>
                 )}
@@ -255,7 +308,7 @@ export function Layout({ children, title, tableOfContents }) {
             )}
           </dl>
         </div>
-        <div className="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6 z-70">
+        <div className="z-70 hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
           <nav aria-labelledby="on-this-page-title" className="w-56">
             {tableOfContents.length > 0 && (
               <>
