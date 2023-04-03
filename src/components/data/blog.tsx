@@ -43,10 +43,18 @@ export const blogText = (
     <h2>Minimize Development Delays by Empowering Content Owners</h2>
     <p>
       As tech leaders, many of you have worn the title of webmaster at some
-      point during your career. Shouldering the responsibility for your entire
-      company’s online presence, a webmaster’s responsibilities encompass site
-      design and development as well as digital marketing and communications.
+      point during your career. Shouldering the{' '}
+      <code>inline code responsibility</code> for your entire company’s online
+      presence, a webmaster’s responsibilities encompass site design and
+      development as well as digital marketing and communications.
     </p>
+    <pre>
+      <code>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in
+        fugiat quasi voluptatibus laudantium eaque dolore cumque porro nesciunt,
+        voluptates facilis obcaecati, aspernatur aliquid! Ut?
+      </code>
+    </pre>
     <p>
       Life somehow felt easier—or at least more stable—when only one person
       could make changes to a website. Now, businesses recognize websites are

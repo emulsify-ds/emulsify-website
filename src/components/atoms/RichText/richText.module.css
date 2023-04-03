@@ -34,3 +34,13 @@
     max-width: calc(100% + calc(var(--space-band-horizontal) / 1.5));
   }
 }
+
+.richText pre {
+  background: #eff4f7;
+  border: 1px solid #bbd0dd;
+  padding: 3rem 3rem;
+  border-radius: 4px;
+  width: 100%;
+  overflow: scroll;
+  color: #475961;
+}
