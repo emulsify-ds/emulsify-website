@@ -1,4 +1,5 @@
 [![Emulsify Design System](https://user-images.githubusercontent.com/409903/170579210-327abcdd-2c98-4922-87bb-36446a4cc013.svg)](https://www.emulsify.info/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e8a8811d-96c9-4c15-b3f0-e14473fcff0f/deploy-status)](https://app.netlify.com/sites/emulsify-website/deploys)
 
 # Emulsify.info website
 
