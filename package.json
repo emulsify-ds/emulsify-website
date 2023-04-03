@@ -79,27 +79,27 @@
     "url": "git+https://github.com/evanmwillhite/emulsify-website.git"
   },
   "scripts": {
-    "dev": "yarn develop",
+    "dev": "gatsby develop",
     "develop": "gatsby develop",
     "commitlint": "commitlint",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md,css}' 'bin/*.js' && yarn lint --fix && yarn stylelint --fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,md,css}' 'bin/*.js' && npm run lint --fix && npm run stylelint --fix",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
-    "noIndex": "yarn build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
+    "noIndex": "npm run build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
-    "start": "yarn develop",
+    "start": "npm run develop",
     "stylelint": "npx stylelint './src/**/*.css'",
     "heroku-postbuild": "gatsby build",
-    "cleanup-repository": "yarn remove contentful-import chalk inquirer && node ./bin/cleanup.js && rimraf bin contentful",
+    "cleanup-repository": "npm run remove contentful-import chalk inquirer && node ./bin/cleanup.js && rimraf bin contentful",
     "prepare": "husky install",
     "storybook": "start-storybook -s src/img -p 6006",
     "build-storybook": "build-storybook -s src/img -o .out",
     "deploy-storybook": "storybook-to-ghpages",
     "husky:pre-commit": "lint-staged",
     "husky:commit-msg": "commitlint --edit $1",
-    "husky:pre-push": "yarn lint"
+    "husky:pre-push": "npm run lint"
   }
 }

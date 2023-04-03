@@ -1,1 +1,1 @@
-yarn husky:commit-msg
+npm run husky:commit-msg
