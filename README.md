@@ -6,11 +6,11 @@ Built using [Gatsby.js](https://www.gatsbyjs.org/), the [Contentful CMS](https:/
 
 ## Getting started
 
-Install [Yarn](https://yarnpkg.com/en/docs/install) (if you haven't already).
+Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (if you haven't already).
 
 ## Installation
 
-Clone repo and run `yarn`
+Clone repo and run `npm i`
 
 ## Configuration
 
@@ -18,11 +18,11 @@ Copy `.env.example` to `.env.development`, and fill in the required credentials.
 
 ## Crucial Commands
 
-### `yarn develop`
+### `npm run develop`
 
 Develop on the gatsby site locally.
 
-### `yarn storybook`
+### `npm run storybook`
 
 Develop on the component library locally.
 
@@ -34,4 +34,4 @@ Commits are vetted against the [@commitlint/config-conventional](https://github.
 
 ## Note for M1 Macs
 
-If you get an error when running `yarn` about "sharp", [this comment](https://github.com/lovell/sharp/issues/2460#issuecomment-751491241) may help you resolve that issue.
+If you get an error when running `npm` about "sharp", [this comment](https://github.com/lovell/sharp/issues/2460#issuecomment-751491241) may help you resolve that issue.

@@ -1,1 +1,1 @@
-yarn husky:pre-push
+npm run husky:pre-push
