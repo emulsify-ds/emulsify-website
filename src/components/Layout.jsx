@@ -38,61 +38,63 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-emulsifyBlue-800 px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50  bg-emulsifyBlue-800 px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
           : 'dark:bg-transparent'
       )}
     >
-      <div className="relative flex items-center">
-        <Link href="/" aria-label="Home page">
-          <Logo className="relative top-[4px] block h-9 min-h-[60px] w-auto fill-slate-700 dark:fill-sky-100" />
-        </Link>
-      </div>
-      <div className="relative ml-10 flex items-center">
-        <nav
-          className={clsx(
-            'font-width-75 text-3xl font-semibold uppercase text-white'
-          )}
-        >
-          <ul className={clsx('flex-flow flex gap-8')}>
-            <li>
-              <Link
-                href="/"
-                className="flex-flow group flex items-center gap-1"
-              >
-                <FontAwesomeIcon icon={faBolt} className="text-orange-600" />
-                <span className="whitespace-nowrap border-b border-solid border-emulsifyBlue-400 group-hover:border-emulsifyBlue-200">
-                  Quick Start
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
-              >
-                Docs
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
-              >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
-              >
-                Search
-              </Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="mx-auto flex max-w-8xl flex-wrap items-center justify-between sm:px-2 lg:px-8 xl:px-12">
+        <div className="relative flex items-center">
+          <Link href="/" aria-label="Home page">
+            <Logo className="relative top-[4px] block h-9 min-h-[60px] w-auto fill-slate-700 dark:fill-sky-100" />
+          </Link>
+        </div>
+        <div className="relative ml-10 flex items-center">
+          <nav
+            className={clsx(
+              'font-width-75 text-3xl font-semibold uppercase text-white'
+            )}
+          >
+            <ul className={clsx('flex-flow flex gap-8')}>
+              <li>
+                <Link
+                  href="/"
+                  className="flex-flow group flex items-center gap-1"
+                >
+                  <FontAwesomeIcon icon={faBolt} className="text-orange-600" />
+                  <span className="whitespace-nowrap border-b border-solid border-emulsifyBlue-400 group-hover:border-emulsifyBlue-200">
+                    Quick Start
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/"
+                  className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+                >
+                  Docs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/"
+                  className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/"
+                  className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+                >
+                  Search
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
       {/* <div className="mr-6 flex lg:hidden">
         <MobileNavigation navigation={navigation} />
@@ -186,7 +188,7 @@ export function Layout({ children, title, tableOfContents }) {
     <>
       <Header navigation={navigation} />
 
-      {isHomePage && <Hero />}
+      {/* {isHomePage && <Hero />} */}
 
       <div className="wave-background relative z-10 mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
