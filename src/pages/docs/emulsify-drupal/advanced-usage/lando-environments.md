@@ -1,8 +1,8 @@
 ---
+title: Lando Environments
+pageTitle: Lando Environments
 description: Use Lando to make your development environment portable
 ---
-
-# Lando Environments
 
 ### Why use Lando?
 
@@ -25,6 +25,7 @@ description: Use Lando to make your development environment portable
     ```yaml
     recipe: drupal9
     ```
+
 2. Both NodeJS and NPM needs to be available at a project level. Using npm the emulsify cli command can also be installed. This and npm can both be made available via Lando tooling.
 
     ```yaml
@@ -47,11 +48,13 @@ description: Use Lando to make your development environment portable
       emulsify:
         service: appserver
     ```
+
 3. Emulsify needs port `6006` to be available for StorybookJS and port `32778` to be available for [Hot Reload](./hot-reload-drupal.md).
 
    By adding proxy address for browsersync.example.lndo.site and storybook.example.lndo.site that point to the ports needed, those applications can be accessible by navigating to the addresses (without the ports, like this: `http://storybook.example.lndo.site`) from outside the container services.
 
    Since we are using proxies instead of forwarding ports directly, multiple projects can make use of these ports simultaneously.
+
    ```yaml
    proxy:
       appserver:

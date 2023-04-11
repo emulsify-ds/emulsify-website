@@ -1,8 +1,8 @@
 ---
+title: Emulsify CLI
+pageTitle: Emulsify CLI
 description: Command line interface for Emulsify.
 ---
-
-# Emulsify CLI
 
 ## Docs
 

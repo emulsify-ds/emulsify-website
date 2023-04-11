@@ -1,16 +1,14 @@
 ---
-description: >-
-  Instructions from
+title: Standalone Installation
+pageTitle: Standalone Installation
+description: Instructions from
   https://github.com/emulsify-ds/gatsby-starter-emulsify-drupal
 ---
 
-# Standalone Installation
-
-### Standalone \(not Drupal\)
+## Standalone \(not Drupal\)
 
 `yarn` or `npm install`
 
-### Drupal Installation
+## Drupal Installation
 
 See here.
-

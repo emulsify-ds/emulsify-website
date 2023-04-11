@@ -1,8 +1,8 @@
 ---
+title: Compound
+pageTitle: Compound
 description: Compound is the default Emulsify system.
 ---
-
-# Compound
 
 ## Components
 

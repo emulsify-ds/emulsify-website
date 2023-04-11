@@ -1,10 +1,8 @@
 ---
-description: >-
-  How to use package management in Emulsify to share components and styles
-  across multiple projects
+title: Packaging For Multiple Properties
+pageTitle: Packaging For Multiple Properties
+description: How to use package management in Emulsify to share components and styles across multiple projects
 ---
-
-# Packaging For Multiple Properties
 
 ## Sharing Across Multiple Projects
 
@@ -19,10 +17,10 @@ One common way to package components and styles is to have one package for compo
 
 The organization's Drupal project (A) and one of the properties of the organization (B) can both share the components and styling across their projects. Once those packages have been set up, installing them in each project using Emulsify Drupal is as follows:
 
-#### Install Packages
+### Install Packages
 
 ```
-$ npm i global-sass global-twig
+npm i global-sass global-twig
 ```
 
 #### Styling
@@ -87,6 +85,3 @@ Now, your project will use your local versions of those packages, and with the c
 #### Drupal Twig
 
 One last note on the Drupal side: you will also want your theme's `*.info.yml` file to mimic any namespaces you have in Webpack for Storybook. Here's [the example from Western University](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/western\_up.info.yml#L46-L58). And of course, for these paths to work, you will have to make sure your continuous integration process produces the `node_modules` directory with your packages.
-
-
-

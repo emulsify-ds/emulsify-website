@@ -1,8 +1,8 @@
 ---
+title: Component-Driven Design
+pageTitle: Component-Driven Design
 description: Helpful information for those new to component-driven design
 ---
-
-# Component-Driven Design
 
 Component-driven design is a way to systematize and share designs as functional prototypes. Emulsify uses the [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) system for organization.
 
@@ -23,4 +23,3 @@ Organizing components using the [Atomic Design](http://bradfrost.com/blog/post/a
 3. **Building a component:** A component is commonly comprised of an HTML file \(using Twig in our case\), a CSS file \(using Sass in our case\) and possibly a Javascript file. `components/01-atoms/links/link/link.twig` is a good example of a simple link component. Please store all code for a component together inside the component's directory.
 4. **Storybook Specific:** Storybook allows you to use YAML or JSON files to insert data in your components \(we use YAML by default\). It also allows you to easily add variations for a component. See `components/01-atoms/buttons/buttons.stories.js` for a an example.
 5. **Drupal-related:** There are other files in the prototyping system specific to Drupal, which you can ignore while prototyping as they have no effect on building the components in Storybook \(e.g., the `/templates` directory\).
-

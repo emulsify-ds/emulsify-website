@@ -1,4 +1,8 @@
-# Writing Stories
+---
+title: Writing Stories
+pageTitle: Writing Stories
+description: TKTK
+---
 
 Writing components in Emulsify follows standard practices. You create your component Twig, .scss and/or .js files in component-specific directories.
 

@@ -1,8 +1,8 @@
 ---
+title: Help and Support
+pageTitle: Help and Support
 description: Support resources for Emulsify Design System
 ---
-
-# Help and Support
 
 Emulsify is a free, open source project built and maintained by [Four Kitchens](https://fourkitchens.com). We welcome community contributions and support requests (via issues) on [Github](https://github.com/emulsify-ds).
 

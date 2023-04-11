@@ -1,10 +1,10 @@
 ---
+title: Styleguide Installation \(Gatsby\)
+pageTitle: Styleguide Installation \(Gatsby\)
 description: 'Instructions from https://github.com/emulsify-ds/gatsby-theme-emulsify'
 ---
 
-# Styleguide Installation \(Gatsby\)
-
-### Quickstart
+## Quickstart
 
 Using a Gatsby Starter is the fastest way to get up-and-running.
 
@@ -65,4 +65,3 @@ publishToStyleGuide: true
 ```
 
 * You're now ready to start documenting your component library!
-

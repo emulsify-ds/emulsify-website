@@ -1,8 +1,8 @@
 ---
+title: 'Emulsify Drupal: Adding 3rd-party libraries'
+pageTitle: 'Emulsify Drupal: Adding 3rd-party libraries'
 description: How to add libraries like jQuery to your project.
 ---
-
-# Emulsify Drupal: Adding 3rd-party libraries
 
 ## Global Libraries \(e.g. jQuery\)
 
@@ -168,4 +168,3 @@ External libraries, for example from a CDN, can be loaded with [Storybook Extern
 + const externalLinkDecorator = withExternalLinks(url);
 + addDecorator(externalLinkDecorator);
 ```
-

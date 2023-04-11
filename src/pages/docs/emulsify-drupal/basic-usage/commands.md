@@ -1,8 +1,8 @@
 ---
+title: Commands
+pageTitle: Commands
 description: Commands available in Emulsify Drupal
 ---
-
-# Commands
 
 ### Storybook
 

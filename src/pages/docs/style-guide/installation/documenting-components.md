@@ -1,8 +1,8 @@
 ---
+title: Documenting Components
+pageTitle: Documenting Components
 description: Document your project components with live Storybook examples
 ---
-
-# Documenting Components
 
 ## Documenting Components
 

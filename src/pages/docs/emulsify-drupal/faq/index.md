@@ -1,8 +1,8 @@
 ---
+title: FAQ
+pageTitle: FAQ
 description: Frequently asked questions about Emulsify Drupal
 ---
-
-# FAQ
 
 ## .git can't be found
 

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faCaretUp } from '@fortawesome/sharp-solid-svg-icons'
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 import classNames from 'classnames'
 
 const navBorder = 'border-l border-gray-300 dark:border-emulsifyBlue-800'
@@ -82,7 +82,7 @@ export function Navigation({ navigation, className }) {
   return (
     <nav className={clsx('text-base lg:text-sm', className)}>
       {navigation.map((section, i) => (
-        <>
+        <Fragment key={i}>
           <h2
             className={classNames(
               'font-width-75 mt-5 text-2xl font-semibold uppercase text-emulsifyBlue-800 dark:text-emulsifyBlue-100',
@@ -92,7 +92,7 @@ export function Navigation({ navigation, className }) {
             {section.title}
           </h2>
           <Submenu items={section.links} open />
-        </>
+        </Fragment>
       ))}
     </nav>
   )

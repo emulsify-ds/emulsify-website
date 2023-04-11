@@ -1,8 +1,8 @@
 ---
+title: Upgrading
+pageTitle: Upgrading
 description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drupal
 ---
-
-# Upgrading
 
 ### Required Steps
 

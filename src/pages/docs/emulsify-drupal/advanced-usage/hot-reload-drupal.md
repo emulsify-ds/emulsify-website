@@ -1,8 +1,8 @@
 ---
+title: Hot Reload Drupal
+pageTitle: Hot Reload Drupal
 description: Use BrowserSync to hot reload Drupal after changes
 ---
-
-# Hot Reload Drupal
 
 ### Instructions
 
@@ -44,6 +44,6 @@ module.exports = merge(common, {
 
 This will add hot reloading for Drupal for a Lando project. Your local environment may require different settings (proxy, port, etc.). See [BrowserSync's docs](https://www.browsersync.io/docs/) for more info.
 
-### Troubleshooting:
+### Troubleshooting
 
 If you do not see your changes hot reloading when editing files, make sure your Drupal caching settings are [completely disabled](https://www.drupal.org/node/2598914).&#x20;

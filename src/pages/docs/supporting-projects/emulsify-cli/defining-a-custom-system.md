@@ -1,10 +1,8 @@
 ---
-description: >-
-  Compound is the default Emulsify system, but you can define your own for your
-  custom projects!
+title: Defining a Custom System
+pageTitle: Defining a Custom System
+description: Compound is the default Emulsify system, but you can define your own for your custom projects!
 ---
-
-# Defining a Custom System
 
 When you're building your custom system, you'll need to add new components to your `system.emulsify.json` file in order for the CLI to know they exists, and what to do with them.
 

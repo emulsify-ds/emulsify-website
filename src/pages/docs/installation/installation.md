@@ -1,10 +1,10 @@
 ---
+title: Drupal Installation
+pageTitle: Drupal Installation
 description: Instructions for installing Emulsify as your Drupal theme
 ---
 
-# Drupal Installation
-
-### Requirements
+## Requirements
 
 1. [PHP 7.1](http://www.php.net/)
 2. [Node \(we recommend NVM\)](https://github.com/creationix/nvm)
@@ -45,4 +45,3 @@ No. Your new custom theme is not a subtheme of Emulsify, and has no references t
 You can use Emulsify as your theme!
 
 However, any changes you make to the components will be overwritten if you ever update Emulsify. So, it's recommended that you run the drush command to create a clone, and make your customizations there.
-

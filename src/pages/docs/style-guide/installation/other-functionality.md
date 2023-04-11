@@ -1,4 +1,8 @@
-# Other Functionality
+---
+title: Other Functionality
+pageTitle: Other Functionality
+description: TKTK
+---
 
 **Other MDX shortcodes available:**
 
@@ -30,4 +34,3 @@ We use [Theme UI](https://theme-ui.com/) to manage the styling of the theme. Thi
 #### Gatsby Shadowing
 
 For complete control, Gatsby themes also allow you to fully override components via [shadowing](https://www.gatsbyjs.org/docs/themes/shadowing/). From the layout to specific components, this allows you full customization over the look/feel and even functionality of the project.
-
