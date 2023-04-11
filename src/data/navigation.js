@@ -4,75 +4,111 @@ export const navigation = [
     links: [
       {
         title: 'Emulsify Drupal',
-        href: '/emulsify-drupal',
+        href: '/docs/emulsify-drupal',
         children: [
           {
             title: 'Basic Usage',
-            href: '/emulsify-drupal/basic-usage',
+            href: '/docs/emulsify-drupal/basic-usage',
             children: [
               {
                 title: 'Commands',
-                href: '/emulsify-drupal/basic-usage/commands',
+                href: '/docs/emulsify-drupal/basic-usage/commands',
               },
               {
                 title: 'Writing Stories',
-                href: '/emulsify-drupal/basic-usage/writing-stories',
+                href: '/docs/emulsify-drupal/basic-usage/writing-stories',
               },
             ],
           },
           {
             title: 'Advanced Usage',
-            href: '/emulsify-drupal/advanced-usage',
+            href: '/docs/emulsify-drupal/advanced-usage',
             children: [
               {
                 title: 'Accessibility Testing',
-                href: '/emulsify-drupal/advanced-usage/accessibility-testing',
+                href: '/docs/emulsify-drupal/advanced-usage/accessibility-testing',
               },
               {
                 title: 'Adding 3rd-party Libraries',
-                href: '/emulsify-drupal/advanced-usage/3rd-party-libraries',
+                href: '/docs/emulsify-drupal/advanced-usage/3rd-party-libraries',
               },
               {
                 title: 'Hot Reload Drupal',
-                href: '/emulsify-drupal/advanced-usage/hot-reload-drupal',
+                href: '/docs/emulsify-drupal/advanced-usage/hot-reload-drupal',
               },
               {
                 title: 'Lando Environments',
-                href: '/emulsify-drupal/advanced-usage/lando-environments',
+                href: '/docs/emulsify-drupal/advanced-usage/lando-environments',
               },
             ],
           },
-          { title: 'FAQ', href: '/emulsify-drupal/faq' },
+          { title: 'FAQ', href: '/docs/emulsify-drupal/faq' },
+          {
+            title: 'Tutorials and Videos',
+            href: '/docs/emulsify-drupal/faq/upgrading',
+          },
         ],
       },
     ],
   },
   {
     title: 'Systems',
-    links: [{ title: 'Compound', href: '/docs/understanding-caching' }],
+    links: [{ title: 'Compound', href: '/docs/systems/compound' }],
   },
   {
     title: 'Supporting Projects',
     links: [
-      { title: 'Emulsify CLI', href: '/docs/writing-plugins' },
-      { title: 'Twig Extensions', href: '/docs/neuralink-integration' },
-      { title: 'Webpack and Babel', href: '/docs/temporal-paradoxes' },
-    ],
-  },
-  {
-    title: 'Style Guide',
-    links: [
-      { title: 'Gatsby Theme Emulsify', href: '/docs/cacheadvance-predict' },
+      {
+        title: 'Emulsify CLI',
+        href: '/docs/supporting-projects/emulsify-cli',
+        children: [
+          {
+            title: 'Emulsify CLI Usage',
+            href: '/docs/supporting-projects/emulsify-cli/emulsify-cli-usage',
+          },
+          {
+            title: 'Defining a Custom System',
+            href: '/docs/supporting-projects/emulsify-cli/defining-a-custom-system',
+          },
+        ],
+      },
+      {
+        title: 'Twig Extensions',
+        href: '/docs/supporting-projects/twig-extensions',
+        children: [
+          {
+            title: 'Add a Custom Twig Extension',
+            href: '/docs/supporting-projects/twig-extensions/add-a-custom-twig-extension',
+          },
+        ],
+      },
+      {
+        title: 'Webpack and Babel',
+        href: '/docs/supporting-projects/webpack-and-build',
+      },
     ],
   },
   {
     title: 'Resources',
     links: [
-      { title: 'Help and Support', href: '/docs/how-to-contribute' },
-      { title: 'Component-Driven Design', href: '/docs/architecture-guide' },
+      {
+        title: 'Help and Support',
+        href: '/docs/resources/help-and-support/index',
+        children: [
+          {
+            title: 'FAQ',
+            href: '/docs/resources/help-and-support/faq',
+          },
+          {
+            title: 'Tutorials and Videos',
+            href: '/docs/resources/help-and-support/tutorials-videos',
+          },
+        ],
+      },
+      { title: 'Component-Driven Design', href: '/resources/cdd' },
       {
         title: 'Packaging for Multiple Properties',
-        href: '/docs/design-principles',
+        href: '/docs/resources/packaging-for-multiple-properties',
       },
     ],
   },
