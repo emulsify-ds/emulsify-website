@@ -38,9 +38,13 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50  bg-emulsifyBlue-800 px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50 px-4 py-5 sm:px-6 lg:px-8',
+        'shadow-md shadow-slate-900/5 ',
+        'transition duration-500',
+        'bg-emulsifyBlue-800',
+        'dark:bg-emulsifyBlue-900 dark:shadow-none',
         isScrolled
-          ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
+          ? 'dark:[@supports(backdrop-filter:blur(0))]:bg-emulsifyBlue-900/85 dark:bg-emulsifyBlue-900/95 dark:backdrop-blur'
           : 'dark:bg-transparent'
       )}
     >
@@ -70,7 +74,7 @@ function Header({ navigation }) {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/docs"
                   className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
                 >
                   Docs
@@ -192,9 +196,7 @@ export function Layout({ children, title, tableOfContents }) {
 
       <div className="wave-background relative z-10 mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
-          <div className="absolute inset-y-0 right-0 w-[50vw] bg-emulsifyBlue-600/10 dark:hidden" />
-          <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
-          <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
+          <div className="absolute inset-y-0 right-0 w-[50vw] bg-emulsifyBlue-600/10 dark:bg-emulsifyBlue-900/10" />
           <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
             <Navigation
               navigation={navigation}
@@ -208,7 +210,7 @@ export function Layout({ children, title, tableOfContents }) {
             {(title || section) && (
               <header className="mb-9">
                 {section && (
-                  <p className="text-xl font-black uppercase text-emulsifyBlue-700">
+                  <p className="text-xl font-black uppercase text-emulsifyBlue-700 dark:text-emulsifyBlue-300">
                     {section.title}
                   </p>
                 )}
@@ -261,7 +263,7 @@ export function Layout({ children, title, tableOfContents }) {
               <>
                 <h2
                   id="on-this-page-title"
-                  className="font-width-75 font-display text-xl font-semibold uppercase text-emulsifyBlue-800 dark:text-white"
+                  className="font-width-75 font-display text-xl font-semibold uppercase text-emulsifyBlue-800 dark:text-emulsifyBlue-100"
                 >
                   On this page
                 </h2>
@@ -273,8 +275,8 @@ export function Layout({ children, title, tableOfContents }) {
                           href={`#${section.id}`}
                           className={clsx(
                             isActive(section)
-                              ? 'font-width-75 text-xl font-semibold leading-none text-violet-800'
-                              : 'font-width-75 text-xl font-normal leading-none text-gray-700 hover:text-emulsifyBlue-700 dark:text-white'
+                              ? 'font-width-75 text-xl font-semibold leading-none text-violet-800 dark:text-emulsifyBlue-100'
+                              : 'font-width-75 text-xl font-normal leading-none text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100'
                           )}
                         >
                           {section.title}
@@ -288,8 +290,8 @@ export function Layout({ children, title, tableOfContents }) {
                                 href={`#${subSection.id}`}
                                 className={
                                   isActive(subSection)
-                                    ? 'font-semibold leading-none text-violet-800'
-                                    : 'leading-none hover:text-emulsifyBlue-700 dark:hover:text-slate-300'
+                                    ? 'font-semibold leading-none text-violet-800 dark:text-emulsifyBlue-100'
+                                    : 'leading-none hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100'
                                 }
                               >
                                 {subSection.title}

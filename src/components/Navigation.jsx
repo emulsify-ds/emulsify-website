@@ -6,7 +6,7 @@ import { faCaretDown, faCaretUp } from '@fortawesome/sharp-solid-svg-icons'
 import { useState } from 'react'
 import classNames from 'classnames'
 
-const navBorder = 'border-l border-gray-300 dark:border-slate-800'
+const navBorder = 'border-l border-gray-300 dark:border-emulsifyBlue-800'
 
 const Submenu = ({ items, open }) => (
   <ul className={classNames('my-2 ml-4 text-xl', navBorder, { hidden: !open })}>
@@ -26,8 +26,8 @@ const MenuItemWithSubmenu = ({ item }) => {
           className={clsx(
             'font-width-75 pl-3.5',
             item.href === router.pathname
-              ? 'font-semibold text-violet-800'
-              : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-slate-400  dark:hover:text-slate-300'
+              ? 'font-semibold text-violet-800 dark:text-emulsifyBlue-100'
+              : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100'
           )}
         >
           {item.title}
@@ -39,7 +39,7 @@ const MenuItemWithSubmenu = ({ item }) => {
         >
           <FontAwesomeIcon
             icon={open ? faCaretUp : faCaretDown}
-            className="text-emulsifyBlue-700 hover:text-emulsifyBlue-600"
+            className="text-emulsifyBlue-700 hover:text-emulsifyBlue-500 dark:text-emulsifyBlue-500 dark:hover:text-emulsifyBlue-200"
           />
         </button>
       </span>
@@ -64,8 +64,8 @@ const MenuItems = ({ items }) => {
                 className={clsx(
                   'font-width-75 block w-full pl-3.5',
                   item.href === router.pathname
-                    ? 'font-semibold text-violet-800'
-                    : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-slate-400  dark:hover:text-slate-300'
+                    ? 'font-semibold text-violet-800 dark:text-violet-200'
+                    : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100'
                 )}
               >
                 {item.title}
@@ -85,7 +85,7 @@ export function Navigation({ navigation, className }) {
         <>
           <h2
             className={classNames(
-              'font-width-75 mt-5 text-2xl font-semibold uppercase text-emulsifyBlue-800 dark:text-white',
+              'font-width-75 mt-5 text-2xl font-semibold uppercase text-emulsifyBlue-800 dark:text-emulsifyBlue-100',
               { 'mt-0': i === 0 }
             )}
           >

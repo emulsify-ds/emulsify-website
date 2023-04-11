@@ -43,9 +43,15 @@ export default function Document() {
     <Html className="antialiased [font-feature-settings:'ss01']" lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <link rel="preload" href="Mona-Sans.woff2" as="font" type="font/woff2" crossorigin></link>
+        <link
+          rel="preload"
+          href="Mona-Sans.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin
+        />
       </Head>
-      <body className="bg-white ">
+      <body className="bg-white dark:bg-emulsifyBlue-1000">
         <Main />
         <NextScript />
       </body>
