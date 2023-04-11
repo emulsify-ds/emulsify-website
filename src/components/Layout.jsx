@@ -254,13 +254,14 @@ export function Layout({ children, title, tableOfContents }) {
             )}
           </dl>
         </div>
+
         <div className="z-70 hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
           <nav aria-labelledby="on-this-page-title" className="w-56">
             {tableOfContents.length > 0 && (
               <>
                 <h2
                   id="on-this-page-title"
-                  className="font-width-75 font-display text-3xl font-semibold uppercase text-emulsifyBlue-700 dark:text-white"
+                  className="font-width-75 font-display text-xl font-semibold uppercase text-emulsifyBlue-800 dark:text-white"
                 >
                   On this page
                 </h2>
@@ -272,23 +273,23 @@ export function Layout({ children, title, tableOfContents }) {
                           href={`#${section.id}`}
                           className={clsx(
                             isActive(section)
-                              ? 'font-width-75 text-xl font-semibold uppercase text-violet-800'
-                              : 'font-width-75 text-xl font-semibold uppercase text-gray-700 hover:text-emulsifyBlue-700 dark:text-white'
+                              ? 'font-width-75 text-xl font-semibold leading-none text-violet-800'
+                              : 'font-width-75 text-xl font-normal leading-none text-gray-700 hover:text-emulsifyBlue-700 dark:text-white'
                           )}
                         >
                           {section.title}
                         </Link>
                       </h3>
                       {section.children.length > 0 && (
-                        <ol className="font-width-75 mt-2 space-y-3 pl-5 text-lg font-normal text-gray-700 dark:text-slate-400">
+                        <ol className="font-width-75 mt-2 pl-3 text-lg font-normal text-gray-700 dark:text-slate-400">
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
                               <Link
                                 href={`#${subSection.id}`}
                                 className={
                                   isActive(subSection)
-                                    ? 'text-emulsifyBlue-800'
-                                    : 'hover:text-emulsifyBlue-700 dark:hover:text-slate-300'
+                                    ? 'font-semibold leading-none text-violet-800'
+                                    : 'leading-none hover:text-emulsifyBlue-700 dark:hover:text-slate-300'
                                 }
                               >
                                 {subSection.title}

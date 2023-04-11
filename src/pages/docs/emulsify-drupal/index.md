@@ -1,10 +1,8 @@
 ---
-description: >-
-  Install the component library (Storybook/Webpack) for prototyping and/or as a
-  Drupal theme
+title: Emulsify Drupal
+pageTitle: Emulsify Drupal
+description: No description. TKTK
 ---
-
-# Emulsify Drupal
 
 ## Installation
 

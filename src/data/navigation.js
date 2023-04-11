@@ -93,7 +93,7 @@ export const navigation = [
     links: [
       {
         title: 'Help and Support',
-        href: '/docs/resources/help-and-support/index',
+        href: '/docs/resources/help-and-support',
         children: [
           {
             title: 'FAQ',
