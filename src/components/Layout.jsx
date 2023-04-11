@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
@@ -38,14 +39,11 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
+        'wave-background-header relative overflow-hidden',
         'sticky top-0 z-50 px-4 py-5 sm:px-6 lg:px-8',
-        'shadow-md shadow-slate-900/5 ',
         'transition duration-500',
         'bg-emulsifyBlue-800',
-        'dark:bg-emulsifyBlue-900 dark:shadow-none',
-        isScrolled
-          ? 'dark:[@supports(backdrop-filter:blur(0))]:bg-emulsifyBlue-900/85 dark:bg-emulsifyBlue-900/95 dark:backdrop-blur'
-          : 'dark:bg-transparent'
+        'dark:bg-emulsifyBlue-900'
       )}
     >
       <div className="mx-auto flex max-w-8xl flex-wrap items-center justify-between sm:px-2 lg:px-8 xl:px-12">
@@ -75,7 +73,9 @@ function Header({ navigation }) {
               <li>
                 <Link
                   href="/docs"
-                  className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+                  className={clsx(
+                    'border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200'
+                  )}
                 >
                   Docs
                 </Link>
