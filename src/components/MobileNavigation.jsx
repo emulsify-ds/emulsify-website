@@ -2,43 +2,22 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Dialog } from '@headlessui/react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowLeftLong,
+  faArrowRightLong,
+  faBarsStaggered,
+  faXmarkCircle,
+  faBolt,
+} from '@fortawesome/sharp-solid-svg-icons'
+import clsx from 'clsx'
 import { Logomark } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
 
-function MenuIcon(props) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      {...props}
-    >
-      <path d="M4 7h16M4 12h16M4 17h16" />
-    </svg>
-  )
-}
-
-function CloseIcon(props) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      {...props}
-    >
-      <path d="M5 5l14 14M19 5l-14 14" />
-    </svg>
-  )
-}
-
 export function MobileNavigation({ navigation }) {
-  let router = useRouter()
-  let [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  const [isOpen, setIsOpen] = useState(false)
+  const [whichNavToShow, setWhichNavToShow] = useState('primary')
 
   useEffect(() => {
     if (!isOpen) return
@@ -46,6 +25,16 @@ export function MobileNavigation({ navigation }) {
     function onRouteChange() {
       setIsOpen(false)
     }
+
+    function determineMenuToShow() {
+      const path = router.pathname
+
+      if (router.pathname.startsWith('/doc')) {
+        setWhichNavToShow('docs')
+      }
+    }
+
+    determineMenuToShow()
 
     router.events.on('routeChangeComplete', onRouteChange)
     router.events.on('routeChangeError', onRouteChange)
@@ -64,28 +53,115 @@ export function MobileNavigation({ navigation }) {
         className="relative"
         aria-label="Open navigation"
       >
-        <MenuIcon className="h-6 w-6 stroke-slate-500" />
+        <FontAwesomeIcon
+          icon={faBarsStaggered}
+          className="w-[24px] text-2xl text-emulsifyBlue-300"
+        />
       </button>
       <Dialog
         open={isOpen}
         onClose={setIsOpen}
-        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-slate-900/50 pr-10 backdrop-blur lg:hidden"
+        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-emulsifyBlue-900/50 pr-10 backdrop-blur lg:hidden"
         aria-label="Navigation"
       >
-        <Dialog.Panel className="min-h-full w-full max-w-xs bg-white px-4 pt-5 pb-12 dark:bg-slate-900 sm:px-6">
-          <div className="flex items-center">
+        <Dialog.Panel className="min-h-full w-full max-w-xs bg-emulsifyBlue-100 px-4 pt-5 pb-12 dark:bg-slate-900 sm:px-6">
+          <div className="mb-10 flex items-center">
             <button
               type="button"
               onClick={() => setIsOpen(false)}
               aria-label="Close navigation"
+              className="flex items-center gap-1 text-lg font-semibold leading-none text-emulsifyBlue-800"
             >
-              <CloseIcon className="h-6 w-6 stroke-slate-500" />
+              <FontAwesomeIcon
+                icon={faXmarkCircle}
+                className="relative top-[-1px] w-[24px] text-2xl"
+              />
+              CLOSE
             </button>
-            <Link href="/" className="ml-6" aria-label="Home page">
-              <Logomark className="h-9 w-9" />
-            </Link>
           </div>
-          <Navigation navigation={navigation} className="mt-5 px-1" />
+          {whichNavToShow === 'docs' && (
+            <div>
+              <button
+                type="button"
+                className="mb-3 font-semibold uppercase text-emulsifyBlue-600 hover:text-emulsifyBlue-700"
+                onClick={() => {
+                  setWhichNavToShow('primary')
+                }}
+              >
+                <FontAwesomeIcon icon={faArrowLeftLong} className="mr-2" />
+                Back
+              </button>
+              <h2 className="font-width-75 text-5xl font-semibold uppercase text-emulsifyBlue-900">
+                Docs
+              </h2>
+              <Navigation navigation={navigation} className="mt-2 pr-3" />
+            </div>
+          )}
+          {whichNavToShow === 'primary' && (
+            <div>
+              <nav
+                className={clsx(
+                  'font-width-75 text-3xl font-semibold uppercase text-emulsifyBlue-800'
+                )}
+              >
+                <ul className={clsx('flex-flow flex flex-col gap-5')}>
+                  <li>
+                    <Link
+                      href="/"
+                      className="flex-flow group flex items-center gap-1"
+                    >
+                      <span className="whitespace-nowrap border-b border-solid border-emulsifyBlue-400 group-hover:border-emulsifyBlue-200">
+                        Quick Start
+                      </span>
+                      <FontAwesomeIcon
+                        icon={faBolt}
+                        className="text-orange-600"
+                      />
+                    </Link>
+                  </li>
+                  <li className="flex-flow flex items-center leading-none">
+                    <Link
+                      href="/docs"
+                      className={clsx(
+                        'border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200'
+                      )}
+                    >
+                      Docs
+                    </Link>
+                    <button
+                      type="button"
+                      className="font-width-75 mb-3 font-semibold uppercase text-emulsifyBlue-600 hover:text-emulsifyBlue-700"
+                      onClick={() => {
+                        setWhichNavToShow('docs')
+                      }}
+                    >
+                      <FontAwesomeIcon
+                        icon={faArrowRightLong}
+                        className="ml-2 text-xl"
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <Link
+                      href="/"
+                      className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/"
+                      className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
+                    >
+                      Search
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          )}
+          {/*  */}
         </Dialog.Panel>
       </Dialog>
     </>

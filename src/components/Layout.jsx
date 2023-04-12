@@ -4,7 +4,12 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
+import {
+  faBolt,
+  faBarsStaggered,
+  faXmark,
+} from '@fortawesome/sharp-solid-svg-icons'
+import { Popover } from '@headlessui/react'
 import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
@@ -24,6 +29,7 @@ function GitHubIcon(props) {
 
 function Header({ navigation }) {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     function onScroll() {
@@ -39,20 +45,49 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'wave-background-header relative overflow-hidden',
-        'sticky top-0 z-50 px-4 py-5 sm:px-6 lg:px-8',
+        'wave-background-header relative',
+        'sticky top-0 left-0 right-0 z-50 w-screen px-4 py-5 sm:px-6 lg:px-8',
         'transition duration-500',
         'bg-emulsifyBlue-800',
         'dark:bg-emulsifyBlue-900'
       )}
     >
-      <div className="mx-auto flex max-w-8xl flex-wrap items-center justify-between sm:px-2 lg:px-8 xl:px-12">
+      <div className="mx-auto flex max-w-8xl flex-wrap items-center gap-5 sm:px-2 md:justify-between md:gap-0 lg:px-8 xl:px-12">
+        <div className="md:hidden">
+          <MobileNavigation navigation={navigation} />
+          {/* <Popover className="relative">
+            <Popover.Button
+              onClick={() => setMobileMenuOpen((current) => !current)}
+            >
+              {mobileMenuOpen ? (
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  className="w-[24px] text-2xl text-emulsifyBlue-300"
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faBarsStaggered}
+                  className="w-[24px] text-2xl text-emulsifyBlue-300"
+                />
+              )}
+            </Popover.Button>
+
+            <Popover.Panel className="absolute z-10 w-[80vw] rounded bg-emulsifyBlue-300 p-5 ">
+              <div className="grid grid-cols-2">
+                <a href="/analytics">Analytics</a>
+                <a href="/engagement">Engagement</a>
+                <a href="/security">Security</a>
+                <a href="/integrations">Integrations</a>
+              </div>
+            </Popover.Panel>
+          </Popover> */}
+        </div>
         <div className="relative flex items-center">
           <Link href="/" aria-label="Home page">
-            <Logo className="relative top-[4px] block h-9 min-h-[60px] w-auto fill-slate-700 dark:fill-sky-100" />
+            <Logo className="relative top-[4px] block h-9 w-auto fill-slate-700 dark:fill-sky-100 md:min-h-[60px]" />
           </Link>
         </div>
-        <div className="relative ml-10 flex items-center">
+        <div className="relative ml-10 flex hidden items-center md:flex">
           <nav
             className={clsx(
               'font-width-75 text-3xl font-semibold uppercase text-white'
@@ -105,7 +140,7 @@ function Header({ navigation }) {
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
-          <Logo className="h-9 w-auto fill-slate-700 dark:fill-sky-100 block min-h-[50px] relative top-[4px]" />
+          <Logo className="relative top-[4px] block h-9 min-h-[50px] w-auto fill-slate-700 dark:fill-sky-100" />
         </Link>
       </div>
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
@@ -205,7 +240,7 @@ export function Layout({ children, title, tableOfContents }) {
           </div>
         </div>
 
-        <div className="z-70 min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+        <div className="z-70 w-full max-w-2xl px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
             {(title || section) && (
               <header className="mb-9">

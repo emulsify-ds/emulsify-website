@@ -6,7 +6,7 @@ description: TKTK
 
 Emulsify Drupal has multiple ways of testing accessibility.
 
-### Storybook a11y Addon
+## Storybook a11y Addon
 
 Emulsify Drupal uses Storybook's [a11y addon](https://github.com/storybookjs/storybook/tree/master/addons/a11y), and it is the default panel open in Storybook's addons pane. This makes it easy to verify the components you build are accessible in the UI.&#x20;
 
