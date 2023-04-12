@@ -4,7 +4,7 @@ pageTitle: Commands
 description: Commands available in Emulsify Drupal
 ---
 
-### Storybook
+## Storybook
 
 Develop: `npm run develop`
 

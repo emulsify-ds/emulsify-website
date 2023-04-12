@@ -4,7 +4,7 @@ pageTitle: Lando Environments
 description: Use Lando to make your development environment portable
 ---
 
-### Why use Lando?
+## Why use Lando?
 
 1. Standardizing local environments is simple and effective.
 2. Your development environment is portable, so you only need Docker and Lando to develop.

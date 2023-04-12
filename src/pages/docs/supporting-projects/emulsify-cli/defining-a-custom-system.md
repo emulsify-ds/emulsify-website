@@ -124,7 +124,7 @@ The process is pretty straight-forward. Let's take a look at an example pulled f
 }
 ```
 
-### Name
+## Name
 
 The "name" key is simply used to identify your system. That's about it.
 

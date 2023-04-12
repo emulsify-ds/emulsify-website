@@ -10,7 +10,7 @@ This project is a command line interface for working with Emulsify. It has a few
 * Allow developers to select an Emulsify system (such as [Compound](https://github.com/emulsify-ds/compound)).
 * Give developers the ability to pull in components from the system they're using, when/if they need them.
 
-### Projects, Systems and Variants
+## Projects, Systems and Variants
 
 You will see the terms "Projects", "Systems" and "Variants" used throughout this documentation, so it's important for you to understand what they mean.
 

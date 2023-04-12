@@ -4,7 +4,7 @@ pageTitle: Upgrading
 description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drupal
 ---
 
-### Required Steps
+## Required Steps
 
 1. Disable old theme
 2. Rename old theme directory to something else (e.g., `THEMENAME_old`) and rename the old theme's info.yml file as well (e.g., `THEMENAME_old.info.yml`)

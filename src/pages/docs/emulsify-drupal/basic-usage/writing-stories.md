@@ -8,7 +8,7 @@ Writing components in Emulsify follows standard practices. You create your compo
 
 To show components in Storybook, however, you will need to create "stories." Storybook is very flexible and extensible, and there are addons that provide additional flexibility. We can't document everything you can do in Storybook, so below you'll find just a few examples of common ways to show your components in the Storybook UI. View more details on the [Storybook documentation site](https://storybook.js.org/docs/react/writing-stories/introduction).
 
-### Simple annotated example
+## Simple annotated example
 
 (From `components/01-atoms/buttons/buttons.stories.js` with added comments)
 

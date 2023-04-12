@@ -6,13 +6,13 @@ description: TKTK
 
 Emulsify Design System uses [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) across all projects. See below for instructions on adding/editing specific Webpack and/or Babel configuration:
 
-### Webpack
+## Webpack
 
-#### Storybook
+### Storybook
 
 Storybook's configuration, including its Webpack configuration, can be found in the `/.storybook` directory. You can easily extend this configuration beyond the defaults, which for Emulsify Drupal includes loading twig, sass, YAML, and linting styles.
 
-#### Project
+### Project
 
 The Webpack build for the project found in the `/webpack` directory can be extended as well. By default it includes the following:
 

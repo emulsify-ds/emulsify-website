@@ -14,7 +14,7 @@ Component-driven design is a way to systematize and share designs as functional 
 
 We accomplish this by using [Storybook](https://storybook.js.org/) and [Twig](https://twig.symfony.com/). Because both Storybook and Drupal 8 can use Twig for templates, this means that the design components that get built can be used directly by systems such as Drupal! 🎉
 
-### How to use Storybook
+## How to use Storybook
 
 Organizing components using the [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) system and seeing those components come to life in Storybook is extremely rewarding. It's worth taking a few moments to read the [Storybook documentation](https://storybook.js.org/docs/basics/introduction/), particularly the section on [Writing Stories](https://storybook.js.org/docs/basics/writing-stories/). Below are a few basic principles.
 

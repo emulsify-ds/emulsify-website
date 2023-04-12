@@ -4,7 +4,7 @@ pageTitle: Hot Reload Drupal
 description: Use BrowserSync to hot reload Drupal after changes
 ---
 
-### Instructions
+## Instructions
 
 1. Install BrowserSync and BrowserSync Webpack plugin
 

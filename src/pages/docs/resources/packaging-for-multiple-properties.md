@@ -56,14 +56,7 @@ config.module.rules[0].use[0].loader = require.resolve('babel-loader');
 
 #### Organization vs. Property (Global vs. local)
 
-Also, you may have noticed we're only using global components in this project (the atoms/molecules/etc. in the `twig-loader` namespaces are all from our global package). This is helpful when working on a global project like a main organization project. If you need some global and local, like on a property, you can use something like in the [Western School of Arts project](https://github.com/emulsify-ds/westernarts/blob/master/web/themes/custom/western\_arts/.storybook/webpack.config.js#L43-L77). Notice there are now namespaces for both global (e.g., `atoms`) and local (e.g., `wa_atoms`). Now you can use things like this in your Twig:
-
-```
-{% raw %}
-{% include "@atoms/global/button.twig" %}
-{% include "@wa_atoms/local/button.twig %}
-{% endraw %}
-```
+Also, you may have noticed we're only using global components in this project (the atoms/molecules/etc. in the `twig-loader` namespaces are all from our global package). This is helpful when working on a global project like a main organization project. If you need some global and local, like on a property, you can use something like in the [Western School of Arts project](https://github.com/emulsify-ds/westernarts/blob/master/web/themes/custom/western\_arts/.storybook/webpack.config.js#L43-L77). Notice there are now namespaces for both global (e.g., `atoms`) and local (e.g., `wa_atoms`). Now you can use things like this in your Twig.
 
 #### Organization Workflow
 
