@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint:next": "next lint",
-    "lint": "eslint .",
+    "lint": "eslint ./src",
     "lint:fix": "eslint . --fix"
   },
   "browserslist": "defaults, not ie <= 11",
