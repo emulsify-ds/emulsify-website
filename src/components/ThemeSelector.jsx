@@ -45,7 +45,7 @@ function SystemIcon(props) {
 }
 
 export function ThemeSelector(props) {
-  let [selectedTheme, setSelectedTheme] = useState()
+  const [selectedTheme, setSelectedTheme] = useState()
 
   useEffect(() => {
     if (selectedTheme) {
@@ -61,7 +61,7 @@ export function ThemeSelector(props) {
   }, [selectedTheme])
 
   useEffect(() => {
-    let handler = () =>
+    const handler = () =>
       setSelectedTheme(
         themes.find(
           (theme) => theme.value === (window.localStorage.theme ?? 'system')

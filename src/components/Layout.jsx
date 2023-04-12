@@ -1,22 +1,15 @@
+/* eslint-disable no-shadow */
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faBolt,
-  faBarsStaggered,
-  faXmark,
-} from '@fortawesome/sharp-solid-svg-icons'
-import { Popover } from '@headlessui/react'
+import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
 import { Hero } from '@/components/Hero'
-import { Logo, Logomark } from '@/components/Logo'
+import { Logo } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
-import { Search } from '@/components/Search'
-import { ThemeSelector } from '@/components/ThemeSelector'
 import { navigation } from '@/data/navigation'
 
 function GitHubIcon(props) {

@@ -9,11 +9,11 @@ const styles = {
 }
 
 export function Button({ variant = 'primary', className, href, ...props }) {
-  className = clsx(styles[variant], className)
+  const classNames = clsx(styles[variant], className)
 
   return href ? (
-    <Link href={href} className={className} {...props} />
+    <Link href={href} className={classNames} {...props} />
   ) : (
-    <button className={className} {...props} />
+    <button type="button" className={classNames} {...props} />
   )
 }

@@ -1,7 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "wesbos"],
   "rules": {
-    "import/no-unresolved": [2, { "ignore": ["@/components"] }],
+    "import/no-unresolved": [2, { "ignore": ["@/components", "@/images", "@/data", "@/styles"] }],
     "react/prop-types": 0
   }
 }
