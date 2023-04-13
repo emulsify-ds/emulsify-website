@@ -82,15 +82,27 @@ export function ThemeSelector(props) {
     >
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
       <Listbox.Button
-        className="flex h-6 w-6 items-center justify-center rounded-lg shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5"
+        className={clsx(
+          'flex h-6 w-6 items-center justify-center rounded-lg',
+          'bg-emulsifyBlue-700 hover:bg-emulsifyBlue-600',
+          'dark:bg-emulsifyBlue-800 dark:hover:bg-emulsifyBlue-700'
+        )}
         aria-label={selectedTheme?.name}
       >
         <LightIcon className="hidden h-4 w-4 fill-white [[data-theme=light]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-sky-400 [[data-theme=dark]_&]:block" />
+        <DarkIcon className="hidden h-4 w-4 fill-white [[data-theme=dark]_&]:block" />
         <LightIcon className="hidden h-4 w-4 fill-white [:not(.dark)[data-theme=system]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-slate-400 [.dark[data-theme=system]_&]:block" />
+        <DarkIcon className="hidden h-4 w-4 fill-white [.dark[data-theme=system]_&]:block" />
       </Listbox.Button>
-      <Listbox.Options className="absolute top-full left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5">
+
+      <Listbox.Options
+        className={clsx(
+          'absolute top-full left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl',
+          'bg-emulsifyBlue-200 p-3 text-sm font-medium',
+          'border border-solid border-emulsifyBlue-400 shadow-lg',
+          'dark:border-emulsifyBlue-700 dark:bg-emulsifyBlue-800'
+        )}
+      >
         {themes.map((theme) => (
           <Listbox.Option
             key={theme.value}
@@ -99,10 +111,12 @@ export function ThemeSelector(props) {
               clsx(
                 'flex cursor-pointer select-none items-center rounded-[0.625rem] p-1',
                 {
-                  'text-sky-500': selected,
-                  'text-slate-900 dark:text-white': active && !selected,
-                  'text-slate-700 dark:text-slate-400': !active && !selected,
-                  'bg-slate-100 dark:bg-slate-900/40': active,
+                  'text-emulsifyBlue-700 dark:text-emulsifyBlue-100': selected,
+                  'text-emulsifyBlue-900 dark:text-white': active && !selected,
+                  'text-emulsifyBlue-900 dark:text-emulsifyBlue-100':
+                    !active && !selected,
+                  'bg-emulsifyBlue-500 text-emulsifyBlue-100 dark:bg-emulsifyBlue-700':
+                    active,
                 }
               )
             }
@@ -114,8 +128,8 @@ export function ThemeSelector(props) {
                     className={clsx(
                       'h-4 w-4',
                       selected
-                        ? 'fill-sky-400 dark:fill-sky-400'
-                        : 'fill-slate-400'
+                        ? 'fill-emulsifyBlue-700 dark:fill-emulsifyBlue-100'
+                        : 'fill-emulsifyBlue-700 dark:fill-emulsifyBlue-200'
                     )}
                   />
                 </div>

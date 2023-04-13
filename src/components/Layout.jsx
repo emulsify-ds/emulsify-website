@@ -11,6 +11,7 @@ import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
 import { navigation } from '@/data/navigation'
+import { ThemeSelector } from './ThemeSelector'
 
 function GitHubIcon(props) {
   return (
@@ -48,39 +49,13 @@ function Header({ navigation }) {
       <div className="mx-auto flex max-w-8xl flex-wrap items-center gap-5 sm:px-2 md:justify-between md:gap-0 lg:px-8 xl:px-12">
         <div className="md:hidden">
           <MobileNavigation navigation={navigation} />
-          {/* <Popover className="relative">
-            <Popover.Button
-              onClick={() => setMobileMenuOpen((current) => !current)}
-            >
-              {mobileMenuOpen ? (
-                <FontAwesomeIcon
-                  icon={faXmark}
-                  className="w-[24px] text-2xl text-emulsifyBlue-300"
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faBarsStaggered}
-                  className="w-[24px] text-2xl text-emulsifyBlue-300"
-                />
-              )}
-            </Popover.Button>
-
-            <Popover.Panel className="absolute z-10 w-[80vw] rounded bg-emulsifyBlue-300 p-5 ">
-              <div className="grid grid-cols-2">
-                <a href="/analytics">Analytics</a>
-                <a href="/engagement">Engagement</a>
-                <a href="/security">Security</a>
-                <a href="/integrations">Integrations</a>
-              </div>
-            </Popover.Panel>
-          </Popover> */}
         </div>
         <div className="relative flex items-center">
           <Link href="/" aria-label="Home page">
             <Logo className="relative top-[4px] block h-9 w-auto fill-slate-700 dark:fill-sky-100 md:min-h-[60px]" />
           </Link>
         </div>
-        <div className="relative ml-10 flex hidden items-center md:flex">
+        <div className="relative ml-10 hidden items-center md:flex">
           <nav
             className={clsx(
               'font-width-75 text-3xl font-semibold uppercase text-white'
@@ -127,15 +102,12 @@ function Header({ navigation }) {
             </ul>
           </nav>
         </div>
+        <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
+          <ThemeSelector className="relative z-10" />
+        </div>
       </div>
-      {/* <div className="mr-6 flex lg:hidden">
-        <MobileNavigation navigation={navigation} />
-      </div>
-      <div className="relative flex flex-grow basis-0 items-center">
-        <Link href="/" aria-label="Home page">
-          <Logo className="relative top-[4px] block h-9 min-h-[50px] w-auto fill-slate-700 dark:fill-sky-100" />
-        </Link>
-      </div>
+      {/* 
+      
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
         <Search />
       </div>
