@@ -39,13 +39,13 @@ function Header({ navigation }) {
     <header
       className={clsx(
         'wave-background-header relative',
-        'sticky top-0 left-0 right-0 z-50 w-screen px-4 py-5 sm:px-6 lg:px-8',
+        'sticky top-0 left-0 right-0 z-10 w-screen px-4 py-5 sm:px-6 lg:px-8',
         'transition duration-500',
         'bg-emulsifyBlue-800',
         'dark:bg-emulsifyBlue-900'
       )}
     >
-      <div className="mx-auto flex max-w-8xl flex-wrap items-center gap-5 sm:px-2 md:justify-between md:gap-0 lg:px-8 xl:px-12">
+      <div className="z-20 mx-auto flex max-w-8xl flex-wrap items-center gap-5 sm:px-2 md:justify-between md:gap-0 lg:px-8 xl:px-12">
         <div className="md:hidden">
           <MobileNavigation navigation={navigation} />
           {/* <Popover className="relative">
@@ -222,7 +222,7 @@ export function Layout({ children, title, tableOfContents }) {
 
       {/* {isHomePage && <Hero />} */}
 
-      <div className="wave-background relative z-10 mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
+      <div className="relative z-30 mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-emulsifyBlue-600/10 dark:bg-emulsifyBlue-900/10" />
           <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
