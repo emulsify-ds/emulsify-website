@@ -32,3 +32,8 @@
   width: 100%;
   z-index: -1;
 }
+
+.wave-footer {
+  background-image: url('/images/wave.png');
+  background-size: 300px;
+}

@@ -46,10 +46,20 @@ export function Search() {
     <>
       <button
         type="button"
-        className="group flex h-6 w-6 items-center justify-center border border-solid border-emulsifyBlue-400 transition-all hover:border-emulsifyBlue-200 sm:justify-start md:h-auto md:w-80 md:flex-none md:rounded-lg md:py-2.5 md:pl-4 md:pr-3.5 md:text-sm  dark:md:bg-slate-800/75 dark:md:ring-inset dark:md:ring-white/5 dark:md:hover:bg-slate-700/40 dark:md:hover:ring-slate-500 lg:w-96"
+        className="font-width-75 group flex items-center gap-1 border-b border-solid border-emulsifyBlue-400 text-3xl font-semibold uppercase text-white hover:border-emulsifyBlue-200"
         onClick={onOpen}
       >
-        <SearchIcon className="h-5 w-5 flex-none fill-emulsifyBlue-300 transition-all group-hover:fill-emulsifyBlue-100 dark:fill-slate-500 " />
+        Search
+        {modifierKey && (
+          <kbd className="ml-auto hidden text-xl font-medium text-emulsifyBlue-200 group-hover:text-emulsifyBlue-100 dark:text-slate-500 md:block">
+            <kbd className="font-sans">{modifierKey}</kbd>
+            <kbd className="font-sans">K</kbd>
+          </kbd>
+        )}
+        {/* className={clsx(
+              'font-width-75 text-3xl font-semibold uppercase text-white'
+            )} */}
+        {/* <SearchIcon className="h-5 w-5 flex-none fill-emulsifyBlue-300 transition-all group-hover:fill-emulsifyBlue-100 dark:fill-slate-500 " />
         <span className="sr-only font-bold uppercase group-hover:text-emulsifyBlue-100 md:not-sr-only md:ml-2 md:text-emulsifyBlue-200 md:dark:text-slate-400">
           Search docs
         </span>
@@ -58,7 +68,7 @@ export function Search() {
             <kbd className="font-sans">{modifierKey}</kbd>
             <kbd className="font-sans">K</kbd>
           </kbd>
-        )}
+        )} */}
       </button>
       {isOpen &&
         createPortal(
