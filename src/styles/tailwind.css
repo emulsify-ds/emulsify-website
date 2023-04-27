@@ -37,3 +37,11 @@
   background-image: url('/images/wave.png');
   background-size: 300px;
 }
+
+.wave-bkg {
+  background-image: url('/images/wave.png');
+}
+
+.wave-bkg-mobile {
+  background-image: url('/images/waves-bg-mobile.png');
+}

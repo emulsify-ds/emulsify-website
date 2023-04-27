@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
+import { useRouter } from 'next/router'
 
 import { Layout } from '@/components/Layout'
 
@@ -50,6 +51,18 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
 
 export default function App({ Component, pageProps }) {
   const title = pageProps.markdoc?.frontmatter.title
+  const router = useRouter()
+
+  let type = ''
+  let useProse = ''
+  if (router.pathname.startsWith('/docs')) {
+    type = 'docs'
+    useProse = true
+  }
+  if (router.pathname.startsWith('/blog')) {
+    type = 'blog'
+    useProse = false
+  }
 
   const pageTitle =
     pageProps.markdoc?.frontmatter.pageTitle ||
@@ -67,7 +80,12 @@ export default function App({ Component, pageProps }) {
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
       </Head>
-      <Layout title={title} tableOfContents={tableOfContents}>
+      <Layout
+        title={title}
+        tableOfContents={tableOfContents}
+        type={type}
+        useProse={useProse}
+      >
         <Component {...pageProps} />
       </Layout>
     </>
