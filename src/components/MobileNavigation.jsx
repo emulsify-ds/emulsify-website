@@ -143,7 +143,7 @@ export function MobileNavigation({ navigation }) {
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/blog"
                       className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
                     >
                       Blog

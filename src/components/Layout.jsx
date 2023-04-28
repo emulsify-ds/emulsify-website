@@ -185,8 +185,6 @@ export function Layout({
     <>
       <Header navigation={navigation} />
 
-      {/* {isHomePage && <Hero />} */}
-
       <div
         className={classNames(
           'relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12',
@@ -194,11 +192,11 @@ export function Layout({
           {
             'bg-gradient-to-b from-emulsifyBlue-300 via-violet-300 to-emulsifyBlue-400':
               type === 'blog',
+          },
+          {
+            'dark:bg-gradient-to-b dark:from-emulsifyBlue-800 dark:via-violet-800 dark:to-emulsifyBlue-900':
+              type === 'blog',
           }
-          // {
-          //   'bg-gradient-to-b from-emulsifyBlue-800 via-violet-900 to-emulsifyBlue-900':
-          //     type === 'blog',
-          // }
         )}
       >
         {type === 'docs' && (
@@ -213,7 +211,12 @@ export function Layout({
           </div>
         )}
 
-        <div className="w-full max-w-2xl px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+        <div
+          className={classNames(
+            'w-full  px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16',
+            { 'max-w-2xl': type === 'docs' }
+          )}
+        >
           <article>
             {(title || section) && (
               <header className="mb-9">

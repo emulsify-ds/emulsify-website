@@ -8,7 +8,7 @@ export function Footer() {
     <footer
       className={clsx(
         'wave-footer bg-emulsifyBlue-900 text-emulsifyBlue-100',
-        'pt-10 pb-24'
+        'px-4 pt-10 pb-24 md:px-6'
       )}
     >
       <div className="mx-auto max-w-8xl sm:px-2 lg:flex lg:flex-row lg:px-8 xl:px-12">
