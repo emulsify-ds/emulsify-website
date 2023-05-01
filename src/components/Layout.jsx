@@ -187,15 +187,16 @@ export function Layout({
 
       <div
         className={classNames(
-          'relative mx-auto flex justify-center sm:px-2 lg:px-8 xl:px-12',
-          { 'max-w-8xl': type === 'docs' },
+          'relative mx-auto flex justify-center ',
+          { 'max-w-8xl sm:px-2 lg:px-8 xl:px-12': type === 'docs' },
+          { 'sm:px-2 lg:px-8 xl:px-12': type === 'blogLandingPage' },
           {
             'bg-gradient-to-b from-emulsifyBlue-300 via-violet-300 to-emulsifyBlue-400':
-              type === 'blog',
+              type === 'blogLandingPage',
           },
           {
             'dark:bg-gradient-to-b dark:from-emulsifyBlue-800 dark:via-violet-800 dark:to-emulsifyBlue-900':
-              type === 'blog',
+              type === 'blogLandingPage',
           }
         )}
       >
@@ -213,8 +214,15 @@ export function Layout({
 
         <div
           className={classNames(
-            'w-full  px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16',
-            { 'max-w-2xl': type === 'docs' }
+            'w-full',
+            {
+              'max-w-2xl px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16':
+                type === 'docs',
+            },
+            {
+              'max-w-2xl px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16':
+                type === 'blogLandingPage',
+            }
           )}
         >
           <article>

@@ -60,6 +60,10 @@ export default function App({ Component, pageProps }) {
     useProse = true
   }
   if (router.pathname.startsWith('/blog')) {
+    type = 'blogLandingPage'
+    useProse = false
+  }
+  if (router.pathname.startsWith('/blog/')) {
     type = 'blog'
     useProse = false
   }
