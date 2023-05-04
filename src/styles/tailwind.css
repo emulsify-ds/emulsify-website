@@ -45,3 +45,8 @@
 .wave-bkg-mobile {
   background-image: url('/images/waves-bg-mobile.png');
 }
+
+.dark .prose pre code,
+.prose pre code {
+  @apply bg-transparent p-0;
+}
