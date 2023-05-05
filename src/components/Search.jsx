@@ -51,7 +51,7 @@ export function Search() {
       >
         Search
         {modifierKey && (
-          <kbd className="ml-auto hidden text-xl font-medium text-emulsifyBlue-200 group-hover:text-emulsifyBlue-100 dark:text-slate-500 md:block">
+          <kbd className="ml-auto hidden text-xl font-medium text-emulsifyBlue-200 group-hover:text-emulsifyBlue-100 dark:text-emulsifyBlue-400  md:block">
             <kbd className="font-sans">{modifierKey}</kbd>
             <kbd className="font-sans">K</kbd>
           </kbd>

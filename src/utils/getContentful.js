@@ -9,6 +9,7 @@ const client = createClient({
 const getBlogPosts = async () => {
   const response = await client.getEntries({
     content_type: 'blog',
+    order: '-sys.createdAt',
   })
 
   return response.items

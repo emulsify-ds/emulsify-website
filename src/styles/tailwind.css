@@ -50,3 +50,7 @@
 .prose pre code {
   @apply bg-transparent p-0;
 }
+
+.gist .gist-file a {
+  @apply shadow-none;
+}
