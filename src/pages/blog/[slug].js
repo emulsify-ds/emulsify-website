@@ -30,7 +30,7 @@ const config = {
 export default function BlogPost({ posts }) {
   const router = useRouter()
   const { slug } = router.query
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState(false)
 
   useEffect(() => {
     async function getBody() {
@@ -52,7 +52,6 @@ export default function BlogPost({ posts }) {
 
   return (
     <div>
-      {console.log('content', content.data.fields.sharingImage.fields.file.url)}
       {content && (
         <Head>
           <title>{content.data.fields.title}</title>
