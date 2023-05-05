@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Head from 'next/head'
 import classNames from 'classnames'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -51,6 +52,23 @@ export default function BlogPost({ posts }) {
 
   return (
     <div>
+      {console.log('content', content.data.fields.sharingImage.fields.file.url)}
+      {content && (
+        <Head>
+          <title>{content.data.fields.title}</title>
+          <meta
+            property="og:title"
+            content={content.data.fields.title}
+            key="title"
+          />
+          {content.data.fields.sharingImage && (
+            <meta
+              property="og:image"
+              content={`https:${content.data.fields.sharingImage.fields.file.url}`}
+            />
+          )}
+        </Head>
+      )}
       {content && (
         <>
           <div
@@ -76,7 +94,7 @@ export default function BlogPost({ posts }) {
                     {content.data.fields.author.fields.photo.fields.file
                       .url && (
                       <Image
-                        src={`https://${content.data.fields.author.fields.photo.fields.file.url}`}
+                        src={`https:${content.data.fields.author.fields.photo.fields.file.url}`}
                         alt={content.data.fields.author}
                         width="20"
                         height="20"
@@ -97,11 +115,12 @@ export default function BlogPost({ posts }) {
                 </p>
               </div>
               <Image
-                src={`https://${content.data.fields.heroImage.fields.file.url}`}
-                alt={content.data.fields.author}
+                src={`https:${content.data.fields.heroImage.fields.file.url}`}
+                alt=""
                 width="700"
                 height="400"
                 className=""
+                priority
               />
             </div>
           </div>

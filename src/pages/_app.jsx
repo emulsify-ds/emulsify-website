@@ -67,6 +67,10 @@ export default function App({ Component, pageProps }) {
     type = 'blog'
     useProse = false
   }
+  if (router.pathname.includes('/shareImage')) {
+    type = 'none'
+    useProse = false
+  }
 
   const pageTitle =
     pageProps.markdoc?.frontmatter.pageTitle ||
