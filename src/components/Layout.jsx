@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faSlack } from '@fortawesome/free-brands-svg-icons'
 import classNames from 'classnames'
 import { Hero } from '@/components/Hero'
 import { Logo } from '@/components/Logo'
@@ -99,6 +99,12 @@ function Header({ navigation }) {
             className="text-4xl text-white transition-colors hover:text-emulsifyBlue-200"
           >
             <FontAwesomeIcon icon={faGithub} />
+          </Link>
+          <Link
+            href="https://join.slack.com/t/emulsify/shared_invite/zt-1ujfwwcvr-ynvUPkEgWYuaby~wPaHt8g"
+            className="text-4xl text-white transition-colors hover:text-emulsifyBlue-200"
+          >
+            <FontAwesomeIcon icon={faSlack} />
           </Link>
           <ThemeSelector className="relative z-10" />
         </div>
