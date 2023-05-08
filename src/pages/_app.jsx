@@ -76,8 +76,8 @@ export default function App({ Component, pageProps }) {
   }
 
   const pageTitle =
-    pageProps.markdoc?.frontmatter.pageTitle ||
-    `${pageProps.markdoc?.frontmatter.title} - Docs`
+    `${pageProps.markdoc?.frontmatter.pageTitle} • Emulsify Docs` ||
+    `${pageProps.markdoc?.frontmatter.title} • Emulsify Docs`
 
   const description = pageProps.markdoc?.frontmatter.description
 

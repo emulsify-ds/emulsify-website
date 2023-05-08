@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/sharp-solid-svg-icons'
 import Link from 'next/link'
+import Head from 'next/head'
 import getBlogPosts from '../utils/getContentful'
 import eventFormatter from '../utils/eventFormatter'
 
@@ -107,41 +108,47 @@ const BlogCard = ({
 
 export default function Blog({ posts }) {
   return (
-    <div>
-      <ul
-        className={classNames(
-          'flex flex-col gap-3',
-          'md:grid md:grid-cols-2 md:gap-3',
-          'lg:grid lg:grid-cols-3 lg:gap-3'
-        )}
-      >
-        {posts
-          .filter((post) => post.fields.publishToBlog === true)
-          .map((post, i) => (
-            <li
-              key={post.sys.id}
-              className={classNames(
-                'flex flex-col items-stretch',
-                'rounded border-4 border-solid border-emulsifyBlue-100 bg-emulsifyBlue-100 shadow lg:overflow-hidden lg:rounded-b-xl',
-                { 'lg:col-span-2 lg:row-span-2': i === 0 }
-              )}
-            >
-              <Link href={`/blog/${post.fields.slug}`} className="h-full">
-                <BlogCard
-                  title={post.fields.title}
-                  image={`https:${post.fields.heroImage.fields.file.url}`}
-                  moreLinkText={post.fields.moreLinkText}
-                  size={i === 0 ? 'lg' : ''}
-                  author={post.fields.author.fields.name}
-                  authorImage={`https:${post.fields.author.fields.photo.fields.file.url}`}
-                  publishDate={eventFormatter(post.fields.publishDate)}
-                  description={post.fields.description}
-                />
-              </Link>
-            </li>
-          ))}
-      </ul>
-    </div>
+    <>
+      <Head>
+        <title>Emulsify Blog</title>
+        <meta property="og:title" content="Emulsify Blog" key="title" />
+      </Head>
+      <div>
+        <ul
+          className={classNames(
+            'flex flex-col gap-3',
+            'md:grid md:grid-cols-2 md:gap-3',
+            'lg:grid lg:grid-cols-3 lg:gap-3'
+          )}
+        >
+          {posts
+            .filter((post) => post.fields.publishToBlog === true)
+            .map((post, i) => (
+              <li
+                key={post.sys.id}
+                className={classNames(
+                  'flex flex-col items-stretch',
+                  'rounded border-4 border-solid border-emulsifyBlue-100 bg-emulsifyBlue-100 shadow lg:overflow-hidden lg:rounded-b-xl',
+                  { 'lg:col-span-2 lg:row-span-2': i === 0 }
+                )}
+              >
+                <Link href={`/blog/${post.fields.slug}`} className="h-full">
+                  <BlogCard
+                    title={post.fields.title}
+                    image={`https:${post.fields.heroImage.fields.file.url}`}
+                    moreLinkText={post.fields.moreLinkText}
+                    size={i === 0 ? 'lg' : ''}
+                    author={post.fields.author.fields.name}
+                    authorImage={`https:${post.fields.author.fields.photo.fields.file.url}`}
+                    publishDate={eventFormatter(post.fields.publishDate)}
+                    description={post.fields.description}
+                  />
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </div>
+    </>
   )
 }
 
