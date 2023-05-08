@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import { useRouter } from 'next/router'
-
 import { Layout } from '@/components/Layout'
-
+import { LayoutDocs } from '@/components/LayoutDocs'
+import { LayoutBlogLP } from '@/components/LayoutBlogLP'
+import { LayoutBlogArticle } from '@/components/LayoutBlogArticle'
 import 'focus-visible'
 import '@/styles/tailwind.css'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
 
 function getNodeText(node) {
   let text = ''
@@ -88,14 +91,42 @@ export default function App({ Component, pageProps }) {
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
       </Head>
-      <Layout
-        title={title}
-        tableOfContents={tableOfContents}
-        type={type}
-        useProse={useProse}
-      >
-        <Component {...pageProps} />
-      </Layout>
+      <Header />
+
+      {type === 'docs' && (
+        <LayoutDocs
+          title={title}
+          tableOfContents={tableOfContents}
+          type={type}
+          useProse={useProse}
+        >
+          <Component {...pageProps} />
+        </LayoutDocs>
+      )}
+
+      {type === 'blogLandingPage' && (
+        <LayoutBlogLP
+          title={title}
+          tableOfContents={tableOfContents}
+          type={type}
+          useProse={useProse}
+        >
+          <Component {...pageProps} />
+        </LayoutBlogLP>
+      )}
+
+      {type === 'blog' && (
+        <LayoutBlogArticle
+          title={title}
+          tableOfContents={tableOfContents}
+          type={type}
+          useProse={useProse}
+        >
+          <Component {...pageProps} />
+        </LayoutBlogArticle>
+      )}
+
+      <Footer />
     </>
   )
 }
