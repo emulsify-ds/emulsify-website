@@ -35,7 +35,8 @@ export function Header({ transparent }) {
         {
           'wave-header bg-emulsifyBlue-800 dark:bg-emulsifyBlue-900':
             !transparent,
-        }
+        },
+        { 'mix-blend-exclusion backdrop-blur-lg': isScrolled && transparent }
       )}
     >
       <div className="mx-auto flex max-w-8xl flex-wrap items-center gap-5 sm:px-2 md:justify-between md:gap-0 lg:px-8 xl:px-12">
