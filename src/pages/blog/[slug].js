@@ -54,10 +54,10 @@ export default function BlogPost({ posts }) {
     <div>
       {content && (
         <Head>
-          <title>{content.data.fields.title} • Emulsify Blog</title>
+          <title>{content.data.fields.title} • Emulsify Blog</title>
           <meta
             property="og:title"
-            content={`${content.data.fields.title} • Emulsify Blog`}
+            content={`${content.data.fields.title} • Emulsify Blog`}
             key="title"
           />
           {content.data.fields.sharingImage && (
