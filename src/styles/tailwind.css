@@ -54,3 +54,24 @@
 .gist .gist-file a {
   @apply shadow-none;
 }
+
+.squiggle::after {
+  background: url('/images/together-squiggle.png') no-repeat top left;
+  @apply content-[''] w-full h-full absolute left-0 -bottom-[109%];
+}
+
+.wave-hero {
+  --tw-gradient-from: #00405B;
+  --tw-gradient-to: #460F3F;
+  background-image: url('/images/waves-hero.png'), linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+.brand-consistency {
+  font-style: normal;
+  @apply relative whitespace-nowrap;
+}
+
+.brand-consistency::after {
+  background: url('/images/brand-consistency.png') no-repeat top left;
+  @apply content-[''] w-full h-full absolute left-0 -top-16 translate-x-[20%] ;
+}

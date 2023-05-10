@@ -2,7 +2,7 @@ import { Prose } from '@/components/Prose'
 
 export function LayoutBlogArticle({ children, title, type, useProse = true }) {
   return (
-    <div>
+    <div className="wave-body">
       <div className="relative mx-auto flex justify-center">
         <div className="w-full">
           <article>

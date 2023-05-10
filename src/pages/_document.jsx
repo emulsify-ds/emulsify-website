@@ -51,7 +51,7 @@ export default function Document() {
           crossOrigin
         />
       </Head>
-      <body className="wave-body bg-white dark:bg-emulsifyBlue-1000">
+      <body className="bg-white dark:bg-emulsifyBlue-1000">
         <Main />
         <NextScript />
       </body>

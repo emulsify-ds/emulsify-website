@@ -57,7 +57,6 @@ export function LayoutDocs({
   children,
   title,
   tableOfContents,
-  type,
   useProse = true,
 }) {
   const router = useRouter()
@@ -77,7 +76,7 @@ export function LayoutDocs({
   }
 
   return (
-    <div>
+    <div className="wave-body">
       <div
         className={classNames(
           'relative mx-auto flex justify-center ',

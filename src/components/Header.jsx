@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
+// import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
 import { faGithub, faSlack } from '@fortawesome/free-brands-svg-icons'
 import { Logo } from '@/components/Logo'
 import { MobileNavigation } from '@/components/MobileNavigation'
@@ -10,7 +10,7 @@ import { navigation } from '@/data/navigation'
 import { ThemeSelector } from './ThemeSelector'
 import { Search } from './Search'
 
-export function Header() {
+export function Header({ transparent }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -28,11 +28,14 @@ export function Header() {
   return (
     <header
       className={clsx(
-        'wave-header relative z-50',
+        'relative z-50',
         'sticky top-0 left-0 right-0 w-screen px-4 py-5 sm:px-6 lg:px-8',
         'transition duration-500',
-        'bg-emulsifyBlue-800',
-        'dark:bg-emulsifyBlue-900'
+        { 'bg-transparent': transparent },
+        {
+          'wave-header bg-emulsifyBlue-800 dark:bg-emulsifyBlue-900':
+            !transparent,
+        }
       )}
     >
       <div className="mx-auto flex max-w-8xl flex-wrap items-center gap-5 sm:px-2 md:justify-between md:gap-0 lg:px-8 xl:px-12">

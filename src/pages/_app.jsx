@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import { useRouter } from 'next/router'
-import { Layout } from '@/components/Layout'
 import { LayoutDocs } from '@/components/LayoutDocs'
 import { LayoutBlogLP } from '@/components/LayoutBlogLP'
 import { LayoutBlogArticle } from '@/components/LayoutBlogArticle'
@@ -74,6 +73,10 @@ export default function App({ Component, pageProps }) {
     type = 'none'
     useProse = false
   }
+  if (router.pathname === '/') {
+    type = 'home'
+    useProse = false
+  }
 
   const pageTitle =
     `${pageProps.markdoc?.frontmatter.pageTitle} • Emulsify Docs` ||
@@ -88,10 +91,14 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
+        <title>
+          {router.pathname === '/'
+            ? 'Emulsify • Build Beautiful Design Systems with Ease'
+            : pageTitle}
+        </title>
         {description && <meta name="description" content={description} />}
       </Head>
-      <Header />
+      <Header transparent={type === 'home'} />
 
       {type === 'docs' && (
         <LayoutDocs
@@ -105,26 +112,18 @@ export default function App({ Component, pageProps }) {
       )}
 
       {type === 'blogLandingPage' && (
-        <LayoutBlogLP
-          title={title}
-          tableOfContents={tableOfContents}
-          type={type}
-          useProse={useProse}
-        >
+        <LayoutBlogLP title={title} type={type} useProse={useProse}>
           <Component {...pageProps} />
         </LayoutBlogLP>
       )}
 
       {type === 'blog' && (
-        <LayoutBlogArticle
-          title={title}
-          tableOfContents={tableOfContents}
-          type={type}
-          useProse={useProse}
-        >
+        <LayoutBlogArticle title={title} type={type} useProse={useProse}>
           <Component {...pageProps} />
         </LayoutBlogArticle>
       )}
+
+      {type === 'home' && <Component {...pageProps} />}
 
       <Footer />
     </>
