@@ -47,7 +47,7 @@ function Hero() {
       )}
     >
       <div className="mx-auto max-w-8xl py-32 pt-60 sm:px-2 lg:px-8 xl:px-12">
-        <h1 className="mb-5 max-w-[800px] text-4xl font-black leading-none md:text-6xl lg:mb-10 lg:text-8xl">
+        <h1 className="mb-5 max-w-[800px] font-sans text-4xl font-black leading-none md:text-6xl lg:mb-10 lg:text-8xl">
           Build Beautiful Design Systems with Ease
         </h1>
         <p className="mb-8 max-w-[700px] text-xl font-semibold md:text-2xl lg:text-3xl">
