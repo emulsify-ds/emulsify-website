@@ -1,3 +1,5 @@
+'use client'
+
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDrupal } from '@fortawesome/free-brands-svg-icons'
@@ -9,7 +11,8 @@ import {
 import { faUniversalAccess } from '@fortawesome/pro-regular-svg-icons'
 import TokenIcon from '@mui/icons-material/Token'
 import Image from 'next/image'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
+import { useState, useEffect } from 'react'
 import ComponentLibrary from '@/components/icons/ComponentLibrary'
 import builtWithEmulsifyImage from '../images/Built with Emulsify Stamp.png'
 import consistencyImage from '../images/home-consistency.jpg'
@@ -222,6 +225,12 @@ function Consistency() {
 }
 
 function WhatIsEmulsify() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    setIsLoaded(true)
+  }, [])
+
   return (
     <section
       className={classNames('bg-emulsifyBlue-100')}
@@ -248,13 +257,16 @@ function WhatIsEmulsify() {
           />
         </h2>
         <div className="mx-auto max-w-4xl">
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=Yk_0fARuBas&ab_channel=TalkingDrupal"
-            controls
-            width="100%"
-            height="100%"
-            className="aspect-video"
-          />
+          {isLoaded ? (
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=Yk_0fARuBas&ab_channel=TalkingDrupal"
+              controls
+              width="100%"
+              height="100%"
+              className="aspect-video"
+            />
+          ) : null}
+
           <p className="mt-3">
             Watch the full episode at{' '}
             <a
