@@ -13,12 +13,27 @@ import TokenIcon from '@mui/icons-material/Token'
 import Image from 'next/image'
 import ReactPlayer from 'react-player/lazy'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import ComponentLibrary from '@/components/icons/ComponentLibrary'
-import builtWithEmulsifyImage from '../images/Built with Emulsify Stamp.png'
+import builtWithEmulsifyImage from '../images/BuiltwithEmulsifyStamp.png'
 import consistencyImage from '../images/home-consistency.jpg'
 import talkingDrupal from '../images/talking_drupal_logo.png'
 import togetherImage from '../images/home-together.jpg'
 import waveImage from '../images/wave.png'
+import WTILogo from '../images/built-with-emulsify/WTILogo.svg'
+import aftLogo from '../images/built-with-emulsify/American_Federation_of_Teachers_logo.svg'
+import colombiaLogo from '../images/built-with-emulsify/colombia.svg'
+import coopeLogo from '../images/built-with-emulsify/coope.svg'
+import drexelLogo from '../images/built-with-emulsify/drexel.svg'
+import fhaoLogo from '../images/built-with-emulsify/fhao.svg'
+import ithacaLogo from '../images/built-with-emulsify/ithaca.svg'
+import ncnLogo from '../images/built-with-emulsify/ncn.svg'
+import stanfordLogo from '../images/built-with-emulsify/stanford.svg'
+import tlhLogo from '../images/built-with-emulsify/tlh.svg'
+import yaleInfoSecLogo from '../images/built-with-emulsify/yale-information-security.svg'
+import yaleSchwarzmanLogo from '../images/built-with-emulsify/yale-schwarzman-center.svg'
+import yalesom from '../images/built-with-emulsify/yalesom.svg'
+import uft from '../images/built-with-emulsify/uft.svg'
 
 function Hero() {
   return (
@@ -135,8 +150,95 @@ function DesignSystemsTogether() {
 }
 
 function BuiltWithEmulsify() {
+  const logoWall = [
+    {
+      src: aftLogo,
+      alt: 'American Federation of Teachers',
+      class: 'col-span-1',
+      url: 'https://www.aft.org/',
+    },
+    {
+      src: colombiaLogo,
+      alt: 'Colombia University',
+      class: 'col-span-3',
+      url: 'https://sps.columbia.edu',
+    },
+    {
+      src: coopeLogo,
+      alt: 'Coope',
+      class: 'col-span-2',
+      url: 'https://www.coopeande1.com/',
+    },
+    {
+      src: drexelLogo,
+      alt: 'Drexel University',
+      class: 'col-span-2',
+      url: 'https://lebow.drexel.edu/',
+    },
+    {
+      src: fhaoLogo,
+      alt: 'Florida Hospital Association',
+      class: 'col-span-2',
+      url: 'https://www.facinghistory.org/',
+    },
+    {
+      src: ithacaLogo,
+      alt: 'Ithaca College',
+      class: 'col-span-3',
+      url: 'https://ithaca.edu',
+    },
+    {
+      src: ncnLogo,
+      alt: 'National Council of Nonprofits',
+      class: 'col-span-2',
+      url: 'https://atlas.councilofnonprofits.org',
+    },
+    {
+      src: stanfordLogo,
+      alt: 'Stanford University',
+      class: 'col-span-4',
+      url: 'https://humsci.stanford.edu',
+    },
+    {
+      src: tlhLogo,
+      alt: 'Texas Law Help',
+      class: 'col-span-1',
+      url: 'https://texaslawhelp.org',
+    },
+    {
+      src: uft,
+      alt: 'United Federation of Teachers',
+      class: 'col-span-1',
+      url: 'https://www.uft.org/',
+    },
+    {
+      src: yaleInfoSecLogo,
+      alt: 'Yale Information Security',
+      class: 'col-span-3',
+      url: 'https://cybersecurity.yale.edu/',
+    },
+    {
+      src: yalesom,
+      alt: 'Yale School of Management',
+      class: 'col-span-3',
+      url: 'https://som.yale.edu/',
+    },
+    {
+      src: yaleSchwarzmanLogo,
+      alt: 'Yale Schwarzman Center',
+      class: 'col-span-2',
+      url: 'https://schwarzman.yale.edu/',
+    },
+    {
+      src: WTILogo,
+      alt: 'Yale Wu Tsai Institute',
+      class: 'col-span-2',
+      url: 'https://wti.yale.edu/',
+    },
+  ]
+
   return (
-    <section className={classNames('h-[80vh] bg-white')}>
+    <section className={classNames('bg-white')}>
       <div className="mx-auto max-w-8xl py-16 sm:px-2 lg:px-8 xl:px-12">
         <Image
           src={builtWithEmulsifyImage}
@@ -145,6 +247,22 @@ function BuiltWithEmulsify() {
           alt="Built with Emulsify"
           className="mx-auto -rotate-6"
         />
+        <ul className="mt-9 grid grid-cols-10 items-center gap-y-9 gap-x-5">
+          {logoWall.map((logo) => (
+            <li
+              key={logo.alt}
+              className={classNames('rounded-sm  p-3', logo.class)}
+            >
+              {' '}
+              <Link href={logo.url}>
+                <Image src={logo.src} width={600} height={600} alt={logo.alt} />
+              </Link>
+            </li>
+          ))}
+          <li className="col-span-3 text-xl font-bold italic text-emulsifyBlue-900">
+            and many more websites...
+          </li>
+        </ul>
       </div>
     </section>
   )
