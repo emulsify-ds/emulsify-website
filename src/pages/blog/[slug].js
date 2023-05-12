@@ -72,13 +72,13 @@ export default function BlogPost({ posts }) {
         <>
           <div
             className={classNames(
-              'p-9',
+              'md:p-9',
               'bg-emulsifyBlue-600/10 from-emulsifyBlue-800 to-emulsifyBlue-900  dark:bg-gradient-to-b'
             )}
           >
-            <div className="mx-auto grid max-w-8xl grid-cols-2 gap-5 sm:px-2 lg:px-8 xl:px-12">
-              <div className="self-center">
-                <h1 className="text-4xl font-bold text-emulsifyBlue-900 dark:text-emulsifyBlue-200">
+            <div className="mx-auto flex max-w-8xl flex-col gap-7 sm:px-2 md:grid md:grid-cols-2  md:gap-5  lg:px-8 xl:px-12">
+              <div className="order-2 self-center px-9 pb-9 md:p-0">
+                <h1 className="text-3xl font-bold leading-tight text-emulsifyBlue-900 dark:text-emulsifyBlue-200 lg:gap-8 lg:text-5xl">
                   {content.data.fields.title}
                 </h1>
                 <p
@@ -118,13 +118,13 @@ export default function BlogPost({ posts }) {
                 alt=""
                 width="700"
                 height="400"
-                className=""
+                className="order-1 md:order-2"
                 priority
               />
             </div>
           </div>
 
-          <Prose className="mx-auto mt-10 mb-52 max-w-3xl">
+          <Prose className="mx-auto mt-10 mb-52 max-w-3xl px-5">
             {content.body}
           </Prose>
         </>

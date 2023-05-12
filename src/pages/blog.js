@@ -20,7 +20,7 @@ const BlogCard = ({
   <div
     className={classNames(
       'group relative ',
-      'flex flex-row gap-5',
+      'flex flex-col gap-5',
       'p-3',
       'lg:h-full lg:flex-col lg:gap-0 lg:p-0'
     )}
@@ -31,7 +31,7 @@ const BlogCard = ({
       height="600"
       alt=""
       className={classNames(
-        'inline-block h-full w-1/3',
+        'inline-block h-full w-full',
         'lg:relative lg:top-0 lg:mb-3 lg:w-full lg:rounded lg:rounded-b-3xl lg:transition-all lg:group-hover:-top-[4.5rem]',
         'lg:h-auto'
       )}
