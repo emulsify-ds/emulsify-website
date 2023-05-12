@@ -1,4 +1,3 @@
-import { Fence } from '@/components/Fence'
 import { nodes as defaultNodes } from '@markdoc/markdoc'
 
 const nodes = {
@@ -12,14 +11,6 @@ const nodes = {
       scope: {
         type: String,
         default: 'col',
-      },
-    },
-  },
-  fence: {
-    render: Fence,
-    attributes: {
-      language: {
-        type: String,
       },
     },
   },

@@ -1,7 +1,5 @@
 import clsx from 'clsx'
 
-import { Icon } from '@/components/Icon'
-
 const styles = {
   note: {
     container:
@@ -17,17 +15,9 @@ const styles = {
   },
 }
 
-const icons = {
-  note: (props) => <Icon icon="lightbulb" {...props} />,
-  warning: (props) => <Icon icon="warning" color="amber" {...props} />,
-}
-
 export function Callout({ type = 'note', title, children }) {
-  const IconComponent = icons[type]
-
   return (
     <div className={clsx('my-8 flex rounded-3xl p-6', styles[type].container)}>
-      <IconComponent className="h-8 w-8 flex-none" />
       <div className="ml-4 flex-auto">
         <p className={clsx('m-0 font-display text-xl', styles[type].title)}>
           {title}

@@ -1,5 +1,4 @@
 import { Callout } from '@/components/Callout'
-import { QuickLink, QuickLinks } from '@/components/QuickLinks'
 
 const tags = {
   callout: {
@@ -28,19 +27,6 @@ const tags = {
         <figcaption>{caption}</figcaption>
       </figure>
     ),
-  },
-  'quick-links': {
-    render: QuickLinks,
-  },
-  'quick-link': {
-    selfClosing: true,
-    render: QuickLink,
-    attributes: {
-      title: { type: String },
-      description: { type: String },
-      icon: { type: String },
-      href: { type: String },
-    },
   },
 }
 

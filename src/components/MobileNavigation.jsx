@@ -11,7 +11,6 @@ import {
   faBolt,
 } from '@fortawesome/sharp-solid-svg-icons'
 import clsx from 'clsx'
-import { Logomark } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
 
 export function MobileNavigation({ navigation }) {
