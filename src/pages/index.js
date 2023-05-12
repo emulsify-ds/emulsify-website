@@ -54,8 +54,8 @@ function Hero() {
           Emulsify is an open-source toolset that helps designers and developers
           create design systems for your Drupal website.
         </p>
-        <a
-          href="https://google.com"
+        <Link
+          href="/docs/emulsify-drupal"
           className={classNames(
             'inline-block rounded-lg',
             'bg-violet-600 text-xl font-bold text-white',
@@ -68,7 +68,7 @@ function Hero() {
             icon={faCloudArrowDown}
             className="ml-3 text-violet-200"
           />
-        </a>
+        </Link>
         <p className="mt-2">
           <a href="https://google.com" className="underline">
             Standalone installation
@@ -407,6 +407,38 @@ function WhatIsEmulsify() {
   )
 }
 
+function TryEmulsifyToday() {
+  return (
+    <section className={classNames('text-white', 'bg-violet-900', 'px-5')}>
+      <div className="mx-auto max-w-8xl py-16 sm:px-2 md:py-32 lg:px-8 xl:px-12">
+        <h2
+          className={classNames(
+            'font-width-75 text-4xl font-black md:text-7xl',
+            'mb-10 max-w-3xl '
+          )}
+        >
+          Ready to build your beautiful design system?
+        </h2>
+        <Link
+          href="/docs"
+          className={classNames(
+            'inline-block rounded-lg',
+            'bg-emulsifyBlue-700 text-xl font-bold text-white',
+            'transition-all hover:bg-emulsifyBlue-800',
+            'px-6 py-3'
+          )}
+        >
+          Try Emulsify Today{' '}
+          <FontAwesomeIcon
+            icon={faCloudArrowDown}
+            className="ml-3 text-emulsifyBlue-200"
+          />
+        </Link>
+      </div>
+    </section>
+  )
+}
+
 export default function Index() {
   return (
     <div>
@@ -415,6 +447,7 @@ export default function Index() {
       <BuiltWithEmulsify />
       <Consistency />
       <WhatIsEmulsify />
+      <TryEmulsifyToday />
     </div>
   )
 }
