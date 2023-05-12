@@ -1,48 +1,60 @@
-# Syntax
+[![Emulsify Design System](https://user-images.githubusercontent.com/409903/170579210-327abcdd-2c98-4922-87bb-36446a4cc013.svg)](https://www.emulsify.info/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e8a8811d-96c9-4c15-b3f0-e14473fcff0f/deploy-status)](https://app.netlify.com/sites/emulsify-website/deploys)
 
-Syntax is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+# Emulsify website
 
-## Getting started
+Built using NextJS and Tailwind for the frontend. Content for the blog comes from Contentful and the documentation is held in this repo as markdown files.
 
-To get started with this template, first install the npm dependencies:
+## Requirements and setup
+
+Install npm, preferably with nvm (node version manager) so you can easily use the node version found in `.nvmrc`
 
 ```bash
 npm install
+nvm use
 cp .env.example .env.local
 ```
 
-Next, run the development server:
+Access to the Emulsify website in Netlify.
 
-```bash
-npm run dev
-```
+Access to Contentful if you want to do anything with blog posts.
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+## Features
 
-## Customizing
+### Content sources
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+* Blog articles are authored using markdown in Contentful.
+* Documenation, found on the site at `/docs/*`, are markdown files found in `./src/pages`
+* Documentation navigation is controlled by `src/data/navigation.js`.
+* Other page content can be found either in `./src/pages/*` or in the corresponding component in `src/components`.
+* Search is managed by [Algolia DocSearch](https://docsearch.algolia.com)
 
-## Global search
+### Adding, editing, or removing blog posts
 
-By default this template uses [Algolia DocSearch](https://docsearch.algolia.com) for the global search. DocSearch is free for open-source projects, and you can sign up for an account on their website. Once your DocSearch account is ready, update the following [environment variables](https://nextjs.org/docs/basic-features/environment-variables) in your project with the values provided by Algolia:
+Blog articles are authored using markdown in Contentful. In order for a blog post to show up, you must check "Publish to Blog" in Contentful.
 
-```
-NEXT_PUBLIC_DOCSEARCH_APP_ID=
-NEXT_PUBLIC_DOCSEARCH_API_KEY=
-NEXT_PUBLIC_DOCSEARCH_INDEX_NAME=
-```
+#### To add or edit an article
 
-## License
+1. Author the article in Contentful, check "Publish to Blog", and publish it.
+2. Create a pull request with an empty commit. Netlify will create a PR branch site to review.
+3. Once approved, merge the PR. Netlify will then rerender the site with the new content.
 
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
+#### To remove an article
 
-## Learn more
+1. Login to Contentful and uncheck "Publish to Blog".
+2. Create a pull request with an empty commit. Netlify will create a PR branch site to review.
+3. Once approved, merge the PR. Netlify will then rerender the site with the new content.
 
-To learn more about the technologies used in this site template, see the following resources:
+### Search
 
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [Markdoc](https://markdoc.io) - the official Markdoc documentation
-- [DocSearch](https://docsearch.algolia.com) - the official DocSearch documentation
+This site uses [Algolia DocSearch](https://docsearch.algolia.com) for the global search. DocSearch is free for open-source projects.
+
+### Markdoc
+
+[Markdoc](https://markdoc.dev/) is a Markdown-based syntax and toolchain for creating custom documentation sites, created by Stripe.
+
+The Emulsify website makes use of Markdoc components to customize rendering. They can be found in `src/markdoc/tags`.
+
+* `src/markdoc/tags/callout.js` is a proof-of-concept component and is not used.
+* `src/markdoc/tags/gist.js` renders Github Gists
+* `src/markdoc/tags/youtube.js` renders YouTube videos
