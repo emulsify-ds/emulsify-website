@@ -57,7 +57,7 @@
 
 .squiggle::after {
   background: url('/images/together-squiggle.png') no-repeat top left;
-  @apply content-[''] w-full h-full absolute left-0 -bottom-[109%];
+  @apply content-[''] w-full h-full absolute left-0 -bottom-[109%] bg-contain;
 }
 
 .wave-hero {
@@ -73,5 +73,19 @@
 
 .brand-consistency::after {
   background: url('/images/brand-consistency.png') no-repeat top left;
-  @apply content-[''] w-full h-full absolute left-0 -top-16 translate-x-[20%] ;
+  @apply content-[''] w-full max-w-[200px] md:max-w-none h-full absolute left-0 -top-11 md:-top-20 lg:-top-24 translate-x-[20%] bg-contain;
+}
+
+.blueprint {
+  @apply relative;
+}
+
+.blueprint::after {
+  @apply absolute inset-0 z-0;
+  content: '';
+  background-size: 20px 20px;
+  background-image:
+    linear-gradient(to right, theme('colors.emulsifyBlue.200') 1px, transparent 1px),
+    linear-gradient(to bottom, theme('colors.emulsifyBlue.200') 1px, transparent 1px);
+  mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent)
 }

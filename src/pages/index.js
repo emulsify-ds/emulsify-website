@@ -40,16 +40,17 @@ function Hero() {
     <section
       className={classNames(
         'bg-gradient-to-b from-emulsifyBlue-900 to-violet-900',
-        'min-h-[85vh] text-white',
+        'text-white',
+        'px-5',
         'relative -top-[88px] -mb-[100px] md:-top-[100px]',
         'wave-hero'
       )}
     >
       <div className="mx-auto max-w-8xl py-32 pt-60 sm:px-2 lg:px-8 xl:px-12">
-        <h1 className="mb-10 max-w-[800px] text-8xl font-black leading-none">
+        <h1 className="mb-5 max-w-[800px] text-4xl font-black leading-none md:text-6xl lg:mb-10 lg:text-8xl">
           Build Beautiful Design Systems with Ease
         </h1>
-        <p className="mb-8 max-w-[700px] text-3xl font-semibold">
+        <p className="mb-8 max-w-[700px] text-xl font-semibold md:text-2xl lg:text-3xl">
           Emulsify is an open-source toolset that helps designers and developers
           create design systems for your Drupal website.
         </p>
@@ -115,27 +116,28 @@ function DesignSystemsTogether() {
     <section
       className={classNames(
         'bg-gradient-to-b from-emulsifyBlue-900 to-violet-900',
-        'bg-cover text-white'
+        'bg-cover text-white',
+        'px-5'
       )}
       style={{ backgroundImage: `url("${togetherImage.src}")` }}
     >
-      <div className="mx-auto max-w-8xl py-32 sm:px-2 lg:px-8 xl:px-12">
+      <div className="mx-auto max-w-8xl py-16 sm:px-2 md:py-32 lg:px-8 xl:px-12">
         <h2
           className={classNames(
-            'font-width-75 text-7xl font-black',
-            'mb-40 max-w-4xl'
+            'font-width-75 text-4xl font-black md:text-7xl',
+            'mb-20 max-w-4xl md:mb-40'
           )}
         >
           Make and implement design systems in Drupal{' '}
           <em className="squiggle relative">together</em>
         </h2>
-        <ul className="grid grid-cols-3 gap-14">
+        <ul className="flex flex-col gap-9 md:grid md:grid-cols-3 md:gap-14">
           {content.tryptch.map((item) => (
             <li key={item.title}>
               {item.icon}
               <h2
                 className={classNames(
-                  'font-width-75 mb-5 text-4xl font-extrabold leading-none text-orange-200'
+                  'font-width-75 mb-5 text-3xl font-extrabold leading-none text-orange-200 lg:text-4xl'
                 )}
               >
                 {item.title}
@@ -160,7 +162,7 @@ function BuiltWithEmulsify() {
     {
       src: colombiaLogo,
       alt: 'Colombia University',
-      class: 'col-span-3',
+      class: 'col-span-2 md:col-span-3',
       url: 'https://sps.columbia.edu',
     },
     {
@@ -184,7 +186,7 @@ function BuiltWithEmulsify() {
     {
       src: ithacaLogo,
       alt: 'Ithaca College',
-      class: 'col-span-3',
+      class: 'col-span-2 md:col-span-3',
       url: 'https://ithaca.edu',
     },
     {
@@ -196,7 +198,7 @@ function BuiltWithEmulsify() {
     {
       src: stanfordLogo,
       alt: 'Stanford University',
-      class: 'col-span-4',
+      class: 'col-span-3 md:col-span-4',
       url: 'https://humsci.stanford.edu',
     },
     {
@@ -214,13 +216,13 @@ function BuiltWithEmulsify() {
     {
       src: yaleInfoSecLogo,
       alt: 'Yale Information Security',
-      class: 'col-span-3',
+      class: 'col-span-2 md:col-span-3',
       url: 'https://cybersecurity.yale.edu/',
     },
     {
       src: yalesom,
       alt: 'Yale School of Management',
-      class: 'col-span-3',
+      class: 'col-span-2 md:col-span-3',
       url: 'https://som.yale.edu/',
     },
     {
@@ -238,16 +240,23 @@ function BuiltWithEmulsify() {
   ]
 
   return (
-    <section className={classNames('bg-white')}>
-      <div className="mx-auto max-w-8xl py-16 sm:px-2 lg:px-8 xl:px-12">
+    <section className={classNames('blueprint bg-white', 'px-5')}>
+      <div className="relative z-10 mx-auto max-w-8xl pt-6 pb-4 sm:px-2 md:py-8 lg:py-16 lg:px-8 xl:px-12">
         <Image
           src={builtWithEmulsifyImage}
           width={300}
           height={300}
           alt="Built with Emulsify"
-          className="mx-auto -rotate-6"
+          className="mx-auto w-[200px] -rotate-6 md:w-[175px] lg:w-auto"
         />
-        <ul className="mt-9 grid grid-cols-10 items-center gap-y-9 gap-x-5">
+        <ul
+          className={classNames(
+            'mt-9 ',
+            'grid grid-cols-5 items-center gap-y-1 gap-x-1',
+            'md:gap-y-2 md:gap-x-4',
+            'md:grid md:grid-cols-10 md:items-center lg:gap-y-9 lg:gap-x-5'
+          )}
+        >
           {logoWall.map((logo) => (
             <li
               key={logo.alt}
@@ -259,9 +268,6 @@ function BuiltWithEmulsify() {
               </Link>
             </li>
           ))}
-          <li className="col-span-3 text-xl font-bold italic text-emulsifyBlue-900">
-            and many more websites...
-          </li>
         </ul>
       </div>
     </section>
@@ -305,30 +311,30 @@ function Consistency() {
   }
   return (
     <section
-      className={classNames('text-white', 'bg-cover')}
+      className={classNames('text-white', 'bg-cover', 'px-5')}
       style={{ backgroundImage: `url("${consistencyImage.src}")` }}
     >
-      <div className="mx-auto max-w-8xl py-32 sm:px-2 lg:px-8 xl:px-12">
+      <div className="mx-auto max-w-8xl py-16 sm:px-2 md:py-32 lg:px-8 xl:px-12">
         <h2
           className={classNames(
-            'font-width-75 text-7xl font-black',
-            'mb-40 max-w-3xl'
+            'font-width-75 text-4xl font-black md:text-7xl',
+            'mb-20 max-w-3xl md:mb-40'
           )}
         >
           Keep <em className="brand-consistency">brand consistency</em> across
           all of your websites
-          <span className="block text-5xl text-orange-200">
+          <span className="block text-2xl text-orange-200 md:text-5xl">
             (while maintaining <FontAwesomeIcon icon={faUniversalAccess} />{' '}
             accessibility)
           </span>
         </h2>
-        <ul className="grid grid-cols-3 gap-14">
+        <ul className="flex flex-col gap-9 md:grid md:grid-cols-3 md:gap-14">
           {content.diptych.map((item) => (
             <li key={item.title}>
               {item.icon}
               <h2
                 className={classNames(
-                  'font-width-75 mb-5 text-4xl font-extrabold leading-none text-orange-200'
+                  'font-width-75 mb-5 text-3xl font-extrabold leading-none text-orange-200 lg:text-4xl'
                 )}
               >
                 {item.title}
@@ -351,18 +357,18 @@ function WhatIsEmulsify() {
 
   return (
     <section
-      className={classNames('bg-emulsifyBlue-100')}
+      className={classNames('bg-emulsifyBlue-100', 'px-5')}
       style={{
         backgroundImage: `url("${waveImage.src}")`,
         backgroundSize: '25%',
       }}
     >
-      <div className="mx-auto max-w-8xl py-16 sm:px-2 lg:px-8 xl:px-12">
+      <div className="mx-auto max-w-8xl py-8 sm:px-2 md:py-16 lg:px-8 xl:px-12">
         <h2
           className={classNames(
             'flex flex-row items-end justify-center gap-4',
-            'font-width-75 text-7xl font-black',
-            'mb-9 text-emulsifyBlue-900'
+            'font-width-75 text-4xl font-black md:text-7xl',
+            'mb-5 text-emulsifyBlue-900 lg:mb-9'
           )}
         >
           What is Emulsify?
@@ -371,7 +377,7 @@ function WhatIsEmulsify() {
             width={169}
             height={300}
             alt="Talking Drupal logo"
-            className="relative -top-1"
+            className="relative -top-1 w-[80px] md:w-[100px]"
           />
         </h2>
         <div className="mx-auto max-w-4xl">
