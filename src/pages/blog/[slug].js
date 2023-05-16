@@ -70,6 +70,13 @@ export default function BlogPost({ posts }) {
       )}
       {content && (
         <>
+          <Image
+            src={`https:${content.data.fields.sharingImage.fields.file.url}`}
+            alt=""
+            width="1200"
+            height="630"
+            style={{ display: 'none' }}
+          />
           <div
             className={classNames(
               'md:p-9',
