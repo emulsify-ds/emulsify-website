@@ -1,7 +1,7 @@
 ---
 title: Emulsify Drupal
 pageTitle: Emulsify Drupal
-description: No description. TKTK
+description: No description. ''
 ---
 
 ## Installation

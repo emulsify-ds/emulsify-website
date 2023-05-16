@@ -1,7 +1,7 @@
 ---
 title: Other Functionality
 pageTitle: Other Functionality
-description: TKTK
+description: ''
 ---
 
 **Other MDX shortcodes available:**

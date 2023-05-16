@@ -1,7 +1,7 @@
 ---
 title: Add a Custom Twig Extension
 pageTitle: Add a Custom Twig Extension
-description: TKTK
+description: ''
 ---
 
 ## Storybook

@@ -1,7 +1,7 @@
 ---
 title: Webpack & Babel
 pageTitle: Webpack & Babel
-description: TKTK
+description: ''
 ---
 
 Emulsify Design System uses [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) across all projects. See below for instructions on adding/editing specific Webpack and/or Babel configuration:

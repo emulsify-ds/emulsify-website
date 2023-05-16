@@ -1,7 +1,7 @@
 ---
 title: Twig Extensions
 pageTitle: Twig Extensions
-description: TKTK
+description: ''
 ---
 
 Emulsify Design System uses a variety of plugins for Twig extensions:

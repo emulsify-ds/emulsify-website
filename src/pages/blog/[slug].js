@@ -14,7 +14,7 @@ import { callout } from '../../markdoc/tags/callout.markdoc'
 import { gist } from '../../markdoc/tags/gist.markdoc'
 import YouTube from '../../markdoc/tags/youtube'
 import { youtube } from '../../markdoc/tags/youtube.markdoc'
-
+import sharingImage from '../../images/sharing-image-blog.png'
 /**
  * Markdoc configuration.
  * Add all .markdoc schemas.
@@ -60,23 +60,11 @@ export default function BlogPost({ posts }) {
             content={`${content.data.fields.title} • Emulsify Blog`}
             key="title"
           />
-          {content.data.fields.sharingImage && (
-            <meta
-              property="og:image"
-              content={`https:${content.data.fields.sharingImage.fields.file.url}`}
-            />
-          )}
+          <meta property="og:image" content={sharingImage.src} />
         </Head>
       )}
       {content && (
         <>
-          <Image
-            src={`https:${content.data.fields.sharingImage.fields.file.url}`}
-            alt=""
-            width="1200"
-            height="630"
-            style={{ display: 'none' }}
-          />
           <div
             className={classNames(
               'md:p-9',

@@ -1,7 +1,7 @@
 ---
 title: Accessibility Testing
 pageTitle: Accessibility Testing
-description: TKTK
+description: ''
 ---
 
 Emulsify Drupal has multiple ways of testing accessibility.

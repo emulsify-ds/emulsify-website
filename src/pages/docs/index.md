@@ -1,7 +1,7 @@
 ---
 title: Emulsify Design System
 pageTitle: Emulsify Design System
-description: TKTK
+description: ''
 ---
 
 ![](.gitbook/assets/logo.png)

@@ -1,7 +1,7 @@
 ---
 title: Emulsify CLI Usage
 pageTitle: Emulsify CLI Usage
-description: TKTK
+description: ''
 ---
 
 This project is a command line interface for working with Emulsify. It has a few primary responsibilities:

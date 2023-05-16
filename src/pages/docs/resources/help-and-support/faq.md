@@ -1,7 +1,7 @@
 ---
 title: FAQ
 pageTitle: FAQ
-description: TKTK
+description: ''
 ---
 
 ## What is the difference between a Style Guide and Pattern Library?
