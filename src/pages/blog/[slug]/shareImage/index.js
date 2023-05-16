@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import getBlogPosts from '../../../../utils/getContentful'
 import bkg from '../../../../images/SharingImageBkg.png'
-import logo from '../../../../images/EmusifyLogo.svg'
+import logo from '../../../../images/emulsifyLogo.svg'
 
 export default function Share({ posts }) {
   const router = useRouter()
