@@ -97,6 +97,7 @@ export default function App({ Component, pageProps }) {
             : pageTitle}
         </title>
         {description && <meta name="description" content={description} />}
+        <link rel="icon" href="/favicon.png" sizes="any" />
       </Head>
       <Header transparent={type === 'home'} />
 

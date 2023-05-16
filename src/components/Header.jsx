@@ -4,11 +4,12 @@ import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
 import { faGithub, faSlack } from '@fortawesome/free-brands-svg-icons'
-import { Logo } from '@/components/Logo'
+import Image from 'next/image'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { navigation } from '@/data/navigation'
 import { ThemeSelector } from './ThemeSelector'
 import { Search } from './Search'
+import logo from '../images/emulsifyLogo.svg'
 
 export function Header({ transparent }) {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,7 +46,10 @@ export function Header({ transparent }) {
         </div>
         <div className="relative flex items-center">
           <Link href="/" aria-label="Home page">
-            <Logo className="relative top-[4px] block h-9 w-auto fill-slate-700 dark:fill-sky-100 md:min-h-[60px]" />
+            <Image
+              src={logo}
+              className="relative top-[4px] block h-9 w-auto md:min-h-[60px]"
+            />
           </Link>
         </div>
         <div className="relative ml-10 hidden items-center md:flex">
@@ -106,12 +110,6 @@ export function Header({ transparent }) {
           <ThemeSelector className="relative z-10" />
         </div>
       </div>
-      {/* 
-      
-      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
-        <Search />
-      </div>
-       */}
     </header>
   )
 }

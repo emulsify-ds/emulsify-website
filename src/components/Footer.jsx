@@ -1,7 +1,9 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import classNames from 'classnames'
+import Image from 'next/image'
 import { Logo } from '@/components/Logo'
+import logo from '../images/emulsifyLogo.svg'
 
 export function Footer() {
   return (
@@ -14,7 +16,10 @@ export function Footer() {
       <div className="mx-auto max-w-8xl sm:px-2 lg:flex lg:flex-row lg:px-8 xl:px-12">
         <div className="mb-5">
           <Link href="/" aria-label="Home page">
-            <Logo className="relative top-[4px] mb-2 block h-9 w-auto fill-slate-700 dark:fill-sky-100 md:min-h-[60px]" />
+            <Image
+              src={logo}
+              className="relative top-[4px] mb-2 block h-9 w-auto md:min-h-[60px]"
+            />
           </Link>
           <p className="text-sm">
             Emulsify is a registered trademark of Four Kitchens.
