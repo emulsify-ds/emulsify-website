@@ -11,6 +11,7 @@ import { Header } from '@/components/Header'
 import sharingImageDocs from '../images/sharing-image-docs.png'
 import sharingImageBlogLP from '../images/sharing-image-blog.png'
 import sharingImageHome from '../images/sharing-image-homepage.png'
+import favicon from '../images/favicon.png'
 
 function getNodeText(node) {
   let text = ''
@@ -109,6 +110,7 @@ export default function App({ Component, pageProps }) {
         {type === 'home' && (
           <meta property="og:image" content={sharingImageHome.src} />
         )}
+        <link rel="icon" href={favicon.src} />
       </Head>
       <Header transparent={type === 'home'} />
 
