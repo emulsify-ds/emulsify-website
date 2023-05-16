@@ -19,6 +19,7 @@ export function Footer() {
             <Image
               src={logo}
               className="relative top-[4px] mb-2 block h-9 w-auto md:min-h-[60px]"
+              alt="Emulsify"
             />
           </Link>
           <p className="text-sm">

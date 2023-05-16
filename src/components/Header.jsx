@@ -49,6 +49,7 @@ export function Header({ transparent }) {
             <Image
               src={logo}
               className="relative top-[4px] block h-9 w-auto md:min-h-[60px]"
+              alt="Emulsify"
             />
           </Link>
         </div>

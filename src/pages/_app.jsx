@@ -8,6 +8,9 @@ import 'focus-visible'
 import '@/styles/tailwind.css'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import sharingImageDocs from '../images/sharing-image-docs.png'
+import sharingImageBlogLP from '../images/sharing-image-blog.png'
+import sharingImageHome from '../images/sharing-image-homepage.png'
 
 function getNodeText(node) {
   let text = ''
@@ -97,7 +100,15 @@ export default function App({ Component, pageProps }) {
             : pageTitle}
         </title>
         {description && <meta name="description" content={description} />}
-        <link rel="icon" href="/favicon.png" sizes="any" />
+        {type === 'docs' && (
+          <meta property="og:image" content={sharingImageDocs.src} />
+        )}
+        {type === 'blogLandingPage' && (
+          <meta property="og:image" content={sharingImageBlogLP.src} />
+        )}
+        {type === 'home' && (
+          <meta property="og:image" content={sharingImageHome.src} />
+        )}
       </Head>
       <Header transparent={type === 'home'} />
 
