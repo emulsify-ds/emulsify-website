@@ -34,6 +34,7 @@ import yaleInfoSecLogo from '../images/built-with-emulsify/yale-information-secu
 import yaleSchwarzmanLogo from '../images/built-with-emulsify/yale-schwarzman-center.svg'
 import yalesom from '../images/built-with-emulsify/yalesom.svg'
 import uft from '../images/built-with-emulsify/uft.svg'
+import homeHero from '../images/home-hero.png'
 
 function Hero() {
   return (
@@ -47,33 +48,40 @@ function Hero() {
       )}
     >
       <div className="mx-auto max-w-8xl py-32 pt-60 sm:px-2 lg:px-8 xl:px-12">
-        <h1 className="mb-5 max-w-[800px] font-sans text-4xl font-black leading-none md:text-6xl lg:mb-10 lg:text-8xl">
-          Build Beautiful Design Systems with Ease
-        </h1>
-        <p className="mb-8 max-w-[700px] text-xl font-semibold md:text-2xl lg:text-3xl">
-          Emulsify is an open-source toolset that helps designers and developers
-          create design systems for your Drupal website.
-        </p>
-        <Link
-          href="/docs/emulsify-drupal"
-          className={classNames(
-            'inline-block rounded-lg',
-            'bg-violet-600 text-xl font-bold text-white',
-            'transition-all hover:bg-violet-700',
-            'px-6 py-3'
-          )}
-        >
-          Install Drupal theme{' '}
-          <FontAwesomeIcon
-            icon={faCloudArrowDown}
-            className="ml-3 text-violet-200"
-          />
-        </Link>
-        <p className="mt-2">
-          <a href="https://google.com" className="underline">
-            Standalone installation
-          </a>
-        </p>
+        <Image
+          src={homeHero}
+          alt=""
+          className="absolute right-0 top-[20%] hidden w-[38%] lg:block"
+        />
+        <div>
+          <h1 className="mb-5 max-w-[800px] font-sans text-4xl font-black leading-none md:text-6xl lg:mb-10 lg:text-8xl">
+            Build Beautiful Design Systems with Ease
+          </h1>
+          <p className="mb-8 max-w-[700px] text-xl font-semibold md:text-2xl lg:text-3xl">
+            Emulsify is an open-source toolset that helps designers and
+            developers create design systems for your Drupal website.
+          </p>
+          <Link
+            href="/docs/emulsify-drupal"
+            className={classNames(
+              'inline-block rounded-lg',
+              'bg-violet-600 text-xl font-bold text-white',
+              'transition-all hover:bg-violet-700',
+              'px-6 py-3'
+            )}
+          >
+            Install Drupal theme{' '}
+            <FontAwesomeIcon
+              icon={faCloudArrowDown}
+              className="ml-3 text-violet-200"
+            />
+          </Link>
+          <p className="mt-2">
+            <a href="https://google.com" className="underline">
+              Standalone installation
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   )

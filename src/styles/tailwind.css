@@ -89,3 +89,10 @@
     linear-gradient(to bottom, theme('colors.emulsifyBlue.200') 1px, transparent 1px);
   mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent)
 }
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}

@@ -110,7 +110,7 @@ export default function App({ Component, pageProps }) {
         {type === 'home' && (
           <meta property="og:image" content={sharingImageHome.src} />
         )}
-        <link rel="icon" href={favicon.src} />
+        <link rel="icon" href={favicon} />
       </Head>
       <Header transparent={type === 'home'} />
 
