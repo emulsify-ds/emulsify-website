@@ -51,7 +51,7 @@ function Hero() {
         <Image
           src={homeHero}
           alt=""
-          className="absolute right-0 top-[20%] hidden w-[38%] lg:block"
+          className="absolute right-[-50px] top-[20%] hidden w-[38%] xl:block"
         />
         <div>
           <h1 className="mb-5 max-w-[800px] font-sans text-4xl font-black leading-none md:text-6xl lg:mb-10 lg:text-8xl">
