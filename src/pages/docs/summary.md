@@ -39,7 +39,7 @@
 ## Resources
 
 * [Help and Support](resources/help-and-support/README.md)
-  * [FAQ](resources/help-and-support/styleguide-vs.-pattern-library.md)
+  * [FAQ](/docs/resources/help-and-support/faq)
   * [Tutorials and Videos](resources/help-and-support/tutorials-videos.md)
 * [Component-Driven Design](resources/cdd.md)
 * [Packaging For Multiple Properties](resources/packaging-for-multiple-properties.md)

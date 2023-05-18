@@ -52,12 +52,6 @@ This repo contains the Javascript version of the BEM and Add Attributes extensio
 
 This repo is a Drupal module that contains the PHP version of the BEM and Add Attributes extensions for support in a Drupal project.
 
-## Style Guide
-
-### [Gatsby Theme Emulsify](https://github.com/emulsify-ds/gatsby-theme-emulsify-workspace)
-
-A fully customizable style guide powered by [GatsbyJS](https://www.gatsbyjs.org). The style guide is a Gatsby theme, and instructions for installation and usage can be found [here](https://github.com/emulsify-ds/gatsby-theme-emulsify-workspace).
-
 ## **Example Websites/Repos**
 
 The examples below were created to demonstrate how multiple properties under the same organization could create properties that implement varied languages (Twig and React, in this case) and share things that make sense.

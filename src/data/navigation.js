@@ -105,7 +105,7 @@ export const navigation = [
           },
         ],
       },
-      { title: 'Component-Driven Design', href: '/resources/cdd' },
+      { title: 'Component-Driven Design', href: '/docs/resources/cdd' },
       {
         title: 'Packaging for Multiple Properties',
         href: '/docs/resources/packaging-for-multiple-properties',

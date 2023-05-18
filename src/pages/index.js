@@ -77,9 +77,12 @@ function Hero() {
             />
           </Link>
           <p className="mt-2">
-            <a href="https://google.com" className="underline">
+            <Link
+              href="/docs/emulsify-drupal#standalone-for-prototyping-outside-of-a-drupal-install"
+              className="underline"
+            >
               Standalone installation
-            </a>
+            </Link>
           </p>
         </div>
       </div>
@@ -201,7 +204,7 @@ function BuiltWithEmulsify() {
       src: ncnLogo,
       alt: 'National Council of Nonprofits',
       class: 'col-span-2',
-      url: 'https://atlas.councilofnonprofits.org',
+      url: 'https://www.councilofnonprofits.org/',
     },
     {
       src: stanfordLogo,
