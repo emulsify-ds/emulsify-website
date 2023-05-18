@@ -42,7 +42,16 @@ export const navigation = [
               },
             ],
           },
-          { title: 'FAQ', href: '/docs/emulsify-drupal/faq' },
+          {
+            title: 'FAQ',
+            href: '/docs/emulsify-drupal/faq',
+            children: [
+              {
+                title: 'Upgrading',
+                href: '/docs/emulsify-drupal/faq/upgrading',
+              },
+            ],
+          },
           {
             title: 'Tutorials and Videos',
             href: '/docs/emulsify-drupal/faq/upgrading',

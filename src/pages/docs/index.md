@@ -4,8 +4,6 @@ pageTitle: Emulsify Design System
 description: ''
 ---
 
-![](.gitbook/assets/logo.png)
-
 Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams. Emulsify helps organizations scale their design while reducing cost, streamlining workflows, and improving accessibility.
 
 Emulsify Design System contains multiple packages, which can be used individually to solve small problems or together to solve big ones. See below for some of the popular packages.

@@ -8,7 +8,7 @@ description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drup
 
 1. Disable old theme
 2. Rename old theme directory to something else (e.g., `THEMENAME_old`) and rename the old theme's info.yml file as well (e.g., `THEMENAME_old.info.yml`)
-3. Follow [Drupal installation instructions](broken-reference) (be sure and use your old name and machine name in the php script, e.g., `php emulsify.php "THEME NAME" --machine-name THEME_NAME`
+3. Follow [Drupal installation instructions](/docs/emulsify-drupal) (be sure and use your old name and machine name in the php script, e.g., `php emulsify.php "THEME NAME" --machine-name THEME_NAME`
 4. Replace contents of the new theme's `components` directory with your old theme's `components/_patterns` contents (if you don't want to have a lot of path changes you can keep them in the `_patterns` subdirectory). Be sure and change any library paths in style.scss, like so:
 
 ```
@@ -57,7 +57,7 @@ To complete the step above, you would add this `js` directory to the Storybook c
 "build-storybook": "build-storybook -s ./dist, ./images, ./js -o .out",
 ```
 
-&#x20;    2\. You may need to copy over new Emulsify styles, e.g. for [the colors](https://github.com/emulsify-ds/emulsify-drupal/blob/develop/components/00-base/01-colors/\_color-vars.scss).
+&#x20;    2\. You may need to copy over new Emulsify styles, e.g. for [the colors](https://github.com/emulsify-ds/compound/blob/main/components/00-base/01-colors/_colors-vars.scss).
 
 ### Writing Stories
 

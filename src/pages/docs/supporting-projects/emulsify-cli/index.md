@@ -8,7 +8,7 @@ description: Command line interface for Emulsify.
 
 Installation and setup of the Emulsify CLI itself is documented thoroughly in [its GitHub repo](https://github.com/emulsify-ds/emulsify-cli).&#x20;
 
-How to use the CLI in a typical workflow is documented in [the Usage section](emulsify-cli-usage.md) of these docs.
+How to use the CLI in a typical workflow is documented in [the Usage section](/docs/supporting-projects/emulsify-cli/emulsify-cli-usage) of these docs.
 
 ## Video Walkthrough
 
