@@ -42,7 +42,7 @@ function Hero() {
       className={classNames(
         'bg-gradient-to-b from-emulsifyBlue-900 to-violet-900',
         'text-white',
-        'px-5',
+        'overflow-hidden px-5',
         'relative -top-[88px] -mb-[100px] md:-top-[100px]',
         'wave-hero'
       )}
