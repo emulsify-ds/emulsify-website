@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import Router from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
+import classNames from 'classnames'
 
 const docSearchConfig = {
   appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID,
@@ -14,7 +15,7 @@ function Hit({ hit, children }) {
   return <Link href={hit.url}>{children}</Link>
 }
 
-export function Search() {
+export function Search({ className }) {
   const [isOpen, setIsOpen] = useState(false)
   const [modifierKey, setModifierKey] = useState()
 
@@ -38,7 +39,10 @@ export function Search() {
     <>
       <button
         type="button"
-        className="font-width-75 group flex items-center gap-1 border-b border-solid border-emulsifyBlue-400 text-3xl font-semibold uppercase text-white hover:border-emulsifyBlue-200"
+        className={classNames(
+          'font-width-75 group flex items-center gap-1 border-b border-solid border-emulsifyBlue-400 text-3xl font-semibold uppercase text-white hover:border-emulsifyBlue-200',
+          className
+        )}
         onClick={onOpen}
       >
         Search

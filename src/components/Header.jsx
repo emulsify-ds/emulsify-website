@@ -95,16 +95,16 @@ export function Header({ transparent }) {
             </ul>
           </nav>
         </div>
-        <div className="relative flex flex-grow basis-0 items-center justify-end gap-6 sm:gap-8">
+        <div className="relative flex flex-grow basis-0 items-center justify-end gap-3 sm:gap-8">
           <Link
             href="https://github.com/emulsify-ds"
-            className="text-4xl text-white transition-colors hover:text-emulsifyBlue-200"
+            className="text-2xl text-white transition-colors hover:text-emulsifyBlue-200 sm:text-4xl"
           >
             <FontAwesomeIcon icon={faGithub} />
           </Link>
           <Link
             href="https://join.slack.com/t/emulsify/shared_invite/zt-1ujfwwcvr-ynvUPkEgWYuaby~wPaHt8g"
-            className="text-4xl text-white transition-colors hover:text-emulsifyBlue-200"
+            className="text-2xl text-white transition-colors hover:text-emulsifyBlue-200 sm:text-4xl"
           >
             <FontAwesomeIcon icon={faSlack} />
           </Link>

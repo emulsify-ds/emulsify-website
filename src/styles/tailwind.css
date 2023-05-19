@@ -11,6 +11,11 @@
   background-size: 300px;
 }
 
+.dark .wave-background-mobile {
+  background: #00405B url('/images/waves-bg-mobile-dark.png') top left;
+  background-size: 300px;
+}
+
 .wave-body::after {
   @apply mix-blend-multiply absolute top-0 left-0;
   content: '';

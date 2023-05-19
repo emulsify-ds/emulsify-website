@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/sharp-solid-svg-icons'
 import clsx from 'clsx'
 import { Navigation } from '@/components/Navigation'
+import { Search } from './Search'
 
 export function MobileNavigation({ navigation }) {
   const router = useRouter()
@@ -63,13 +64,13 @@ export function MobileNavigation({ navigation }) {
         className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-emulsifyBlue-900/50 pr-10 backdrop-blur lg:hidden"
         aria-label="Navigation"
       >
-        <Dialog.Panel className="wave-background-mobile min-h-full w-full max-w-xs bg-emulsifyBlue-100 px-4 pt-7 pb-12 dark:bg-slate-900 sm:px-6">
+        <Dialog.Panel className="wave-background-mobile min-h-full w-full max-w-xs px-4 pt-7 pb-12 sm:px-6">
           <div className="mb-10 flex items-center">
             <button
               type="button"
               onClick={() => setIsOpen(false)}
               aria-label="Close navigation"
-              className="flex items-center gap-1 text-lg font-semibold leading-none text-emulsifyBlue-800"
+              className="flex items-center gap-1 text-lg font-semibold leading-none text-emulsifyBlue-800 dark:text-emulsifyBlue-300"
             >
               <FontAwesomeIcon
                 icon={faXmarkCircle}
@@ -82,7 +83,7 @@ export function MobileNavigation({ navigation }) {
             <div>
               <button
                 type="button"
-                className="mb-3 font-semibold uppercase text-emulsifyBlue-600 hover:text-emulsifyBlue-700"
+                className="mb-3 font-semibold uppercase text-emulsifyBlue-600 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300 dark:hover:text-emulsifyBlue-400"
                 onClick={() => {
                   setWhichNavToShow('primary')
                 }}
@@ -90,7 +91,7 @@ export function MobileNavigation({ navigation }) {
                 <FontAwesomeIcon icon={faArrowLeftLong} className="mr-2" />
                 Back
               </button>
-              <h2 className="font-width-75 text-5xl font-semibold uppercase text-emulsifyBlue-900">
+              <h2 className="font-width-75 text-5xl font-semibold uppercase text-emulsifyBlue-900 dark:text-emulsifyBlue-200">
                 Docs
               </h2>
               <Navigation navigation={navigation} className="mt-2 pr-3" />
@@ -100,11 +101,11 @@ export function MobileNavigation({ navigation }) {
             <div>
               <nav
                 className={clsx(
-                  'font-width-75 text-3xl font-semibold uppercase text-emulsifyBlue-800'
+                  'font-width-75 text-3xl font-semibold uppercase text-emulsifyBlue-800 dark:text-emulsifyBlue-200'
                 )}
               >
                 <ul className={clsx('flex-flow flex flex-col gap-5')}>
-                  <li>
+                  {/* <li>
                     <Link
                       href="/"
                       className="flex-flow group flex items-center gap-1"
@@ -117,7 +118,7 @@ export function MobileNavigation({ navigation }) {
                         className="text-orange-600"
                       />
                     </Link>
-                  </li>
+                  </li> */}
                   <li className="flex-flow flex items-center leading-none">
                     <Link
                       href="/docs"
@@ -129,7 +130,7 @@ export function MobileNavigation({ navigation }) {
                     </Link>
                     <button
                       type="button"
-                      className="font-width-75 mb-3 font-semibold uppercase text-emulsifyBlue-600 hover:text-emulsifyBlue-700"
+                      className="font-width-75 mb-3 font-semibold uppercase text-emulsifyBlue-600 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300 dark:hover:text-emulsifyBlue-400"
                       onClick={() => {
                         setWhichNavToShow('docs')
                       }}
@@ -149,12 +150,7 @@ export function MobileNavigation({ navigation }) {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/"
-                      className="border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200"
-                    >
-                      Search
-                    </Link>
+                    <Search className="dark:text-emulsifyBlue-200" />
                   </li>
                 </ul>
               </nav>
