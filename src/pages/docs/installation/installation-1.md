@@ -8,22 +8,22 @@ description: 'Instructions from https://github.com/emulsify-ds/gatsby-theme-emul
 
 Using a Gatsby Starter is the fastest way to get up-and-running.
 
-* [Twig Starter](https://github.com/fourkitchens/gatsby-starter-emulsify-twig)
-* React Starter \(coming soon\)
-* [Drupal Starter](https://github.com/fourkitchens/gatsby-starter-emulsify-drupal) \(Drupal 8 theme including Storybook and Webpack build\)
+- [Twig Starter](https://github.com/fourkitchens/gatsby-starter-emulsify-twig)
+- React Starter \(coming soon\)
+- [Drupal Starter](https://github.com/fourkitchens/gatsby-starter-emulsify-drupal) \(Drupal 8 theme including Storybook and Webpack build\)
 
 ### **Manual Installation**
 
-* Create a directory for your design system.
+- Create a directory for your design system.
 
 ```text
 mkdir my-design-system
 cd my-design-system
 ```
 
-* `yarn init`
-* `yarn add react react-dom gatsby gatsby-theme-emulsify`
-* Create a `gatsby-config.js`
+- `yarn init`
+- `yarn add react react-dom gatsby gatsby-theme-emulsify`
+- Create a `gatsby-config.js`
 
 ```text
 module.exports = {
@@ -52,9 +52,9 @@ module.exports = {
 }
 ```
 
-* In your project root, create a `components` directory and add a directory for each component.
-* Add your component and an adjacent `.yml` file that will be used to populate the data needed to render the component.
-* In your project root, create a `styleguide` directory and inside it create a `Components` directory with an empty `.md` file in it. This is needed for placing links to each component in the sidebar.
+- In your project root, create a `components` directory and add a directory for each component.
+- Add your component and an adjacent `.yml` file that will be used to populate the data needed to render the component.
+- In your project root, create a `styleguide` directory and inside it create a `Components` directory with an empty `.md` file in it. This is needed for placing links to each component in the sidebar.
 
 ```text
 ---
@@ -64,4 +64,4 @@ publishToStyleGuide: true
 ---
 ```
 
-* You're now ready to start documenting your component library!
+- You're now ready to start documenting your component library!

@@ -6,17 +6,17 @@ description: ''
 
 This project is a command line interface for working with Emulsify. It has a few primary responsibilities:
 
-* Make initializing Emulsify projects very simple.
-* Allow developers to select an Emulsify system (such as [Compound](https://github.com/emulsify-ds/compound)).
-* Give developers the ability to pull in components from the system they're using, when/if they need them.
+- Make initializing Emulsify projects very simple.
+- Allow developers to select an Emulsify system (such as [Compound](https://github.com/emulsify-ds/compound)).
+- Give developers the ability to pull in components from the system they're using, when/if they need them.
 
 ## Projects, Systems and Variants
 
 You will see the terms "Projects", "Systems" and "Variants" used throughout this documentation, so it's important for you to understand what they mean.
 
-* **Project**: an implementation of an Emulsify starter, such as [emulsify-drupal](https://github.com/emulsify-ds/emulsify-drupal).
-* **System**: a design system that defines components, and assets. Emulsify projects opt into using systems using cli commands. Once a system has been selected for a project, the system will mandate how components are organized and how required components/assets are installed. It also gives developers the ability to find and install non-required components.
-* **Variant**: a system might have a Drupal variant, a WordPress variant, and a React variant. The system is the same (imagine Material-UI is a system), but each variant may define different types of components, or have different organization patterns that are compatible with different platforms. Systems may have as many variants as they want.
+- **Project**: an implementation of an Emulsify starter, such as [emulsify-drupal](https://github.com/emulsify-ds/emulsify-drupal).
+- **System**: a design system that defines components, and assets. Emulsify projects opt into using systems using cli commands. Once a system has been selected for a project, the system will mandate how components are organized and how required components/assets are installed. It also gives developers the ability to find and install non-required components.
+- **Variant**: a system might have a Drupal variant, a WordPress variant, and a React variant. The system is the same (imagine Material-UI is a system), but each variant may define different types of components, or have different organization patterns that are compatible with different platforms. Systems may have as many variants as they want.
 
 ### Using the CLI
 

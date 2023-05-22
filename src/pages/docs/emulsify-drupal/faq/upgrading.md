@@ -21,8 +21,8 @@ description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drup
 @import "~breakpoint-sass/stylesheets/breakpoint";
 ```
 
-&#x20;    4\. Move any static contents (e.g., `images` directory) into the new theme.\
-&#x20;    5\. Copy over Drupal files (you may need to fix paths later):
+&#x20; 4\. Move any static contents (e.g., `images` directory) into the new theme.\
+&#x20; 5\. Copy over Drupal files (you may need to fix paths later):
 
 ```
 *.theme
@@ -31,10 +31,10 @@ description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drup
 *.libraries.yml
 ```
 
-&#x20;    6\. Disable/uninstall/remove the unified\_twig\_extensions module, and enable the new [emulsify\_twig](https://www.drupal.org/project/emulsify\_twig) module.\
-&#x20;    7\. Enable new theme in Drupal\
-&#x20;    8\. Run `composer remove fourkitchens/emulsify`\
-&#x20;    9\. Run `yarn develop` or `npm run develop`.
+&#x20; 6\. Disable/uninstall/remove the unified_twig_extensions module, and enable the new [emulsify_twig](https://www.drupal.org/project/emulsify_twig) module.\
+&#x20; 7\. Enable new theme in Drupal\
+&#x20; 8\. Run `composer remove fourkitchens/emulsify`\
+&#x20; 9\. Run `yarn develop` or `npm run develop`.
 
 ### Optional Steps (depending on your installation)
 
@@ -57,7 +57,7 @@ To complete the step above, you would add this `js` directory to the Storybook c
 "build-storybook": "build-storybook -s ./dist, ./images, ./js -o .out",
 ```
 
-&#x20;    2\. You may need to copy over new Emulsify styles, e.g. for [the colors](https://github.com/emulsify-ds/compound/blob/main/components/00-base/01-colors/_colors-vars.scss).
+&#x20; 2\. You may need to copy over new Emulsify styles, e.g. for [the colors](https://github.com/emulsify-ds/compound/blob/main/components/00-base/01-colors/_colors-vars.scss).
 
 ### Writing Stories
 

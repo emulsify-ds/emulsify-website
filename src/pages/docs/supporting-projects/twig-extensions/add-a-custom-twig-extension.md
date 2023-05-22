@@ -28,7 +28,7 @@ You can see inside `Twig.extendFunction` that we are simply returning content, b
 const twigSimple = require('./simple-function.js');
 ```
 
-Below that inside of the `module.exports.setupTwig` function,  add your new function like so:
+Below that inside of the `module.exports.setupTwig` function, add your new function like so:
 
 ```bash
 module.exports.setupTwig = function setupTwig(twig) {

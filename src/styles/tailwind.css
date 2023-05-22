@@ -4,36 +4,41 @@
 @import './prism.css';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url("https://use.typekit.net/tep4bny.css");
+@import url('https://use.typekit.net/tep4bny.css');
 
 .wave-background-mobile {
-  background: #E6F5FC url('/images/waves-bg-mobile.png') top left;
+  background: #e6f5fc url('/images/waves-bg-mobile.png') top left;
   background-size: 300px;
 }
 
 .dark .wave-background-mobile {
-  background: #00405B url('/images/waves-bg-mobile-dark.png') top left;
+  background: #00405b url('/images/waves-bg-mobile-dark.png') top left;
   background-size: 300px;
 }
 
 .wave-body::after {
-  @apply mix-blend-multiply absolute top-0 left-0;
+  @apply absolute top-0 left-0 mix-blend-multiply;
   content: '';
   background: url('/images/wave.png') top left;
   background-size: 300px;
-  display: block; 
+  display: block;
   width: 100%;
   height: 400px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), 45%, rgba(0,0,0,0));
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    45%,
+    rgba(0, 0, 0, 0)
+  );
   z-index: -1;
 }
 
 .wave-header::after {
-  @apply mix-blend-multiply absolute top-0 left-0 bottom-0;
+  @apply absolute top-0 left-0 bottom-0 mix-blend-multiply;
   content: '';
   background: url('/images/wave.png') top left;
   background-size: 300px;
-  display: block; 
+  display: block;
   width: 100%;
   z-index: -1;
 }
@@ -62,13 +67,14 @@
 
 .squiggle::after {
   background: url('/images/together-squiggle.png') no-repeat top left;
-  @apply content-[''] w-full h-full absolute left-0 -bottom-[109%] bg-contain;
+  @apply absolute left-0 -bottom-[109%] h-full w-full bg-contain content-[''];
 }
 
 .wave-hero {
-  --tw-gradient-from: #00405B;
-  --tw-gradient-to: #460F3F;
-  background-image: url('/images/waves-hero.png'), linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-to));
+  --tw-gradient-from: #00405b;
+  --tw-gradient-to: #460f3f;
+  background-image: url('/images/waves-hero.png'),
+    linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-to));
 }
 
 .brand-consistency {
@@ -78,7 +84,7 @@
 
 .brand-consistency::after {
   background: url('/images/brand-consistency.png') no-repeat top left;
-  @apply content-[''] w-full max-w-[200px] md:max-w-none h-full absolute left-0 -top-11 md:-top-20 lg:-top-24 translate-x-[20%] bg-contain;
+  @apply absolute left-0 -top-11 h-full w-full max-w-[200px] translate-x-[20%] bg-contain content-[''] md:-top-20 md:max-w-none lg:-top-24;
 }
 
 .blueprint {
@@ -89,10 +95,17 @@
   @apply absolute inset-0 z-0;
   content: '';
   background-size: 20px 20px;
-  background-image:
-    linear-gradient(to right, theme('colors.emulsifyBlue.200') 1px, transparent 1px),
-    linear-gradient(to bottom, theme('colors.emulsifyBlue.200') 1px, transparent 1px);
-  mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent)
+  background-image: linear-gradient(
+      to right,
+      theme('colors.emulsifyBlue.200') 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      theme('colors.emulsifyBlue.200') 1px,
+      transparent 1px
+    );
+  mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
 }
 
 .svg-inline--fa {

@@ -12,7 +12,7 @@ description: Use BrowserSync to hot reload Drupal after changes
 npm install --save-dev browser-sync browser-sync-webpack-plugin
 ```
 
-&#x20;   2\.  In webpack/plugins.js, add the following (this example uses a Lando url):
+&#x20; 2\. In webpack/plugins.js, add the following (this example uses a Lando url):
 
 ```
 const _BrowserSyncPlugin = require('browser-sync-webpack-plugin');
@@ -29,7 +29,7 @@ module.exports = {
 
 ```
 
-&#x20;   3\. In webpack/webpack.dev.js, add the following:
+&#x20; 3\. In webpack/webpack.dev.js, add the following:
 
 ```
 const plugins = require('./plugins');

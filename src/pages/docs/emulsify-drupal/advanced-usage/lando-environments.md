@@ -15,39 +15,39 @@ description: Use Lando to make your development environment portable
 
 ### Dependencies
 
-* [Docker](https://docs.docker.com/get-docker/)
-* [Lando](https://lando.dev/download/)
+- [Docker](https://docs.docker.com/get-docker/)
+- [Lando](https://lando.dev/download/)
 
 ### Basic Lando stack
 
 1. The `drupal9` recipe can handle most the work for us
 
-    ```yaml
-    recipe: drupal9
-    ```
+   ```yaml
+   recipe: drupal9
+   ```
 
 2. Both NodeJS and NPM needs to be available at a project level. Using npm the emulsify cli command can also be installed. This and npm can both be made available via Lando tooling.
 
-    ```yaml
-    services:
-      appserver:
-        build_as_root:
-           - apt update -y && apt install -y apt-transport-https build-essential unzip
-           - curl -sL https://deb.nodesource.com/setup_16.x | bash -
-           - apt-get install -y nodejs
-           - chown -R www-data /usr/lib/node_modules
-           - chown -R www-data /usr/bin
-           - npm install -g npm
-           - npm install -g @emulsify/cli
-    ...
-    tooling:
-      node:
-        service: appserver
-      npm:
-        service: appserver
-      emulsify:
-        service: appserver
-    ```
+   ```yaml
+   services:
+     appserver:
+       build_as_root:
+         - apt update -y && apt install -y apt-transport-https build-essential unzip
+         - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+         - apt-get install -y nodejs
+         - chown -R www-data /usr/lib/node_modules
+         - chown -R www-data /usr/bin
+         - npm install -g npm
+         - npm install -g @emulsify/cli
+   ---
+   tooling:
+     node:
+       service: appserver
+     npm:
+       service: appserver
+     emulsify:
+       service: appserver
+   ```
 
 3. Emulsify needs port `6006` to be available for StorybookJS and port `32778` to be available for [Hot Reload](./hot-reload-drupal.md).
 
@@ -57,10 +57,10 @@ description: Use Lando to make your development environment portable
 
    ```yaml
    proxy:
-      appserver:
-         - example.lndo.site
-         - browsersync.example.lndo.site:32778
-         - storybook.example.lndo.site:6006 
+     appserver:
+       - example.lndo.site
+       - browsersync.example.lndo.site:32778
+       - storybook.example.lndo.site:6006
    ```
 
 ## Full example
@@ -81,7 +81,7 @@ services:
   appserver:
     overrides:
       environment:
-        DRUSH_OPTIONS_URI: "https://example.lndo.site"
+        DRUSH_OPTIONS_URI: 'https://example.lndo.site'
     build:
       - composer install
     build_as_root:
@@ -116,9 +116,9 @@ tooling:
 3. Run `lando start`
 4. After it builds you can then run these commands:
 
-* `lando node`
-* `lando npm`
-* `lando emulsify`
-* `lando drush`
+- `lando node`
+- `lando npm`
+- `lando emulsify`
+- `lando drush`
 
 1. Follow the [Inside a Composer-Based Drupal Instance](/docs/emulsify-drupal#inside-a-composer-based-drupal-instance) steps to complete setting up Emulsify Drupal.

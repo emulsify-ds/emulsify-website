@@ -1,7 +1,22 @@
 {
-  "extends": ["next/core-web-vitals", "wesbos"],
+  "extends": [
+    "next/core-web-vitals",
+    "wesbos",
+    "plugin:tailwindcss/recommended"
+  ],
   "rules": {
-    "import/no-unresolved": [2, { "ignore": ["@/components", "@/images", "@/data", "@/styles"] }],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "@/components",
+          "@/images",
+          "@/data",
+          "@/styles"
+        ]
+      }
+    ],
+    "tailwindcss/no-custom-classname": "off",
     "react/prop-types": 0
   }
 }

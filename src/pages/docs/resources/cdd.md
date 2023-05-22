@@ -6,11 +6,11 @@ description: Helpful information for those new to component-driven design
 
 Component-driven design is a way to systematize and share designs as functional prototypes. Emulsify uses the [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) system for organization.
 
-* **Atoms** are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.
-* **Molecules** are where things start to get more tangible as we start combining atoms together. Example, a search form comprised of a label, input and submit button.
-* **Organisms** allow us to combine molecules into something relatively complex, such as a distinct section of the interface. Example, the header or footer of a site.
-* **Templates** consist mostly of groups of organisms stitched together to form pages. It’s here where we start to see the design coming together and start seeing things like layout in action. Example, article node page.
-* **Pages** are specific instances of templates. Here, placeholder content is replaced with real representative content to give an accurate depiction of what a user will ultimately see.
+- **Atoms** are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button.
+- **Molecules** are where things start to get more tangible as we start combining atoms together. Example, a search form comprised of a label, input and submit button.
+- **Organisms** allow us to combine molecules into something relatively complex, such as a distinct section of the interface. Example, the header or footer of a site.
+- **Templates** consist mostly of groups of organisms stitched together to form pages. It’s here where we start to see the design coming together and start seeing things like layout in action. Example, article node page.
+- **Pages** are specific instances of templates. Here, placeholder content is replaced with real representative content to give an accurate depiction of what a user will ultimately see.
 
 We accomplish this by using [Storybook](https://storybook.js.org/) and [Twig](https://twig.symfony.com/). Because both Storybook and Drupal 8 can use Twig for templates, this means that the design components that get built can be used directly by systems such as Drupal! 🎉
 

@@ -46,7 +46,7 @@ The Add Attributes function provides a way to programmatically add any html attr
 
 This repo contains the Javascript version of the BEM and Add Attributes extensions for compatibility with Twig.js (which makes the work in Storybook.)
 
-#### [Emulsify Twig](https://github.com/emulsify-ds/emulsify\_twig)
+#### [Emulsify Twig](https://github.com/emulsify-ds/emulsify_twig)
 
 This repo is a Drupal module that contains the PHP version of the BEM and Add Attributes extensions for support in a Drupal project.
 

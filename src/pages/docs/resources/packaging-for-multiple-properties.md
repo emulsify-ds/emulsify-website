@@ -10,10 +10,10 @@ Emulsify allows you to use shared packages across multiple projects. If you are 
 
 One common way to package components and styles is to have one package for components (for a given language) and one package for shared styling. That way, you can share styling across multiple languages and components per language to any relevant project. So, here's an imaginary set of packages:
 
-* Styles (Sass) `global-sass`
-* Components (Twig) `global-twig`
-* Drupal Project A (Organization)
-* Drupal Project B (Property)
+- Styles (Sass) `global-sass`
+- Components (Twig) `global-twig`
+- Drupal Project A (Organization)
+- Drupal Project B (Property)
 
 The organization's Drupal project (A) and one of the properties of the organization (B) can both share the components and styling across their projects. Once those packages have been set up, installing them in each project using Emulsify Drupal is as follows:
 
@@ -25,7 +25,7 @@ npm i global-sass global-twig
 
 #### Styling
 
-In Emulsify Drupal,  you will want to tell Webpack where to compile your new files. Let's start with the styles. We already have a Sass pipeline in place, so importing styling from a package is as simple as putting this into `components/style.scss`:
+In Emulsify Drupal, you will want to tell Webpack where to compile your new files. Let's start with the styles. We already have a Sass pipeline in place, so importing styling from a package is as simple as putting this into `components/style.scss`:
 
 ```
 @import '~global-sass/style';
@@ -41,22 +41,22 @@ Next, we need to tell Storybook and Drupal where to find the component Twig file
 // In the case of using yarn/npm link to link and develop your packages locally, this will help.
 config.resolve = { symlinks: false }
 
-// For hot reloading (watch), ignore node_modules except the western-up-scss/twig directories. 
+// For hot reloading (watch), ignore node_modules except the western-up-scss/twig directories.
 config.watchOptions = {
   ignored: [
     /node_modules\/(?!(western-up-scss|western-up-twig)\/)/,
-    /\(?!(western-up-scss|western-up-twig)([\\]+|\/)node_modules/
-  ]
+    /\(?!(western-up-scss|western-up-twig)([\\]+|\/)node_modules/,
+  ],
 }
 
 // Transpile western-up-twig because it includes un-transpiled ES6 code.
-config.module.rules[0].exclude = [/node_modules\/(?!(western-up-twig)\/)/];
-config.module.rules[0].use[0].loader = require.resolve('babel-loader');
+config.module.rules[0].exclude = [/node_modules\/(?!(western-up-twig)\/)/]
+config.module.rules[0].use[0].loader = require.resolve('babel-loader')
 ```
 
 #### Organization vs. Property (Global vs. local)
 
-Also, you may have noticed we're only using global components in this project (the atoms/molecules/etc. in the `twig-loader` namespaces are all from our global package). This is helpful when working on a global project like a main organization project. If you need some global and local, like on a property, you can use something like in the [Western School of Arts project](https://github.com/emulsify-ds/westernarts/blob/master/web/themes/custom/western\_arts/.storybook/webpack.config.js#L43-L77). Notice there are now namespaces for both global (e.g., `atoms`) and local (e.g., `wa_atoms`). Now you can use things like this in your Twig.
+Also, you may have noticed we're only using global components in this project (the atoms/molecules/etc. in the `twig-loader` namespaces are all from our global package). This is helpful when working on a global project like a main organization project. If you need some global and local, like on a property, you can use something like in the [Western School of Arts project](https://github.com/emulsify-ds/westernarts/blob/master/web/themes/custom/western_arts/.storybook/webpack.config.js#L43-L77). Notice there are now namespaces for both global (e.g., `atoms`) and local (e.g., `wa_atoms`). Now you can use things like this in your Twig.
 
 #### Organization Workflow
 
@@ -77,4 +77,4 @@ Now, your project will use your local versions of those packages, and with the c
 
 #### Drupal Twig
 
-One last note on the Drupal side: you will also want your theme's `*.info.yml` file to mimic any namespaces you have in Webpack for Storybook. Here's [the example from Western University](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/western\_up.info.yml#L46-L58). And of course, for these paths to work, you will have to make sure your continuous integration process produces the `node_modules` directory with your packages.
+One last note on the Drupal side: you will also want your theme's `*.info.yml` file to mimic any namespaces you have in Webpack for Storybook. Here's [the example from Western University](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/western_up.info.yml#L46-L58). And of course, for these paths to work, you will have to make sure your continuous integration process produces the `node_modules` directory with your packages.

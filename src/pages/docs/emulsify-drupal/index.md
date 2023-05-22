@@ -13,8 +13,8 @@ description: No description. ''
 
 ### Picking a version
 
-* **4.x** - Drupal 9.x compatible
-* **2.x** - Drupal 8.x compatible (No longer supported)
+- **4.x** - Drupal 9.x compatible
+- **2.x** - Drupal 8.x compatible (No longer supported)
 
 ## Inside a Composer-Based Drupal Instance
 

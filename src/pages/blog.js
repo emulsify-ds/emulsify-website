@@ -39,8 +39,8 @@ const BlogCard = ({
     <section
       className={classNames(
         'lg:relative lg:top-0 lg:transition-all lg:group-hover:-top-[4.5rem]',
-        { 'lg:px-5 lg:pt-1 lg:pb-5': !size },
-        { 'lg:px-8 lg:pt-4 lg:pb-5': size === 'lg' }
+        { 'lg:px-5 lg:pb-5 lg:pt-1': !size },
+        { 'lg:px-8 lg:pb-5 lg:pt-4': size === 'lg' }
       )}
     >
       <h2

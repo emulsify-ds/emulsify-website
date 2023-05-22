@@ -252,7 +252,7 @@ function BuiltWithEmulsify() {
 
   return (
     <section className={classNames('blueprint bg-white', 'px-5')}>
-      <div className="relative z-10 mx-auto max-w-8xl pt-6 pb-4 sm:px-2 md:py-8 lg:py-16 lg:px-8 xl:px-12">
+      <div className="relative z-10 mx-auto max-w-8xl pb-4 pt-6 sm:px-2 md:py-8 lg:px-8 lg:py-16 xl:px-12">
         <Image
           src={builtWithEmulsifyImage}
           width={300}
@@ -263,9 +263,9 @@ function BuiltWithEmulsify() {
         <ul
           className={classNames(
             'mt-9 ',
-            'grid grid-cols-5 items-center gap-y-1 gap-x-1',
-            'md:gap-y-2 md:gap-x-4',
-            'md:grid md:grid-cols-10 md:items-center lg:gap-y-9 lg:gap-x-5'
+            'grid grid-cols-5 items-center gap-x-1 gap-y-1',
+            'md:gap-x-4 md:gap-y-2',
+            'md:grid md:grid-cols-10 md:items-center lg:gap-x-5 lg:gap-y-9'
           )}
         >
           {logoWall.map((logo) => (

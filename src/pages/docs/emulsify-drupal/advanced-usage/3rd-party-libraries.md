@@ -23,9 +23,9 @@ yarn add jquery
 Create a `/.storybook/jquery-global.js` file and add the following:
 
 ```javascript
-import jquery from 'jquery';
-global.jQuery = jquery;
-global.$ = jquery;
+import jquery from 'jquery'
+global.jQuery = jquery
+global.$ = jquery
 ```
 
 Import this file in `./storybook/preview.js`:
@@ -72,15 +72,15 @@ The following example will cause the error status message to blink.
 Create `components/02-molecules/status/status.js` and add the following:
 
 ```javascript
-($ => {
+;(($) => {
   Drupal.behaviors.status = {
     attach() {
       setInterval(() => {
-        $('.status--error').fadeToggle();
-      }, 500);
+        $('.status--error').fadeToggle()
+      }, 500)
     },
-  };
-})(jQuery);
+  }
+})(jQuery)
 ```
 
 #### Update the Status Story
