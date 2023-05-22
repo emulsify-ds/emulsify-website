@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import { useRouter } from 'next/router'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 import { LayoutDocs } from '@/components/LayoutDocs'
 import { LayoutBlogLP } from '@/components/LayoutBlogLP'
 import { LayoutBlogArticle } from '@/components/LayoutBlogArticle'
@@ -112,6 +113,8 @@ export default function App({ Component, pageProps }) {
         )}
         <link rel="icon" href={favicon.src} />
       </Head>
+
+      <GoogleAnalytics trackPageViews />
       <Header transparent={type === 'home'} />
 
       {type === 'docs' && (
