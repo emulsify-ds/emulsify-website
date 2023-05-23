@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import classNames from 'classnames'
 import Image from 'next/image'
-import { Logo } from '@/components/Logo'
 import logo from '../images/emulsifyLogo.svg'
 
 export function Footer() {
@@ -10,7 +9,7 @@ export function Footer() {
     <footer
       className={clsx(
         'wave-footer bg-emulsifyBlue-900 text-emulsifyBlue-100',
-        'px-4 pt-10 pb-24 md:px-6'
+        'px-4 pb-24 pt-10 md:px-6'
       )}
     >
       <div className="mx-auto max-w-8xl sm:px-2 lg:flex lg:flex-row lg:px-8 xl:px-12">
