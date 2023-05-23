@@ -95,7 +95,7 @@ export function LayoutDocs({
 
         <div
           className={classNames(
-            'w-full max-w-[700px] px-4 py-16 lg:max-w-[796px] lg:pr-0 lg:pl-8 xl:px-16'
+            'w-full max-w-[700px] px-4 py-16 lg:max-w-[796px] lg:pl-8 lg:pr-0 xl:px-16'
           )}
         >
           <article>
