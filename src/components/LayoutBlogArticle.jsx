@@ -1,6 +1,6 @@
 import { Prose } from '@/components/Prose'
 
-export function LayoutBlogArticle({ children, title, type, useProse = true }) {
+export function LayoutBlogArticle({ children, title, useProse = true }) {
   return (
     <div className="wave-body">
       <div className="relative mx-auto flex justify-center">
