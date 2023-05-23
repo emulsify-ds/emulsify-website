@@ -8,7 +8,7 @@ import {
   faArrowRightLong,
   faBarsStaggered,
   faXmarkCircle,
-  faBolt,
+  // faBolt,
 } from '@fortawesome/sharp-solid-svg-icons'
 import clsx from 'clsx'
 import { Navigation } from '@/components/Navigation'
@@ -27,8 +27,6 @@ export function MobileNavigation({ navigation }) {
     }
 
     function determineMenuToShow() {
-      const path = router.pathname
-
       if (router.pathname.startsWith('/doc')) {
         setWhichNavToShow('docs')
       }
@@ -64,7 +62,7 @@ export function MobileNavigation({ navigation }) {
         className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-emulsifyBlue-900/50 pr-10 backdrop-blur lg:hidden"
         aria-label="Navigation"
       >
-        <Dialog.Panel className="wave-background-mobile min-h-full w-full max-w-xs px-4 pt-7 pb-12 sm:px-6">
+        <Dialog.Panel className="wave-background-mobile min-h-full w-full max-w-xs px-4 pb-12 pt-7 sm:px-6">
           <div className="mb-10 flex items-center">
             <button
               type="button"
