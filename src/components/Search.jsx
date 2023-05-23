@@ -15,7 +15,7 @@ function Hit({ hit, children }) {
   return <Link href={hit.url}>{children}</Link>
 }
 
-export function Search({ className }) {
+export function Search({ className, modifierKeyClassName }) {
   const [isOpen, setIsOpen] = useState(false)
   const [modifierKey, setModifierKey] = useState()
 
@@ -47,7 +47,12 @@ export function Search({ className }) {
       >
         Search
         {modifierKey && (
-          <kbd className="ml-auto hidden text-xl font-medium text-emulsifyBlue-200 group-hover:text-emulsifyBlue-100 dark:text-emulsifyBlue-400  md:block">
+          <kbd
+            className={classNames(
+              'ml-auto hidden text-xl font-medium text-emulsifyBlue-200 group-hover:text-emulsifyBlue-100 dark:text-emulsifyBlue-400 md:block',
+              modifierKeyClassName
+            )}
+          >
             <kbd className="font-sans">{modifierKey}</kbd>
             <kbd className="font-sans">K</kbd>
           </kbd>

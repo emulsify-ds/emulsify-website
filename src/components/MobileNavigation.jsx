@@ -148,7 +148,10 @@ export function MobileNavigation({ navigation }) {
                     </Link>
                   </li>
                   <li>
-                    <Search className="dark:text-emulsifyBlue-200" />
+                    <Search
+                      className="!text-emulsifyBlue-800 dark:!text-emulsifyBlue-200"
+                      modifierKeyClassName="dark:!text-emulsifyBlue-200 !text-emulsifyBlue-800"
+                    />
                   </li>
                 </ul>
               </nav>
