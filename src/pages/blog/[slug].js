@@ -119,7 +119,7 @@ export default function BlogPost({ posts }) {
             </div>
           </div>
 
-          <Prose className="mx-auto mb-52 mt-10 max-w-3xl px-5">
+          <Prose className="mx-auto mb-52 mt-10 !max-w-3xl px-5">
             {content.body}
           </Prose>
         </>
