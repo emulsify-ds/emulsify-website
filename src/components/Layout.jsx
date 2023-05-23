@@ -117,11 +117,11 @@ export function Layout({
               className={classNames(
                 'w-full',
                 {
-                  'max-w-2xl px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16':
+                  'max-w-2xl px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16':
                     type === 'docs',
                 },
                 {
-                  'max-w-2xl px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16':
+                  'max-w-2xl px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16':
                     type === 'blogLandingPage',
                 }
               )}
