@@ -13,7 +13,6 @@ import logo from '../images/emulsifyLogo.svg'
 
 export function Header({ transparent }) {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     function onScroll() {
@@ -29,8 +28,8 @@ export function Header({ transparent }) {
   return (
     <header
       className={clsx(
-        'relative z-50',
-        'sticky top-0 left-0 right-0 w-screen px-4 py-5 sm:px-6 lg:px-8',
+        'z-50',
+        'sticky inset-x-0 top-0 w-screen px-4 py-5 sm:px-6 lg:px-8',
         'transition duration-500',
         { 'bg-transparent': transparent },
         {
@@ -95,7 +94,7 @@ export function Header({ transparent }) {
             </ul>
           </nav>
         </div>
-        <div className="relative flex flex-grow basis-0 items-center justify-end gap-3 sm:gap-8">
+        <div className="relative flex grow basis-0 items-center justify-end gap-3 sm:gap-8">
           <Link
             href="https://github.com/emulsify-ds"
             className="text-2xl text-white transition-colors hover:text-emulsifyBlue-200 sm:text-4xl"
