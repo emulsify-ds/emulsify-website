@@ -97,7 +97,7 @@ export function ThemeSelector(props) {
 
       <Listbox.Options
         className={clsx(
-          'absolute top-full left-[95%] mt-3 w-36 -translate-x-[95%] space-y-1 rounded-xl md:left-[85%] md:-translate-x-[85%]',
+          'absolute left-[95%] top-full mt-3 w-36 translate-x-[-95%] space-y-1 rounded-xl md:left-[85%] md:translate-x-[-85%]',
           'bg-emulsifyBlue-200 p-3 text-sm font-medium',
           'border border-solid border-emulsifyBlue-400 shadow-lg',
           'dark:border-emulsifyBlue-700 dark:bg-emulsifyBlue-800'

@@ -5,7 +5,7 @@ export function Prose({ as: Component = 'div', className, ...props }) {
     <Component
       className={clsx(
         className,
-        'prose prose-emulsify max-w-none dark:prose-invert dark:text-emulsifyBlue-200 lg:prose-lg',
+        'prose prose-emulsify max-w-none dark:prose-invert lg:prose-lg dark:text-emulsifyBlue-200',
         // headings
         'prose-headings:scroll-mt-28 prose-headings:font-bold lg:prose-headings:scroll-mt-[8.5rem] ',
         'prose-h3:text-gray-500',
