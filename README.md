@@ -1,38 +1,60 @@
 [![Emulsify Design System](https://user-images.githubusercontent.com/409903/170579210-327abcdd-2c98-4922-87bb-36446a4cc013.svg)](https://www.emulsify.info/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e8a8811d-96c9-4c15-b3f0-e14473fcff0f/deploy-status)](https://app.netlify.com/sites/emulsify-website/deploys)
 
-# Emulsify.info website
+# Emulsify website
 
-Built using [Gatsby.js](https://www.gatsbyjs.org/), the [Contentful CMS](https://www.contentful.com/), and the [Gatsby Contentful Starter](https://github.com/contentful/starter-gatsby-blog). It is hosted on [Netlify](https://www.netlify.com/).
+Built using NextJS and Tailwind for the frontend. Content for the blog comes from Contentful and the documentation is held in this repo as markdown files.
 
-## Getting started
+## Requirements and setup
 
-Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (if you haven't already).
+Install npm, preferably with nvm (node version manager) so you can easily use the node version found in `.nvmrc`
 
-## Installation
+```bash
+npm install
+nvm use
+cp .env.example .env.local
+```
 
-Clone repo and run `npm i`
+Access to the Emulsify website in Netlify.
 
-## Configuration
+Access to Contentful if you want to do anything with blog posts.
 
-Copy `.env.example` to `.env.development`, and fill in the required credentials.
+## Features
 
-## Crucial Commands
+### Content sources
 
-### `npm run develop`
+* Blog articles are authored using markdown in Contentful.
+* Documenation, found on the site at `/docs/*`, are markdown files found in `./src/pages`
+* Documentation navigation is controlled by `src/data/navigation.js`.
+* Other page content can be found either in `./src/pages/*` or in the corresponding component in `src/components`.
+* Search is managed by [Algolia DocSearch](https://docsearch.algolia.com)
 
-Develop on the gatsby site locally.
+### Adding, editing, or removing blog posts
 
-### `npm run storybook`
+Blog articles are authored using markdown in Contentful. In order for a blog post to show up, you must check "Publish to Blog" in Contentful.
 
-Develop on the component library locally.
+#### To add or edit an article
 
-To deploy your changes, simply commit to the repo and request a PR.
+1. Author the article in Contentful, check "Publish to Blog", and publish it.
+2. Create a pull request with an empty commit. Netlify will create a PR branch site to review.
+3. Once approved, merge the PR. Netlify will then rerender the site with the new content.
 
-## This project uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+#### To remove an article
 
-Commits are vetted against the [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) ruleset. See the configuration in `commitlint.config.js`.
+1. Login to Contentful and uncheck "Publish to Blog".
+2. Create a pull request with an empty commit. Netlify will create a PR branch site to review.
+3. Once approved, merge the PR. Netlify will then rerender the site with the new content.
 
-## Note for M1 Macs
+### Search
 
-If you get an error when running `npm` about "sharp", [this comment](https://github.com/lovell/sharp/issues/2460#issuecomment-751491241) may help you resolve that issue.
+This site uses [Algolia DocSearch](https://docsearch.algolia.com) for the global search. DocSearch is free for open-source projects.
+
+### Markdoc
+
+[Markdoc](https://markdoc.dev/) is a Markdown-based syntax and toolchain for creating custom documentation sites, created by Stripe.
+
+The Emulsify website makes use of Markdoc components to customize rendering. They can be found in `src/markdoc/tags`.
+
+* `src/markdoc/tags/callout.js` is a proof-of-concept component and is not used.
+* `src/markdoc/tags/gist.js` renders Github Gists
+* `src/markdoc/tags/youtube.js` renders YouTube videos
