@@ -61,8 +61,8 @@ To complete the step above, you would add this `js` directory to the Storybook c
 
 ### Writing Stories
 
-Storybook only loads the stories you tell it to, so you will need to create \*.stories.js files. We have multiple examples in the new starter including ones using complex Twig includes, sharing data across components and using JavaScript (see [usage](../basic-usage/writing-stories.md) details).
+Storybook only loads the stories you tell it to, so you will need to create \*.stories.js files. We have multiple examples in the new starter including ones using complex Twig includes, sharing data across components and using JavaScript (see [usage](../basic-usage/writing-stories) details).
 
 ### Data
 
-Data can still be handled via YML (preferred) or JSON files. However, you will need to handle any global data files differently (see [usage](../basic-usage/writing-stories.md) instructions) as the new setup pays no attention automatically to the old `/components/_data` directory.
+Data can still be handled via YML (preferred) or JSON files. However, you will need to handle any global data files differently (see [usage](../basic-usage/writing-stories) instructions) as the new setup pays no attention automatically to the old `/components/_data` directory.
