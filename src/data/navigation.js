@@ -62,7 +62,10 @@ export const navigation = [
   },
   {
     title: 'Systems',
-    links: [{ title: 'Compound', href: '/docs/systems/compound' }],
+    links: [
+      { title: 'Emulsify UI Kit', href: '/docs/systems/ui-kit' },
+      { title: 'Compound', href: '/docs/systems/compound' },
+    ],
   },
   {
     title: 'Supporting Projects',
