@@ -9,7 +9,9 @@ Built using NextJS and Tailwind for the frontend. Content for the blog comes fro
 
 Install npm, preferably with nvm (node version manager) so you can easily use the node version found in `.nvmrc`
 
-Before installation, you will need to set a value for `FONTAWESOME_NPM_AUTH_TOKEN`. This value can be found in the Four Kitchens 1Password shared vault.
+Before installation, you will need to set a value for `FONTAWESOME_NPM_AUTH_TOKEN`. This value can be found in the Four Kitchens 1Password shared vault as "FONTAWESOME_NPM_AUTH_TOKEN".
+
+You will also need to copy `.env.example` and fill in the credentials. These can be found in the Four Kitchens 1Password shared vault as "Emulsify Website .env variables".
 
 ```bash
 npm install
