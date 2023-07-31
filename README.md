@@ -14,9 +14,9 @@ Before installation, you will need to set a value for `FONTAWESOME_NPM_AUTH_TOKE
 You will also need to copy `.env.example` and fill in the credentials. These can be found in the Four Kitchens 1Password shared vault as "Emulsify Website .env variables".
 
 ```bash
-npm install
 nvm use
 cp .env.example .env.local
+npm install
 ```
 
 Access to the Emulsify website in Netlify.
