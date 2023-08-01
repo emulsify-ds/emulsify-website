@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 import { useRouter } from 'next/router'
 import { GoogleAnalytics } from 'nextjs-google-analytics'
+import Script from 'next/script'
+import { useEffect } from 'react'
 import { LayoutDocs } from '@/components/LayoutDocs'
 import { LayoutBlogLP } from '@/components/LayoutBlogLP'
 import { LayoutBlogArticle } from '@/components/LayoutBlogArticle'
@@ -13,6 +15,7 @@ import sharingImageDocs from '../images/sharing-image-docs.png'
 import sharingImageBlogLP from '../images/sharing-image-blog.png'
 import sharingImageHome from '../images/sharing-image-homepage.png'
 import favicon from '../images/favicon.png'
+import { GTM_ID, pageview } from '../utils/gtm'
 
 function getNodeText(node) {
   let text = ''
@@ -60,6 +63,13 @@ export default function App({ Component, pageProps }) {
   const title = pageProps.markdoc?.frontmatter.title
   const router = useRouter()
 
+  useEffect(() => {
+    router.events.on('routeChangeComplete', pageview)
+    return () => {
+      router.events.off('routeChangeComplete', pageview)
+    }
+  }, [router.events])
+
   let type = ''
   let useProse = ''
   if (router.pathname.startsWith('/docs')) {
@@ -95,6 +105,20 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      {/* Google Tag Manager - Global base code */}
+      <Script
+        id="gtag-base"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer', '${GTM_ID}');
+          `,
+        }}
+      />
       <Head>
         <title>
           {router.pathname === '/'

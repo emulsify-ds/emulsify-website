@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import { GTM_ID } from '../utils/gtm'
 
 const themeScript = `
   let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
@@ -53,6 +54,15 @@ export default function Document() {
         />
       </Head>
       <body className="bg-white dark:bg-emulsifyBlue-1000">
+        <noscript>
+          <iframe
+            title="gtm"
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Main />
         <NextScript />
       </body>
