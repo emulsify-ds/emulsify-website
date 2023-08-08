@@ -8,7 +8,6 @@ import Image from 'next/image'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { navigation } from '@/data/navigation'
 import { ThemeSelector } from './ThemeSelector'
-import { Search } from './Search'
 import logo from '../images/emulsifyLogo.svg'
 
 export function Header({ transparent }) {
@@ -87,9 +86,6 @@ export function Header({ transparent }) {
                 >
                   Blog
                 </Link>
-              </li>
-              <li>
-                <Search />
               </li>
             </ul>
           </nav>
