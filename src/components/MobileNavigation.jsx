@@ -12,7 +12,6 @@ import {
 } from '@fortawesome/sharp-solid-svg-icons'
 import clsx from 'clsx'
 import { Navigation } from '@/components/Navigation'
-import { Search } from './Search'
 
 export function MobileNavigation({ navigation }) {
   const router = useRouter()
@@ -146,12 +145,6 @@ export function MobileNavigation({ navigation }) {
                     >
                       Blog
                     </Link>
-                  </li>
-                  <li>
-                    <Search
-                      className="!text-emulsifyBlue-800 dark:!text-emulsifyBlue-200"
-                      modifierKeyClassName="dark:!text-emulsifyBlue-200 !text-emulsifyBlue-800"
-                    />
                   </li>
                 </ul>
               </nav>
