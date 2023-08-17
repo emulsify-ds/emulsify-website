@@ -63,7 +63,16 @@ export const navigation = [
   {
     title: 'Systems',
     links: [
-      { title: 'Emulsify UI Kit', href: '/docs/systems/ui-kit' },
+      {
+        title: 'Emulsify UI Kit',
+        href: '/docs/systems/ui-kit',
+        children: [
+          {
+            title: 'Connecting Figma to a Github repository',
+            href: '/docs/systems/ui-kit/connecting-figma-to-github',
+          },
+        ],
+      },
       { title: 'Compound', href: '/docs/systems/compound' },
     ],
   },
