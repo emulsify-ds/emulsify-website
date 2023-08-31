@@ -29,7 +29,7 @@ export function Footer() {
           <h2 className="text-xl font-bold ">
             Emulsify is a product of{' '}
             <Link
-              href="https://fourkitchens.com"
+              href="https://www.fourkitchens.com"
               className="border-b border-solid border-emulsifyBlue-400  text-emulsifyBlue-100 transition-colors hover:border-emulsifyBlue-100"
             >
               Four Kitchens
@@ -41,7 +41,7 @@ export function Footer() {
             system, the Web Chefs have you covered.
           </p>
           <Link
-            href="https://fourkitchens.com/"
+            href="https://www.fourkitchens.com/"
             className={classNames(
               'mt-4 inline-block rounded px-4 py-2 transition-colors',
               'bg-emulsifyBlue-700',

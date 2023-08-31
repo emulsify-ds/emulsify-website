@@ -9,7 +9,7 @@ description: No description. ''
 ### Requirements
 
 1. [Node (we recommend NVM)](https://github.com/nvm-sh/nvm)
-2. [Emulsify CLI](https://docs.emulsify.info/supporting-projects/emulsify-cli) (Not strictly recommended, but all docs will assume its use)
+2. [Emulsify CLI](/docs/supporting-projects/emulsify-cli) (Not strictly recommended, but all docs will assume its use)
 
 ### Picking a version
 
