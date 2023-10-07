@@ -51,7 +51,7 @@
     "focus-visible": "^5.2.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "next": "13.0.2",
+    "next": "13.5.4",
     "nextjs-google-analytics": "^2.3.3",
     "path": "^0.12.7",
     "postcss-focus-visible": "^6.0.4",
