@@ -26,7 +26,7 @@ Here's a [video walkthrough](https://modulesunraveled.wistia.com/medias/7cdtb3k4
 2. Move into your new theme `cd web/themes/custom/my_awesome_theme`
 3. Install the Compound system with the default components `emulsify system install compound`
 4. Build theme `npm run build`
-5. Enable your theme and its dependencies\* \*\*`drush then THEME_NAME -y && drush en components emulsify_twig -y`
+5. Enable your theme and its dependencies\* \*\*`drush en components emulsify_twig -y && drush then THEME_NAME -y`
 6. Set your custom theme as the default `drush config-set system.theme default THEME_NAME -y`
 7. See [the FAQ](/docs/resources/help-and-support/faq/) for the final step to avoid the `.git can't be found` error
 
