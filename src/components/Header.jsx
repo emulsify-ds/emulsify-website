@@ -3,7 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
-import { faGithub, faSlack } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faSlack, faFigma } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { navigation } from '@/data/navigation'
@@ -102,6 +102,12 @@ export function Header({ transparent }) {
             className="text-2xl text-white transition-colors hover:text-emulsifyBlue-200 sm:text-4xl"
           >
             <FontAwesomeIcon icon={faSlack} />
+          </Link>
+          <Link
+            href="https://www.figma.com/community/file/1141071510618977331/emulsify-ui-kit-beta"
+            className="text-2xl text-white transition-colors hover:text-emulsifyBlue-200 sm:text-4xl"
+          >
+            <FontAwesomeIcon icon={faFigma} />
           </Link>
           <ThemeSelector className="relative z-10" />
         </div>

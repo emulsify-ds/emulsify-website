@@ -28,7 +28,9 @@ import drexelLogo from '../images/built-with-emulsify/drexel.svg'
 import fhaoLogo from '../images/built-with-emulsify/fhao.svg'
 import ithacaLogo from '../images/built-with-emulsify/ithaca.svg'
 import ncnLogo from '../images/built-with-emulsify/ncn.svg'
+import oregonZoo from '../images/built-with-emulsify/oregon-zoo-logo.svg'
 import stanfordLogo from '../images/built-with-emulsify/stanford.svg'
+import smithCollege from '../images/built-with-emulsify/smith-college.svg'
 import tlhLogo from '../images/built-with-emulsify/tlh.svg'
 import yaleInfoSecLogo from '../images/built-with-emulsify/yale-information-security.svg'
 import yaleSchwarzmanLogo from '../images/built-with-emulsify/yale-schwarzman-center.svg'
@@ -51,7 +53,7 @@ function Hero() {
         <Image
           src={homeHero}
           alt=""
-          className="absolute right-[-50px] top-[20%] hidden w-[38%] xl:block"
+          className="absolute right-[-50px] top-[20%] hidden w-[38%] max-w-[621px] xl:block"
         />
         <div>
           <h1 className="mb-5 max-w-[800px] font-sans text-4xl font-black leading-none md:text-6xl lg:mb-10 lg:text-8xl">
@@ -207,10 +209,22 @@ function BuiltWithEmulsify() {
       url: 'https://www.councilofnonprofits.org/',
     },
     {
+      src: oregonZoo,
+      alt: 'Oregon Zoo',
+      class: 'col-span-2',
+      url: 'https://www.oregonzoo.org',
+    },
+    {
       src: stanfordLogo,
       alt: 'Stanford University',
-      class: 'col-span-3 md:col-span-4',
+      class: 'col-span-3',
       url: 'https://humsci.stanford.edu',
+    },
+    {
+      src: smithCollege,
+      alt: 'Smith College',
+      class: 'col-span-3',
+      url: 'https://www.smith.edu',
     },
     {
       src: tlhLogo,
