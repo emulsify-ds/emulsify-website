@@ -50,7 +50,7 @@ export default function Document() {
           href="/fonts/mona-sans/Mona-Sans.woff2"
           as="font"
           type="font/woff2"
-          crossOrigin
+          crossOrigin="true"
         />
       </Head>
       <body className="bg-white dark:bg-emulsifyBlue-1000">
