@@ -4,7 +4,37 @@ pageTitle: Upgrading
 description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drupal
 ---
 
-## Required Steps
+An existing Emulsify starter theme (storybook) can be updated to a subtheme featuring Emulsify Core by performing the following:
+
+## Existing Drupal Project/Theme
+
+1. Install the base theme: `composer require drupal/emulsify`
+2. Enable the base theme and it's helper module: `drush pm:enable emulsify_tools && drush theme:enable emulsify`
+3. Uninstall the theme existing theme: `drush theme:uninstall [theme_name]`
+   - [OPTIONAL] If you wish to keep the existing theme's name for rename the old theme directory to something else (e.g., `THEMENAME_old`) and rename the old theme's info.yml file as well (e.g., `THEMENAME_old.info.yml`) 
+4. Generate an Emulsify subtheme: `drush emulsify [theme_name]`
+5. Copy your `components/` directory from the old theme into the new theme directory.
+6. Review the old theme's `package.json` for any customizations or additional packages/libraries. Compare this to [Emulsify Core's](https://github.com/emulsify-ds/emulsify-core/blob/main/package.json) `package.json` file to help determine packages/libraries not part of the base installation.
+7. Review the following files within your old theme and compare them to [Emulsify Core's shipped configuration](https://github.com/emulsify-ds/emulsify-core/tree/main/config). If there are any customizations that need to carry forward you can extend/overwrite Emulsify Core's configuration by modifying your new theme's configuration within `[new theme]/config/emulsify-core`.
+8. Verify the component structure defined in `project.emulsify.json` matches your `components/` directory.
+
+## Standalone Project
+
+### Tooling and custom configuration
+
+All project tooling 
+
+### Parent theme assets
+
+
+### Update packages
+
+
+## Upgrading from Pattern Lab
+
+Early versions of Emulsify used Pattern Lab to organize and build components. Since September of 2020 Emulsify has moved to Storybook. Follow the steps below to refactor your old project and upgrade to the latest version of Emulsify.
+
+### Required Steps
 
 1. Disable old theme
 2. Rename old theme directory to something else (e.g., `THEMENAME_old`) and rename the old theme's info.yml file as well (e.g., `THEMENAME_old.info.yml`)
