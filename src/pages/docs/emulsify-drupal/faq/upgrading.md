@@ -4,9 +4,9 @@ pageTitle: Upgrading
 description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drupal
 ---
 
-An existing Emulsify starter theme (storybook) can be updated to a subtheme featuring Emulsify Core by performing the following:
+An existing Emulsify starter theme (storybook) can be updated to a subtheme utilizing Emulsify Core by performing the following:
 
-## Existing Drupal Project/Theme
+## Scenario: Existing Drupal Project/Theme
 
 1. Install the base theme: `composer require drupal/emulsify`
 2. Enable the base theme and it's helper module: `drush pm:enable emulsify_tools && drush theme:enable emulsify`
@@ -18,19 +18,62 @@ An existing Emulsify starter theme (storybook) can be updated to a subtheme feat
 7. Review the following files within your old theme and compare them to [Emulsify Core's shipped configuration](https://github.com/emulsify-ds/emulsify-core/tree/main/config). If there are any customizations that need to carry forward you can extend/overwrite Emulsify Core's configuration by modifying your new theme's configuration within `[new theme]/config/emulsify-core`.
 8. Verify the component structure defined in `project.emulsify.json` matches your `components/` directory.
 
-## Standalone Project
+## Scenario: Standalone Project
+
+If your instance of Emulsify lives outside of Drupal you can do an in-place upgrade.
 
 ### Tooling and custom configuration
 
-All project tooling 
+All tooling and configuration has been moved to Emulsify Core in an effort to simplify your component library and provide an easier update workflow. This means there is a lot of additional files that are no longer needed post-update. Perform the following steps to remove files/configuration that are no longer needed and refactor any configuration customizations.
 
-### Parent theme assets
+1. Edit `.nvmrc` and change the version to `20`
+2. From the root of your project create a `config/` directory that can extend/overwrite Emulsify Core configuration
+`git clone -b main https://github.com/emulsify-ds/emulsify-drupal.git && cd emulsify-drupal && git sparse-checkout set --no-cone whisk && mv whisk/config .. && cd .. && rm -rf emulsify-drupal`
+1. Review the existing files and compare them to their corresponding Emulsify Core implementation. Make note of any customization that need to carry forward:
+  - `.eslintrc.yml` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/config/eslintrc.config.json 
+  - `.prettierignore` compared to https://github.com/emulsify-ds/emulsify-drupal/blob/main/whisk/config/emulsify-core/.prettierignore
+  - `.prettierrc.json` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/config/.prettierrc.json 
+  - `.storybook/emulsifyTheme.js` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/.storybook/emulsifyTheme.js 
+  - `.stylelintrc.json` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/config/.stylelintrc.json
+  - `a11y.config.js` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/config/a11y.config.js
+  - `babel.config.js` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/config/babel.config.js
+  - `jest.config.js` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/config/jest.config.js
+  - `postcss.config.js` compared to https://github.com/emulsify-ds/emulsify-core/blob/main/config/postcss.config.js 
+2. If there are any customizations from step #2 that you want to carry forward you can now modify the corresponding files within `config/emulsify-core/` 
+3. Remove the following files from your project
+  - `.eslintignore`
+  - `.eslintrc.yml`
+  - `.prettierignore`
+  - `.storybook/`
+  - `.stylelintignore`
+  - `.stylelintrc`
+  - `a11y.config.js`
+  - `babel.config.js`
+  - `emulsify.php`
+  - `jest.config.js`
+  - `postcss.config.js`
+  - `util/`
+
+### Moving assets
+
+As of version `4.7.0` all theme icons, images, fonts, ...etc have been moved to the `assets/` directory. Verify this directory exists and houses the previously mentioned folders.
+- `assets/icons`
+- `assets/images`
+- `assets/fonts`
+
+### Update scripts and packages
+
+The `package.json` will likely see the most changes to your project due to all project dependencies and their versions now being added via Emulsify Core.
+
+1. Review the `package.json` file and make note of any custom `"scripts": {` added to your project. Compare this to https://github.com/emulsify-ds/emulsify-drupal/blob/main/whisk/package.json#L15 to reference.
+2. Copy all scripts from https://github.com/emulsify-ds/emulsify-drupal/blob/main/whisk/package.json#L15 into your own `package.json` and add any customizations previously identified.
+3. Review the `"dependencies": {` in your `package.json` and compare them to https://github.com/emulsify-ds/emulsify-core/blob/main/package.json#L38. Make note of any additional packages your project may have. The version numbers for matching packages can be ignored as Emulsify Core will install the ideal version.
+4. Remove all dependencies (except addition packages identified in step 3) and replace with `"emulsify-core": "github:emulsify-ds/emulsify-core"`. For most projects `github:emulsify-ds/emulsify-core` will be the only listed dependency.
+5. Review and verify all your `devDependencies` are still relevant and in use. Update them to a version that is compatible with Node 20. This may result in additional configuration changes required for your specific project.
+6. Run `npm install` and verify all the scripts still run without errors.
 
 
-### Update packages
-
-
-## Upgrading from Pattern Lab
+## Scenario: Upgrading from Pattern Lab
 
 Early versions of Emulsify used Pattern Lab to organize and build components. Since September of 2020 Emulsify has moved to Storybook. Follow the steps below to refactor your old project and upgrade to the latest version of Emulsify.
 
