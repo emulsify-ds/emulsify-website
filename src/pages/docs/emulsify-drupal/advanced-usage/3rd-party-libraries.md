@@ -15,7 +15,7 @@ Use the following steps to make jQuery available to your component javascript fi
 #### Add jQuery Library
 
 ```bash
-yarn add jquery
+npm install jquery
 ```
 
 ### Add jQuery to Storybook Config
@@ -111,7 +111,7 @@ Add the new JS file to the `components/02-molecules/status/status.stories.js` an
 + };
 ```
 
-Now if you run the storybook `yarn develop` you should see a blinking error message in the status molecule.
+Now if you run the storybook `npm run develop` you should see a blinking error message in the status molecule.
 
 #### Add JS File to Theme Library and Load in the Template
 
@@ -135,32 +135,17 @@ The library then needs to be loaded in the component twig template. In this case
 + {{ attach_library('THEME_NAME/status') }}
 ```
 
-#### Add jQuery Once
-
-To include jQuery `once()` add it to your project:
-
-```bash
-yarn add jquery-once
-```
-
-Add add it to your the `/.storybook/config.js` file:
-
-```javascript
-  import './jquery-global.js';
-+ import once from 'jquery-once';
-```
-
 ## Libraries for Individual Components
 
 There are a couple of strategies for loading individual libraries.
 
-### Add with Yarn
+### Add with NPM
 
-Add an external library using yarn by adding it to your project `yarn add LIBRARY` and then importing where needed.
+Add an external library using npm by adding it to your project/custom theme `npm i LIBRARY` and then importing where needed.
 
 ### Load Library from an External URL
 
-External libraries, for example from a CDN, can be loaded with [Storybook External Links](https://github.com/jhta/storybook-external-links). Install, `yarn add storybook-external-links` and add to the `/.storybook/config.js` or an individual story file:
+External libraries, for example from a CDN, can be loaded with [Storybook External Links](https://github.com/jhta/storybook-external-links). Install, `npm run storybook-external-links` and add to the `/.storybook/config.js` or an individual story file:
 
 ```javascript
 + import withExternalLinks from 'storybook-external-links';

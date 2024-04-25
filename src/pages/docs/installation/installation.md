@@ -16,7 +16,7 @@ description: Instructions for installing Emulsify as your Drupal theme
 2. Move into the Emulsify theme `cd web/themes/contrib/gatsby-starter-emulsify-drupal/`
 3. Create your new theme by cloning emulsify `php emulsify.php "THEME NAME"` \(Run `php emulsify.php -h` for other available options\)
 4. Move into your theme directory `cd web/themes/custom/THEME_NAME/`
-5. Install the theme dependencies `yarn` or `npm install`
+5. Install the theme dependencies `npm install`
 6. Enable your theme and its dependencies `drush then THEME_NAME -y && drush en components emulsify_twig -y`
 
 Troubleshooting Installation: See [Drupal Installation FAQ](https://github.com/fourkitchens/emulsify/wiki/Installation#drupal-installation-faq).
@@ -30,15 +30,15 @@ _Note: Once you've created your custom theme, you can remove Emulsify as a depen
 3. Move into the emulsify theme `cd emulsify`
 4. Create your new theme by cloning emulsify `php emulsify.php "THEME NAME"` \(Run `php emulsify.php -h` for other available options\)
 5. Move into your cloned theme directory `cd web/themes/custom/THEME_NAME/`
-6. Install the theme dependencies `yarn` or `npm install`
+6. Install the theme dependencies `npm install`
 7. Move the Emulsify Twig module from `themes/custom/emulsify/vendor/drupal/emulsify_twig/` to `modules/contrib/emulsify_twig`. \(You can do this from the Drupal root with `cp -r themes/contrib/emulsify/vendor/drupal/emulsify_twig/ modules/contrib/emulsify_twig`\)
 8. Enable Emulsify and its dependencies `drush then THEME_NAME -y && drush en components emulsify_twig -y`
 
 #### Drupal installation FAQ
 
-**Do I need to run `npm install` or `yarn` in the original Emulsify if I use the drush command to create my own custom clone?**
+**Do I need to run `npm install` in the original Emulsify if I use the drush command to create my own custom clone?**
 
-No. Your new custom theme is not a subtheme of Emulsify, and has no references to the original Emulsify contributed theme. You should do all development on the new cloned theme, including running any npm/yarn tasks. Also, do not enable Emulsify **and** your cloned them, only your cloned theme.
+No. Your new custom theme is not a subtheme of Emulsify, and has no references to the original Emulsify contributed theme. You should do all development on the new cloned theme, including running any npm tasks. Also, do not enable Emulsify **and** your cloned them, only your cloned theme.
 
 **Do I have to use the drush command or can I just use Emulsify as-is?**
 

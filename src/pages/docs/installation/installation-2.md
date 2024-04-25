@@ -7,7 +7,7 @@ description: Instructions from
 
 ## Standalone \(not Drupal\)
 
-`yarn` or `npm install`
+`npm install`
 
 ## Drupal Installation
 

@@ -20,7 +20,7 @@ The Webpack build for the project found in the `/webpack` directory can be exten
 2. **Image minification**: Any images added into the `images` directory will be minified
 3. **Sass/Stylelint/Minification**: By default, all sass files will be compiled and minified into a single CSS file with stylelint feedback for errors.
 
-There are other niceties for feedback (progress plugin) and cleanup (to keep the `dist` directory clean). Also, by default, there is a separate webpack configuration for development (`webpack/webpack.dev.js`) and production (`webpack/webpack.prod.js`). The development file is used when running `yarn develop` and the production task is meant to be used by the `yarn build-webpack` command for deployments.
+There are other niceties for feedback (progress plugin) and cleanup (to keep the `dist` directory clean). Also, by default, there is a separate webpack configuration for development (`webpack/webpack.dev.js`) and production (`webpack/webpack.prod.js`). The development file is used when running `npm run develop` and the production task is meant to be used by the `npm run build` command for deployments.
 
 **Create separate CSS files per component**
 
