@@ -17,6 +17,8 @@ An existing Emulsify starter theme (storybook) can be updated to a subtheme util
 6. Review the old theme's `package.json` for any customizations or additional packages/libraries. Compare this to [Emulsify Core's](https://github.com/emulsify-ds/emulsify-core/blob/main/package.json) `package.json` file to help determine packages/libraries not part of the base installation.
 7. Review the following files within your old theme and compare them to [Emulsify Core's shipped configuration](https://github.com/emulsify-ds/emulsify-core/tree/main/config). If there are any customizations that need to carry forward you can extend/overwrite Emulsify Core's configuration by modifying your new theme's configuration within `[new theme]/config/emulsify-core`.
 8. Verify the component structure defined in `project.emulsify.json` matches your `components/` directory.
+9. Delete the `node_modules/` directory if it exists.
+10. Run `npm install` and verify all the scripts still run without errors.
 
 ## Scenario: Standalone Project
 
