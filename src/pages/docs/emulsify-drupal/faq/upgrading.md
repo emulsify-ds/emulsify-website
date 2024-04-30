@@ -70,7 +70,8 @@ The `package.json` will likely see the most changes to your project due to all p
 3. Review the `"dependencies": {` in your `package.json` and compare them to https://github.com/emulsify-ds/emulsify-core/blob/main/package.json#L38. Make note of any additional packages your project may have. The version numbers for matching packages can be ignored as Emulsify Core will install the ideal version.
 4. Remove all dependencies (except addition packages identified in step 3) and replace with `"emulsify-core": "github:emulsify-ds/emulsify-core"`. For most projects `github:emulsify-ds/emulsify-core` will be the only listed dependency.
 5. Review and verify all your `devDependencies` are still relevant and in use. Update them to a version that is compatible with Node 20. This may result in additional configuration changes required for your specific project.
-6. Run `npm install` and verify all the scripts still run without errors.
+6. Delete the `node_modules/` directory if it exists.
+7. Run `npm install` and verify all the scripts still run without errors.
 
 
 ## Scenario: Upgrading from Pattern Lab
