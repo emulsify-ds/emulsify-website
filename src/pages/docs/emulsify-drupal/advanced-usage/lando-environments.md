@@ -32,13 +32,19 @@ description: Use Lando to make your development environment portable
    services:
      appserver:
        build_as_root:
-         - apt update -y && apt install -y apt-transport-https build-essential unzip
-         - curl -sL https://deb.nodesource.com/setup_16.x | bash -
-         - apt-get install -y nodejs
+         - apt-get update -qq -y && apt-get install -qq -y apt-transport-https build-essential unzip
+         - apt-get install -qq chromium
+         - apt-get update
+         - apt-get install -y ca-certificates curl gnupg
+         - mkdir -p /etc/apt/keyrings
+         - curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+         - echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
+         - apt-get update
+         - apt-get install nodejs -y
          - chown -R www-data /usr/lib/node_modules
          - chown -R www-data /usr/bin
-         - npm install -g npm
-         - npm install -g @emulsify/cli
+         - npm install --silent -g npm@latest
+         - npm install --silent -g @emulsify/cli
    ---
    tooling:
      node:
