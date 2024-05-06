@@ -31,7 +31,6 @@ Access to Contentful if you want to do anything with blog posts.
 * Documenation, found on the site at `/docs/*`, are markdown files found in `./src/pages`
 * Documentation navigation is controlled by `src/data/navigation.js`.
 * Other page content can be found either in `./src/pages/*` or in the corresponding component in `src/components`.
-* Search is managed by [Algolia DocSearch](https://docsearch.algolia.com)
 
 ### Adding, editing, or removing blog posts
 
@@ -48,10 +47,6 @@ Blog articles are authored using markdown in Contentful. In order for a blog pos
 1. Login to Contentful and uncheck "Publish to Blog".
 2. Create a pull request with an empty commit. Netlify will create a PR branch site to review.
 3. Once approved, merge the PR. Netlify will then rerender the site with the new content.
-
-### Search
-
-This site uses [Algolia DocSearch](https://docsearch.algolia.com) for the global search. DocSearch is free for open-source projects.
 
 ### Markdoc
 
