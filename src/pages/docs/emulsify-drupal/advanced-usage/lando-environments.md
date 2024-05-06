@@ -20,10 +20,10 @@ description: Use Lando to make your development environment portable
 
 ### Basic Lando stack
 
-1. The `drupal9` recipe can handle most the work for us
+1. The `drupal10` recipe can handle most the work for us
 
    ```yaml
-   recipe: drupal9
+   recipe: drupal10
    ```
 
 2. Both NodeJS and NPM needs to be available at a project level. Using npm the emulsify cli command can also be installed. This and npm can both be made available via Lando tooling.
@@ -77,9 +77,9 @@ This example includes a full setup for Emulsify Drupal with Drupal 9 in a Lando 
 
 ```yaml
 name: example
-recipe: drupal9
+recipe: drupal10
 config:
-  php: '7.4'
+  php: '8.2'
   via: apache
   webroot: ./web
   database: mysql
