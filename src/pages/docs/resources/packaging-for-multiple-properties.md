@@ -38,7 +38,7 @@ Assuming you have a Sass stylesheet named `style.css` that compiles all the styl
 Next, we need to tell Storybook and Drupal where to find the component Twig files. First let's start with Storybook. Storybook uses Webpack to load files, and since our Twig components are Node packages, we need to tell Webpack a few things (see links for Western University examples of how to do this): 1. [How to watch/compile for changes in these files](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/.storybook/webpack.config.js#L7-L18), 2. [Where to look for these files](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/.storybook/webpack.config.js#L29-L43), and 3. [To include those in our linting](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/.storybook/webpack.config.js#L94-L95). Let's walk through a couple of places in this file that may be confusing - see comments in file for clarification:
 
 ```javascript
-// In the case of using yarn/npm link to link and develop your packages locally, this will help.
+// In the case of using npm link to link and develop your packages locally, this will help.
 config.resolve = { symlinks: false }
 
 // For hot reloading (watch), ignore node_modules except the western-up-scss/twig directories.
@@ -60,17 +60,17 @@ Also, you may have noticed we're only using global components in this project (t
 
 #### Organization Workflow
 
-If you are working on a property like this, you should be good to go. Changes to your local files will hot reload automatically and you will be able to leverage global components/styles. One last note is needed here when you are working on the organization (parent or global) project. You will want to work on the global components and styles within their respective packages while also gaining hot reloading. There are a number of approaches for this, but we have had great success with the simple usage of `npm/yarn link`. We use `yarn` so I will show an example using that. You will clone down your projects separately (`global-sass` ,`global-twig`). In each, you will want to run:
+If you are working on a property like this, you should be good to go. Changes to your local files will hot reload automatically and you will be able to leverage global components/styles. One last note is needed here when you are working on the organization (parent or global) project. You will want to work on the global components and styles within their respective packages while also gaining hot reloading. There are a number of approaches for this, but we have had great success with the simple usage of `npm link`. You will clone down your projects separately (`global-sass` ,`global-twig`). In each, you will want to run:
 
 ```
-yarn link
+npm link
 ```
 
 Once you've done that, you need to now link them in your Drupal project. Go to your theme, and run:
 
 ```
-yarn link global-sass
-yarn link global-twig
+npm link global-sass
+npm link global-twig
 ```
 
 Now, your project will use your local versions of those packages, and with the changes in place above, your Storybook will also hot reload when editing those files!

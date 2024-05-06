@@ -45,18 +45,12 @@ export const navigation = [
           {
             title: 'FAQ',
             href: '/docs/emulsify-drupal/faq',
-            children: [
-              {
-                title: 'Upgrading',
-                href: '/docs/emulsify-drupal/faq/upgrading',
-              },
-            ],
-          },
-          {
-            title: 'Tutorials and Videos',
-            href: '/docs/emulsify-drupal/faq/upgrading',
           },
         ],
+      },
+      {
+        title: 'Upgrading Emulsify Drupal',
+        href: '/docs/emulsify-drupal/faq/upgrading',
       },
     ],
   },
