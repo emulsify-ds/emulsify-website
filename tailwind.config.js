@@ -116,6 +116,7 @@ module.exports = {
             '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
             '--tw-prose-invert-th-borders': theme('colors.gray[600]'),
             '--tw-prose-invert-td-borders': theme('colors.gray[700]'),
+            '--tw-prose-invert-bullets': theme('colors.gray[400]'),
           },
         },
       }),
