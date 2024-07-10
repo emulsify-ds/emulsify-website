@@ -22,7 +22,7 @@ The Webpack build for the project found in the `/webpack` directory can be exten
 
 There are other niceties for feedback (progress plugin) and cleanup (to keep the `dist` directory clean). Also, by default, there is a separate webpack configuration for development (`webpack/webpack.dev.js`) and production (`webpack/webpack.prod.js`). The development file is used when running `npm run develop` and the production task is meant to be used by the `npm run build` command for deployments.
 
-**Create separate CSS files per component**
+### Create separate CSS files per component
 
 As of version 4.2.0, Emulsify's webpack config compiles multiple SCSS files into multiple CSS files while keeping the default `style.css`. Any SASS file that is not a partial (its filename is not prefixed with an underscore) will have a file created in `dist/css`.
 
