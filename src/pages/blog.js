@@ -85,7 +85,7 @@ const BlogCard = ({
             className={classNames(
               'text-gray-500 ',
               { 'md:text-base lg:text-sm': !size },
-              { 'md:text-base': size === 'lg' },
+              { 'md:text-sm': size === 'lg' },
               'lg:order-2'
             )}
           >
