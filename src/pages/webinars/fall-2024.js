@@ -117,15 +117,15 @@ export default function Index() {
               Webinar
             </p>
 
-            <h1 className="font-width-75 mb-4 text-balance text-5xl font-bold leading-none text-emulsifyBlue-900 dark:text-emulsifyBlue-200 md:text-6xl lg:gap-8 lg:text-7xl">
+            <h1 className="font-width-75 mb-4 text-balance text-5xl font-bold leading-none text-emulsifyBlue-900 dark:text-white md:text-6xl lg:gap-8 lg:text-7xl">
               {webinar.title}
             </h1>
 
-            <h2 className="mb-8 text-2xl font-bold leading-tight text-emulsifyBlue-800 lg:text-3xl">
+            <h2 className="mb-8 text-2xl font-bold leading-tight text-emulsifyBlue-800 dark:text-emulsifyBlue-300 lg:text-3xl">
               Join Us on {webinar.date} at {webinar.time} for a Free Webinar
             </h2>
 
-            <h3 className="text-balance text-xl font-bold leading-tight text-emulsifyBlue-900 lg:text-2xl">
+            <h3 className="text-balance text-xl font-bold leading-tight text-emulsifyBlue-900 dark:text-emulsifyBlue-200 lg:text-2xl">
               Are your institution’s web teams struggling with consistency,
               collaboration, and accessibility in your digital presence?
             </h3>
@@ -240,7 +240,7 @@ export default function Index() {
                 className="rounded-lg"
               />
               <div>
-                <h3 className="text-2xl font-bold leading-tight text-emulsifyBlue-800">
+                <h3 className="text-2xl font-bold leading-tight text-emulsifyBlue-800 dark:text-emulsifyBlue-300">
                   {presenter.name}
                 </h3>
                 <p>{presenter.jobTitle}</p>

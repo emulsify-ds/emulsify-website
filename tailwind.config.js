@@ -106,7 +106,6 @@ module.exports = {
             '--tw-prose-invert-links': theme('colors.white'),
             '--tw-prose-invert-bold': theme('colors.white'),
             '--tw-prose-invert-counters': theme('colors.gray[400]'),
-            '--tw-prose-invert-bullets': theme('colors.gray[600]'),
             '--tw-prose-invert-hr': theme('colors.gray[700]'),
             '--tw-prose-invert-quotes': theme('colors.gray[100]'),
             '--tw-prose-invert-quote-borders': theme('colors.gray[700]'),

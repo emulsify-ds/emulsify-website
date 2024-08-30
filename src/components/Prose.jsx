@@ -10,7 +10,7 @@ export function Prose({ as: Component = 'div', className, ...props }) {
         'prose-h3:text-gray-500',
         'dark:prose-headings:text-emulsifyBlue-200',
         // lead
-        'prose-lead:text-gray-500 dark:prose-lead:text-slate-400',
+        'prose-lead:text-gray-500 dark:prose-lead:text-slate-200',
         // links
         'prose-a:font-semibold dark:prose-a:text-sky-400',
         // link underline
@@ -22,7 +22,7 @@ export function Prose({ as: Component = 'div', className, ...props }) {
         'prose-code:px-2 prose-code:py-1',
         'dark:prose-code:rounded-lg dark:prose-code:bg-gray-600 dark:prose-code:text-emulsifyBlue-200',
         // hr
-        'dark:prose-hr:border-slate-800',
+        'dark:prose-hr:border-emulsifyBlue-500/50',
         className,
       )}
       {...props}
