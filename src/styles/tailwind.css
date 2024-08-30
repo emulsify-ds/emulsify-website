@@ -114,3 +114,21 @@
   overflow: visible;
   vertical-align: -0.125em;
 }
+
+.webinar-gradient {
+  width: 100vw;
+  height: 50vh;
+  filter: blur(50px);
+  background-image: linear-gradient(theme(colors.emulsifyBlue.300), theme(colors.violet.200), theme(colors.violet.300));
+  animation: webinar-gradient-rotate 10s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+}
+
+@keyframes webinar-gradient-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

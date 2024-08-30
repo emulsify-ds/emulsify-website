@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { LayoutDocs } from '@/components/LayoutDocs'
 import { LayoutBlogLP } from '@/components/LayoutBlogLP'
 import { LayoutBlogArticle } from '@/components/LayoutBlogArticle'
+import { LayoutWebinar } from '@/components/LayoutWebinar'
 import 'focus-visible'
 import '@/styles/tailwind.css'
 import { Footer } from '@/components/Footer'
@@ -88,6 +89,10 @@ export default function App({ Component, pageProps }) {
     type = 'none'
     useProse = false
   }
+  if (router.pathname.includes('/webinars')) {
+    type = 'webinars'
+    useProse = false
+  }
   if (router.pathname === '/') {
     type = 'home'
     useProse = false
@@ -162,6 +167,12 @@ export default function App({ Component, pageProps }) {
         <LayoutBlogArticle title={title} type={type} useProse={useProse}>
           <Component {...pageProps} />
         </LayoutBlogArticle>
+      )}
+      
+      {type === 'webinars' && (
+        <LayoutWebinar title={title} type={type} useProse={useProse}>
+          <Component {...pageProps} />
+        </LayoutWebinar>
       )}
 
       {type === 'home' && <Component {...pageProps} />}

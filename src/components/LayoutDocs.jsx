@@ -25,29 +25,29 @@ function useTableOfContents(tableOfContents) {
           const top = window.scrollY + el.getBoundingClientRect().top - scrollMt
           return { id, top }
         }),
-    []
+    [],
   )
 
   useEffect(() => {
     if (tableOfContents.length === 0) return
     const headings = getHeadings(tableOfContents)
-    function onScroll() {
-      const top = window.scrollY
-      let current = headings[0].id
-      for (const heading of headings) {
-        if (top >= heading.top) {
-          current = heading.id
-        } else {
-          break
-        }
-      }
-      setCurrentSection(current)
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => {
-      window.removeEventListener('scroll', onScroll, { passive: true })
-    }
+    // function onScroll() {
+    //   const top = window.scrollY
+    //   let current = headings[0].id
+    //   for (const heading of headings) {
+    //     if (top >= heading.top) {
+    //       current = heading.id
+    //     } else {
+    //       break
+    //     }
+    //   }
+    //   setCurrentSection(current)
+    // }
+    // window.addEventListener('scroll', onScroll, { passive: true })
+    // onScroll()
+    // return () => {
+    //   window.removeEventListener('scroll', onScroll, { passive: true })
+    // }
   }, [getHeadings, tableOfContents])
 
   return currentSection
@@ -61,7 +61,7 @@ export function LayoutDocs({
 }) {
   const router = useRouter()
   const section = navigation.find((section) =>
-    section.links.find((link) => link.href === router.pathname)
+    section.links.find((link) => link.href === router.pathname),
   )
   const currentSection = useTableOfContents(tableOfContents)
 
@@ -80,7 +80,7 @@ export function LayoutDocs({
       <div
         className={classNames(
           'relative mx-auto flex justify-center ',
-          'max-w-8xl sm:px-2 lg:px-8 xl:px-12'
+          'max-w-8xl sm:px-2 lg:px-8 xl:px-12',
         )}
       >
         <div className="hidden lg:relative lg:block lg:flex-none">
@@ -95,7 +95,7 @@ export function LayoutDocs({
 
         <div
           className={classNames(
-            'w-full max-w-[700px] px-4 py-16 lg:max-w-[796px] lg:pl-8 lg:pr-0 xl:px-16'
+            'w-full max-w-[700px] px-4 py-16 lg:max-w-[796px] lg:pl-8 lg:pr-0 xl:px-16',
           )}
         >
           <article>
@@ -136,7 +136,7 @@ export function LayoutDocs({
                           className={clsx(
                             isActive(section)
                               ? 'font-width-75 text-xl font-semibold leading-none text-violet-800 dark:text-emulsifyBlue-100'
-                              : 'font-width-75 text-xl font-normal leading-none text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100'
+                              : 'font-width-75 text-xl font-normal leading-none text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100',
                           )}
                         >
                           {section.title}
