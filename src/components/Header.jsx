@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faBolt } from '@fortawesome/sharp-solid-svg-icons'
 import { faGithub, faSlack, faFigma } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
 import { MobileNavigation } from '@/components/MobileNavigation'
@@ -35,7 +34,7 @@ export function Header({ transparent }) {
           'wave-header bg-emulsifyBlue-800 dark:bg-emulsifyBlue-900':
             !transparent,
         },
-        { 'mix-blend-exclusion backdrop-blur-lg': isScrolled && transparent }
+        { 'mix-blend-exclusion backdrop-blur-lg': isScrolled && transparent },
       )}
     >
       <div className="mx-auto flex max-w-8xl flex-wrap items-center gap-5 sm:px-2 md:justify-between md:gap-0 lg:px-8 xl:px-12">
@@ -54,7 +53,7 @@ export function Header({ transparent }) {
         <div className="relative ml-10 hidden items-center md:flex">
           <nav
             className={clsx(
-              'font-width-75 text-3xl font-semibold uppercase text-white'
+              'font-width-75 text-3xl font-semibold uppercase text-white',
             )}
           >
             <ul className={clsx('flex-flow flex gap-8')}>
@@ -73,7 +72,7 @@ export function Header({ transparent }) {
                 <Link
                   href="/docs"
                   className={clsx(
-                    'border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200'
+                    'border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200',
                   )}
                 >
                   Docs

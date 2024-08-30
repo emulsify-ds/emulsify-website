@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Listbox } from '@headlessui/react'
+import {
+  Listbox,
+  Label,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from '@headlessui/react'
 import clsx from 'clsx'
 
 const themes = [
@@ -54,8 +60,8 @@ export function ThemeSelector(props) {
       setSelectedTheme(
         themes.find(
           (theme) =>
-            theme.value === document.documentElement.getAttribute('data-theme')
-        )
+            theme.value === document.documentElement.getAttribute('data-theme'),
+        ),
       )
     }
   }, [selectedTheme])
@@ -64,8 +70,8 @@ export function ThemeSelector(props) {
     const handler = () =>
       setSelectedTheme(
         themes.find(
-          (theme) => theme.value === (window.localStorage.theme ?? 'system')
-        )
+          (theme) => theme.value === (window.localStorage.theme ?? 'system'),
+        ),
       )
 
     window.addEventListener('storage', handler)
@@ -80,31 +86,32 @@ export function ThemeSelector(props) {
       onChange={setSelectedTheme}
       {...props}
     >
-      <Listbox.Label className="sr-only">Theme</Listbox.Label>
-      <Listbox.Button
+      <Label className="sr-only">Theme</Label>
+      <ListboxButton
         className={clsx(
-          'flex h-6 w-6 items-center justify-center rounded-lg',
+          'flex size-6 items-center justify-center rounded-lg',
           'bg-emulsifyBlue-700 hover:bg-emulsifyBlue-600',
-          'dark:bg-emulsifyBlue-800 dark:hover:bg-emulsifyBlue-700'
+          'dark:bg-emulsifyBlue-800 dark:hover:bg-emulsifyBlue-700',
         )}
         aria-label={selectedTheme?.name}
       >
-        <LightIcon className="hidden h-4 w-4 fill-white [[data-theme=light]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-white [[data-theme=dark]_&]:block" />
-        <LightIcon className="hidden h-4 w-4 fill-white [:not(.dark)[data-theme=system]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-white [.dark[data-theme=system]_&]:block" />
-      </Listbox.Button>
+        <LightIcon className="hidden size-4 fill-white [[data-theme=light]_&]:block" />
+        <DarkIcon className="hidden size-4 fill-white [[data-theme=dark]_&]:block" />
+        <LightIcon className="hidden size-4 fill-white [:not(.dark)[data-theme=system]_&]:block" />
+        <DarkIcon className="hidden size-4 fill-white [.dark[data-theme=system]_&]:block" />
+      </ListboxButton>
 
-      <Listbox.Options
+      <ListboxOptions
         className={clsx(
-          'absolute left-[95%] top-full mt-3 w-36 translate-x-[-95%] space-y-1 rounded-xl md:left-[85%] md:translate-x-[-85%]',
+          'absolute left-[95%] top-full z-70 mt-3 w-36  space-y-1 rounded-xl md:left-[85%] ',
           'bg-emulsifyBlue-200 p-3 text-sm font-medium',
           'border border-solid border-emulsifyBlue-400 shadow-lg',
-          'dark:border-emulsifyBlue-700 dark:bg-emulsifyBlue-800'
+          'dark:border-emulsifyBlue-700 dark:bg-emulsifyBlue-800',
         )}
+        anchor="bottom"
       >
         {themes.map((theme) => (
-          <Listbox.Option
+          <ListboxOption
             key={theme.value}
             value={theme}
             className={({ active, selected }) =>
@@ -117,7 +124,7 @@ export function ThemeSelector(props) {
                     !active && !selected,
                   'bg-emulsifyBlue-500 text-emulsifyBlue-100 dark:bg-emulsifyBlue-700':
                     active,
-                }
+                },
               )
             }
           >
@@ -126,19 +133,19 @@ export function ThemeSelector(props) {
                 <div className="rounded-md bg-white p-1 shadow ring-1 ring-slate-900/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5">
                   <theme.icon
                     className={clsx(
-                      'h-4 w-4',
+                      'size-4',
                       selected
                         ? 'fill-emulsifyBlue-700 dark:fill-emulsifyBlue-100'
-                        : 'fill-emulsifyBlue-700 dark:fill-emulsifyBlue-200'
+                        : 'fill-emulsifyBlue-700 dark:fill-emulsifyBlue-200',
                     )}
                   />
                 </div>
                 <div className="ml-3">{theme.name}</div>
               </>
             )}
-          </Listbox.Option>
+          </ListboxOption>
         ))}
-      </Listbox.Options>
+      </ListboxOptions>
     </Listbox>
   )
 }
