@@ -184,7 +184,7 @@ const Form = () => {
             <li>
               Join our{' '}
               <a
-                className="text-white underline"
+                className="underline dark:text-white"
                 href="https://join.slack.com/t/emulsify/shared_invite/zt-1ujfwwcvr-ynvUPkEgWYuaby~wPaHt8g"
               >
                 Slack community
@@ -193,7 +193,7 @@ const Form = () => {
             <li>
               Follow us on{' '}
               <a
-                className="text-white underline"
+                className="underline dark:text-white"
                 href="https://github.com/emulsify-ds"
               >
                 Github
