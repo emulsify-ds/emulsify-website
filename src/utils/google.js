@@ -1,5 +1,4 @@
 import * as google from 'google-auth-library'
-import creds from '../../google-services.json'
 
 const SCOPES = [
   'https://www.googleapis.com/auth/spreadsheets',
