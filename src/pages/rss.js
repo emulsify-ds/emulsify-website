@@ -6,7 +6,7 @@ export async function getStaticProps() {
   return { props: { posts } }
 }
 
-export default function RSS({ posts }) {
+export default function RSS() {
   return (
     <>
       <Head>

@@ -68,7 +68,7 @@ export default function BlogPost({ posts }) {
           <div
             className={classNames(
               'md:p-9',
-              'bg-emulsifyBlue-600/10 from-emulsifyBlue-800 to-emulsifyBlue-900  dark:bg-gradient-to-b'
+              'bg-emulsifyBlue-600/10 from-emulsifyBlue-800 to-emulsifyBlue-900  dark:bg-gradient-to-b',
             )}
           >
             <div className="mx-auto flex max-w-8xl flex-col gap-7 sm:px-2 md:grid md:grid-cols-2  md:gap-5  lg:px-8 xl:px-12">
@@ -81,7 +81,7 @@ export default function BlogPost({ posts }) {
                     'flex flex-row items-center gap-2 text-sm font-semibold uppercase leading-tight text-gray-600 dark:text-gray-100',
                     'md:flex-col md:items-start',
                     'lg:flex-row lg:items-center',
-                    'mt-2 text-xs md:text-sm'
+                    'mt-2 text-xs md:text-sm',
                   )}
                 >
                   <span className="flex flex-row items-center gap-1 md:order-2 lg:order-1">
@@ -101,7 +101,7 @@ export default function BlogPost({ posts }) {
                     className={classNames(
                       'text-gray-500 dark:text-gray-200',
                       'md:text-base lg:text-sm',
-                      'lg:order-2'
+                      'lg:order-2',
                     )}
                   >
                     {eventFormatter(content.data.fields.publishDate)}

@@ -59,7 +59,7 @@ export default async function generateRssFeed() {
 
   fs.writeFileSync(
     './public/rss-planet-drupal.xml',
-    drupalFeed.xml({ indent: true })
+    drupalFeed.xml({ indent: true }),
   )
 
   return posts

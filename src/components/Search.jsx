@@ -31,7 +31,7 @@ export function Search({ className, modifierKeyClassName }) {
 
   useEffect(() => {
     setModifierKey(
-      /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl '
+      /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? '⌘' : 'Ctrl ',
     )
   }, [])
 
@@ -41,7 +41,7 @@ export function Search({ className, modifierKeyClassName }) {
         type="button"
         className={classNames(
           'font-width-75 group flex items-center gap-1 border-b border-solid border-emulsifyBlue-400 text-3xl font-semibold uppercase text-white hover:border-emulsifyBlue-200',
-          className
+          className,
         )}
         onClick={onOpen}
       >
@@ -50,7 +50,7 @@ export function Search({ className, modifierKeyClassName }) {
           <kbd
             className={classNames(
               'ml-auto hidden text-xl font-medium text-emulsifyBlue-200 group-hover:text-emulsifyBlue-100 dark:text-emulsifyBlue-400 md:block',
-              modifierKeyClassName
+              modifierKeyClassName,
             )}
           >
             <kbd className="font-sans">{modifierKey}</kbd>
@@ -71,7 +71,7 @@ export function Search({ className, modifierKeyClassName }) {
               },
             }}
           />,
-          document.body
+          document.body,
         )}
     </>
   )

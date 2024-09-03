@@ -9,7 +9,7 @@ export function Footer() {
     <footer
       className={clsx(
         'wave-footer bg-emulsifyBlue-900 text-emulsifyBlue-100',
-        'px-4 pb-24 pt-10 md:px-6'
+        'px-4 pb-24 pt-10 md:px-6',
       )}
     >
       <div className="mx-auto max-w-8xl sm:px-2 lg:flex lg:flex-row lg:px-8 xl:px-12">
@@ -46,7 +46,7 @@ export function Footer() {
               'mt-4 inline-block rounded px-4 py-2 transition-colors',
               'bg-emulsifyBlue-700',
               'font-bold',
-              'hover:bg-emulsifyBlue-600'
+              'hover:bg-emulsifyBlue-600',
             )}
           >
             Get in touch

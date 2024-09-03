@@ -46,7 +46,7 @@ function Hero() {
         'text-white',
         'overflow-hidden px-5',
         'relative -top-[88px] -mb-[100px] md:-top-[100px]',
-        'wave-hero'
+        'wave-hero',
       )}
     >
       <div className="mx-auto max-w-8xl py-32 pt-60 sm:px-2 lg:px-8 xl:px-12">
@@ -69,7 +69,7 @@ function Hero() {
               'inline-block rounded-lg',
               'bg-violet-600 text-xl font-bold text-white',
               'transition-all hover:bg-violet-700',
-              'px-6 py-3'
+              'px-6 py-3',
             )}
           >
             Install Drupal theme{' '}
@@ -130,7 +130,7 @@ function DesignSystemsTogether() {
       className={classNames(
         'bg-gradient-to-b from-emulsifyBlue-900 to-violet-900',
         'bg-cover text-white',
-        'px-5'
+        'px-5',
       )}
       style={{ backgroundImage: `url("${togetherImage.src}")` }}
     >
@@ -138,7 +138,7 @@ function DesignSystemsTogether() {
         <h2
           className={classNames(
             'font-width-75 text-4xl font-black md:text-7xl',
-            'mb-20 max-w-4xl md:mb-40'
+            'mb-20 max-w-4xl md:mb-40',
           )}
         >
           Make and implement design systems in Drupal{' '}
@@ -150,7 +150,7 @@ function DesignSystemsTogether() {
               {item.icon}
               <h2
                 className={classNames(
-                  'font-width-75 mb-5 text-3xl font-extrabold leading-none text-orange-200 lg:text-4xl'
+                  'font-width-75 mb-5 text-3xl font-extrabold leading-none text-orange-200 lg:text-4xl',
                 )}
               >
                 {item.title}
@@ -279,7 +279,7 @@ function BuiltWithEmulsify() {
             'mt-9 ',
             'grid grid-cols-5 items-center gap-x-1 gap-y-1',
             'md:gap-x-4 md:gap-y-2',
-            'md:grid md:grid-cols-10 md:items-center lg:gap-x-5 lg:gap-y-9'
+            'md:grid md:grid-cols-10 md:items-center lg:gap-x-5 lg:gap-y-9',
           )}
         >
           {logoWall.map((logo) => (
@@ -343,7 +343,7 @@ function Consistency() {
         <h2
           className={classNames(
             'font-width-75 text-4xl font-black md:text-7xl',
-            'mb-20 max-w-3xl md:mb-40'
+            'mb-20 max-w-3xl md:mb-40',
           )}
         >
           Keep <em className="brand-consistency">brand consistency</em> across
@@ -359,7 +359,7 @@ function Consistency() {
               {item.icon}
               <h2
                 className={classNames(
-                  'font-width-75 mb-5 text-3xl font-extrabold leading-none text-orange-200 lg:text-4xl'
+                  'font-width-75 mb-5 text-3xl font-extrabold leading-none text-orange-200 lg:text-4xl',
                 )}
               >
                 {item.title}
@@ -393,7 +393,7 @@ function WhatIsEmulsify() {
           className={classNames(
             'flex flex-row items-end justify-center gap-4',
             'font-width-75 text-4xl font-black md:text-7xl',
-            'mb-5 text-emulsifyBlue-900 lg:mb-9'
+            'mb-5 text-emulsifyBlue-900 lg:mb-9',
           )}
         >
           What is Emulsify?
@@ -439,7 +439,7 @@ function TryEmulsifyToday() {
         <h2
           className={classNames(
             'font-width-75 text-4xl font-black md:text-7xl',
-            'mb-10 max-w-3xl '
+            'mb-10 max-w-3xl ',
           )}
         >
           Ready to build your beautiful design system?
@@ -450,7 +450,7 @@ function TryEmulsifyToday() {
             'inline-block rounded-lg',
             'bg-emulsifyBlue-700 text-xl font-bold text-white',
             'transition-all hover:bg-emulsifyBlue-800',
-            'px-6 py-3'
+            'px-6 py-3',
           )}
         >
           Try Emulsify Today{' '}
