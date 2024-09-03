@@ -7,8 +7,8 @@ const SCOPES = [
 ]
 
 const jwt = new google.JWT({
-  email: creds.client_email,
-  key: creds.private_key,
+  email: process.env.NEXT_PUBLIC_CLIENT_EMAIL,
+  key: process.env.NEXT_PUBLIC_PRIVATE_KEY,
   scopes: SCOPES,
 })
 
