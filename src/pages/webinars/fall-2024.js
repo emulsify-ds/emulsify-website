@@ -164,7 +164,7 @@ const Form = () => {
             >
               Register
             </button>
-            <Arrow className="absolute bottom-[-40px] left-[-140px] w-[150px] fill-emulsifyBlue-800 dark:fill-emulsifyBlue-100" />
+            <Arrow className="absolute bottom-[-40px] left-[-140px] hidden w-[150px] fill-emulsifyBlue-800 dark:fill-emulsifyBlue-100 lg:block" />
           </div>
         </form>
       ) : (
@@ -220,7 +220,7 @@ export default function Index() {
       </Head>
 
       <div className={classNames('', 'dark:bg-gradient-to-b')}>
-        <div className="absolute min-h-[100vw] w-screen overflow-x-hidden ">
+        <div className="absolute min-h-screen w-screen overflow-x-hidden md:min-h-[100vw] ">
           <div className="webinar-gradient absolute top-0" />
         </div>
 
@@ -252,7 +252,7 @@ export default function Index() {
       </div>
 
       <section className="relative z-20">
-        <Prose className="prose-emulsify mx-auto mb-52 !max-w-3xl px-5 py-10 ">
+        <Prose className="prose-emulsify mx-auto mb-16 !max-w-3xl px-5 py-10 ">
           <Form />
 
           <p className="lead">
@@ -345,9 +345,9 @@ export default function Index() {
           {presenters.map((presenter, i) => (
             <div
               className={classNames(
-                'not-prose flex items-center gap-6',
-                { 'flex-row': i % 2 === 0 },
-                { 'flex-row-reverse': i % 2 !== 0 },
+                'not-prose flex md:items-center gap-6 mt-8',
+                { 'flex-col md:flex-row': i % 2 === 0 },
+                { 'flex-col md:flex-row-reverse': i % 2 !== 0 },
               )}
             >
               <Image
