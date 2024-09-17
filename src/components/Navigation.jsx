@@ -27,7 +27,7 @@ const MenuItemWithSubmenu = ({ item }) => {
             'font-width-75 pl-3.5',
             item.href === router.pathname
               ? 'font-semibold text-violet-800 dark:text-emulsifyBlue-100'
-              : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100'
+              : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100',
           )}
         >
           {item.title}
@@ -37,6 +37,7 @@ const MenuItemWithSubmenu = ({ item }) => {
           className="ml-auto "
           onClick={() => setOpen((current) => !current)}
         >
+          <span className="hidden">Expand</span>
           <FontAwesomeIcon
             icon={open ? faCaretUp : faCaretDown}
             className="text-emulsifyBlue-700 hover:text-emulsifyBlue-500 dark:text-emulsifyBlue-500 dark:hover:text-emulsifyBlue-200"
@@ -65,7 +66,7 @@ const MenuItems = ({ items }) => {
                   'font-width-75 block w-full pl-3.5',
                   item.href === router.pathname
                     ? 'font-semibold text-violet-800 dark:text-violet-200'
-                    : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100'
+                    : 'text-gray-700 hover:text-emulsifyBlue-700 dark:text-emulsifyBlue-300  dark:hover:text-emulsifyBlue-100',
                 )}
               >
                 {item.title}
@@ -86,7 +87,7 @@ export function Navigation({ navigation, className }) {
           <h2
             className={classNames(
               'font-width-75 mt-5 text-2xl font-semibold uppercase text-emulsifyBlue-800 dark:text-emulsifyBlue-100',
-              { 'mt-0': i === 0 }
+              { 'mt-0': i === 0 },
             )}
           >
             {section.title}

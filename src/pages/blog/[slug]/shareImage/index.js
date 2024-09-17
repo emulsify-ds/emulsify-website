@@ -28,7 +28,6 @@ export default function Share({ posts }) {
             height={630}
             className="absolute inset-0"
           />
-          {console.log(content)}
           <div className="relative z-10 flex h-full flex-col leading-none text-white">
             <h1 className="p-24 pb-0 text-[83px] font-black">
               {content.title}

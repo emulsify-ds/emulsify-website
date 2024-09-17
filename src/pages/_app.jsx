@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { LayoutDocs } from '@/components/LayoutDocs'
 import { LayoutBlogLP } from '@/components/LayoutBlogLP'
 import { LayoutBlogArticle } from '@/components/LayoutBlogArticle'
+import { LayoutWebinar } from '@/components/LayoutWebinar'
 import 'focus-visible'
 import '@/styles/tailwind.css'
 import { Footer } from '@/components/Footer'
@@ -40,7 +41,7 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
         if (node.name === 'h3') {
           if (!sections[sections.length - 1]) {
             throw new Error(
-              'Cannot add `h3` to table of contents without a preceding `h2`'
+              'Cannot add `h3` to table of contents without a preceding `h2`',
             )
           }
           sections[sections.length - 1].children.push({
@@ -86,6 +87,10 @@ export default function App({ Component, pageProps }) {
   }
   if (router.pathname.includes('/shareImage')) {
     type = 'none'
+    useProse = false
+  }
+  if (router.pathname.includes('/webinars')) {
+    type = 'webinars'
     useProse = false
   }
   if (router.pathname === '/') {
@@ -162,6 +167,12 @@ export default function App({ Component, pageProps }) {
         <LayoutBlogArticle title={title} type={type} useProse={useProse}>
           <Component {...pageProps} />
         </LayoutBlogArticle>
+      )}
+
+      {type === 'webinars' && (
+        <LayoutWebinar title={title} type={type} useProse={useProse}>
+          <Component {...pageProps} />
+        </LayoutWebinar>
       )}
 
       {type === 'home' && <Component {...pageProps} />}

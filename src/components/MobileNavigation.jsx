@@ -71,7 +71,7 @@ export function MobileNavigation({ navigation }) {
             >
               <FontAwesomeIcon
                 icon={faXmarkCircle}
-                className="relative top-[-1px] w-[24px] text-2xl"
+                className="relative -top-px w-[24px] text-2xl"
               />
               CLOSE
             </button>
@@ -98,7 +98,7 @@ export function MobileNavigation({ navigation }) {
             <div>
               <nav
                 className={clsx(
-                  'font-width-75 text-3xl font-semibold uppercase text-emulsifyBlue-800 dark:text-emulsifyBlue-200'
+                  'font-width-75 text-3xl font-semibold uppercase text-emulsifyBlue-800 dark:text-emulsifyBlue-200',
                 )}
               >
                 <ul className={clsx('flex-flow flex flex-col gap-5')}>
@@ -120,7 +120,7 @@ export function MobileNavigation({ navigation }) {
                     <Link
                       href="/docs"
                       className={clsx(
-                        'border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200'
+                        'border-b border-solid border-emulsifyBlue-400 pb-1 transition-all hover:border-emulsifyBlue-200',
                       )}
                     >
                       Docs
@@ -132,6 +132,7 @@ export function MobileNavigation({ navigation }) {
                         setWhichNavToShow('docs')
                       }}
                     >
+                      <span className="hidden">Which nav</span>
                       <FontAwesomeIcon
                         icon={faArrowRightLong}
                         className="ml-2 text-xl"
