@@ -15,11 +15,8 @@ const webinar = {
   title:
     'From silos to synergy: Emulsify’s impact on higher ed website development',
   description: 'This is the description for the Fall 2024 webinar.',
-  date: '2024-10-01',
-  time: '10:00 AM',
-  duration: '1 hour',
-  location: 'Online',
-  registrationLink: 'https://example.com',
+  date: 'October 25, 2024',
+  time: 'Noon CT',
 }
 
 const presenters = [
@@ -240,7 +237,7 @@ export default function Index() {
             </h1>
 
             <h2 className="mb-8 text-2xl font-bold leading-tight text-emulsifyBlue-800 dark:text-emulsifyBlue-300 lg:text-3xl">
-              Join Us on {webinar.date} at {webinar.time} for a Free Webinar
+              Join us on {webinar.date} at {webinar.time} for a free webinar
             </h2>
 
             <h3 className="text-balance text-xl font-bold leading-tight text-emulsifyBlue-900 dark:text-emulsifyBlue-200 lg:text-2xl">
@@ -339,7 +336,7 @@ export default function Index() {
           <hr />
 
           <h2 id="-about-the-presenters-">
-            <strong>About the Presenters:</strong>
+            <strong>About the presenters:</strong>
           </h2>
 
           {presenters.map((presenter, i) => (
