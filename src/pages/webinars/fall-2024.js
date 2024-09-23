@@ -99,106 +99,35 @@ const Form = () => {
   }
   return (
     <div>
-      {!formSubmitted ? (
-        <form
-          onSubmit={handleSubmit}
+      <div
+        id="register"
+        className={classNames(
+          'not-prose w-full scroll-pt-28 ',
+          'md:float-right md:ml-8 lg:-mr-8 md:mb-8 md:max-w-[300px] space-y-6',
+          'p-7 rounded border border-solid border-emulsifyBlue-400',
+          'bg-gradient-to-b from-emulsifyBlue-100 to-emulsifyBlue-300',
+          'dark:bg-gradient-to-b dark:from-violet-700 dark:via-emulsifyBlue-800 dark:to-emulsifyBlue-800',
+        )}
+      >
+        <h2 className="font-width-75 text-balance text-3xl font-bold leading-none text-emulsifyBlue-800 dark:text-white">
+          Register now to secure your spot!
+        </h2>
+        <a
+          href="https://fourkitchens.zoom.us/webinar/register/WN_5C-HWkwmSCOPSdKDUnMiDg"
           className={classNames(
-            'not-prose w-full scroll-pt-28 ',
-            'md:float-right md:ml-8 lg:-mr-8 md:mb-8 md:max-w-[300px] space-y-6',
-            'p-7 rounded border border-solid border-emulsifyBlue-400',
-            'bg-gradient-to-b from-emulsifyBlue-100 to-emulsifyBlue-300',
-            'dark:bg-gradient-to-b dark:from-violet-700 dark:via-emulsifyBlue-800 dark:to-emulsifyBlue-800',
-          )}
-          id="register"
-        >
-          <h2 className="font-width-75 text-balance text-3xl font-bold leading-none text-emulsifyBlue-800 dark:text-white">
-            Register now to secure your spot!
-          </h2>
-
-          <label className="block">
-            <span className="text-base font-semibold leading-none text-emulsifyBlue-900 dark:text-emulsifyBlue-100">
-              Name
-            </span>
-            <input
-              className="mt-1 block w-full rounded-md border-emulsifyBlue-400 shadow-sm focus:border-violet-500 focus:ring focus:ring-violet-300 dark:text-emulsifyBlue-900"
-              placeholder=""
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label className="block">
-            <span className="text-base font-semibold leading-none text-emulsifyBlue-900 dark:text-emulsifyBlue-100">
-              Email address
-            </span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-emulsifyBlue-400 shadow-sm focus:border-violet-500 focus:ring focus:ring-violet-300 dark:text-emulsifyBlue-900"
-              placeholder="john@example.com"
-            />
-          </label>
-
-          <div className="relative">
-            <button
-              type="submit"
-              className={classNames(
-                'inline-block rounded-lg',
-                'bg-violet-600 text-base font-bold text-white',
-                'transition-all hover:bg-violet-700',
-                'px-8 py-1 uppercase',
-                'focus:ring focus:ring-violet-900',
-                'focus-visible:ring focus-visible:ring-violet-900 focus-visible:border-violet-900 focus-visible:ring-offset-2',
-                'dark:bg-violet-600 dark:border dark:border-solid dark:border-violet-1000',
-                'dark:hover:bg-violet-700',
-              )}
-            >
-              Register
-            </button>
-            <Arrow className="absolute bottom-[-40px] left-[-140px] hidden w-[150px] fill-emulsifyBlue-800 dark:fill-emulsifyBlue-100 lg:block" />
-          </div>
-        </form>
-      ) : (
-        <div
-          className={classNames(
-            'not-prose w-full scroll-pt-28 ',
-            'md:float-right md:ml-8 lg:-mr-8 md:mb-8 md:max-w-[300px] space-y-6',
-            'p-7 rounded border border-solid border-emulsifyBlue-400',
-            'bg-gradient-to-b from-emulsifyBlue-100 to-emulsifyBlue-300',
-            'dark:bg-gradient-to-b dark:from-violet-700 dark:via-emulsifyBlue-800 dark:to-emulsifyBlue-800',
+            'inline-block rounded-lg',
+            'bg-violet-600 text-base font-bold text-white',
+            'transition-all hover:bg-violet-700',
+            'px-8 py-1 uppercase',
+            'focus:ring focus:ring-violet-900',
+            'focus-visible:ring focus-visible:ring-violet-900 focus-visible:border-violet-900 focus-visible:ring-offset-2',
+            'dark:bg-violet-600 dark:border dark:border-solid dark:border-violet-1000',
+            'dark:hover:bg-violet-700',
           )}
         >
-          <h2 className="font-width-75 text-balance text-3xl font-bold leading-none text-emulsifyBlue-800 dark:text-white">
-            You are registered!
-          </h2>
-          <ul>
-            <li>
-              Join our{' '}
-              <a
-                className="underline dark:text-white"
-                href="https://join.slack.com/t/emulsify/shared_invite/zt-1ujfwwcvr-ynvUPkEgWYuaby~wPaHt8g"
-              >
-                Slack community
-              </a>
-            </li>
-            <li>
-              Follow us on{' '}
-              <a
-                className="underline dark:text-white"
-                href="https://github.com/emulsify-ds"
-              >
-                Github
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+          Register
+        </a>
+      </div>
     </div>
   )
 }
