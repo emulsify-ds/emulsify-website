@@ -4,11 +4,16 @@ pageTitle: Writing Stories
 description: ''
 ---
 
-Writing components in Emulsify follows standard practices. You create your component Twig, .scss and/or .js files in component-specific directories.
+## TLDR: Creating your own components
+1. A component consists of 3 required files.
+  - `.yml` to define your component and provide mock data for Storybook's development instance - See [Drupal's Single Directory Component documentation](https://www.drupal.org/node/3352951) on how to structure your YAML file.
+  - `.twig` to create to markup for your component.
+  - `.stories.js` for Storybook to display, categorize, provide controls, and interact with your component. See [Storybook's documentation](https://storybook.js.org/docs/writing-stories).
+2. A component can have addition files that are optional.
+  - `.scss` that is compiled into CSS and automatically loaded by Storybook.
+  - `.js` file to provide interactivity.
 
-To show components in Storybook, however, you will need to create "stories." Storybook is very flexible and extensible, and there are addons that provide additional flexibility. We can't document everything you can do in Storybook, so below you'll find just a few examples of common ways to show your components in the Storybook UI. View more details on the [Storybook documentation site](https://storybook.js.org/docs/react/writing-stories/introduction).
-
-## Simple annotated example
+## Example: Simple annotated example
 
 (From `components/01-atoms/buttons/buttons.stories.js` with added comments)
 
@@ -28,7 +33,7 @@ export const primary = () => button(buttonData);
 
 ```
 
-### Sharing Data Between Components
+### Example: Sharing Data Between Components
 
 (From `components/02-molecules/card/cards.stories.js` with added comments)
 
@@ -51,7 +56,7 @@ export const cardWithBackground = () => card({ ...cardData, ...cardBgData });
 
 ```
 
-### Using JavaScript
+### Example: Using JavaScript
 
 (From `components/02-molecules/tabs/tabs.stories.js` with added comments)
 
@@ -70,7 +75,7 @@ export const JSTabs = () => tabs(tabData);
 
 ```
 
-### Using Storybook "Controls"
+### Example: Using Storybook "Controls"
 
 Storybook [Controls](https://storybook.js.org/docs/react/essentials/controls) offers the ability to tweak stories via the Storybook UI for demoing different variations, etc. Here is a simple example below:
 

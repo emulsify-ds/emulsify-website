@@ -1,46 +1,14 @@
 export const navigation = [
   {
-    title: 'Starters',
+    title: 'Base Theme',
     links: [
       {
-        title: 'Emulsify Drupal',
+        title: 'Emulsify (Drupal)',
         href: '/docs/emulsify-drupal',
         children: [
           {
-            title: 'Basic Usage',
-            href: '/docs/emulsify-drupal/basic-usage',
-            children: [
-              {
-                title: 'Commands',
-                href: '/docs/emulsify-drupal/basic-usage/commands',
-              },
-              {
-                title: 'Writing Stories',
-                href: '/docs/emulsify-drupal/basic-usage/writing-stories',
-              },
-            ],
-          },
-          {
-            title: 'Advanced Usage',
-            href: '/docs/emulsify-drupal/advanced-usage',
-            children: [
-              {
-                title: 'Accessibility Testing',
-                href: '/docs/emulsify-drupal/advanced-usage/accessibility-testing',
-              },
-              {
-                title: 'Adding 3rd-party Libraries',
-                href: '/docs/emulsify-drupal/advanced-usage/3rd-party-libraries',
-              },
-              {
-                title: 'Hot Reload Drupal',
-                href: '/docs/emulsify-drupal/advanced-usage/hot-reload-drupal',
-              },
-              {
-                title: 'Lando Environments',
-                href: '/docs/emulsify-drupal/advanced-usage/lando-environments',
-              },
-            ],
+            title: 'Upgrading Emulsify Drupal',
+            href: '/docs/emulsify-drupal/faq/upgrading',
           },
           {
             title: 'FAQ',
@@ -48,9 +16,18 @@ export const navigation = [
           },
         ],
       },
+    ],
+  },
+  {
+    title: 'Starters',
+    links: [
       {
-        title: 'Upgrading Emulsify Drupal',
-        href: '/docs/emulsify-drupal/faq/upgrading',
+        title: 'Emulsify Starter',
+        href: '/docs/emulsify-starter',
+      },
+      {
+        title: 'Emulsify Drupal Starter',
+        href: '/docs/emulsify-drupal-starter',
       },
     ],
   },
@@ -73,6 +50,44 @@ export const navigation = [
   {
     title: 'Supporting Projects',
     links: [
+      {
+        title: 'Emulsify Core',
+        href: '/docs/supporting-projects/emulsify-core',
+        children: [
+          {
+            title: 'Basic Usage',
+            href: '/docs/supporting-projects/emulsify-core/basic-usage',
+            children: [
+              {
+                title: 'Writing Stories',
+                href: '/docs/supporting-projects/emulsify-core/basic-usage/writing-stories',
+              },
+            ],
+          },
+          {
+            title: 'Advanced Usage',
+            href: '/docs/supporting-projects/emulsify-core/advanced-usage',
+            children: [
+              {
+                title: 'Accessibility Testing',
+                href: '/docs/supporting-projects/emulsify-core/advanced-usage/accessibility-testing',
+              },
+              {
+                title: 'Adding 3rd-party Libraries',
+                href: '/docs/supporting-projects/emulsify-core/advanced-usage/3rd-party-libraries',
+              },
+              {
+                title: 'Hot Reload Drupal',
+                href: '/docs/supporting-projects/emulsify-core/advanced-usage/hot-reload-drupal',
+              },
+              {
+                title: 'Lando Environments',
+                href: '/docs/supporting-projects/emulsify-core/advanced-usage/lando-environments',
+              },
+            ],
+          },          
+        ],
+      },
       {
         title: 'Emulsify CLI',
         href: '/docs/supporting-projects/emulsify-cli',

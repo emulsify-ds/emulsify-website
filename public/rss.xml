@@ -4,9 +4,25 @@
         <description><![CDATA[Emulsify Blog RSS Feed]]></description>
         <link>localhost:3000</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 06 May 2024 13:44:19 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 21 Oct 2024 19:21:38 GMT</lastBuildDate>
         <atom:link href="localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 06 May 2024 13:44:19 GMT</pubDate>
+        <pubDate>Mon, 21 Oct 2024 19:21:38 GMT</pubDate>
+        <item>
+            <title><![CDATA[Embracing the Future of Component Libraries: Single Directory Components and Emulsify]]></title>
+            <description><![CDATA[Discover the similarities and differences between Single Directory Components (SDC) and Emulsify, two powerful tools for building reusable component libraries. As we transition our UI Kit to support SDC, we highlight key updates and offer guidance on converting existing projects. Whether you’re using Emulsify or SDC, this guide will help you enhance your frontend development process.]]></description>
+            <link>https://emulsify.info/blog/single-directory-components</link>
+            <guid isPermaLink="true">https://emulsify.info/blog/single-directory-components</guid>
+            <pubDate>Tue, 13 Aug 2024 05:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Emulsify roadmap updates from DrupalCon Portland 2024]]></title>
+            <description><![CDATA[We've been bustling away on some fantastic updates and extras that we believe will make Emulsify an even more handy tool for you.
+
+Let's walk together through the enhancements we've implemented and get excited about our upcoming plans to boost collaboration and streamline workflow for all our teams using the Emulsify Design System.]]></description>
+            <link>https://emulsify.info/blog/roadmap-updates-from-drupalcon-portland-2024</link>
+            <guid isPermaLink="true">https://emulsify.info/blog/roadmap-updates-from-drupalcon-portland-2024</guid>
+            <pubDate>Thu, 30 May 2024 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Introducing the Emulsify UI Kit Beta: The Open Source Tool Set for Design Systems]]></title>
             <description><![CDATA[The Emulsify UI Kit beta is an open source tool set that combines storybook, configuration, and other resources to make it easy to create design systems. It includes a Figma file and an open source code repository, and allows designers and front-end engineers to collaborate closely to create custom design systems for Drupal and other websites.]]></description>

@@ -32,3 +32,7 @@ This combines 2 tasks, which can be run separately as needed:
 `npm run build`
 
 This runs the production webpack script and is intended for Drupal builds (e.g., in a CI environment.)
+
+### Storybook Build
+
+`npm run storybook-build`: Creates a static instance of your project that is ideal for deployments to remote environments.
