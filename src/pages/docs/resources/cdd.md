@@ -21,12 +21,3 @@ The following are examples of how to organize your components.
 With the release of Emulsify Core 2.x it is highly recommended you use a `src/` directory at the root of your Emulsify project. If your project doesn't have a defined platform in your `project.emulisfy.json` file then all files meant for public viewing will be compiled to a `dist/` directory. 
 
 If your project's platform is Drupal then components in your `src/components` directory will be compiled to `components/` and any foundational/utiliy/global files will be compiled to a `dist/` directory. This approach is specifically implemented in order to support Drupal's [Single Directory Component](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components) feature.
-
-## Creating your own components
-1. A component consists of 3 required files.
-  - YAML file to define your component and provide mock data for Storybook's development instance - See [Drupal's Single Directory Component documentation](https://www.drupal.org/node/3352951) on how to structure your YAML file.
-  - Twig file to create to markup for your component.
-  - Stories file for Storybook to display, categorize, provide controls, and interact with your component. See [Storybook's documentation](https://storybook.js.org/docs/writing-stories).
-2. A component can have addition files that are optional.
-  - SCSS file that is compiled into CSS and automatically loaded by Storybook.
-  - JS file to provide interactivity.
