@@ -17,10 +17,11 @@ description: No description. ''
 
 ## Inside a Composer-Based Drupal Instance
 
-1. Install the Emulsify base theme via composer. `composer require 'drupal/emulsify:^5.3'`
-2. Initialize a sub-theme using drush. `drush emulsify [theme_name]` - This will generate a new theme within `themes/custom/` directory.
-3. Install your new theme and set it as the default frontend theme. `drush theme:enable [theme_name] && drush config:set system.theme default [theme_name]`
-4. Install theme dependencies from your theme's directory. `nvm use && npm install`
+1. Add the Emulsify base theme (and its dependencies) via composer. `composer require 'drupal/emulsify:^5.3'`
+2. Install the Emulsify base theme and Emulsify Tools module `drush pm:install emulsify_tools && drush theme:install emulsify`
+3. Initialize a sub-theme using drush. `drush emulsify [theme_name]` - This will generate a new theme within `themes/custom/` directory.
+4. Install your new theme and set it as the default frontend theme. `drush theme:enable [theme_name] && drush config:set system.theme default [theme_name]`
+5. Install theme dependencies from your theme's directory. `nvm use && npm install`
 
 ## Standalone (for prototyping outside of a CMS install)
 
