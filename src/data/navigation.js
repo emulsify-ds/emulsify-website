@@ -85,7 +85,7 @@ export const navigation = [
                 href: '/docs/supporting-projects/emulsify-core/advanced-usage/lando-environments',
               },
             ],
-          },          
+          },
         ],
       },
       {
