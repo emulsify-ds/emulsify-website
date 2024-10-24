@@ -4,50 +4,66 @@
         <description><![CDATA[Emulsify Blog RSS Feed for Planet Drupal]]></description>
         <link>localhost:3000</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 06 May 2024 13:44:19 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Oct 2024 14:47:21 GMT</lastBuildDate>
         <atom:link href="localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 06 May 2024 13:44:19 GMT</pubDate>
+        <pubDate>Wed, 23 Oct 2024 14:47:21 GMT</pubDate>
+        <item>
+            <title><![CDATA[Embracing the Future of Component Libraries: Single Directory Components and Emulsify]]></title>
+            <description><![CDATA[Discover the similarities and differences between Single Directory Components (SDC) and Emulsify, two powerful tools for building reusable component libraries. As we transition our UI Kit to support SDC, we highlight key updates and offer guidance on converting existing projects. Whether you’re using Emulsify or SDC, this guide will help you enhance your frontend development process.]]></description>
+            <link>https://emulsify.info/blog/single-directory-components</link>
+            <guid isPermaLink="true">https://emulsify.info/blog/single-directory-components</guid>
+            <pubDate>Tue, 13 Aug 2024 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Emulsify roadmap updates from DrupalCon Portland 2024]]></title>
+            <description><![CDATA[We've been bustling away on some fantastic updates and extras that we believe will make Emulsify an even more handy tool for you.
+
+Let's walk together through the enhancements we've implemented and get excited about our upcoming plans to boost collaboration and streamline workflow for all our teams using the Emulsify Design System.]]></description>
+            <link>https://emulsify.info/blog/roadmap-updates-from-drupalcon-portland-2024</link>
+            <guid isPermaLink="true">https://emulsify.info/blog/roadmap-updates-from-drupalcon-portland-2024</guid>
+            <pubDate>Fri, 31 May 2024 04:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Introducing the Emulsify UI Kit Beta: The Open Source Tool Set for Design Systems]]></title>
             <description><![CDATA[The Emulsify UI Kit beta is an open source tool set that combines storybook, configuration, and other resources to make it easy to create design systems. It includes a Figma file and an open source code repository, and allows designers and front-end engineers to collaborate closely to create custom design systems for Drupal and other websites.]]></description>
             <link>https://emulsify.info/blog/introducing-the-emulsify-ui-kit-beta-the-open-source-tool-set-for-design</link>
             <guid isPermaLink="true">https://emulsify.info/blog/introducing-the-emulsify-ui-kit-beta-the-open-source-tool-set-for-design</guid>
-            <pubDate>Wed, 07 Jun 2023 05:00:00 GMT</pubDate>
+            <pubDate>Thu, 08 Jun 2023 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[An Emulsify Drupal site is up for a Webby! Go vote!]]></title>
             <description><![CDATA[The Wu Tsai Institute website, built with Emulsify, has been nominated for a Webby Award in the School/University and Best Mobile Visual Design Aesthetic categories! The website was built using Drupal and uses Emulsify for theming. The Webby Awards are determined by a panel of judges and popular vote, so everyone is encouraged to vote for the website on the Webby Awards website.]]></description>
             <link>https://emulsify.info/blog/an-emulsify-drupal-site-is-up-for-a-webby-go-vote</link>
             <guid isPermaLink="true">https://emulsify.info/blog/an-emulsify-drupal-site-is-up-for-a-webby-go-vote</guid>
-            <pubDate>Wed, 05 Apr 2023 05:00:00 GMT</pubDate>
+            <pubDate>Thu, 06 Apr 2023 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Adding a JS library to an Emulsify Component in Drupal]]></title>
             <description><![CDATA[Adding a JavaScript library to an Emulsify component may seem daunting if you're new to the process, but it's not as complicated as it may seem. In this guide, we'll show you how to add a JavaScript library to an Emulsify component step-by-step, using the Swiper library as an example.]]></description>
             <link>https://emulsify.info/blog/adding-a-js-library-to-an-emulsify-component-in-drupal</link>
             <guid isPermaLink="true">https://emulsify.info/blog/adding-a-js-library-to-an-emulsify-component-in-drupal</guid>
-            <pubDate>Thu, 30 Mar 2023 05:00:00 GMT</pubDate>
+            <pubDate>Fri, 31 Mar 2023 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Specbee teaches how Emulsify Twig makes it easy to write BEM CSS class names]]></title>
             <description><![CDATA[The BEM (Block, Element, Modifier) methodology is a widely used naming convention for CSS classes that is popular because of the ease of use it offers. Find out how Emulsify Twig makes it easy in Drupal.]]></description>
             <link>https://emulsify.info/blog/specbee-teaches-how-emulsify-twig-makes-it-easy-to-write-bem-css-class-names</link>
             <guid isPermaLink="true">https://emulsify.info/blog/specbee-teaches-how-emulsify-twig-makes-it-easy-to-write-bem-css-class-names</guid>
-            <pubDate>Thu, 10 Nov 2022 06:00:00 GMT</pubDate>
+            <pubDate>Fri, 11 Nov 2022 05:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Researching the state of Emulsify]]></title>
             <description><![CDATA[The Emulsify project has grown a lot since it first launched in 2016. We have thousands of people using it across Drupal and WordPress and a vibrant community of contributors. To celebrate, we are working with you, the community, to create a roadmap for Emulsify that will guide us into the future. ]]></description>
             <link>https://emulsify.info/blog/researching-the-state-of-emulsify</link>
             <guid isPermaLink="true">https://emulsify.info/blog/researching-the-state-of-emulsify</guid>
-            <pubDate>Thu, 08 Sep 2022 05:00:00 GMT</pubDate>
+            <pubDate>Fri, 09 Sep 2022 04:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Frontend & Figma Magic, Building a Connected UI Kit for Emulsify]]></title>
             <description><![CDATA[Website production has always progressed while navigating a broad divide: the line separating visual design and frontend development. Now, through Emulsify harnessing Figma’s design tokens plugin, design and development teams can enjoy an automated communication connection.]]></description>
             <link>https://emulsify.info/blog/frontend-and-figma-magic-building-a-connected-ui-kit-for-emulsify</link>
             <guid isPermaLink="true">https://emulsify.info/blog/frontend-and-figma-magic-building-a-connected-ui-kit-for-emulsify</guid>
-            <pubDate>Sat, 01 Oct 2022 05:00:00 GMT</pubDate>
+            <pubDate>Thu, 01 Sep 2022 04:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

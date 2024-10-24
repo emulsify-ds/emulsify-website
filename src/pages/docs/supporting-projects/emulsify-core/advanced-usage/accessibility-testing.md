@@ -16,8 +16,8 @@ Emulsify Drupal uses Storybook's [a11y addon](https://github.com/storybookjs/sto
 
 The Storybook panel pane is excellent for passive testing, but if you want to utilize more active tests (that will fail on CI builds or not allow commits), then you can use the CLI tool. This can be used in the following ways:
 
-1. Command: `npm run a11y`&#x20;
-2. As a part of tests: `npm run test`&#x20;
-3. Coverage report: `npm run coverage`&#x20;
+1. Command: `npm run a11y`
+2. As a part of tests: `npm run test`
+3. Coverage report: `npm run coverage`
 
 The CLI tool is flexible and can be configured to meet your project needs. Edit the [a11y.config.js](https://github.com/emulsify-ds/emulsify-drupal/blob/master/a11y.config.js) file to set the level of severity you want to see, codes to be ignored, the runner to use and what components you would like to test.

@@ -1,6 +1,6 @@
 ---
-title: Emulsify Drupal
-pageTitle: Emulsify Drupal
+title: Emulsify (Drupal)
+pageTitle: Emulsify (Drupal)
 description: No description. ''
 ---
 
@@ -8,35 +8,32 @@ description: No description. ''
 
 ### Requirements
 
-1. [Node (we recommend NVM)](https://github.com/nvm-sh/nvm)
-2. [Emulsify CLI](/docs/supporting-projects/emulsify-cli) (Not strictly recommended, but all docs will assume its use)
+1. [Node v20 (we recommend NVM)](https://github.com/nvm-sh/nvm)
+2. [Emulsify CLI](/docs/supporting-projects/emulsify-cli) (required if you want to install components from an external library. Not required if you are creating components from scratch.)
 
-### Picking a version
+### Version
 
-- **4.x** - Drupal 10.x || 11.x compatible
+- **5.x** - Drupal 10.x || 11.x compatible
 
 ## Inside a Composer-Based Drupal Instance
 
-The recommended method of installing the Drupal Starter is via the Emulsify CLI. Before you follow the steps below, verify you have the CLI installed `npm install -g @emulsify/cli`.
+1. Add the Emulsify base theme (and its dependencies) via composer. `composer require 'drupal/emulsify:^5.3'`
+2. Install the Emulsify base theme and Emulsify Tools module `drush pm:install emulsify_tools && drush pm:install components && drush theme:install emulsify`
+3. Initialize a sub-theme using drush. `drush emulsify [theme_name]` - This will generate a new theme within `themes/custom/` directory.
+4. Install your new theme and set it as the default frontend theme. `drush theme:enable [theme_name] && drush config:set system.theme default [theme_name]`
+5. Install theme dependencies from your theme's directory. `nvm use && npm install`
 
-Here's a [video walkthrough](https://modulesunraveled.wistia.com/medias/7cdtb3k40h) that quickly shows these steps, plus a little more about the CLI
+## Standalone (for prototyping outside of a CMS install)
 
-1. In your project root, initialize a theme based on the Drupal starter `emulsify init "My Awesome Theme"` (Using your preferred theme name)
-2. Move into your new theme `cd web/themes/custom/my_awesome_theme`
-3. Install the Compound system with the default components `emulsify system install compound`
-4. Build theme `npm run build`
-5. Enable your theme and its dependencies\* \*\*`drush en components emulsify_twig -y && drush then THEME_NAME -y`
-6. Set your custom theme as the default `drush config-set system.theme default THEME_NAME -y`
-7. See [the FAQ](/docs/resources/help-and-support/faq/) for the final step to avoid the `.git can't be found` error
+1. Use the Emulsify CLI to install a starter at your preferred location. You can use an optional platform flag if you would like to eventually add your standalone theme to a Drupal installation. Otherwise, omitting the platform flag will install a platform agnostic starter. `emulsify init "My Awesome Theme" --platform drupal .` (The preceding snippet uses `.` to indicate "the current location")
+2. Install the standalone's dependencies from your project's directory. `nvm use && npm install`
 
-\* `drush then` is the correct command for Drush versions >= 9. `drush en` is the command to use for Drush versions <= 8.\
-\*\* if it's not already a part of your project, run `composer require drupal/components drupal/emulsify_twig` to get the required Drupal modules.
+## Start installing/building your components
 
-## Standalone (for prototyping outside of a Drupal install)
+At this point you will have an empty custom theme that is ready for component development. You can either install components from the [Emulsify UI Kit](/docs/systems/ui-kit), [Compound](/docs/systems/compound), or build your own [components from scratch](/docs/resources/cdd).
 
-1. Install the starter at your preferred location, and pass a starter\* (like Drupal) `emulsify init "My Awesome Theme" --platform drupal .` (The preceding snippet uses `.` to indicate "the current location")
-2. `cd` into that directory and install your system. `emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout main` for the latest version or `emulsify system install --repository https://github.com/emulsify-ds/compound.git --checkout [branch/tag/commit]` if you would like to use a specific version.
-3. Now you can run `npm run build` to simply compile things, or `npm run develop` to start working on the components in isolation.
-4. See [the FAQ](/docs/resources/help-and-support/faq/) for the final step to avoid the `.git can't be found` error
+### Installing components
 
-\* If you don't pass a starter, the CLI will try to figure out your environment, but if it can't it'll fail. By passing one explicitly the CLI skips the "try to figure it out" step, and just uses what you pass.
+1. Any given Drupal installation can have multiple instances of a custom Emulsify-based theme. To install a specific component library first go to your theme's directory.
+2. Refer to the Emulsify CLI documentation on how to [install a system and components](/docs/supporting-projects/emulsify-cli/emulsify-cli-usage).
+3. Once you have components installed you can build your theme, run storybook, and watch for active file changes by running `npm run develop`
