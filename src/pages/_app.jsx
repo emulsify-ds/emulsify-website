@@ -102,7 +102,9 @@ export default function App({ Component, pageProps }) {
     `${pageProps.markdoc?.frontmatter.pageTitle} • Emulsify Docs` ||
     `${pageProps.markdoc?.frontmatter.title} • Emulsify Docs`
 
-  const description = pageProps.markdoc?.frontmatter.description
+  const description =
+    pageProps.markdoc?.frontmatter.description ||
+    'Emulsify is an open-source toolset that helps designers and developers create design systems for your Drupal website.'
 
   const tableOfContents = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
@@ -130,7 +132,7 @@ export default function App({ Component, pageProps }) {
             ? 'Emulsify • Build Beautiful Design Systems with Ease'
             : pageTitle}
         </title>
-        {description && <meta name="description" content={description} />}
+        <meta name="description" content={description} />
         {type === 'docs' && (
           <meta property="og:image" content={sharingImageDocs.src} />
         )}

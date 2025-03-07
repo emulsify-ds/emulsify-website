@@ -1,7 +1,7 @@
 ---
 title: Emulsify (Drupal)
 pageTitle: Emulsify (Drupal)
-description: No description. ''
+description: Installing Emulsify
 ---
 
 ## Installation
