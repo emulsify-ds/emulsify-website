@@ -112,6 +112,10 @@ export default function Blog({ posts }) {
       <Head>
         <title>Emulsify Blog</title>
         <meta property="og:title" content="Emulsify Blog" key="title" />
+        <meta
+          name="description"
+          content="The latest news and updates from the Emulsify team."
+        />
       </Head>
       <div>
         <ul

@@ -61,6 +61,7 @@ export default function BlogPost({ posts }) {
             key="title"
           />
           <meta property="og:image" content={sharingImage.src} />
+          <meta name="description" content={content.data.fields.description} />
         </Head>
       )}
       {content && (

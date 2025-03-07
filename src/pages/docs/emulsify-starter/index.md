@@ -1,7 +1,7 @@
 ---
 title: Emulsify Starter
 pageTitle: Emulsify Starter
-description: No description. ''
+description: Learn more about the Emulsify Starter
 ---
 
 Emulsify Starter is a scaffolding repository for the Emulsify CLI. It creates a platform-agnostic build that is meant for a standalone installation. It provides Emulsify Core integration for development, available configuration file overrides, and the various `npm run ...` commands to develop/test/build your project.
