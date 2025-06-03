@@ -1,7 +1,13 @@
 ---
 title: Upgrading
 pageTitle: Upgrading
-description: Upgrading from the deprecated Emulsify Pattern Lab to Emulsify Drupal
+description: Upgrading documentation for various version of Emulsify's Drupal theme.
+---
+
+## Upgrading the Emulsify base theme from 5.x to 6.x
+
+Run `composer require drupal/emulsify:^6.0` to install the latest version of the base theme. The new version is 100% backwards compatible and doesn't require any database updates. All newly generated sub themes will use the latest version of Emulsify Core. If you'd like to upgrade your existing custom theme see [Emulsify Core Upgrading](https://www.emulsify.info/docs/supporting-projects/emulsify-core/upgrading) for specific steps.
+
 ---
 
 An existing Emulsify starter theme (storybook) can be updated to a subtheme utilizing Emulsify Core by performing the following:
