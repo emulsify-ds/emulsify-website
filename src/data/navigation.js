@@ -86,6 +86,10 @@ export const navigation = [
               },
             ],
           },
+          {
+            title: 'Upgrading',
+            href: '/docs/supporting-projects/emulsify-core/upgrading',
+          },
         ],
       },
       {
