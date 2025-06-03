@@ -87,7 +87,7 @@ export const navigation = [
             ],
           },
           {
-            title: 'Upgrading',
+            title: 'Upgrading Emulsify Core',
             href: '/docs/supporting-projects/emulsify-core/upgrading',
           },
         ],
