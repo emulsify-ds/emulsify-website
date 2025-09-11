@@ -8,7 +8,7 @@ description: Installing Emulsify
 
 ### Requirements
 
-1. [Node v20 (we recommend NVM)](https://github.com/nvm-sh/nvm)
+1. [Node v24 (we recommend NVM)](https://github.com/nvm-sh/nvm)
 2. [Emulsify CLI](/docs/supporting-projects/emulsify-cli) (required if you want to install components from an external library. Not required if you are creating components from scratch.)
 
 ### Version
