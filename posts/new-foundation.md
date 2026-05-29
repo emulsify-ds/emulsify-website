@@ -1,22 +1,22 @@
 # A New Foundation for Emulsify
 
-For years, Emulsify has helped teams build design systems that work where real projects happen: in component libraries, in CMS themes, in Storybook, and in the day-to-day handoff between design and development.
+For years, Emulsify has helped teams build design systems where the work actually happens: in component libraries, in CMS themes, in Storybook, and in the handoff between design and development.
 
-For many teams, that has meant Drupal. Emulsify has a long history in the Drupal ecosystem, and Drupal will continue to be a first-class part of the project. But with the upcoming [Emulsify Core 4.x](https://www.npmjs.com/package/@emulsify/core) release, we’re taking an important step toward something broader.
+For many teams, that path has run through Drupal. Emulsify has deep roots in that ecosystem, and that is not changing. But with the upcoming [Emulsify Core 4.x](https://www.npmjs.com/package/@emulsify/core) release, we’re opening the door to a broader future for the project.
 
-**Emulsify Core 4.x**, or **EC4.x** for short, is a more modern, more flexible foundation for component-driven development. It moves Emulsify to Vite, brings Storybook into a React/Vite workflow, adds first-class support for Twig and React components side by side, and introduces a clearer platform model for projects that are not Drupal-specific.
+**Emulsify Core 4.x**, or **EC4.x** for short, is a more modern, more flexible foundation for component-driven development. It moves Emulsify to Vite, brings Storybook into a React/Vite workflow, adds first-class support for Twig and React components side by side, and introduces a clearer platform model for projects that are not tied to one CMS.
 
-In other words: Emulsify is still here to help teams build maintainable design systems. **The foundation is simply ready to support more kinds of teams, more kinds of platforms, and more kinds of projects.**
+At its core, this release keeps the same goal Emulsify has always had: help teams build maintainable design systems. **What changes is how many project types that foundation can now support.**
 
 ## Why this release matters
 
-Frontend tooling has changed a lot since Emulsify first helped teams standardize their component workflows. Webpack served the project well, but modern frontend teams increasingly expect faster local builds, clearer configuration, and tools that are easier to adapt across different project types.
+Frontend tooling has changed a lot since Emulsify first helped teams standardize their component workflows. Webpack served the project well, and many teams built successful systems with it. But today, developers often expect faster local builds, clearer configuration, and tools that are easier to adapt across different project types.
 
-EC4.x moves the build system to Vite. That change is important on its own, but the bigger story is what it unlocks.
+EC4.x moves the build system to Vite. That is an important technical change, but the bigger story is what it unlocks.
 
 With EC4.x, Emulsify is no longer shaped around the assumption that every project is a Drupal theme. Drupal-specific behavior still exists where it should, but it now lives behind a Drupal platform adapter. Generic projects can stay generic. React projects can use React. Twig-based CMS projects can use Twig. Mixed systems can document both Twig-rendered and React-rendered components in the same Storybook instance.
 
-That shift makes EC4.x easier to use as a shared frontend foundation, whether you are working in Drupal, building a standalone design system, modernizing an existing theme, or preparing for another platform integration in the future.
+With that change, EC4.x becomes easier to use as a shared frontend foundation, whether you are working on a Drupal implementation, building a standalone design system, modernizing an existing theme, or preparing for another platform integration in the future.
 
 ## Vite becomes the new compiler foundation
 
@@ -24,7 +24,7 @@ The most visible change in EC4.x is the move from Webpack to Vite.
 
 This is not just a dependency swap. **Vite gives Emulsify a modern build foundation** for compiling project JavaScript, Sass/CSS, Twig templates, component metadata, and static component assets. It also gives existing projects a clearer path to use EC4.x as a modern compiler layer without needing to rethink the entire project structure at once.
 
-That last point matters. A major release should move the project forward, but it should not make existing teams feel like they need to start over.
+This matters. A major release should move the project forward, but it should not make existing teams feel like they need to start over.
 
 EC4.x continues to support the component structures Emulsify projects already use, including `src/components`, root-level `./components`, and configured `variant.structureImplementations`. So if your project already has an established component structure, the upgrade path is designed to respect that.
 
@@ -80,9 +80,9 @@ A Drupal project can opt into Drupal behavior:
 }
 ```
 
-That difference is small in configuration, but important in practice.
+It is a small bit of configuration with a meaningful impact.
 
-Drupal projects can still get Drupal-specific behavior, including Drupal behavior attachment and Single Directory Component output handling. Generic projects do not inherit Drupal assumptions. That means a standalone Twig library, a React component library, a WordPress + Timber project, a Craft CMS project, or another non-Drupal implementation can use the EC4.x foundation without carrying Drupal-specific behavior it does not need.
+Projects using the Drupal adapter can still get Drupal-specific behavior, including behavior attachment and Single Directory Component output handling. Generic projects do not inherit those assumptions. A standalone Twig library, a React component library, a WordPress + Timber project, a Craft CMS project, or another non-Drupal implementation can use the EC4.x foundation without carrying behavior it does not need.
 
 Dedicated adapters for platforms like WordPress are future opportunities, but EC4.x gives us the structure to support that direction cleanly.
 
@@ -147,17 +147,17 @@ export default {
 export const Success = {};
 ```
 
-That opens up a lot of possibilities.
+The possibilities are broad.
 
 A team supporting a Drupal project can keep using Twig components. A React team can use Emulsify for a standalone component library. A team with both CMS-rendered components and application-rendered components can document them together in one Storybook instance.
 
-That is a meaningful shift for design systems. **Instead of forcing every project into one rendering model, Emulsify can now support the way a design system actually gets used across an organization.**
+For design systems, this is a meaningful shift. **Instead of forcing every project into one rendering model, Emulsify can now support the way a design system actually gets used across an organization.**
 
 ## Better Twig support where teams already work
 
 Twig remains an important part of Emulsify. EC4.x improves the Twig experience by adding native Twig.js support for familiar Emulsify helpers like `bem()` and `add_attributes()`, along with `switch`, `case`, `default`, and `endswitch` tags.
 
-That means Twig components can continue using patterns that Emulsify teams already know:
+Twig components can continue using patterns that Emulsify teams already know:
 
 ```twig
 {% set link_label = link.text|default('Read more') %}
@@ -199,7 +199,7 @@ These are small authoring improvements, but they add up. The goal is not to make
 
 ## A practical upgrade path
 
-Major releases can sound intimidating. This one brings significant changes, but it is designed to avoid unnecessary churn.
+Major releases can sound intimidating. EC4.x brings significant changes, but it is designed to avoid unnecessary churn.
 
 Existing component roots do not need to move just to upgrade. Existing Twig component authoring remains supported. Older Twig stories that return HTML strings are wrapped for compatibility, while actively maintained stories can move toward the clearer `renderTwig()` pattern over time.
 
@@ -209,7 +209,7 @@ But the intended upgrade story is straightforward: **keep what still works, mode
 
 EC4.x also introduces audit tooling to help identify upgrade-readiness items, including legacy Twig story patterns, unresolved Twig references, Webpack-era assumptions, and Drupal assumptions in non-Drupal projects.
 
-This is especially useful for existing Emulsify projects. Instead of treating migration as a manual guessing game, teams can use the audit output to see where their project needs attention.
+For existing Emulsify projects, that makes the migration more concrete. Instead of guessing where older patterns may still be hiding, teams can use the audit output to see what actually needs attention.
 
 [See our upgrading to Emulsify Core 4.x guide.](#)
 
@@ -229,15 +229,15 @@ Not every project will be a drop-in migration. Existing build customizations sti
 
 That separation gives teams more room to adopt Emulsify incrementally.
 
-## Drupal is still first-class
+## The Drupal ecosystem remains first-class
 
-This broader direction does not mean Drupal is becoming less important to Emulsify.
+This broader direction does not move Emulsify away from Drupal.
 
-The upcoming [Emulsify (base theme) 7.x](https://www.drupal.org/project/emulsify) and [Emulsify Tools 2.x](https://www.drupal.org/project/emulsify_tools) releases bring this new EC4.x foundation into the Drupal ecosystem. Those releases modernize the base theme, move generated themes to the Vite-based workflow, update compatibility for modern Drupal versions, and improve Drupal-specific developer workflows.
+The upcoming [Emulsify (base theme) 7.x](https://www.drupal.org/project/emulsify) and [Emulsify Tools 2.x](https://www.drupal.org/project/emulsify_tools) releases bring this new EC4.x foundation into that ecosystem. Those releases modernize the base theme, move generated themes to the Vite-based workflow, update compatibility for modern Drupal versions, and improve project-specific developer workflows.
 
-But it is important to frame those releases correctly: **they are integration projects built on top of the new Emulsify Core 4.x foundation.**
+It is important to frame those releases correctly: **they are integration projects built on top of the new Emulsify Core 4.x foundation.**
 
-That is the model we want going forward. EC4.x provides the platform-agnostic foundation. Drupal provides a first-class integration. Future platforms can follow that same pattern when the time is right.
+This is the model we want going forward. EC4.x provides the platform-agnostic foundation. Drupal provides a first-class integration. Future platforms can follow that same pattern when the time is right.
 
 ## What comes next
 
@@ -245,8 +245,8 @@ EC4.x is a major technical shift, but the goal is familiar: help teams build des
 
 The difference is that the foundation is now broader.
 
-Twig and React can live together. Drupal behavior can stay in Drupal projects. Generic projects can stay generic. Existing projects have a practical upgrade path. Future integrations have a clearer place to start.
+Twig and React can live together. Platform-specific behavior can stay where it belongs. Generic projects can stay generic. Existing projects have a practical upgrade path. Future integrations have a clearer place to start.
 
-In the next post, we’ll look at what this means for Drupal specifically, including Emulsify (base theme) 7.x, Emulsify Tools 2.x, the new generated theme workflow, and the improvements coming for modern Drupal projects.
+In the next post, we’ll look at what this means for teams that support Drupal projects, including Emulsify (base theme) 7.x, Emulsify Tools 2.x, the new generated theme workflow, and the improvements coming for modern implementations.
 
 For now, **Emulsify Core 4.x gives us the foundation for the next chapter of the project:** still component-driven, still practical, and ready for more than one platform.
