@@ -97,45 +97,59 @@ EC4.x moves Storybook to React/Vite. React components can render directly throug
 For Twig teams, the recommended story pattern uses `renderTwig()`:
 
 ```js
-import buttonTwig from './button.twig';
+import teaserCardTwig from './teaser-card.twig';
 import { renderTwig } from '@emulsify/core/storybook';
 
 const context = (args) => ({
-  text: args.text,
-  url: args.url,
+  eyebrow: args.eyebrow,
+  heading: args.heading,
+  summary: args.summary,
+  link: {
+    url: args.url,
+    text: args.linkText,
+  },
 });
 
 export default {
-  title: 'Components/Button',
-  render: renderTwig(buttonTwig, { context }),
+  title: 'Components/Teaser Card',
+  render: renderTwig(teaserCardTwig, { context }),
   args: {
-    text: 'Read more',
+    eyebrow: 'Design systems',
+    heading: 'Build components where your project needs them',
+    summary:
+      'Emulsify helps teams document, test, and implement reusable components across different project types.',
     url: '#',
+    linkText: 'Read more',
   },
 };
 
 export const Default = {};
 ```
 
-React stories can live beside those Twig stories:
+React stories can live in that same Storybook workspace without needing to mirror the Twig component one-to-one:
 
 ```jsx
-import { Button } from './Button';
-
 export default {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/Status Message',
+  render: ({ type, heading, message }) => (
+    <aside className={`status-message status-message--${type}`} role="status">
+      <strong>{heading}</strong>
+      <p>{message}</p>
+    </aside>
+  ),
   args: {
-    text: 'Read more',
+    type: 'success',
+    heading: 'Settings saved',
+    message: 'Your display preferences have been updated.',
   },
 };
 
-export const Default = {};
+export const Success = {};
 ```
 
 That opens up a lot of possibilities.
 
-A Drupal team can keep using Twig components. A React team can use Emulsify for a standalone component library. A team with both CMS-rendered components and application-rendered components can document them together in one Storybook instance.
+A team supporting a Drupal project can keep using Twig components. A React team can use Emulsify for a standalone component library. A team with both CMS-rendered components and application-rendered components can document them together in one Storybook instance.
 
 That is a meaningful shift for design systems. **Instead of forcing every project into one rendering model, Emulsify can now support the way a design system actually gets used across an organization.**
 
@@ -146,12 +160,25 @@ Twig remains an important part of Emulsify. EC4.x improves the Twig experience b
 That means Twig components can continue using patterns that Emulsify teams already know:
 
 ```twig
-{% set button_attributes = {
-  class: bem('button', ['primary'])
+{% set link_label = link.text|default('Read more') %}
+{% set link_title = 'Read more about ' ~ heading %}
+
+{% set link_attributes = {
+  class: bem('button', [variant|default('primary')]),
+  href: link.url,
+  title: link_title,
+  'aria-label': link_title
 } %}
 
-<a href="{{ url }}" {{ add_attributes(button_attributes) }}>
-  {{ text }}
+{% if link.is_external %}
+  {% set link_attributes = link_attributes|merge({
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  }) %}
+{% endif %}
+
+<a {{ add_attributes(link_attributes) }}>
+  {{ link_label }}
 </a>
 ```
 
@@ -159,8 +186,10 @@ The new switch/case support also makes component templates easier to read when m
 
 ```twig
 {% switch variant %}
-  {% case 'primary' or 'secondary' %}
+  {% case 'primary' %}
     <span class="badge badge--strong">{{ label }}</span>
+  {% case 'secondary' %}
+    <span class="badge badge--subtle">{{ label }}</span>
   {% default %}
     <span class="badge">{{ label }}</span>
 {% endswitch %}
@@ -204,7 +233,7 @@ That separation gives teams more room to adopt Emulsify incrementally.
 
 This broader direction does not mean Drupal is becoming less important to Emulsify.
 
-The upcoming [Emulsify (Drupal base theme) 7.x](https://www.drupal.org/project/emulsify) and [Emulsify Tools 2.x](https://www.drupal.org/project/emulsify_tools) releases bring this new EC4.x foundation into the Drupal ecosystem. Those releases modernize the Drupal base theme, move generated themes to the Vite-based workflow, update compatibility for modern Drupal versions, and improve Drupal-specific developer workflows.
+The upcoming [Emulsify (base theme) 7.x](https://www.drupal.org/project/emulsify) and [Emulsify Tools 2.x](https://www.drupal.org/project/emulsify_tools) releases bring this new EC4.x foundation into the Drupal ecosystem. Those releases modernize the base theme, move generated themes to the Vite-based workflow, update compatibility for modern Drupal versions, and improve Drupal-specific developer workflows.
 
 But it is important to frame those releases correctly: **they are integration projects built on top of the new Emulsify Core 4.x foundation.**
 
@@ -218,6 +247,6 @@ The difference is that the foundation is now broader.
 
 Twig and React can live together. Drupal behavior can stay in Drupal projects. Generic projects can stay generic. Existing projects have a practical upgrade path. Future integrations have a clearer place to start.
 
-In the next post, we’ll look at what this means for Drupal specifically, including Emulsify (Drupal base theme) 7.x, Emulsify Tools 2.x, the new generated theme workflow, and the improvements coming for modern Drupal projects.
+In the next post, we’ll look at what this means for Drupal specifically, including Emulsify (base theme) 7.x, Emulsify Tools 2.x, the new generated theme workflow, and the improvements coming for modern Drupal projects.
 
 For now, **Emulsify Core 4.x gives us the foundation for the next chapter of the project:** still component-driven, still practical, and ready for more than one platform.
