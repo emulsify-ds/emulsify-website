@@ -1,8 +1,8 @@
 # Bringing the New Emulsify Foundation to Drupal
 
-In the last post, we looked at [Emulsify Core 4.x](https://www.npmjs.com/package/@emulsify/core), or **EC4.x** for short, as a new foundation for the project: more modern, more flexible, and more intentionally platform agnostic.
+In the last post, we looked at [Emulsify Core 4.x](https://www.npmjs.com/package/@emulsify/core), or **EC4.x** for short, as a new foundation for the project: more modern, more flexible, and easier to extend across different implementation paths.
 
-The direction matters because Emulsify is not just a CMS theme, and EC4.x is not limited to one implementation path. With Vite, Storybook, Twig, React, and platform adapters working together, **EC4.x gives us a better foundation for many different kinds of component-driven projects.**
+That direction matters because Emulsify has never been just a CMS theme. With Vite, Storybook, Twig, React, and platform adapters working together, **EC4.x makes Emulsify’s flexible architecture clearer and gives teams more room to build on it.**
 
 The Drupal ecosystem is still a major part of that story.
 
@@ -18,13 +18,13 @@ One of the most important ideas behind this release cycle is separation.
 
 Platform-specific behavior should exist where the platform needs it. But it should not define the entire shape of EC4.x.
 
-This is where the new Emulsify architecture becomes important. EC4.x introduces a platform model that allows Drupal-specific behavior to live behind an adapter while generic projects stay generic. Emulsify (base theme) 7.x builds on that model by acting as the integration point for the new foundation.
+That idea has always been part of Emulsify’s direction. EC4.x simply makes the separation more visible in the architecture, configuration, and adapter boundaries. Emulsify (base theme) 7.x builds on that model by acting as the Drupal integration point for the new foundation.
 
 For teams that support Drupal projects, the familiar Emulsify workflow is still there: component-driven development, Storybook, Twig templates, generated child themes, and practical tooling for theme work.
 
-**The difference is that those pieces now sit on top of a more modern and portable foundation.**
+**The difference is that those pieces now sit on top of a more modern and easier-to-extend foundation.**
 
-Those projects get the benefits of EC4.x without making one CMS the default assumption for every Emulsify project.
+Those projects get the benefits of EC4.x while the core package remains easier to adapt for other platforms and project types.
 
 ## Built for modern Drupal projects
 
@@ -78,7 +78,7 @@ For teams that prefer the core Starterkit command, the generated theme path can 
 php web/core/scripts/drupal generate-theme my_theme --starterkit whisk --path themes/custom
 ```
 
-Both paths are designed around the same architecture: **generate from Whisk, run on Emulsify, and build with EC4.x.**
+Both paths are designed around the same architecture: **generate from Whisk, run on Emulsify, and build with EC4.x.** Simple enough. :)
 
 ## A more practical upgrade path
 
@@ -86,7 +86,7 @@ Major releases always come with some planning. Emulsify (base theme) 7.x is no d
 
 Drupal 10 support has been removed. Drupal 11.3 or newer is required. The generated child theme frontend workflow moves from Webpack to Vite. Whisk should no longer be enabled directly. Existing child themes should be reviewed to make sure they inherit from `emulsify`.
 
-Those are real changes, but they are changes with a clear direction.
+Those are real changes, but they are also changes with a clear direction.
 
 The upgrade is not intended to be a reset. Existing Emulsify projects should not need to throw away their component architecture or start from scratch. **EC4.x continues to support existing component structures**, and the base theme integration keeps platform-specific behavior where those projects need it.
 
@@ -102,7 +102,7 @@ For teams that want to focus specifically on Twig story migration, there is also
 npm run audit:twig-stories
 ```
 
-That tooling matters because upgrades are easier when teams can see what actually needs attention. Instead of guessing where a project may rely on older patterns, teams can review the audit output and make targeted updates.
+That kind of tooling matters because upgrades are easier when teams can see what actually needs attention. Instead of guessing where a project may rely on older patterns, teams can review the audit output and make targeted updates.
 
 [See our upgrading to Emulsify Core 4.x guide.](#)
 
@@ -112,7 +112,7 @@ That tooling matters because upgrades are easier when teams can see what actuall
 
 It updates the compatibility baseline for modern projects, including Drupal 11.3, PHP 8.4, and Drush 13. It also modernizes the child theme generation command while preserving the familiar `drush emulsify` alias.
 
-Continuity matters here. **The underlying implementation is changing, but the command developers already know can remain part of the workflow.**
+That matters for continuity. **The underlying implementation is changing, but the command developers already know can remain part of the workflow.**
 
 ```bash
 drush emulsify my_theme
@@ -200,7 +200,7 @@ Emulsify (base theme) 7.x takes a more structured approach.
 
 The new workflow is built around one SVG source configured in the theme settings form. From there, Emulsify can generate a favicon package that includes browser, iOS, Android, manifest, and metadata assets. The settings UI can store the portable SVG source and generated package metadata so the favicon package can be recreated consistently across environments.
 
-The workflow becomes clearer:
+That gives teams a clearer lifecycle:
 
 1. **Configure the favicon in theme settings.**
 2. **Export and deploy configuration as usual.**
@@ -259,10 +259,10 @@ Emulsify (base theme) 7.x and Emulsify Tools 2.x are important releases for team
 
 But they also represent something bigger for Emulsify as a project.
 
-**These are the first major integration releases built around the new EC4.x foundation.** Drupal remains a first-class part of the Emulsify ecosystem, but it is now more clearly one integration of a broader platform-agnostic approach.
+**These are the first major integration releases built around the new EC4.x foundation.** Drupal remains a first-class part of the Emulsify ecosystem, and the clearer architecture now makes room for more integrations to follow the same pattern.
 
-This is the future we are building toward.
+That is the future we are building toward.
 
-EC4.x provides the foundation. Emulsify (base theme) 7.x brings that foundation into a real CMS integration. Future platforms can follow the same pattern when the time is right.
+EC4.x provides the foundation and extension points. Emulsify (base theme) 7.x brings that foundation into a real CMS integration. Future platforms can follow the same pattern when the time is right.
 
 For teams that support Drupal projects, this release cycle provides a cleaner, more modern path forward. For Emulsify, it marks another step toward a design system toolset that can meet teams wherever their components need to live.
