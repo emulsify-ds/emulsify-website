@@ -20,8 +20,7 @@ Emulsify Drupal 6.x declares `drupal/emulsify_tools:^1.0`. Using Tools 2.2 with 
 ## Installation
 
 ```bash
-composer config repositories.drupal composer https://packages.drupal.org/8
-composer require 'drupal/emulsify:^7.2' 'drupal/emulsify_tools:^2.2' --with-all-dependencies
+composer require 'drupal/emulsify:^7' 'drupal/emulsify_tools:^2' --with-all-dependencies
 drush en emulsify_tools -y
 ```
 
