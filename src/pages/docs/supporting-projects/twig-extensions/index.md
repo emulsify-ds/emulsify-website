@@ -6,7 +6,7 @@ description: ''
 
 Emulsify Design System uses a variety of plugins for Twig extensions:
 
-1. [Emulsify Tools](https://www.drupal.org/project/emulsify_tools): Defines a Drush command (`drush emulsify [theme_name]) to generate sub-themes and custom Twig functions for BEM and Add Attributes.
+1. [Emulsify Tools](/docs/emulsify-drupal/emulsify-tools): Defines a Drush command (`drush emulsify [theme_name]`) to generate sub-themes and custom Twig functions for BEM and Add Attributes.
 2. [Emulsify Twig Extensions](https://github.com/emulsify-ds/emulsify-twig-extensions): Adds BEM and Add Attributes custom Twig extensions for Storybook (Twig.js)
 3. [Twig Drupal Filters](https://www.npmjs.com/package/twig-drupal-filters): Adds Drupal Twig extensions for Storybook (Twig.js)
 4. [Emulsify Twig](https://www.drupal.org/project/emulsify_twig): (deprecated: all future development moving to Emulsify Tools) Adds BEM and Add Attributes custom Twig extensions for Drupal (Drupal module)
