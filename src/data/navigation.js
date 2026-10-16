@@ -1,5 +1,9 @@
 export const navigation = [
   {
+    title: 'Introduction',
+    links: [{ title: 'Getting Started', href: '/docs/getting-started' }],
+  },
+  {
     title: 'Base Theme',
     links: [
       {
