@@ -4,10 +4,10 @@ pageTitle: Component-Driven Design
 description: Helpful information for those new to component-driven design
 ---
 
-Component-driven design is a way to systematize and share designs as functional prototypes. Emulsify has traditionally used the [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) system for organization. However, with the release of Emulsify Core 2.x we now support any organization you prefer.
+Component-driven design is a way to systematize and share designs as functional prototypes. Emulsify has traditionally used the [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) system for organization. However, Emulsify Core supports any organization you prefer.
 
 ## Choose your own component organization
-Your Emulsify installation has one project dependency called [Emulsify Core](https://github.com/emulsify-ds/emulsify-core) that contains all the development tooling and configuration you'll need. The recent 2.x release added a host of new features including the ability to define your own component structure.
+Your Emulsify installation has one project dependency called [Emulsify Core](https://github.com/emulsify-ds/emulsify-core) that contains all the development tooling and configuration you'll need. It also lets you define your own component structure.
 
 The following are examples of how to organize your components.
 - [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) - If you are a long time Emulsify user then you know we've traditionally preferred this approach. 
@@ -18,6 +18,6 @@ The following are examples of how to organize your components.
 ...or create your own structure that fits best for you and your project. We chose our own organization for the [Emulsify UI Kit](https://github.com/emulsify-ds/emulsify-ui-kit/tree/main/src).
 
 ### Compiled files vs Source files
-With the release of Emulsify Core 2.x it is highly recommended you use a `src/` directory at the root of your Emulsify project. If your project doesn't have a defined platform in your `project.emulisfy.json` file then all files meant for public viewing will be compiled to a `dist/` directory. 
+For new projects, it is highly recommended you use a `src/` directory at the root of your Emulsify project. If your project doesn't have a defined platform in your `project.emulsify.json` file then all files meant for public viewing will be compiled to a `dist/` directory. 
 
-If your project's platform is Drupal then components in your `src/components` directory will be compiled to `components/` and any foundational/utiliy/global files will be compiled to a `dist/` directory. This approach is specifically implemented in order to support Drupal's [Single Directory Component](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components) feature.
+If your project's platform is Drupal and `singleDirectoryComponents` is enabled (the default for themes generated from Emulsify Drupal), then components in your `src/components` directory will be compiled to `dist/components/` and mirrored to `components/`, and any foundational/utility/global files will be compiled to `dist/global/`. This approach is specifically implemented in order to support Drupal's [Single Directory Component](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components) feature.
