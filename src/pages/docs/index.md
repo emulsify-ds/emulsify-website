@@ -36,13 +36,13 @@ A Drupal theme scaffold that lets teams create an installable Emulsify child the
 
 Systems are used to define components and assets. Emulsify projects opt into using systems via the Emulsify CLI. Once a system has been selected for a project, the system mandates how components are organized and how required components/assets are installed. It also gives developers the ability to find and install non-required components.
 
-### [UI Kit](https://github.com/emulsify-ds/emulsify-ui-kit/)
+### [Emulsify UI Kit](/docs/systems/ui-kit)
 
 The Emulsify UI Kit is a tool for designers and front-end engineers to build high-quality user interfaces effectively and efficiently while maintaining WCAG 2.2 AA standards and project performance goals. It features tight integration with Figma via design tokens, and is the recommended system for new projects.
 
-### [Compound](https://github.com/emulsify-ds/compound) (archived)
+### [Compound](/docs/systems/compound) (archived)
 
-Compound was the original Emulsify system. Its repository is archived and no longer receives updates. New projects should use the UI Kit.
+Compound was the original Emulsify component system. Its repository is archived and no longer receives updates; it remains installable through the Emulsify CLI for existing projects. New projects should start with the Emulsify UI Kit.
 
 ## Supporting Projects
 
