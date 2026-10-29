@@ -18,8 +18,14 @@ The `[path]` argument is the parent directory. The CLI creates the project insid
 
 ### Requirements
 
-1. [Node v24.13.0 or newer (we recommend NVM)](https://github.com/nvm-sh/nvm)
-2. [Emulsify CLI](/docs/supporting-projects/emulsify-cli) (required to create the project with `emulsify init` and to install components from an external library.)
+1. [Node.js `>=24.13.0`](https://nodejs.org/) (we recommend [NVM](https://github.com/nvm-sh/nvm); the starter's `.nvmrc` selects the Node 24 line).
+2. [Emulsify CLI](/docs/supporting-projects/emulsify-cli), installed globally with `npm install -g @emulsify/cli`. The CLI clones this starter during `emulsify init` and is also used to install a component system and components.
+
+## Local development
+
+- `npm run develop` runs Vite in watch mode alongside Storybook.
+- `npm run build` builds design system assets with Vite.
+- `npm run storybook-build` builds static Storybook output.
 
 ## Repository
 
