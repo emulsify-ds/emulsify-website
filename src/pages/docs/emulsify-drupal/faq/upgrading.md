@@ -76,7 +76,7 @@ An older Emulsify theme that does not use Emulsify Core can be moved to a new Em
 If your Emulsify project lives outside Drupal, upgrade it in place by following Emulsify Core's [Migration to 4.x guide](https://github.com/emulsify-ds/emulsify-core/blob/main/docs/migration-4x.md). In short:
 
 1. Use Node.js `>=24.13.0` (set `.nvmrc` to `24`).
-2. Replace your tooling dependencies with `"@emulsify/core": "^4.3.1"` (published on npm).
+2. Replace your tooling dependencies with `"@emulsify/core": "^4.5.0"` (published on npm).
 3. Copy the scripts block from the [Emulsify Starter `package.json`](https://github.com/emulsify-ds/emulsify-starter/blob/main/package.json) (the platform-agnostic starter) and re-apply your own scripts.
 4. Move lint, Storybook and a11y customizations into `config/emulsify-core/` and Webpack customizations into Vite plugins under `config/emulsify-core/vite/`.
 5. Delete `node_modules/`, run `npm install`, then `npm run audit`.
