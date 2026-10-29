@@ -8,13 +8,17 @@ Emulsify is an open-source toolset for creating and implementing design systems 
 
 Emulsify Design System contains multiple packages, which can be used individually to solve small problems or together to solve big ones. See below for some of the popular packages. New to Emulsify? Start with [Getting Started](/docs/getting-started).
 
-## Base Theme
+## Base Themes
 
-Base themes contain application-specific configuration and a sub theme template (whisk) used for generation.
+Base themes contain platform-specific runtime code and a child theme starter (Whisk) used to generate the theme your project owns.
 
-### [**Drupal**](https://github.com/emulsify-ds/emulsify-drupal)
+### [Emulsify Drupal](/docs/emulsify-drupal)
 
-Emulsify Drupal is the official [Drupal](https://www.drupal.org) parent theme for Emulsify. It uses [Storybook](https://storybook.js.org) as a component library and Emulsify Core with [Vite](https://vite.dev) as a build engine. To build a theme outside of a Drupal installation, use the [Emulsify Drupal Starter](/docs/emulsify-drupal-starter).
+Emulsify Drupal is the official [Drupal](https://www.drupal.org) parent theme for Emulsify. It provides [Storybook](https://storybook.js.org) integration, [Emulsify Core](/docs/supporting-projects/emulsify-core) tooling, and a [Vite](https://vite.dev)-based build workflow for Drupal 11.3+ with Drupal 12 forward compatibility. It requires the [Emulsify Tools](https://www.drupal.org/project/emulsify_tools) module to generate child themes.
+
+### [Emulsify WordPress](https://github.com/emulsify-ds/emulsify-wordpress)
+
+Emulsify WordPress is a Timber-first WordPress parent theme built with Emulsify Core, Vite, Storybook, and Twig. The parent theme provides the WordPress runtime; generated child themes hold your components, templates, and assets.
 
 ## Systems
 
