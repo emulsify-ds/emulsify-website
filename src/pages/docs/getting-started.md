@@ -57,6 +57,16 @@ npm run develop
 
 This starts Vite in watch mode alongside Storybook.
 
+## 6. Enable the theme in Drupal
+
+In another terminal, from the Drupal project root:
+
+```bash
+drush theme:enable my_theme -y
+drush config:set system.theme default my_theme -y
+drush cr -y
+```
+
 ## Next steps
 
 - [Emulsify CLI usage](/docs/supporting-projects/emulsify-cli/emulsify-cli-usage)
