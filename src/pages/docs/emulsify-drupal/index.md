@@ -9,7 +9,9 @@ description: Installing Emulsify
 ### Requirements
 
 1. [Node v24.13.0 or newer (we recommend NVM)](https://github.com/nvm-sh/nvm)
-2. [Emulsify CLI](/docs/supporting-projects/emulsify-cli) (required if you want to install components from an external library. Not required if you are creating components from scratch.)
+2. An existing Composer-managed Drupal 11.3+ site with Drush 13+.
+3. PHP 8.3+ (follow [Drupal's PHP requirements](https://www.drupal.org/docs/getting-started/system-requirements/php-requirements) for your core release).
+4. [Emulsify CLI](/docs/supporting-projects/emulsify-cli) (required if you want to install components from an external library. Not required if you are creating components from scratch.)
 
 ### Version
 
