@@ -11,6 +11,10 @@ export const navigation = [
             href: '/docs/emulsify-drupal/faq/upgrading',
           },
           {
+            title: 'Emulsify Tools',
+            href: '/docs/emulsify-drupal/emulsify-tools',
+          },
+          {
             title: 'FAQ',
             href: '/docs/emulsify-drupal/faq',
           },
