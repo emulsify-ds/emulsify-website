@@ -1,12 +1,12 @@
 ---
 title: Emulsify Design System
 pageTitle: Emulsify Design System
-description: ''
+description: 'Overview of the Emulsify Design System packages: base themes, starters, systems, and supporting tools.'
 ---
 
-Emulsify is an open-source tool for creating design systems with reusable components and clear guidelines for teams. Emulsify helps organizations scale their design while reducing cost, streamlining workflows, and improving accessibility.
+Emulsify is an open-source toolset for creating and implementing design systems on your website, with reusable components and clear guidelines for teams. Emulsify helps organizations scale their design while reducing cost, streamlining workflows, and improving accessibility.
 
-Emulsify Design System contains multiple packages, which can be used individually to solve small problems or together to solve big ones. See below for some of the popular packages.
+Emulsify Design System contains multiple packages, which can be used individually to solve small problems or together to solve big ones. See below for some of the popular packages. New to Emulsify? Start with [Getting Started](/docs/getting-started).
 
 ## Base Theme
 
