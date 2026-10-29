@@ -33,7 +33,7 @@ Emulsify 7.x is a **breaking** release. Plan it as a theme-platform change, not 
    ```
 
 3. Regenerate or review custom child themes so they inherit from `emulsify` (not `stable9` or `whisk`). Existing child themes are **not** rewritten by the update; generate a new theme with a new machine name (`drush emulsify my_theme_7`) to compare against.
-4. If a child theme overrides `templates/layout/page.html.twig`, compare it with the 7.x templates so the `content_top` and `content_bottom` regions still render.
+4. If a child theme has a copied `templates/layout/page.html.twig`, delete it so the theme inherits the parent's page template. To keep customizations, extend `@emulsify/templates/layout/page.html.twig` and override only the blocks you need (see the [template extension guide](https://github.com/emulsify-ds/emulsify-drupal/blob/main/docs/template-extension.md)).
 5. Move frontend scripts and habits from Webpack to the Vite workflow (see Emulsify Core's [Migration to 4.x guide](https://github.com/emulsify-ds/emulsify-core/blob/main/docs/migration-4x.md)). Generated themes include `npm run audit` (and `npm run audit:twig-stories`) to report Webpack-era patterns, unresolved Twig includes and stories that should move to `renderTwig()`.
 6. Favicons: `drush updb` (step 2) backfills the new favicon keys. Run `drush emulsify_tools:repair-favicon-config [theme]` to backfill child-theme `config/install` and `config/schema` files, then run `drush emulsify_tools:favicon-generate [theme]` after each config import. PNG and ICO generation need the PHP `gd` and `Imagick` extensions.
 
@@ -43,6 +43,10 @@ For new work prefer Drupal SDC names, such as `{% include "my_theme:list" with {
 
 ### Minor 7.x upgrades
 
+- **7.2.1 → 7.3.0:** run the `composer require` command above, then:
+  - **Required:** delete the child theme's copied `templates/layout/page.html.twig` to receive the parent's page fixes (see step 4 above), then run `drush cr`.
+  - If generated favicons are enabled, run `drush emulsify_tools:favicon-generate [theme]` (or save the theme settings), then `drush config:export` and commit the updated `[theme].settings.yml`.
+  - Optional: to adopt the latest Emulsify Core, run `npm install @emulsify/core@^4.5.0` in the child theme, then rebuild assets.
 - **7.2.0 → 7.2.1:** requires Emulsify Tools 2.2+, which delegates theme generation to Drupal Starterkit. The `composer require` command above picks it up.
 - **7.1.x → 7.2.0:** adds an optional component inspector. To use it in an existing theme, run `npm install @emulsify/core@^4.3.1` and add `"inspect:components": "emulsify-inspect-components"` to the `package.json` scripts.
 - **7.0.0 → 7.1.0:** backward compatible. Clear caches, rebuild assets, and regenerate favicon packages after config import.
