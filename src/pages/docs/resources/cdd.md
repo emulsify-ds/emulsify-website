@@ -36,6 +36,8 @@ To define a custom structure, add `variant.structureImplementations` to your `pr
 When you create a component with the [Emulsify CLI](/docs/supporting-projects/emulsify-cli), `emulsify component create <name> --directory <structure>` places it in one of these named structures. See [Project Structure And Output](https://github.com/emulsify-ds/emulsify-core/blob/main/docs/project-structure.md) for every option.
 
 ### Compiled files vs Source files
-For new projects, it is highly recommended you use a `src/` directory at the root of your Emulsify project. If your project doesn't have a defined platform in your `project.emulsify.json` file then all files meant for public viewing will be compiled to a `dist/` directory. 
+For new projects, it is highly recommended you use a `src/` directory at the root of your Emulsify project, with components in `src/components`. Existing projects that keep components in a root `components/` directory are still supported, so you don't need to create `src/` just to upgrade.
+
+Where compiled files end up depends on the `platform` in your `project.emulsify.json` file (`none`, `drupal`, or `wordpress`; `none` is the default). With `none` or `wordpress`, all files meant for public viewing will be compiled to a `dist/` directory.
 
 If your project's platform is Drupal and `singleDirectoryComponents` is enabled (the default for themes generated from Emulsify Drupal), then components in your `src/components` directory will be compiled to `dist/components/` and mirrored to `components/`, and any foundational/utility/global files will be compiled to `dist/global/`. This approach is specifically implemented in order to support Drupal's [Single Directory Component](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components) feature.
