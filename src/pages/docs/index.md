@@ -46,18 +46,23 @@ Compound was the original Emulsify component system. Its repository is archived 
 
 ## Supporting Projects
 
-### [Emulsify Cli](https://github.com/emulsify-ds/emulsify-cli)
+### [Emulsify Core](/docs/supporting-projects/emulsify-core)
 
-This is a command line interface for Emulsify. With it, you can initialize a project, and identify a "system" (like the UI Kit) for your project. Once initialized you can install individual components from that system into your project as "boiler-plate" code.
+Emulsify Core is an npm package (`@emulsify/core`) that provides shared Vite build configuration and a Storybook workspace for component-driven development with Twig, React, and custom elements. Every Emulsify base theme and starter uses it.
 
-### [Emulsify Tools](https://github.com/emulsify-ds/emulsify_tools)
+### [Emulsify CLI](/docs/supporting-projects/emulsify-cli)
 
-The Emulsify Tools module defines a Drush command (`drush emulsify [theme_name]`) to generate sub-themes and includes two Twig functions "BEM" and "Add Attributes".
+The command line interface for Emulsify. Use it to create a project for Drupal, WordPress, or a standalone front end; install a component system (such as the Emulsify UI Kit); and install or scaffold individual components. Requires Node.js `>=24.13.0`.
 
-The BEM function provides a simple way to programmatically generate BEM classes on elements in your components.
+### [Emulsify Tools](https://www.drupal.org/project/emulsify_tools)
 
-The Add Attributes function provides a way to programmatically add any html attribute (including classes) to elements of your components.
+The Emulsify Tools Drupal module provides the `drush emulsify [theme_name]` command (an alias of `drush emulsify_tools:bake`) to generate child themes, theme Twig namespaces, favicon deployment commands, and two Twig functions, `bem()` and `add_attributes()`:
 
-### [Emulsify Twig Extensions](https://github.com/emulsify-ds/emulsify-twig-extensions)
+- `bem()` generates BEM classes on elements in your components.
+- `add_attributes()` adds any HTML attribute (including classes) to elements of your components.
 
-This repo contains the JavaScript version of the BEM and Add Attributes extensions for Twig.js. Emulsify Core 4 includes its own implementations for Storybook, so you only need these packages when using Twig.js outside of Emulsify Core.
+Source code and issues: [GitHub](https://github.com/emulsify-ds/emulsify_tools).
+
+### [Emulsify Twig Extensions](/docs/supporting-projects/twig-extensions)
+
+JavaScript (Twig.js) versions of the `bem()` and `add_attributes()` functions, published as the `bem-twig-extension` and `add-attributes-twig-extension` npm packages. Emulsify Core 4 includes its own native implementations for Storybook, so you only need these packages when using Twig.js outside Emulsify Core.
