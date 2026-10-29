@@ -21,11 +21,31 @@ description: Installing Emulsify
 
 ## Inside a Composer-Based Drupal Instance
 
-1. Add the Emulsify base theme (and its dependencies) via composer. `composer require 'drupal/emulsify:^7'`
-2. Install the Emulsify Tools module `drush pm:install emulsify_tools`
-3. Initialize a sub-theme using drush. `drush emulsify [theme_name]` - This will generate a new theme within `themes/custom/` directory.
-4. Install your new theme and set it as the default frontend theme. `drush theme:enable [theme_name] && drush config:set system.theme default [theme_name]`
-5. Install theme dependencies from your theme's directory. `nvm use && npm install`
+Run these commands from the root of your Drupal project.
+
+1. Add the Emulsify base theme and the Emulsify Tools module via Composer:
+
+   ```bash
+   composer require 'drupal/emulsify:^7' 'drupal/emulsify_tools:^2' --with-all-dependencies
+   ```
+
+2. Enable the Emulsify Tools module: `drush en emulsify_tools -y`
+3. Generate a child theme: `drush emulsify my_theme`. This creates `web/themes/custom/my_theme` with `emulsify` as its parent theme. Do not enable the `whisk` theme directly; it is only the source used to generate child themes.
+4. Enable your new theme and set it as the default frontend theme:
+
+   ```bash
+   drush theme:enable my_theme -y
+   drush config:set system.theme default my_theme -y
+   drush cr -y
+   ```
+
+5. Install the theme's dependencies from its directory:
+
+   ```bash
+   cd web/themes/custom/my_theme
+   nvm install && nvm use
+   npm install
+   ```
 
 ## Standalone (for prototyping outside of a CMS install)
 
