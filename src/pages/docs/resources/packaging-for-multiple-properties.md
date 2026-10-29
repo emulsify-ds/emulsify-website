@@ -58,7 +58,9 @@ Next, we need to tell Storybook and Drupal where to find the component Twig file
 
 Restart `npm run develop` after changing `project.emulsify.json`. The shared package is treated like your own roots: its stories show up in Storybook, and its files are built into your theme's `dist/` directory.
 
-{% callout type="warning" title="Projects without structureImplementations" %}
+Component styles inside the shared package are compiled to `dist/`, but Storybook doesn't load them, because their output path is under `node_modules`. To see them in Storybook, import the package's styles with `@use` from a stylesheet in one of your own roots, as shown in [Styling](#styling).
+
+{% callout title="Projects without structureImplementations" %}
 If your `project.emulsify.json` has no `variant.structureImplementations`, don't add it just to include a shared package. Once it is present, Emulsify Core uses only the roots you list: Drupal Single Directory Components are no longer mirrored to `./components`, and global styles and scripts under `src/` are no longer built. See [Project Structure](https://github.com/emulsify-ds/emulsify-core/blob/main/docs/project-structure.md) in Emulsify Core.
 {% /callout %}
 
@@ -86,7 +88,7 @@ npm link global-sass
 npm link global-twig
 ```
 
-Now your project uses your local versions of those packages. Because a linked package lives outside your theme, Storybook needs Node's `--preserve-symlinks` option to resolve it; without it, Storybook fails with `Failed to resolve import "@emulsify/core/..."`. Add the option to the `storybook` script in your theme's `package.json`:
+Now your project uses your local versions of those packages. For Storybook to resolve linked packages, add Node's `--preserve-symlinks` option to the `storybook` script in your theme's `package.json`:
 
 ```json
 {
