@@ -4,13 +4,13 @@ pageTitle: Component-Driven Design
 description: Helpful information for those new to component-driven design
 ---
 
-Component-driven design is a way to systematize and share designs as functional prototypes. Emulsify has traditionally used the [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) system for organization. However, Emulsify Core supports any organization you prefer.
+Component-driven design is a way to systematize and share designs as functional prototypes. Emulsify has traditionally used the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) system for organization. However, Emulsify Core supports any organization you prefer.
 
 ## Choose your own component organization
 Your Emulsify installation has one project dependency called [Emulsify Core](https://github.com/emulsify-ds/emulsify-core) that contains all the development tooling and configuration you'll need. It also lets you define your own component structure.
 
 The following are examples of how to organize your components.
-- [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) - If you are a long time Emulsify user then you know we've traditionally preferred this approach. 
+- [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) - If you are a long time Emulsify user then you know we've traditionally preferred this approach. 
 - Flat Component Structure - all components regardless of complexity and reliance exist at the same level.
 - Component Type Grouping - Components are organized by their type or function, such as UI components, form elements, layout components, etc.
 - Design System-Based Structure - Follows a design system approach where components are based on standardized design tokens and patterns. Components are usually divided into categories such as primitives (buttons, inputs) and complex components (modals, tables).
