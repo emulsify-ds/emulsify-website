@@ -54,7 +54,7 @@ Run these commands from the root of your Drupal project.
 
 ## Start installing/building your components
 
-At this point you will have an empty custom theme that is ready for component development. You can either install components from the [Emulsify UI Kit](/docs/systems/ui-kit) or build your own [components from scratch](/docs/resources/cdd).
+At this point you will have an empty custom theme that is ready for component development. The generated theme includes the Emulsify Core 4 tooling (Vite and Storybook) but no components, and its Drupal library file only contains commented CSS and JavaScript examples. You can either install components from the [Emulsify UI Kit](/docs/systems/ui-kit) or build your own [components from scratch](/docs/resources/cdd), then update those library examples to point at your build output.
 
 ### Installing components
 
