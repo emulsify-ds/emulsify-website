@@ -9,7 +9,7 @@ This quick start creates an Emulsify theme for an existing Composer-managed Drup
 ## Requirements
 
 1. [Node v24.13.0 or newer (we recommend NVM)](https://github.com/nvm-sh/nvm)
-2. A Composer-managed Drupal 11.3+ site with Drush
+2. A Composer-managed Drupal 11.3+ site with Drush 13+
 
 ## 1. Install the Emulsify CLI
 
@@ -24,8 +24,8 @@ Run `emulsify --help` at any time to see the available commands.
 From the Drupal project root:
 
 ```bash
-composer require 'drupal/emulsify:^7' 'drupal/emulsify_tools:^2'
-drush pm:install emulsify_tools
+composer require 'drupal/emulsify:^7' 'drupal/emulsify_tools:^2' --with-all-dependencies
+drush en emulsify_tools -y
 ```
 
 ## 3. Create your theme
