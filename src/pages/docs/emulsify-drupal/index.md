@@ -61,3 +61,11 @@ At this point you will have an empty custom theme that is ready for component de
 1. Any given Drupal installation can have multiple instances of a custom Emulsify-based theme. To install a specific component library first go to your theme's directory.
 2. Refer to the Emulsify CLI documentation on how to [install a system and components](/docs/supporting-projects/emulsify-cli/emulsify-cli-usage).
 3. Once you have components installed you can build your theme, run storybook, and watch for active file changes by running `npm run develop`
+
+## Verify your theme
+
+Run these commands from your theme's directory:
+
+- `npm run test` runs your project's tests. Add at least one test first; the command fails when no tests are found.
+- `npm run inspect:components` reports your components, their dependencies and any configuration issues.
+- `npm run build` and `npm run storybook-build` check the asset and Storybook builds once components are installed.
