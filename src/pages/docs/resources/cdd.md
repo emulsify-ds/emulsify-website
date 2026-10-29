@@ -17,6 +17,24 @@ The following are examples of how to organize your components.
 
 ...or create your own structure that fits best for you and your project. We chose our own organization for the [Emulsify UI Kit](https://github.com/emulsify-ds/emulsify-ui-kit/tree/main/src).
 
+### Define your own structure
+To define a custom structure, add `variant.structureImplementations` to your `project.emulsify.json`. Each entry becomes a structure root and a Twig namespace (for example `@components` or `@foundation`). The Emulsify UI Kit uses this configuration:
+
+```json
+{
+  "variant": {
+    "structureImplementations": [
+      { "name": "components", "directory": "./src/components/" },
+      { "name": "foundation", "directory": "./src/foundation/" },
+      { "name": "layout", "directory": "./src/layout/" },
+      { "name": "tokens", "directory": "./src/tokens/" }
+    ]
+  }
+}
+```
+
+When you create a component with the [Emulsify CLI](/docs/supporting-projects/emulsify-cli), `emulsify component create <name> --directory <structure>` places it in one of these named structures. See [Project Structure And Output](https://github.com/emulsify-ds/emulsify-core/blob/main/docs/project-structure.md) for every option.
+
 ### Compiled files vs Source files
 For new projects, it is highly recommended you use a `src/` directory at the root of your Emulsify project. If your project doesn't have a defined platform in your `project.emulsify.json` file then all files meant for public viewing will be compiled to a `dist/` directory. 
 
