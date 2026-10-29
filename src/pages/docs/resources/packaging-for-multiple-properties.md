@@ -6,7 +6,7 @@ description: How to use package management in Emulsify to share components and s
 
 ## Sharing Across Multiple Projects
 
-Emulsify allows you to use shared packages across multiple projects. If you are a large organization, this is an excellent way to provide consistency, reuse and save time/money across all properties. The first step is to make some decisions around how you want to organize your organization and projects. Emulsify is not opinionated on this, as organizations will operate in a multitude of ways. We will use one common way as an example to show how it can be set up.&#x20;
+Emulsify allows you to use shared packages across multiple projects. If you are a large organization, this is an excellent way to provide consistency, reuse and save time/money across all properties. The first step is to make some decisions around how you want to organize your organization and projects. Emulsify is not opinionated on this, as organizations will operate in a multitude of ways. We will use one common way as an example to show how it can be set up.
 
 One common way to package components and styles is to have one package for components (for a given language) and one package for shared styling. That way, you can share styling across multiple languages and components per language to any relevant project. So, here's an imaginary set of packages:
 
@@ -15,7 +15,7 @@ One common way to package components and styles is to have one package for compo
 - Drupal Project A (Organization)
 - Drupal Project B (Property)
 
-The organization's Drupal project (A) and one of the properties of the organization (B) can both share the components and styling across their projects. Once those packages have been set up, installing them in each project using Emulsify Drupal is as follows:
+The organization's Drupal project (A) and one of the properties of the organization (B) can both share the components and styling across their projects. Once those packages have been set up, install them in each project's theme:
 
 ### Install Packages
 
@@ -23,58 +23,94 @@ The organization's Drupal project (A) and one of the properties of the organizat
 npm i global-sass global-twig
 ```
 
+Use npm for these projects, not pnpm or Yarn Plug'n'Play. Emulsify Core relies on npm's flat `node_modules` layout.
+
 #### Styling
 
-In Emulsify Drupal, you will want to tell Webpack where to compile your new files. Let's start with the styles. We already have a Sass pipeline in place, so importing styling from a package is as simple as putting this into `components/style.scss`:
+Emulsify Core compiles Sass with Vite, so importing styles from an installed package is a normal Sass import. Add it to the stylesheet where your project loads its global styles. In a project built on the [Emulsify UI Kit](/docs/systems/ui-kit), that is a file under `src/foundation/`; in a project without a design system, it can be any directory under `src/`, such as `src/global/`:
 
-```
-@import '~global-sass/style';
+```scss
+@use '../../node_modules/global-sass/style';
 ```
 
-Assuming you have a Sass stylesheet named `style.css` that compiles all the styles from your global-sass directory, this import will automatically pull in all of those styles. See our Western University [project](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/components/style.scss) and [sass project's style.css](https://github.com/emulsify-ds/western-up-scss/blob/master/style.scss) for an example of this.&#x20;
+Adjust the relative path to match where your file lives. The UI Kit imports `normalize.css` the same way: `@use '../../../node_modules/normalize.css/normalize.css';`.
 
 #### Twig/Markup - Storybook
 
-Next, we need to tell Storybook and Drupal where to find the component Twig files. First let's start with Storybook. Storybook uses Webpack to load files, and since our Twig components are Node packages, we need to tell Webpack a few things (see links for Western University examples of how to do this): 1. [How to watch/compile for changes in these files](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/.storybook/webpack.config.js#L7-L18), 2. [Where to look for these files](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/.storybook/webpack.config.js#L29-L43), and 3. [To include those in our linting](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/.storybook/webpack.config.js#L94-L95). Let's walk through a couple of places in this file that may be confusing - see comments in file for clarification:
+Next, we need to tell Storybook and Drupal where to find the component Twig files. Emulsify Core builds its Twig namespaces from the structure roots in your theme's `project.emulsify.json`: each entry in `variant.structureImplementations` becomes a namespace. Projects built on the Emulsify UI Kit already list their roots there, so you can add the shared package as one more root:
 
-```javascript
-// In the case of using npm link to link and develop your packages locally, this will help.
-config.resolve = { symlinks: false }
-
-// For hot reloading (watch), ignore node_modules except the western-up-scss/twig directories.
-config.watchOptions = {
-  ignored: [
-    /node_modules\/(?!(western-up-scss|western-up-twig)\/)/,
-    /\(?!(western-up-scss|western-up-twig)([\\]+|\/)node_modules/,
-  ],
+```json
+{
+  "variant": {
+    "structureImplementations": [
+      { "name": "components", "directory": "./src/components/" },
+      { "name": "foundation", "directory": "./src/foundation/" },
+      { "name": "layout", "directory": "./src/layout/" },
+      { "name": "tokens", "directory": "./src/tokens/" },
+      {
+        "name": "global",
+        "directory": "./node_modules/global-twig/components/"
+      }
+    ]
+  }
 }
-
-// Transpile western-up-twig because it includes un-transpiled ES6 code.
-config.module.rules[0].exclude = [/node_modules\/(?!(western-up-twig)\/)/]
-config.module.rules[0].use[0].loader = require.resolve('babel-loader')
 ```
+
+Restart `npm run develop` after changing `project.emulsify.json`. The shared package is treated like your own roots: its stories show up in Storybook, and its files are built into your theme's `dist/` directory.
+
+Component styles inside the shared package are compiled to `dist/`, but Storybook doesn't load them, because their output path is under `node_modules`. To see them in Storybook, import the package's styles with `@use` from a stylesheet in one of your own roots, as shown in [Styling](#styling).
+
+{% callout title="Projects without structureImplementations" %}
+If your `project.emulsify.json` has no `variant.structureImplementations`, don't add it just to include a shared package. Once it is present, Emulsify Core uses only the roots you list: Drupal Single Directory Components are no longer mirrored to `./components`, and global styles and scripts under `src/` are no longer built. See [Project Structure](https://github.com/emulsify-ds/emulsify-core/blob/main/docs/project-structure.md) in Emulsify Core.
+{% /callout %}
 
 #### Organization vs. Property (Global vs. local)
 
-Also, you may have noticed we're only using global components in this project (the atoms/molecules/etc. in the `twig-loader` namespaces are all from our global package). This is helpful when working on a global project like a main organization project. If you need some global and local, like on a property, you can use something like in the [Western School of Arts project](https://github.com/emulsify-ds/westernarts/blob/master/web/themes/custom/western_arts/.storybook/webpack.config.js#L43-L77). Notice there are now namespaces for both global (e.g., `atoms`) and local (e.g., `wa_atoms`). Now you can use things like this in your Twig.
+On an organization (global) project, most of your components may come from the shared package. On a property, you will usually combine both: the shared package has its own root name (`global` in the example above), and your local components keep theirs (`components`). Templates can then include either one:
+
+```twig
+{{ include('@global/button/button.twig') }}
+{{ include('@components/hero/hero.twig') }}
+```
 
 #### Organization Workflow
 
-If you are working on a property like this, you should be good to go. Changes to your local files will hot reload automatically and you will be able to leverage global components/styles. One last note is needed here when you are working on the organization (parent or global) project. You will want to work on the global components and styles within their respective packages while also gaining hot reloading. There are a number of approaches for this, but we have had great success with the simple usage of `npm link`. You will clone down your projects separately (`global-sass` ,`global-twig`). In each, you will want to run:
+When you work on the organization (parent or global) project, you will want to edit the global components and styles within their respective packages while seeing the result in your theme. There are a number of approaches for this, but we have had great success with the simple usage of `npm link`. You will clone down your projects separately (`global-sass`, `global-twig`). In each, run:
 
 ```
 npm link
 ```
 
-Once you've done that, you need to now link them in your Drupal project. Go to your theme, and run:
+Then link them in your Drupal project. Go to your theme, and run:
 
 ```
 npm link global-sass
 npm link global-twig
 ```
 
-Now, your project will use your local versions of those packages, and with the changes in place above, your Storybook will also hot reload when editing those files!
+Now your project uses your local versions of those packages. For Storybook to resolve linked packages, add Node's `--preserve-symlinks` option to the `storybook` script in your theme's `package.json`:
+
+```json
+{
+  "scripts": {
+    "storybook": "NODE_OPTIONS=\"--no-deprecation --preserve-symlinks\" storybook dev -c node_modules/@emulsify/core/.storybook --ci -p 6006"
+  }
+}
+```
+
+Edits to your theme's own files still reload automatically, but edits inside a linked package do not: restart `npm run develop` to see them.
 
 #### Drupal Twig
 
-One last note on the Drupal side: you will also want your theme's `*.info.yml` file to mimic any namespaces you have in Webpack for Storybook. Here's [the example from Western University](https://github.com/emulsify-ds/westernuni/blob/master/web/themes/custom/western-up/western_up.info.yml#L46-L58). And of course, for these paths to work, you will have to make sure your continuous integration process produces the `node_modules` directory with your packages.
+In Drupal, register the same namespaces in your theme's `.info.yml` file. [Emulsify Tools](https://github.com/emulsify-ds/emulsify_tools#twig-namespaces) supports the `components.namespaces` structure:
+
+```yaml
+components:
+  namespaces:
+    global:
+      - node_modules/global-twig/components
+```
+
+Relative paths are resolved from the theme directory, and paths starting with `/` are resolved from the Drupal app root. Shared Twig components can also ship as a Composer package, registered with an app-root path such as `/../vendor/acme/components`.
+
+For these paths to work, make sure your continuous integration process installs the packages, so the `node_modules` (or `vendor`) directory exists on the server.
