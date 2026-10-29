@@ -8,7 +8,13 @@ Emulsify Starter is a scaffolding repository for the Emulsify CLI. It creates a 
 
 ## Installation
 
-`emulsify init [project_name] --platform none .`
+```bash
+emulsify init "My Project" ./ --platform none
+cd my-project
+emulsify system install
+```
+
+The `[path]` argument is the parent directory. The CLI creates the project inside it using the machine name (for example, `My Project` becomes `my-project`). Use `--machineName` to set the folder name exactly. After init, run `emulsify system install` to choose a component system.
 
 ### Requirements
 
