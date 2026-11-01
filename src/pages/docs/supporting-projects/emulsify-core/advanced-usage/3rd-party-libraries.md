@@ -27,7 +27,7 @@ Drupal.behaviors.eventDate = {
 };
 ```
 
-Vite bundles the package into the component's built file.
+Vite bundles the package into the component's built file. If several components import the same package, Vite moves it into a shared file under `dist/assets/`, and each built file loads it with an ES `import` (see [Loading libraries in Drupal](#loading-libraries-in-drupal)).
 
 To run the component's JavaScript in Storybook, import it from the component's story:
 
@@ -66,13 +66,15 @@ event-date:
     - core/once
 ```
 
+If the built file loads a shared file with `import`, add `attributes: { type: module }` and `preprocess: false` to its entry, so it loads as a module and its relative imports keep working.
+
 Then attach the library from the component's Twig template:
 
 ```twig
 {{ attach_library('my_theme/event-date') }}
 ```
 
-In Storybook, `attach_library()` does nothing, so load the library there as shown in the sections above.
+In Storybook, `attach_library()` does nothing.
 
 ## Vite plugins and Storybook addons
 
